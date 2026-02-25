@@ -31,16 +31,16 @@
   <meta property="og:title" content="Contact — Abstract Creative" />
   <meta property="og:description"
     content="Schedule a Strategic Fit Call with Abstract Creative to clarify your brand direction and next steps." />
-  <meta property="og:url" content="https://abstract-creative.com/contact/">
-  <meta property="og:image" content="https://abstract-creative.com/assets/images/og/abstract-creative-og.jpg">
+  <meta property="og:url" content="contact/">
+  <meta property="og:image" content="assets/images/og/abstract-creative-og.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact — Abstract Creative" />
   <meta name="twitter:description"
     content="Talk with Abstract Creative about locking positioning, brand direction, and growth systems." />
-  <meta name="twitter:image" content="https://abstract-creative.com/assets/images/og/abstract-creative-og.jpg">
-  <link rel="canonical" href="https://abstract-creative.com/contact/">
+  <meta name="twitter:image" content="assets/images/og/abstract-creative-og.jpg">
+  <link rel="canonical" href="contact/">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
   <link rel="apple-touch-startup-image" href="/assets/images/apple-touch-startup.png">
 
@@ -165,7 +165,7 @@
     <div class="mobile-menu overflow-hidden"></div>
     <ul class="info pt-40">
       <li><i class="fa-solid primary-color fa-location-dot"></i> <a
-          href="https://abstract-creative.com/">abstract-creative.com</a>
+          href="">abstract-creative.com</a>
       </li>
       <li class="py-2"><i class="fa-solid primary-color fa-phone-volume"></i> <a id="contact_phone_sidebar"
           data-track="contact" data-type="phone" data-location="sidebar" href="tel:+18323707322">832-370-7322</a>
@@ -213,137 +213,25 @@
 
               <h2 class="text-capitalize mb-50 text-center">Tell us about your goals</h2>
 
-              <form id="contact-form" name="contact" method="POST" action="/thank-you/" data-netlify="true"
-                data-netlify-honeypot="bot-field" class="gform_wrapper ac-form" data-hs-form="true">
-                <!-- Netlify required -->
-                <input type="hidden" name="form-name" value="contact" />
-
-                <!-- Honeypot -->
-                <p style="display:none;">
-                  <label>
-                    Don’t fill this out if you’re human:
-                    <input name="bot-field" />
-                  </label>
-                </p>
-
-                <ul class="gform_fields top_label description_below">
-
-                  <!-- Row 1: First / Last -->
-                  <li class="ac-row" aria-label="Name fields">
-                    <div class="gfield gfield_contains_required">
-                      <label class="gfield_label" for="input_contact_first_name">
-                        First Name<span class="gfield_required">*</span>
-                      </label>
-                      <input type="text" name="first_name" id="input_contact_first_name" class="large"
-                        placeholder="First Name" required autocomplete="given-name" />
-                    </div>
-
-                    <div class="gfield gfield_contains_required">
-                      <label class="gfield_label" for="input_contact_last_name">
-                        Last Name<span class="gfield_required">*</span>
-                      </label>
-                      <input type="text" name="last_name" id="input_contact_last_name" class="large"
-                        placeholder="Last Name" required autocomplete="family-name" />
-                    </div>
-                  </li>
-
-                  <!-- Row 2: Business / Email -->
-                  <li class="ac-row" aria-label="Company and email fields">
-                    <div class="gfield gfield_contains_required">
-                      <label class="gfield_label" for="input_contact_business_name">
-                        Business Name<span class="gfield_required">*</span>
-                      </label>
-                      <input type="text" name="business_name" id="input_contact_business_name" class="large"
-                        placeholder="Business Name" required autocomplete="organization" />
-                    </div>
-
-                    <div class="gfield gfield_contains_required">
-                      <label class="gfield_label" for="input_contact_email">
-                        Email<span class="gfield_required">*</span>
-                      </label>
-                      <input type="email" name="email" id="input_contact_email" class="large" placeholder="Email"
-                        required autocomplete="email" />
-                    </div>
-                  </li>
-
-                  <!-- Row 3: Role / Help -->
-                  <li class="ac-row" aria-label="Role and help topic fields">
-                    <div class="gfield gfield_contains_required">
-                      <label class="gfield_label" for="input_contact_role">
-                        What’s Your Role?<span class="gfield_required">*</span>
-                      </label>
-                      <select name="role" id="input_contact_role" class="large gfield_select" required>
-                        <option value="">What’s Your Role?</option>
-                        <option value="Business Owner/Partner">Business Owner/Partner</option>
-                        <option value="VP/Executive Leadership">VP/Executive Leadership</option>
-                        <option value="Marketing Director/Manager">Marketing Director/Manager</option>
-                        <option value="MarComm/PR">MarComm/PR</option>
-                        <option value="Sales">Sales</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-
-                    <div class="gfield gfield_contains_required">
-                      <label class="gfield_label" for="input_contact_help">
-                        How Can We Help?<span class="gfield_required">*</span>
-                      </label>
-                      <select name="help_topic" id="input_contact_help" class="large gfield_select" required>
-                        <option value="">How Can We Help?</option>
-                        <option value="Sales - Book a Discovery Call">Sales - Book a Discovery Call</option>
-                        <option value="Partnership/Vendor - Becoming a vendor, partner, supplier">
-                          Partnership/Vendor – Becoming a vendor, partner, supplier
-                        </option>
-                        <option value="Other - I have a question not associated with the items above">
-                          Other – I have a question
-                        </option>
-                      </select>
-                    </div>
-                  </li>
-
-                  <!-- Message -->
-                  <li class="gfield gfield--width-full mt-20">
-                    <label class="gfield_label" for="input_contact_message">
-                      Anything additional you'd like to add?
-                    </label>
-                    <textarea name="message" id="input_contact_message" class="textarea medium"
-                      placeholder="Anything additional you'd like to add?" rows="8"></textarea>
-                  </li>
-
-                  <!-- Consent -->
-                  <li id="field_contact_consent"
-                    class="gfield gfield--type-consent gfield--width-full gfield_contains_required gfield_visibility_visible">
-                    <div class="gfield_description gfield_consent_description"
-                      id="gfield_consent_description_contact_consent">
-                      By submitting this form, you agree to the
-                      <a href="https://abstract-creative.com/legal/privacy.html">Privacy Policy</a>
-                      and consent to receiving emails from Abstract Creative.
-                    </div>
-
-                    <div class="ginput_container ginput_container_consent">
-                      <input type="checkbox" name="consent" id="input_contact_consent" value="1" required
-                        aria-required="true" aria-describedby="gfield_consent_description_contact_consent" />
-
-                      <label for="input_contact_consent"
-                        class="gform-field-label gform-field-label--type-inline gfield_consent_label">
-                        I agree to the privacy policy.
-                      </label>
-                    </div>
-                  </li>
-
-                  <li class="gfield gform_footer top_label">
-                    <div class="row">
-                      <div class="col-md-6 mx-auto">
-                        <button type="submit" class="btn-one alink5 w-100 text-center mt-10"
-                          id="gform_submit_button_contact">
-                          Submit
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-
-
-                </ul>
-              </form>
+              <iframe
+    src="https://api.leadconnectorhq.com/widget/form/r8cRGeaDMASeAkHFDthA"
+    style="width:100%;height:100%;border:none;border-radius:3px"
+    id="inline-r8cRGeaDMASeAkHFDthA" 
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Contact Form"
+    data-height="739"
+    data-layout-iframe-id="inline-r8cRGeaDMASeAkHFDthA"
+    data-form-id="r8cRGeaDMASeAkHFDthA"
+    title="Contact Form"
+        >
+</iframe>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
 
             </div>
           </div>
@@ -367,8 +255,7 @@
                     alt="Abstract Creative white logo – strategic brand partner" />
                 </a>
                 <p>
-                  Abstract Creative is a brand strategy consultancy that installs and governs positioning, brand, and
-                  growth systems — so leadership teams can scale without drift.
+                  Abstract Creative is a Brand Transformation Studio that installs positioning, brand architecture, and growth systems—so you can scale without drift.
                 </p>
                 <div class="social-icon mt-20">
                   <a href="https://www.facebook.com/AbstractCreative"><i class="fa-brands fa-facebook-f"></i></a>
@@ -385,7 +272,7 @@
                   <li>
                     <a href="../about/index.html">About</a>
                   </li>
-                  <li><a href="https://abstract-creative.com/offer/index.html">How We Work</a></li>
+                  <li><a href="offer/index.html">How We Work</a></li>
 
                   <li>
                     <a href="../work/index.html">Work</a>
@@ -408,13 +295,13 @@
                 <h4 class="title mb-20 text-white">Legal</h4>
                 <ul class="link">
                   <li>
-                    <a href="../legal/privacy.html">Privacy Policy</a>
+                    <a href="../privacy.html">Privacy Policy</a>
                   </li>
                   <li>
-                    <a href="../legal/terms-of-services.html">Terms & Conditions</a>
+                    <a href="../terms-of-services.html">Terms & Conditions</a>
                   </li>
                   <li>
-                    <a href="../legal/cookies.html">Cookies</a>
+                    <a href="../cookies.html">Cookies</a>
                   </li>
                 </ul>
               </div>

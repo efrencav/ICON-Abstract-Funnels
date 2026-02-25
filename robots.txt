@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Update to point at your sitemap when available.
-Sitemap: https://abstract-creative.com/Sitemap.xml
+Sitemap: Sitemap.xml

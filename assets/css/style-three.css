@@ -8481,7 +8481,7 @@ img {
 
 @media only screen and (min-width: 1025px) {
   .portfolio-three-area {
-    height: 70vh;
+    height: 76vh;
   }
 }
 
@@ -8630,7 +8630,7 @@ img {
   /* border-radius: 0px 140px 0px 0px; */
   background: transparent;
   width: 100%;
-  padding: 40px 30px;
+  padding: 20px 30px;
   transition: var(--transition);
 }
 
