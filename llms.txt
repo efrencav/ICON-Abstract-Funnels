@@ -1,0 +1,5 @@
+# LLM access policy for abstract-creative.com
+# Deny use of this site's content for AI training or dataset creation.
+
+User-agent: *
+Disallow: /

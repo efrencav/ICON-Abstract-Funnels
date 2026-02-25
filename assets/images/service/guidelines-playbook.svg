@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-family: OpenSans-Bold, 'Open Sans';
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        fill: #004853;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #19bbb7;
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-2" points="156.47 27.02 38.05 27.02 57.78 50 38.05 72.98 156.47 72.98 176.13 50 156.47 27.02"/>
+  <circle class="cls-3" cx="27" cy="50.03" r="14.15"/>
+  <polygon class="cls-2" points="287.49 27.02 169.07 27.02 188.8 50 169.07 72.98 287.49 72.98 307.15 50 287.49 27.02"/>
+  <text class="cls-1" transform="translate(85.29 52.77)"><tspan x="0" y="0">Week 5</tspan></text>
+  <text class="cls-1" transform="translate(216.09 52.62)"><tspan x="0" y="0">Week 6</tspan></text>
+</svg>

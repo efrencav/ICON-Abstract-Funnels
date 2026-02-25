@@ -1,0 +1,82 @@
+.footer__main-wrp {
+  position: relative;
+}
+.footer__wrp, .footer-two__wrp {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.footer__item .newsletter, .footer-two__item .newsletter {
+  position: relative;
+}
+.footer__item .newsletter input, .footer-two__item .newsletter input {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  color: var(--paragraph-light);
+}
+.footer__item .newsletter input::-moz-placeholder, .footer-two__item .newsletter input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5019607843);
+}
+.footer__item .newsletter input::placeholder, .footer-two__item .newsletter input::placeholder {
+  color: rgba(255, 255, 255, 0.5019607843);
+}
+.footer__item .newsletter button, .footer-two__item .newsletter button {
+  color: rgba(255, 255, 255, 0.8980392157);
+  font-size: 20px;
+  position: absolute;
+  right: 15px;
+  top: 12px;
+}
+.footer__item .social-icon a, .footer-two__item .social-icon a {
+  font-size: 24px;
+  color: var(--white);
+  margin-right: 20px;
+}
+.footer__item .social-icon a:hover, .footer-two__item .social-icon a:hover {
+  color: var(--primary-color);
+}
+.footer__item p, .footer-two__item p {
+  color: var(--paragraph-light);
+}
+.footer__item .link li:not(:last-child), .footer-two__item .link li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer__item .link li a, .footer-two__item .link li a {
+  color: var(--paragraph-light);
+  font-size: 18px;
+}
+.footer__item .link li a:hover, .footer-two__item .link li a:hover {
+  color: var(--primary-color);
+}
+.footer__copytext, .footer-two__copytext {
+  padding: 20px 0;
+  text-align: center;
+}
+.footer__copytext p, .footer-two__copytext p,
+.footer__copytext a,
+.footer-two__copytext a {
+  color: var(--paragraph-light);
+}
+.footer-two__wrp {
+  border-bottom: 1px solid var(--border);
+}
+.footer-two__item .social-icon a {
+  color: var(--primary-two);
+}
+.footer-two__item .social-icon a:hover {
+  color: var(--primary-two);
+}
+.footer-two__item p {
+  color: var(--paragraph);
+}
+.footer-two__item .link li a {
+  color: var(--paragraph);
+}
+.footer-two__item .link li a:hover {
+  color: var(--primary-two);
+}
+.footer-two__copytext p,
+.footer-two__copytext a {
+  color: var(--paragraph);
+}/*# sourceMappingURL=_footer.css.map */

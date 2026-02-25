@@ -1,0 +1,60 @@
+/*-----------------------------------------------------------------
+
+Template Name: Marketi - Digital Marketing Agency HTML Template
+Author:  wprealizer
+Author URI: https://themeforest.net/user/wprealizer/portfolio
+Developer: WPRealizer Team
+Version: 1.0.0
+Description: Marketi - Digital Marketing Agency HTML5 Template
+
+-------------------------------------------------------------------
+CSS TABLE OF CONTENTS
+-------------------------------------------------------------------
+
+01. abstracts
+    1.01 --> mixins
+    1.02 --> variable
+
+02. base
+    2.01 --> typography
+    2.02 --> animation
+    2.03 --> responsive
+
+03. components
+    3.01 --> buttons
+    3.02 --> progress
+
+04. layout
+    4.01 --> header
+    4.02 --> banner
+    4.03 --> section
+    4.04 --> footer
+
+------------------------------------------------------------------*/
+// Inter,Marcellus, Clash Grotesk & SF Pro
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Marcellus&family=Poppins:wght@100..900&display=swap");
+@import "SFProDisplay.css";
+@import "SF_Pro_Text.css";
+@import "ClashGrotesk.min.css";
+// font-family: "Inter", sans-serif;
+// font-family: "Marcellus", serif;
+// font-family: 'Poppins', sans-serif;
+// font-family: 'Clash Grotesk', sans-serif;
+
+// Abstracts styles ***
+@import "_abstracts/_mixins";
+@import "_abstracts/_variables";
+
+// Base styles***
+@import "_base/_typography";
+@import "_base/_animation";
+
+// Component styles ***
+@import "_components/_buttons";
+@import "_components/_progress";
+
+// Layout styles ***
+@import "_layout/_header";
+@import "_layout/_banner";
+@import "_layout/_section";
+@import "_layout/_footer";
