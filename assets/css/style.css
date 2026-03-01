@@ -3641,7 +3641,7 @@ img {
 
 .banner__hero {
   position: absolute;
-  right: 9%;
+  right: 5%;
   bottom: 0;
   z-index: -1;
 }
@@ -10876,7 +10876,7 @@ h1 {
 }
 
 .banner__hero {
-  max-width: 33%;
+  max-width: 40%;
 }
 
 .banner__hero-info img {
