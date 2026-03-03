@@ -10104,8 +10104,8 @@ h1 {
 }
 
 .alink {
-  background: #D13833;
-  border: 0.5px solid #D13833;
+  background: #ef4237;
+  border: 0.5px solid #ef4237;
   color: #fff;
 }
 
@@ -10474,7 +10474,7 @@ h1 {
 }
 
 .tabbox.phase-item1 .svgclip path:nth-child(3) {
-  fill: #D13833;
+  fill: #ef4237;
 }
 
 .tabbox.phase-item1 .svgclip path:nth-child(4) {
@@ -10906,7 +10906,7 @@ h1 {
 }
 
 .about-three-area.about-three-area-identity .clr2 ul li:before {
-  color: #D13833;
+  color: #ef4237;
 }
 
 .team-three-area-identity .team-user-info {
@@ -11177,7 +11177,7 @@ h1 {
   --card-radius: 14px;
   --grad-start: #f0ad1e;
   --grad-mid:   #ef4237;
-  --grad-end:   #d13833;
+  --grad-end:   #ef4237;
 }
 
 /* Painpoints cards: base */
@@ -12285,7 +12285,7 @@ section[id] {
   right: 0;
   height: 6px;
   border-radius: 16px 16px 0 0;
-  background: linear-gradient(90deg, #d13833 0%, #ef4237 40%, #ed7b39 75%, #f0ad1e 100%);
+  background: linear-gradient(90deg, #ef4237 0%, #ef4237 40%, #ed7b39 75%, #f0ad1e 100%);
 }
 
 .pp-head {
@@ -12341,7 +12341,7 @@ section[id] {
   position: relative;
   top: -2px;
   /* nudge UP; tweak as needed */
-  color: #d13833;
+  color: #ef4237;
 }
 
 
@@ -12429,7 +12429,7 @@ section[id] {
   color: #ffffff !important;
 }
 .text-orange {
-  color: #d13833 !important;
+  color: #ef4237 !important;
 }
 .text-green{
   color: #00b5b0 !important;
@@ -12506,7 +12506,7 @@ section[id] {
 }
 
 .icon-step {
-  background: #d13833;
+  background: #ef4237;
   color: #fff;
   border: none;
   padding: 20px;
