@@ -3156,7 +3156,7 @@ img {
   z-index: 99;
   flex-direction: column;
   gap: 0;
-  width: 250px;
+  width: 350px;
   border: var(--border-1px);
   box-shadow: var(--shadow);
   background-color: var(--white);
@@ -3167,8 +3167,10 @@ img {
   transform: translateY(10px);
 }
 
-.header__main .main-menu ul li .sub-menu.sub-menu-wide {
-  width: 290px;
+
+
+.header__main .main-menu ul li .sub-menu .sub-menu-wide {
+  width: 360px;
 }
 
 .header__main .main-menu ul li .sub-menu li {
