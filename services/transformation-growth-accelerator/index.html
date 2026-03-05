@@ -17,7 +17,7 @@
   <title>Transformation + Growth Accelerator — Build the System. Keep the Momentum. | Abstract Creative</title>
   <meta name="description"
     content="Most brands invest in transformation and stall. The Growth Accelerator is the only engagement where the system gets built AND runs for 6 months—so momentum doesn't die after launch.">
-  <link rel="canonical" href="transformation-growth-accelerator/">
+  <link rel="canonical" href="https://abstract-creative.com/services/transformation-growth-accelerator/">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
   <link rel="apple-touch-startup-image" href="/assets/images/apple-touch-startup.png">
@@ -56,7 +56,7 @@
         "url": "transformation-growth-accelerator/",
         "name": "Transformation + Growth Accelerator | Abstract Creative",
         "description": "Complete brand system installation + 6 months of ongoing marketing execution. Strategy, identity, website, funnels, and live marketing—built and run for growth-stage businesses.",
-        "isPartOf": { "@id": "#website" },
+        "isPartOf": { "@id": "https://abstract-creative.com/#website" },
         "breadcrumb": {
           "@type": "BreadcrumbList",
           "itemListElement": [
@@ -87,7 +87,7 @@
         "@type": "LocalBusiness",
         "@id": "#studio",
         "name": "Abstract Creative",
-        "url": "",
+        "url": "https://abstract-creative.com",
         "image": "assets/images/logo/logo-stacked.svg",
         "telephone": "+1-832-370-7322",
         "address": {
@@ -141,222 +141,14 @@
     })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
   </script>
 
-  <!-- Page-specific overrides -->
+  <!-- Page-specific overrides (base TGA styles in style.css) -->
   <style>
-    /* ── Accelerator accent strip ── */
-    .accel-badge {
-      display: inline-block;
-      background: var(--main);
-      color: #fff;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 4px 14px;
-      border-radius: 3px;
-      margin-bottom: 18px;
-    }
-
-    /* ── Value math block ── */
-    .value-math {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
-      padding: 28px 32px;
-    }
-    .value-math__row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      color: #fff;
-      font-size: 0.95rem;
-    }
-    .value-math__row:last-child { border-bottom: none; }
-    .value-math__row .label { opacity: 0.75; }
-    .value-math__row .amount { font-weight: 700; }
-    .value-math__row.total { 
-      margin-top: 8px;
-      padding-top: 18px;
-      border-top: 2px solid var(--main);
-      border-bottom: none;
-    }
-    .value-math__row.total .label { opacity: 1; font-size: 1rem; }
-    .value-math__row.total .amount { color: var(--main); font-size: 1.15rem; }
-    .value-math__savings {
-      background: var(--main);
-      color: #fff;
-      text-align: center;
-      border-radius: 5px;
-      padding: 10px 16px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      margin-top: 16px;
-    }
-
-    /* ── Phase connector extended ── */
-    .phase-connector-extended .system-node {
-      font-size: 0.8rem;
-    }
-
-    /* ── Month cards (Growth phase) ── */
-    .month-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px;
-      padding: 24px 20px;
-      height: 100%;
-      transition: border-color 0.2s;
-    }
-    .month-card:hover { border-color: var(--main); }
-    .month-card__number {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--main);
-      line-height: 1;
-      margin-bottom: -11px;
-    }
-    .month-card h5 { color: #000; font-size: 0.95rem; margin-bottom: 10px; }
-    .month-card p { font-size: 0.88rem; opacity: 0.72; margin-bottom: 0; color: #000; }
-
-    /* ── Comparison table ── */
-    .compare-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-    }
-    .compare-table th {
-      padding: 14px 16px;
-      text-align: center;
-      font-size: 0.82rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-    .compare-table th.col-feature { text-align: left; }
-    .compare-table th.col-accelerator {
-      background: var(--main);
-      color: #fff;
-      border-radius: 6px 6px 0 0;
-    }
-    .compare-table th.col-standalone { color: rgba(255,255,255,0.5); }
-    .compare-table td {
-      padding: 13px 16px;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      font-size: 0.9rem;
-      color: #fff;
-    }
-    .compare-table td.col-feature { opacity: 0.8; }
-    .compare-table td.col-accelerator {
-      text-align: center;
-      background: rgba(255,140,0,0.06);
-    }
-    .compare-table td.col-standalone {
-      text-align: center;
-      opacity: 0.5;
-    }
-    .compare-table .check-yes { color: var(--main); font-size: 1.1rem; }
-    .compare-table .check-no { color: rgba(255,255,255,0.3); font-size: 1.1rem; }
-    .compare-table tbody tr:last-child td { border-bottom: none; }
-
-    /* ── Timeline extended (10 weeks + 6 months) ── */
-    .accel-timeline {
-      position: relative;
-    }
-    .accel-timeline__phase {
-      display: flex;
-      align-items: flex-start;
-      gap: 24px;
-      padding: -5px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-    }
-    .accel-timeline__phase:last-child { border-bottom: none; }
-    .accel-timeline__dot {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--main);
-      color: #fff;
-      font-weight: 800;
-      font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 4px;
-    }
-    .accel-timeline__dot.dot-outline {
-      background: transparent;
-      border: 2px solid var(--main);
-      color: var(--main);
-    }
-    .accel-timeline__content h5 { margin-bottom: 0px; font-size: 1rem; }
-    .accel-timeline__content p { font-size: 0.88rem; margin-bottom: 0; opacity: 0.7; }
-    .accel-timeline__label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--main);
-      margin-bottom: 0px;
-      display: block;
-    }
-
-    /* ── Staggered reveal for momentum section ── */
-    .momentum-block {
-      border-left: 3px solid var(--main);
-      padding-left: 20px;
-      margin-bottom: 28px;
-    }
-    .momentum-block h5 { margin-bottom: 6px; }
-    .momentum-block p { margin-bottom: 0; font-size: 0.9rem; opacity: 0.8; }
-
-    /* ── Package card accent for featured accelerator ── */
-    .package-card--accelerator {
-      border: 2px solid var(--main) !important;
-      position: relative;
-    }
-    .package-card--accelerator::before {
-      content: 'BEST VALUE · ONE TEAM THROUGH GROWTH';
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--main);
-      color: #fff;
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      padding: 4px 16px;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
-
-    /* ── FAQ accordion minimal ── */
-    .faq-item {
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-      padding: 20px 0;
-    }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-question {
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-    }
-    .faq-answer {
-      font-size: 0.92rem;
-      opacity: 0.75;
-      margin-top: 12px;
-      display: none;
-      line-height: 1.7;
-    }
-    .faq-answer.open { display: block; }
-    .faq-icon { font-size: 0.9rem; color: var(--main); flex-shrink: 0; transition: transform 0.2s; }
-    .faq-item.active .faq-icon { transform: rotate(45deg); }
+    .month-card__number { margin-bottom: -11px; }
+    .month-card h5 { color: #000; }
+    .month-card p { color: #000; }
+    .accel-timeline__content h5 { margin-bottom: 0; }
+    .accel-timeline__label { margin-bottom: 0; }
+    .package-card--accelerator::before { content: 'BEST VALUE · ONE TEAM THROUGH GROWTH'; }
   </style>
 </head>
 
@@ -437,7 +229,7 @@
     </a>
     <div class="mobile-menu overflow-hidden"></div>
     <ul class="info pt-40">
-      <li><i class="fa-solid primary-color fa-location-dot"></i> <a href="">abstract-creative.com</a></li>
+      <li><i class="fa-solid primary-color fa-location-dot"></i> <a href="https://abstract-creative.com">abstract-creative.com</a></li>
       <li class="py-2"><i class="fa-solid primary-color fa-phone-volume"></i> <a href="tel:+18323707322">832-370-7322</a></li>
       <li><i class="fa-solid primary-color fa-paper-plane"></i> <a href="/cdn-cgi/l/email-protection#3a525f5656557a5b58494e485b594e1759485f5b4e534c5f14595557"><span class="__cf_email__" data-cfemail="a6cec3cacac9e6c7c4d5d2d4c7c5d28bc5d4c3c7d2cfd0c388c5c9cb">[email&#160;protected]</span></a></li>
     </ul>
@@ -552,7 +344,7 @@
 
         <div class="row g-4">
           <div class="col-md-6">
-            <div class="p-4 rounded bg-white h-100 d-flex align-items-start" style="gap: 16px;">
+            <div class="p-4 rounded bg-white h-100 d-flex align-items-start card-feature">
               <div class="text-orange" style="font-size: 40px; line-height: 1;">
                 <i class="fa-solid fa-circle-check"></i>
               </div>
@@ -563,7 +355,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="p-4 rounded bg-white h-100 d-flex align-items-start" style="gap: 16px;">
+            <div class="p-4 rounded bg-white h-100 d-flex align-items-start card-feature">
               <div class="text-orange" style="font-size: 40px; line-height: 1;">
                 <i class="fa-solid fa-circle-check"></i>
               </div>
@@ -574,7 +366,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="p-4 rounded bg-white h-100 d-flex align-items-start" style="gap: 16px;">
+            <div class="p-4 rounded bg-white h-100 d-flex align-items-start card-feature">
               <div class="text-orange" style="font-size: 40px; line-height: 1;">
                 <i class="fa-solid fa-circle-check"></i>
               </div>
@@ -585,7 +377,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="p-4 rounded bg-white h-100 d-flex align-items-start" style="gap: 16px;">
+            <div class="p-4 rounded bg-white h-100 d-flex align-items-start card-feature">
               <div class="text-orange" style="font-size: 40px; line-height: 1;">
                 <i class="fa-solid fa-circle-check"></i>
               </div>
@@ -690,13 +482,13 @@
               <div class="deliverable-phase deliverable-phase--dark">
                 <span class="phase-number text-orange">Deliverable</span>
                 <strong class="text-white">Market Analysis &amp; Customer Personas</strong>
-                <p class="mb-10" style="font-size:0.9rem;">Deep-dive into your competitive landscape, highest-value client profiles, and decision-driver mapping.</p>
+                <p class="mb-10">Deep-dive into your competitive landscape, highest-value client profiles, and decision-driver mapping.</p>
                 <strong class="text-white">Unique Value Proposition &amp; Service Architecture</strong>
-                <p class="mb-10" style="font-size:0.9rem;">Locked UVP plus a structured service architecture so every offer has a clear position, price rationale, and buyer path.</p>
+                <p class="mb-10">Locked UVP plus a structured service architecture so every offer has a clear position, price rationale, and buyer path.</p>
                 <strong class="text-white">Messaging Architecture</strong>
-                <p class="mb-10" style="font-size:0.9rem;">Core narrative framework, messaging pillars, and copy hierarchy. The master document every campaign in the Growth Phase runs from.</p>
+                <p class="mb-10">Core narrative framework, messaging pillars, and copy hierarchy. The master document every campaign in the Growth Phase runs from.</p>
                 <strong class="text-white">Strategic Roadmap</strong>
-                <p class="mb-0" style="font-size:0.9rem;">Prioritized execution plan that maps every subsequent decision back to revenue impact.</p>
+                <p class="mb-0">Prioritized execution plan that maps every subsequent decision back to revenue impact.</p>
               </div>
             </div>
           </div>
@@ -709,13 +501,13 @@
               <div class="deliverable-phase deliverable-phase--dark">
                 <span class="phase-number text-orange">Deliverable</span>
                 <strong class="text-white">Full Logo Suite</strong>
-                <p class="mb-10" style="font-size:0.9rem;">Primary mark, secondary mark, favicon, and contextual lockups in all required formats—print, digital, and motion-ready.</p>
+                <p class="mb-10">Primary mark, secondary mark, favicon, and contextual lockups in all required formats—print, digital, and motion-ready.</p>
                 <strong class="text-white">Visual System</strong>
-                <p class="mb-10" style="font-size:0.9rem;">Complete color palette, typography hierarchy, photography direction, and graphic language system.</p>
+                <p class="mb-10">Complete color palette, typography hierarchy, photography direction, and graphic language system.</p>
                 <strong class="text-white">Comprehensive Brand Guidelines</strong>
-                <p class="mb-10" style="font-size:0.9rem;">The full system rulebook: logo usage, color, type, imagery, voice and tone, messaging pillars, and application examples. Reduces brand drift by 90%.</p>
+                <p class="mb-10">The full system rulebook: logo usage, color, type, imagery, voice and tone, messaging pillars, and application examples. Reduces brand drift by 90%.</p>
                 <strong class="text-white">Core Brand Asset Suite</strong>
-                <p class="mb-0" style="font-size:0.9rem;">Business cards, letterhead, email signature, and social profile templates—deployed and ready on launch day.</p>
+                <p class="mb-0">Business cards, letterhead, email signature, and social profile templates—deployed and ready on launch day.</p>
               </div>
             </div>
           </div>
@@ -732,11 +524,11 @@
               <div class="deliverable-phase deliverable-phase--dark">
                 <span class="phase-number text-orange">Deliverable</span>
                 <strong class="text-white">5-Page Conversion-Optimized Website</strong>
-                <p class="mb-10" style="font-size:0.9rem;">Home, About, Services, Work/Case Studies, and Contact—designed with conversion architecture, not just aesthetics.</p>
+                <p class="mb-10">Home, About, Services, Work/Case Studies, and Contact—designed with conversion architecture, not just aesthetics.</p>
                 <strong class="text-white">CRM Integration &amp; Lead Tracking</strong>
-                <p class="mb-10" style="font-size:0.9rem;">Full CRM setup with form routing, lead source attribution, and pipeline stages—so you know exactly where every prospect came from and where they are.</p>
+                <p class="mb-10">Full CRM setup with form routing, lead source attribution, and pipeline stages—so you know exactly where every prospect came from and where they are.</p>
                 <strong class="text-white">On-Page SEO &amp; Technical Foundation</strong>
-                <p class="mb-0" style="font-size:0.9rem;">Title tags, meta descriptions, schema markup, site speed optimization, and structured data—built for discoverability from day one.</p>
+                <p class="mb-0">Title tags, meta descriptions, schema markup, site speed optimization, and structured data—built for discoverability from day one.</p>
               </div>
             </div>
           </div>
@@ -749,11 +541,11 @@
               <div class="deliverable-phase deliverable-phase--dark">
                 <span class="phase-number text-orange">Deliverable</span>
                 <strong class="text-white">Lead Magnet &amp; Opt-In System</strong>
-                <p class="mb-10" style="font-size:0.9rem;">High-value downloadable asset with landing page, opt-in form, and delivery sequence—live before Growth Phase begins.</p>
+                <p class="mb-10">High-value downloadable asset with landing page, opt-in form, and delivery sequence—live before Growth Phase begins.</p>
                 <strong class="text-white">Automated Email Sequences</strong>
-                <p class="mb-10" style="font-size:0.9rem;">Welcome sequence, nurture flow, and booking sequence—written on your locked messaging and deployed in your CRM before launch.</p>
+                <p class="mb-10">Welcome sequence, nurture flow, and booking sequence—written on your locked messaging and deployed in your CRM before launch.</p>
                 <strong class="text-white">Sales Funnel Architecture</strong>
-                <p class="mb-0" style="font-size:0.9rem;">Full funnel mapped and built: traffic source → landing page → opt-in → nurture → booking → close. Attribution tracked end to end.</p>
+                <p class="mb-0">Full funnel mapped and built: traffic source → landing page → opt-in → nurture → booking → close. Attribution tracked end to end.</p>
               </div>
             </div>
           </div>
@@ -776,28 +568,28 @@
                       <div class="deliverable-phase deliverable-phase--dark mb-0">
                         <span class="phase-number text-orange">Deliverable</span>
                         <strong class="text-white">Launch Week Monitoring</strong>
-                        <p class="mb-0" style="font-size:0.9rem;">Active performance tracking during the first week post-launch to catch technical issues, conversion drops, or integration failures immediately.</p>
+                        <p class="mb-0">Active performance tracking during the first week post-launch to catch technical issues, conversion drops, or integration failures immediately.</p>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="deliverable-phase deliverable-phase--dark mb-0">
                         <span class="phase-number text-orange">Deliverable</span>
                         <strong class="text-white">Performance Baseline Report</strong>
-                        <p class="mb-0" style="font-size:0.9rem;">Documented baseline metrics—traffic, conversion rate, funnel performance—so the Growth Phase optimizes from data, not guesswork.</p>
+                        <p class="mb-0">Documented baseline metrics—traffic, conversion rate, funnel performance—so the Growth Phase optimizes from data, not guesswork.</p>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="deliverable-phase deliverable-phase--dark mb-0">
                         <span class="phase-number text-orange">Deliverable</span>
                         <strong class="text-white">Growth Phase Activation Brief</strong>
-                        <p class="mb-0" style="font-size:0.9rem;">Full handover document that transitions the build team seamlessly into 6 months of execution—zero re-briefing required.</p>
+                        <p class="mb-0">Full handover document that transitions the build team seamlessly into 6 months of execution—zero re-briefing required.</p>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="deliverable-phase deliverable-phase--dark mb-0">
                         <span class="phase-number text-orange">Deliverable</span>
                         <strong class="text-white">30-Day Optimization Window</strong>
-                        <p class="mb-0" style="font-size:0.9rem;">Post-launch support period for copy adjustments, CRM corrections, and technical fixes—overlapping directly with Growth Phase Month 1.</p>
+                        <p class="mb-0">Post-launch support period for copy adjustments, CRM corrections, and technical fixes—overlapping directly with Growth Phase Month 1.</p>
                       </div>
                     </div>
                   </div>
@@ -880,25 +672,25 @@
         </div>
         <div class="row g-4 text-center">
           <div class="col-md-3">
-            <div class="p-4 rounded h-100 d-flex flex-column justify-content-center" style="border: 2px solid var(--main); background: transparent;">
+            <div class="p-4 rounded h-100 d-flex flex-column justify-content-center">
               <h5 class="text-white mb-10">4X Conversion Lift</h5>
               <p class="text-white mb-0 small">Conversion-optimized websites and locked messaging move conversion rates from 1% to 4%</p>
             </div>
           </div>
           <div class="col-md-3">
-            <div class="p-4 rounded h-100 d-flex flex-column justify-content-center" style="border: 2px solid var(--main); background: transparent;">
+            <div class="p-4 rounded h-100 d-flex flex-column justify-content-center">
               <h5 class="text-white mb-10">30% Faster Close</h5>
               <p class="text-white mb-0 small">Sales decks and pitch narratives close deals 30% faster when positioning is locked from month one</p>
             </div>
           </div>
           <div class="col-md-3">
-            <div class="p-4 rounded h-100 d-flex flex-column justify-content-center" style="border: 2px solid var(--main); background: transparent;">
+            <div class="p-4 rounded h-100 d-flex flex-column justify-content-center">
               <h5 class="text-white mb-10">6-Month Pipeline Build</h5>
               <p class="text-white mb-0 small">Six months of active execution compounds into a qualified, self-sustaining pipeline—not a single-launch spike</p>
             </div>
           </div>
           <div class="col-md-3">
-            <div class="p-4 rounded h-100 d-flex flex-column justify-content-center" style="border: 2px solid var(--main); background: transparent;">
+            <div class="p-4 rounded h-100 d-flex flex-column justify-content-center">
               <h5 class="text-white mb-10">Zero Briefing Loss</h5>
               <p class="text-white mb-0 small">One team from strategy to month six means no re-briefing, no positioning drift, and no execution gap</p>
             </div>
@@ -922,7 +714,7 @@
 
         <div class="row justify-content-center">
           <div class="col-lg-10">
-            <div class="p-4 rounded" style="background: #1a1a1a; overflow-x: auto;">
+            <div class="p-4 rounded card-outlined" style="background: #1a1a1a; overflow-x: auto;">
               <table class="compare-table">
                 <thead>
                   <tr>
@@ -1279,7 +1071,7 @@
               <p class="mb-20">"Abstract Creative gave us <strong>clarity and consistency</strong>—our leads doubled in two months. By month six, we had a fully operational pipeline."</p>
               <div>
                 <strong class="d-block">Tara M.</strong>
-                <span style="font-size:0.85rem; opacity:0.65;">Chief Executive Officer</span>
+                <span>Chief Executive Officer</span>
               </div>
             </div>
           </div>
@@ -1291,7 +1083,7 @@
               <p class="mb-20">"It felt like hiring a <strong>strategist, designer, and CMO in one</strong>. The brand system and funnels bring in business daily—six months in, it still compounds."</p>
               <div>
                 <strong class="d-block">Luis R.</strong>
-                <span style="font-size:0.85rem; opacity:0.65;">Digital Consultant</span>
+                <span>Digital Consultant</span>
               </div>
             </div>
           </div>
@@ -1303,7 +1095,7 @@
               <p class="mb-20">"Outcome-focused positioning and packaging for an athletic recovery brand—<strong>$700K+ in profit since launch</strong>."</p>
               <div>
                 <strong class="d-block">Muscle Rehab</strong>
-                <span style="font-size:0.85rem; opacity:0.65;"><a href="../../work/muscle-rehab/index.html" class="primary-hover">View Case Study →</a></span>
+                <span><a href="../../work/muscle-rehab/index.html" class="primary-hover">View Case Study →</a></span>
               </div>
             </div>
           </div>
@@ -1315,7 +1107,7 @@
               <p class="mb-20">"This wasn't just branding—it was <strong>business transformation</strong>. Website, automation, first campaign—now we feel unstoppable."</p>
               <div>
                 <strong class="d-block">Derrick H.</strong>
-                <span style="font-size:0.85rem; opacity:0.65;">Creative Agency Owner</span>
+                <span>Creative Agency Owner</span>
               </div>
             </div>
           </div>

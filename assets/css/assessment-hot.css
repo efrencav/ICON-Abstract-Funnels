@@ -1,0 +1,115 @@
+/* ── Assessment: Qualified Hot (red/orange theme) ─────────── */
+.priority-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #EF4237 0%, #FF8C42 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.trust-signal {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid #EF4237;
+  padding: 20px;
+  margin: 25px 0;
+  border-radius: 4px;
+}
+
+.trust-signal h5 {
+  color: #EF4237;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.stat-highlight {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 140, 66, 0.1) 100%);
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.stat-number {
+  font-size: 42px;
+  font-weight: 700;
+  color: #EF4237;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.urgency-bar {
+  background: rgba(255, 107, 53, 0.1);
+  border: 1px solid #EF4237;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.urgency-icon {
+  font-size: 24px;
+  color: #EF4237;
+}
+
+.urgency-text {
+  margin: 0;
+  color: white;
+  font-weight: 500;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 8px;
+  margin: 20px 0 10px;
+  height: auto;
+}
+
+.testimonial-quote {
+  font-size: 18px;
+  font-style: italic;
+  color: #E0E0E0;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: #EF4237;
+  margin-bottom: 3px;
+}
+
+.testimonial-role {
+  font-size: 14px;
+  color: #999;
+}
+
+.backup-cta {
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+
+.backup-cta p {
+  margin-bottom: 15px;
+  color: #CCC;
+}
+
+.icon-checkmark {
+  color: #4CAF50;
+  margin-right: 8px;
+}
+
+.funnel-card { margin-bottom: 30px; }
+main { padding-bottom: 100px; }

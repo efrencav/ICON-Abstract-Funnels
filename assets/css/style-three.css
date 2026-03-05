@@ -13722,3 +13722,39 @@ button i{
     }
 
     #_builder-form .some-child {padding: 0px 40px 30px !important;  }
+
+/* ═══════════════════════════════════════════════
+   Utility classes (extracted from inline styles)
+   ═══════════════════════════════════════════════ */
+
+/* Feature list icon (40px fa-icon in card rows) */
+.icon-feature-icon { font-size: 40px; line-height: 1; }
+
+/* Feature card flex gap */
+.card-feature { gap: 16px; }
+
+/* Outlined card (bordered, transparent fill) */
+.card-outlined { border: 2px solid var(--main); background: transparent; }
+
+/* Centered prose containers */
+.prose-center    { max-width: 700px; margin-left: auto; margin-right: auto; }
+.prose-center-730 { max-width: 730px; }
+.prose-center-800 { max-width: 800px; margin-left: auto; margin-right: auto; }
+
+/* Eyebrow / section label above headings */
+.eyebrow       { opacity: 0.55; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.eyebrow--light { opacity: 0.75; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; }
+
+/* Small text */
+.text-sm      { font-size: 0.9rem; }
+.text-xs-muted { font-size: 0.85rem; opacity: 0.65; }
+
+/* Opacity utilities */
+.opacity-65 { opacity: 0.65; }
+.opacity-75 { opacity: 0.75; }
+.opacity-80 { opacity: 0.8;  }
+
+/* Embedded iframes */
+.iframe-embed { width: 100%; height: 100%; border: none; border-radius: 0; }
+.iframe-modal { width: 100%; height: 100%; border: none; border-radius: 3px; }
+.iframe-form  { width: 100%; border: none; overflow: hidden; height: 700px; }

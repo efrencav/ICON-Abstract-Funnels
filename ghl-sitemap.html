@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GHL Automation Sitemap — Abstract Creative</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red:     #EF4237;
+      --dark:    #2C3E50;
+      --dark2:   #1a2a38;
+      --mid:     #6c757d;
+      --border:  #dde1e7;
+      --light:   #f5f7fa;
+      --white:   #ffffff;
+
+      /* node type colors */
+      --c-page:    #2563eb;  /* blue   — website pages */
+      --c-form:    #7c3aed;  /* purple — GHL forms */
+      --c-email:   #0891b2;  /* cyan   — email sequences */
+      --c-sms:     #059669;  /* green  — SMS */
+      --c-auto:    #d97706;  /* amber  — automations / logic */
+      --c-pipe:    #dc2626;  /* red    — pipeline / CTA */
+      --c-nurture: #64748b;  /* slate  — nurture / low priority */
+      --c-win:     #16a34a;  /* green  — won / client */
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Public Sans', sans-serif;
+      background: #0f1923;
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TOP BAR ─────────────────────────────── */
+    .topbar {
+      background: var(--dark2);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .topbar-title { font-size: 0.875rem; font-weight: 700; color: white; letter-spacing: -0.01em; }
+    .topbar-title span { color: var(--red); }
+    .legend { display: flex; gap: 16px; flex-wrap: wrap; }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.5); }
+    .legend-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+
+    /* ── CANVAS ──────────────────────────────── */
+    .canvas { padding: 48px 40px 80px; min-width: 1200px; }
+
+    /* ── SECTION LABELS ─────────────────────── */
+    .phase-label {
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.2); margin-bottom: 16px; padding-left: 2px;
+    }
+    .phase-block { margin-bottom: 8px; }
+
+    /* ── SWIMLANE ────────────────────────────── */
+    .swimlane {
+      display: grid; gap: 0;
+      position: relative; margin-bottom: 0;
+    }
+
+    /* ── NODE ────────────────────────────────── */
+    .node {
+      border-radius: 10px; padding: 14px 16px;
+      position: relative; background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+    .node-type {
+      font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 5px; opacity: 0.8;
+    }
+    .node-title {
+      font-size: 0.85rem; font-weight: 700; line-height: 1.3; color: white; margin-bottom: 4px;
+    }
+    .node-sub {
+      font-size: 0.72rem; color: rgba(255,255,255,0.45); line-height: 1.45;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .node-sub .id { color: rgba(255,255,255,0.3); font-size: 0.65rem; }
+    .node-badge {
+      display: inline-block; margin-top: 6px;
+      padding: 2px 8px; border-radius: 20px; font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+
+    /* color variants */
+    .page    { border-color: rgba(37,99,235,0.4);  background: rgba(37,99,235,0.08);  }
+    .page    .node-type { color: #60a5fa; }
+    .form    { border-color: rgba(124,58,237,0.4); background: rgba(124,58,237,0.08); }
+    .form    .node-type { color: #a78bfa; }
+    .auto    { border-color: rgba(217,119,6,0.4);  background: rgba(217,119,6,0.08);  }
+    .auto    .node-type { color: #fbbf24; }
+    .email   { border-color: rgba(8,145,178,0.4);  background: rgba(8,145,178,0.08);  }
+    .email   .node-type { color: #22d3ee; }
+    .sms     { border-color: rgba(5,150,105,0.4);  background: rgba(5,150,105,0.08);  }
+    .sms     .node-type { color: #34d399; }
+    .pipe    { border-color: rgba(239,66,55,0.4);  background: rgba(239,66,55,0.1);   }
+    .pipe    .node-type { color: #f87171; }
+    .nurture { border-color: rgba(100,116,139,0.4);background: rgba(100,116,139,0.07);}
+    .nurture .node-type { color: #94a3b8; }
+    .win     { border-color: rgba(22,163,74,0.5);  background: rgba(22,163,74,0.1);   }
+    .win     .node-type { color: #4ade80; }
+
+    .badge-red    { background: rgba(239,66,55,0.2);  color: #fca5a5; }
+    .badge-amber  { background: rgba(217,119,6,0.2);  color: #fcd34d; }
+    .badge-blue   { background: rgba(37,99,235,0.2);  color: #93c5fd; }
+    .badge-green  { background: rgba(22,163,74,0.2);  color: #86efac; }
+    .badge-slate  { background: rgba(100,116,139,0.2);color: #cbd5e1; }
+
+    /* ── ARROW SVG ───────────────────────────── */
+    .arrows-svg {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none; overflow: visible;
+    }
+    .arr { fill: none; stroke-width: 1.5; marker-end: url(#arrowhead); }
+    .arr-main   { stroke: rgba(239,66,55,0.6); }
+    .arr-branch { stroke: rgba(255,255,255,0.2); }
+    .arr-email  { stroke: rgba(8,145,178,0.5); stroke-dasharray: 4 3; }
+    .arr-back   { stroke: rgba(217,119,6,0.4); stroke-dasharray: 4 3; }
+
+    /* ── MAIN FUNNEL FLOW ────────────────────── */
+    .flow-main {
+      display: flex; align-items: flex-start; gap: 0;
+      position: relative;
+    }
+    .flow-col {
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      position: relative;
+    }
+    .flow-arrow {
+      width: 48px; display: flex; align-items: center; justify-content: center;
+      padding-top: 20px; flex-shrink: 0;
+    }
+    .flow-arrow svg { overflow: visible; }
+    .node-w220 { width: 220px; }
+    .node-w200 { width: 200px; }
+    .node-w180 { width: 180px; }
+
+    /* ── BRANCH SECTION ──────────────────────── */
+    .branch-section { position: relative; }
+    .branch-label {
+      font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.25); text-align: center; margin-bottom: 12px;
+    }
+    .branches {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+      position: relative;
+    }
+    .branch { display: flex; flex-direction: column; gap: 10px; position: relative; }
+    .branch-col-hot      { border-left: 2px solid rgba(239,66,55,0.4);   padding-left: 14px; }
+    .branch-col-warm     { border-left: 2px solid rgba(251,146,60,0.4);  padding-left: 14px; }
+    .branch-col-lukewarm { border-left: 2px solid rgba(250,204,21,0.4);  padding-left: 14px; }
+    .branch-col-notready { border-left: 2px solid rgba(100,116,139,0.4); padding-left: 14px; }
+
+    .branch-header {
+      font-size: 0.72rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.08em; margin-bottom: 2px; padding: 8px 12px; border-radius: 6px;
+    }
+    .bh-hot      { background: rgba(239,66,55,0.15);  color: #fca5a5; }
+    .bh-warm     { background: rgba(251,146,60,0.15); color: #fdba74; }
+    .bh-lukewarm { background: rgba(250,204,21,0.15); color: #fde047; }
+    .bh-notready { background: rgba(100,116,139,0.15);color: #cbd5e1; }
+
+    .branch-header small {
+      display: block; font-size: 0.6rem; opacity: 0.6; font-weight: 500;
+      text-transform: none; letter-spacing: 0; margin-top: 2px;
+    }
+
+    /* ── EMAIL SEQUENCE BOX ──────────────────── */
+    .seq-box {
+      border-radius: 8px; padding: 12px 14px;
+      border: 1px dashed rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.02);
+    }
+    .seq-title {
+      font-size: 0.72rem; font-weight: 700; color: #22d3ee; margin-bottom: 8px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .seq-step {
+      display: flex; gap: 8px; align-items: baseline;
+      padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.72rem;
+    }
+    .seq-step:last-child { border-bottom: none; }
+    .seq-day {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem; color: rgba(255,255,255,0.3);
+      min-width: 36px; flex-shrink: 0;
+    }
+    .seq-action { color: rgba(255,255,255,0.65); line-height: 1.35; }
+    .seq-action .cond { color: #fbbf24; font-size: 0.65rem; }
+    .seq-action .tag  { color: #a78bfa; font-size: 0.65rem; font-family: 'JetBrains Mono', monospace; }
+
+    /* ── PIPELINE ROW ────────────────────────── */
+    .pipeline-row {
+      display: flex; gap: 0; align-items: center; margin: 32px 0 8px;
+    }
+    .pipe-stage {
+      flex: 1; text-align: center; padding: 12px 8px; position: relative;
+    }
+    .pipe-stage-inner {
+      background: rgba(239,66,55,0.07); border: 1px solid rgba(239,66,55,0.2);
+      border-radius: 8px; padding: 10px 12px;
+    }
+    .pipe-stage-inner.active { background: rgba(239,66,55,0.15); border-color: rgba(239,66,55,0.5); }
+    .pipe-stage-inner.won    { background: rgba(22,163,74,0.1);  border-color: rgba(22,163,74,0.4); }
+    .pipe-stage-inner.lost   { background: rgba(100,116,139,0.1);border-color: rgba(100,116,139,0.3); }
+    .pipe-num  { font-size: 0.62rem; color: rgba(255,255,255,0.3); font-family: 'JetBrains Mono', monospace; }
+    .pipe-name { font-size: 0.75rem; font-weight: 700; color: white; line-height: 1.2; margin: 3px 0; }
+    .pipe-name.won-text  { color: #4ade80; }
+    .pipe-name.lost-text { color: #94a3b8; }
+    .pipe-arrow {
+      width: 20px; text-align: center; color: rgba(239,66,55,0.4); font-size: 0.75rem; flex-shrink: 0;
+    }
+
+    /* ── POST CALL ───────────────────────────── */
+    .postcall-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 12px;
+    }
+
+    /* ── CONNECTOR DOTS ─────────────────────── */
+    .connector-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--red);
+      margin: 0 auto; position: relative;
+    }
+    .connector-line-v {
+      width: 2px; background: linear-gradient(to bottom, rgba(239,66,55,0.5), rgba(239,66,55,0.1));
+      margin: 0 auto;
+    }
+    .connector-line-h {
+      height: 2px;
+      background: linear-gradient(to right, rgba(239,66,55,0.5), rgba(239,66,55,0.1));
+    }
+
+    /* ── SECTION WRAPPER ─────────────────────── */
+    .map-section { margin-bottom: 40px; position: relative; }
+    .section-title-row {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
+    }
+    .section-title-row h3 { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.3); }
+    .section-title-row hr { flex: 1; border: none; border-top: 1px solid rgba(255,255,255,0.06); }
+
+    /* ── MINI TAG ────────────────────────────── */
+    .tag-chip {
+      display: inline-block; padding: 2px 8px; border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 600;
+      background: rgba(167,139,250,0.15); color: #c4b5fd;
+      margin: 2px 2px 0 0;
+    }
+
+    .divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 32px 0; }
+
+    /* notification pill */
+    .notif {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 3px 9px; border-radius: 20px; font-size: 0.62rem; font-weight: 700;
+      background: rgba(34,197,94,0.15); color: #86efac;
+      margin-top: 5px;
+    }
+    .notif.sms-notif { background: rgba(8,145,178,0.15); color: #67e8f9; }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-title">Abstract Creative — <span>GoHighLevel Automation Sitemap</span></div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#60a5fa"></div> Page</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div> GHL Form</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fbbf24"></div> Automation</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#22d3ee"></div> Email</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#34d399"></div> SMS</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f87171"></div> Pipeline</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#4ade80"></div> Win</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#94a3b8"></div> Nurture</div>
+  </div>
+</div>
+
+<div class="canvas">
+
+  <!-- ══════════════════════════════════════════
+       PIPELINE OVERVIEW
+  ══════════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-title-row"><h3>Pipeline Stages</h3><hr></div>
+    <div class="pipeline-row">
+      <div class="pipe-stage"><div class="pipe-stage-inner active">
+        <div class="pipe-num">01</div>
+        <div class="pipe-name">New Lead</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner">
+        <div class="pipe-num">02</div>
+        <div class="pipe-name">Assessment Taken</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner active">
+        <div class="pipe-num">03</div>
+        <div class="pipe-name">Hot Qualified</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner">
+        <div class="pipe-num">04</div>
+        <div class="pipe-name">Warm Qualified</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner">
+        <div class="pipe-num">05</div>
+        <div class="pipe-name">Exploratory</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner active">
+        <div class="pipe-num">06</div>
+        <div class="pipe-name">Fit Call Booked</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner">
+        <div class="pipe-num">07</div>
+        <div class="pipe-name">Fit Call Complete</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner">
+        <div class="pipe-num">08</div>
+        <div class="pipe-name">Proposal Sent</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner won">
+        <div class="pipe-num">09</div>
+        <div class="pipe-name won-text">Won / Client</div>
+      </div></div>
+      <div class="pipe-arrow" style="color:rgba(100,116,139,0.4)">↔</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner lost">
+        <div class="pipe-num">—</div>
+        <div class="pipe-name lost-text">Not a Fit / Nurture</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       FUNNEL ENTRY: DIAGNOSTIC
+  ══════════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-title-row"><h3>Entry Point A — Diagnostic Download Funnel</h3><hr></div>
+
+    <div class="flow-main">
+
+      <!-- Step 1: Diagnostic Page -->
+      <div class="flow-col">
+        <div class="node page node-w220">
+          <div class="node-type">Website Page</div>
+          <div class="node-title">Diagnostic Page</div>
+          <div class="node-sub">diagnostic/index.html</div>
+        </div>
+        <div class="node form node-w220">
+          <div class="node-type">GHL Form</div>
+          <div class="node-title">Get the Diagnostic</div>
+          <div class="node-sub"><span class="id">KZusvBcslwv4UmD2Ywh1</span></div>
+          <div class="node-badge badge-blue">Captures: Name · Email · Company</div>
+        </div>
+      </div>
+
+      <!-- Arrow 1 -->
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a1)"/></svg>
+      </div>
+
+      <!-- Step 2: Automation 1 -->
+      <div class="flow-col">
+        <div class="node auto node-w220">
+          <div class="node-type">Automation 1</div>
+          <div class="node-title">Diagnostic Download Sequence</div>
+          <div class="node-sub">Triggers on form submit</div>
+          <div class="tag-chip">diagnostic-download</div>
+          <div class="tag-chip">pipeline: New Lead</div>
+        </div>
+        <div class="seq-box" style="width:220px; margin-top:6px;">
+          <div class="seq-title">📧 5-Email Sequence</div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">PDF delivery + how to score yourself</div></div>
+          <div class="seq-step"><div class="seq-day">Day 2</div><div class="seq-action">"Did you score your brand?"</div></div>
+          <div class="seq-step"><div class="seq-day">Day 4</div><div class="seq-action">Invite to Strategy Assessment</div></div>
+          <div class="seq-step"><div class="seq-day">Day 7</div><div class="seq-action"><span class="cond">if no assessment</span> — Social proof push</div></div>
+          <div class="seq-step"><div class="seq-day">Day 14</div><div class="seq-action"><span class="cond">if no assessment</span> — Educational nurture</div></div>
+          <div class="seq-step"><div class="seq-day">Day 21</div><div class="seq-action"><span class="cond">if no assessment</span> → <span class="tag">long-term-nurture</span></div></div>
+        </div>
+      </div>
+
+      <!-- Arrow 2 -->
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a2)"/></svg>
+      </div>
+
+      <!-- Step 3: TY Page -->
+      <div class="flow-col">
+        <div class="node page node-w200">
+          <div class="node-type">Thank You Page</div>
+          <div class="node-title">Diagnostic Downloaded</div>
+          <div class="node-sub">ty/diagnostic/index.html</div>
+          <div class="node-badge badge-blue" style="margin-top:6px;">CTA → Take Strategy Assessment</div>
+        </div>
+      </div>
+
+      <!-- Arrow 3 -->
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a3)"/></svg>
+      </div>
+
+      <!-- Step 4: Assessment -->
+      <div class="flow-col">
+        <div class="node page node-w220">
+          <div class="node-type">Website Page</div>
+          <div class="node-title">Strategy Assessment</div>
+          <div class="node-sub">assessment/index.html</div>
+        </div>
+        <div class="node form node-w220">
+          <div class="node-type">GHL Form</div>
+          <div class="node-title">Strategy Assessment</div>
+          <div class="node-sub"><span class="id">1oNttPasxe2sTQQWcck6</span></div>
+          <div class="node-badge badge-amber">Routes on: Qualification Tier field</div>
+        </div>
+        <div class="node auto node-w220" style="margin-top:2px;">
+          <div class="node-type">Automation 2 — Router</div>
+          <div class="node-title">Assessment Submission + Routing</div>
+          <div class="node-sub">Stops Automation 1 · Sets tier · Branches ↓</div>
+          <div class="tag-chip">assessment-complete</div>
+          <div class="tag-chip">pipeline: Assessment Taken</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       ASSESSMENT RESULT BRANCHES
+  ══════════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-title-row"><h3>Assessment Branches — 4 Qualification Paths</h3><hr></div>
+    <div class="branch-label">↓ routes here based on Qualification Tier custom field value ↓</div>
+
+    <div class="branches">
+
+      <!-- ── HOT ── -->
+      <div class="branch branch-col-hot">
+        <div class="branch-header bh-hot">🔴 Hot Lead<small>Executive authority · Immediate timeline</small></div>
+
+        <div class="node pipe" style="margin:0;">
+          <div class="node-type">Result Page</div>
+          <div class="node-title">Priority Qualified</div>
+          <div class="node-sub">assessment/qualified/qualified-hot.html</div>
+          <div class="tag-chip">qualified-hot</div>
+          <div class="tag-chip">pipeline: Hot Qualified</div>
+        </div>
+
+        <div class="node auto" style="margin:0;">
+          <div class="node-type">Automation 3 — Priority</div>
+          <div class="node-title">Hot Lead Sequence</div>
+          <div class="notif">🔔 Owner: SMS + Email (immediate)</div>
+        </div>
+
+        <div class="seq-box">
+          <div class="seq-title">📧 + 💬 Sequence</div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">Email: "You're a strong fit" + calendar link</div></div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">SMS: Personal invite to book</div></div>
+          <div class="seq-step"><div class="seq-day">Day 1</div><div class="seq-action"><span class="cond">if no booking</span> — Email: prep framing + link</div></div>
+          <div class="seq-step"><div class="seq-day">Day 2</div><div class="seq-action"><span class="cond">if no booking</span> — SMS follow-up</div></div>
+          <div class="seq-step"><div class="seq-day">Day 4</div><div class="seq-action"><span class="cond">if no booking</span> — Email: objection handle</div></div>
+          <div class="seq-step"><div class="seq-day">Day 8</div><div class="seq-action"><span class="cond">if no booking</span> → <span class="tag">long-term-nurture</span></div></div>
+        </div>
+
+        <div class="node form" style="margin:0;">
+          <div class="node-type">GHL Calendar</div>
+          <div class="node-title">Book Strategic Fit Call</div>
+          <div class="node-sub"><span class="id">vAThrbufC2Acw3utk7J4_priority</span></div>
+        </div>
+      </div>
+
+      <!-- ── WARM ── -->
+      <div class="branch branch-col-warm">
+        <div class="branch-header bh-warm">🟠 Warm Lead<small>Strong fit · Timing or budget gap</small></div>
+
+        <div class="node auto" style="margin:0;">
+          <div class="node-type">Result Page</div>
+          <div class="node-title">Warm Qualified</div>
+          <div class="node-sub">assessment/qualified/qualified-warm.html</div>
+          <div class="tag-chip">qualified-warm</div>
+          <div class="tag-chip">pipeline: Warm Qualified</div>
+        </div>
+
+        <div class="node auto" style="margin:0;">
+          <div class="node-type">Automation 4 — Warm</div>
+          <div class="node-title">Warm Lead Sequence</div>
+          <div class="notif">📬 Owner: Email notification</div>
+        </div>
+
+        <div class="seq-box">
+          <div class="seq-title">📧 4-Email Sequence</div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">Email: Personalized result + calendar link</div></div>
+          <div class="seq-step"><div class="seq-day">Day 3</div><div class="seq-action"><span class="cond">if no booking</span> — What a fit call covers</div></div>
+          <div class="seq-step"><div class="seq-day">Day 7</div><div class="seq-action"><span class="cond">if no booking</span> — Case study / social proof</div></div>
+          <div class="seq-step"><div class="seq-day">Day 12</div><div class="seq-action"><span class="cond">if no booking</span> — Last call email</div></div>
+          <div class="seq-step"><div class="seq-day">Day 18</div><div class="seq-action"><span class="cond">if no booking</span> → <span class="tag">long-term-nurture</span></div></div>
+        </div>
+
+        <div class="node form" style="margin:0;">
+          <div class="node-type">GHL Calendar</div>
+          <div class="node-title">Book Strategic Fit Call</div>
+          <div class="node-sub"><span class="id">vAThrbufC2Acw3utk7J4_warm</span></div>
+        </div>
+      </div>
+
+      <!-- ── LUKEWARM ── -->
+      <div class="branch branch-col-lukewarm">
+        <div class="branch-header bh-lukewarm">🟡 Lukewarm<small>Potential · Timing / alignment gap</small></div>
+
+        <div class="node nurture" style="margin:0;">
+          <div class="node-type">Result Page</div>
+          <div class="node-title">Exploratory Qualified</div>
+          <div class="node-sub">assessment/qualified/qualified-lukewarm.html</div>
+          <div class="tag-chip">qualified-lukewarm</div>
+          <div class="tag-chip">pipeline: Exploratory</div>
+        </div>
+
+        <div class="node auto" style="margin:0;">
+          <div class="node-type">Automation 5 — Lukewarm</div>
+          <div class="node-title">Resource + Nurture Sequence</div>
+          <div style="font-size:0.68rem; color:rgba(255,255,255,0.35); margin-top:4px;">No owner notification</div>
+        </div>
+
+        <div class="seq-box">
+          <div class="seq-title">📧 Resource Sequence</div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">Email: Results + Readiness Checklist</div></div>
+          <div class="seq-step"><div class="seq-day">Day 5</div><div class="seq-action">Email: "Cost of unclear positioning"</div></div>
+          <div class="seq-step"><div class="seq-day">Day 10</div><div class="seq-action">Email: Revenue Gap Calculator</div></div>
+          <div class="seq-step"><div class="seq-day">Day 20</div><div class="seq-action">Email: "When timing is right…"</div></div>
+          <div class="seq-step"><div class="seq-day">Day 30</div><div class="seq-action">→ <span class="tag">long-term-nurture</span> (quarterly)</div></div>
+        </div>
+
+        <div class="node nurture" style="margin:0;">
+          <div class="node-type">Resources Delivered</div>
+          <div class="node-title">Readiness Checklist · Revenue Gap Calculator</div>
+          <div class="node-sub">Optional calendar link available</div>
+        </div>
+      </div>
+
+      <!-- ── NOT READY ── -->
+      <div class="branch branch-col-notready">
+        <div class="branch-header bh-notready">⚫ Not Ready<small>No authority · No budget · No alignment</small></div>
+
+        <div class="node nurture" style="margin:0;">
+          <div class="node-type">Result Page</div>
+          <div class="node-title">Not Ready</div>
+          <div class="node-sub">assessment/not-ready/index.html</div>
+          <div class="tag-chip">not-ready</div>
+          <div class="tag-chip">pipeline: Nurture</div>
+        </div>
+
+        <div class="node auto" style="margin:0;">
+          <div class="node-type">Automation 6 — Not Ready</div>
+          <div class="node-title">Educational Sequence</div>
+          <div style="font-size:0.68rem; color:rgba(255,255,255,0.35); margin-top:4px;">No owner notification</div>
+        </div>
+
+        <div class="seq-box">
+          <div class="seq-title">📧 Long-term Sequence</div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">Email: "You made the right call" + resources</div></div>
+          <div class="seq-step"><div class="seq-day">Day 7</div><div class="seq-action">Email: Positioning strategy education</div></div>
+          <div class="seq-step"><div class="seq-day">Day 30</div><div class="seq-action">→ Monthly newsletter list</div></div>
+          <div class="seq-step"><div class="seq-day">Day 90</div><div class="seq-action">"Has anything changed?" re-engagement</div></div>
+        </div>
+
+        <div class="node nurture" style="margin:0;">
+          <div class="node-type">Resources Delivered</div>
+          <div class="node-title">Diagnostic · Revenue Calculator · Checklist · Waitlist</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       FIT CALL BOOKING
+  ══════════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-title-row"><h3>Fit Call Automation — Booking → Post-Call Disposition</h3><hr></div>
+
+    <div class="flow-main">
+
+      <!-- Booking trigger -->
+      <div class="flow-col">
+        <div class="node form node-w220">
+          <div class="node-type">GHL Calendar</div>
+          <div class="node-title">Strategic Fit Call Booked</div>
+          <div class="node-sub"><span class="id">vAThrbufC2Acw3utk7J4</span></div>
+          <div class="tag-chip">fit-call-booked</div>
+          <div class="tag-chip">pipeline: Fit Call Booked</div>
+        </div>
+      </div>
+
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a4" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a4)"/></svg>
+      </div>
+
+      <!-- Automation 7 -->
+      <div class="flow-col">
+        <div class="node auto node-w220">
+          <div class="node-type">Automation 7 — Fit Call</div>
+          <div class="node-title">Booking Confirmation + Reminders</div>
+          <div class="node-sub">Stops all active sequences for contact</div>
+        </div>
+        <div class="seq-box" style="width:220px;">
+          <div class="seq-title">📧 + 💬 Pre-Call</div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">Email: Confirmation + prep guide + what to expect</div></div>
+          <div class="seq-step"><div class="seq-day">-24h</div><div class="seq-action">Email + SMS: Day-before reminder</div></div>
+          <div class="seq-step"><div class="seq-day">-1h</div><div class="seq-action">SMS: 1-hour reminder</div></div>
+        </div>
+      </div>
+
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a5" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a5)"/></svg>
+      </div>
+
+      <!-- No-show fork + completion -->
+      <div class="flow-col" style="gap:12px;">
+        <div class="node pipe node-w220">
+          <div class="node-type">Disposition — Call Happened</div>
+          <div class="node-title">Appointment Complete</div>
+          <div class="node-sub">Owner marks manually in GHL</div>
+          <div class="tag-chip">fit-call-completed</div>
+          <div class="tag-chip">pipeline: Fit Call Complete</div>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; width:220px;">
+          <div style="flex:1;height:1px;background:rgba(239,66,55,0.2);"></div>
+          <div style="font-size:0.65rem;color:rgba(255,255,255,0.2);">or</div>
+          <div style="flex:1;height:1px;background:rgba(100,116,139,0.2);"></div>
+        </div>
+        <div class="node nurture node-w220">
+          <div class="node-type">Disposition — No-Show</div>
+          <div class="node-title">Appointment Not Attended</div>
+          <div class="node-sub">Triggers Automation 7b</div>
+          <div class="tag-chip">fit-call-noshow</div>
+        </div>
+        <div class="seq-box" style="width:220px;">
+          <div class="seq-title">💬 No-Show Recovery</div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">Email + SMS: "We missed you — easy to rebook"</div></div>
+          <div class="seq-step"><div class="seq-day">Day 3</div><div class="seq-action">Second rebook attempt</div></div>
+          <div class="seq-step"><div class="seq-day">Day 7</div><div class="seq-action"><span class="cond">if no rebook</span> → resume warm sequence</div></div>
+        </div>
+      </div>
+
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a6" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a6)"/></svg>
+      </div>
+
+      <!-- Post-call disposition -->
+      <div class="flow-col" style="gap:10px;">
+        <div style="font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.25); text-align:center;">Automation 8 — Post-Call Disposition</div>
+        <div class="node win node-w200">
+          <div class="node-type">Outcome: Won</div>
+          <div class="node-title">Move → Proposal Sent</div>
+          <div class="node-sub">Send proposal follow-up sequence</div>
+          <div class="tag-chip">proposal-sent</div>
+        </div>
+        <div class="node nurture node-w200">
+          <div class="node-type">Outcome: Not a Fit</div>
+          <div class="node-title">Move → Nurture</div>
+          <div class="node-sub">Graceful exit email · Monthly content</div>
+          <div class="tag-chip">not-a-fit</div>
+        </div>
+        <div class="node auto node-w200">
+          <div class="node-type">Outcome: Follow-up</div>
+          <div class="node-title">Owner Task Created</div>
+          <div class="node-sub">Send "next steps" email · Schedule follow-up</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       ENTRY POINT B: CONTACT FORM
+  ══════════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-title-row"><h3>Entry Point B — Direct Contact Form</h3><hr></div>
+
+    <div class="flow-main">
+      <div class="flow-col">
+        <div class="node page node-w220">
+          <div class="node-type">Website Page</div>
+          <div class="node-title">Contact Page</div>
+          <div class="node-sub">contact/index.html</div>
+        </div>
+        <div class="node form node-w220">
+          <div class="node-type">GHL Form</div>
+          <div class="node-title">Contact Form</div>
+          <div class="node-sub"><span class="id">r8cRGeaDMASeAkHFDthA</span></div>
+        </div>
+      </div>
+
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a7" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a7)"/></svg>
+      </div>
+
+      <div class="flow-col">
+        <div class="node auto node-w220">
+          <div class="node-type">Automation 9 — Contact Router</div>
+          <div class="node-title">Contact Form Submission</div>
+          <div class="notif">🔔 Owner: Immediate SMS + Email</div>
+        </div>
+      </div>
+
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a8" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a8)"/></svg>
+      </div>
+
+      <div class="flow-col" style="gap:10px;">
+        <div style="font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.25);">Conditional Branch</div>
+        <div class="node pipe node-w220">
+          <div class="node-type">Has assessment-complete tag</div>
+          <div class="node-title">Route as Qualified Lead</div>
+          <div class="node-sub">Owner notified with full assessment context · Skip diagnostic sequence</div>
+        </div>
+        <div class="node auto node-w220">
+          <div class="node-type">No prior tags</div>
+          <div class="node-title">New Contact</div>
+          <div class="node-sub">Tag: contact-form · Pipeline: New Lead · Confirmation email sent · Owner task: follow up &lt;24hrs</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       LONG-TERM NURTURE
+  ══════════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-title-row"><h3>Long-Term Nurture — All Paths Converge Here</h3><hr></div>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:16px;">
+
+      <div class="node nurture">
+        <div class="node-type">Entry Conditions</div>
+        <div class="node-title">Who Enters Nurture</div>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:4px;">
+          <div class="tag-chip">diagnostic-download (no assessment after 21d)</div>
+          <div class="tag-chip">qualified-hot (no booking after 8d)</div>
+          <div class="tag-chip">qualified-warm (no booking after 18d)</div>
+          <div class="tag-chip">qualified-lukewarm (after 30d)</div>
+          <div class="tag-chip">not-ready (immediate)</div>
+          <div class="tag-chip">not-a-fit (post-call)</div>
+        </div>
+      </div>
+
+      <div class="node email">
+        <div class="node-type">Monthly Content Rotation</div>
+        <div class="node-title">Long-Term Nurture Sequence</div>
+        <div class="seq-box" style="margin-top:10px;">
+          <div class="seq-step"><div class="seq-day">Mo 1</div><div class="seq-action">Client case study / work showcase</div></div>
+          <div class="seq-step"><div class="seq-day">Mo 2</div><div class="seq-action">Educational: positioning strategy insight</div></div>
+          <div class="seq-step"><div class="seq-day">Mo 3</div><div class="seq-action">Re-assessment invite: "Are you ready now?"</div></div>
+          <div class="seq-step"><div class="seq-day">Mo 4</div><div class="seq-action">Industry insight / thought leadership</div></div>
+          <div class="seq-step"><div class="seq-day">Mo 6</div><div class="seq-action">Re-engagement: "Has anything changed?"</div></div>
+        </div>
+      </div>
+
+      <div class="node auto">
+        <div class="node-type">Re-Entry Trigger</div>
+        <div class="node-title">Nurture → Active Funnel</div>
+        <div style="margin-top:8px; font-size:0.78rem; color:rgba(255,255,255,0.55); line-height:1.6;">
+          If contact clicks "Retake Assessment" from any nurture email:<br><br>
+          <span class="tag-chip">assessment-complete removed</span><br>
+          <span class="tag-chip">long-term-nurture removed</span><br>
+          <br>Re-enters Automation 2 (Assessment Router) with fresh routing based on new result.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       IMPLEMENTATION CHECKLIST
+  ══════════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-title-row"><h3>GHL Setup Checklist</h3><hr></div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+
+      <div class="node auto">
+        <div class="node-type">Step 1 — Custom Fields</div>
+        <div class="node-title">Create in GHL → Contacts</div>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:5px; font-size:0.76rem; color:rgba(255,255,255,0.6); line-height:1.5;">
+          <div>□ Qualification Tier (Dropdown: Hot / Warm / Lukewarm / Not Ready)</div>
+          <div>□ Lead Score (Number)</div>
+          <div>□ Assessment Completed (Checkbox)</div>
+          <div>□ Diagnostic Downloaded (Checkbox)</div>
+          <div>□ Company Revenue Range (Dropdown)</div>
+          <div>□ Decision Authority (Dropdown)</div>
+          <div>□ Engagement Stage (Text)</div>
+        </div>
+      </div>
+
+      <div class="node form">
+        <div class="node-type">Step 2 — Form Field Mapping</div>
+        <div class="node-title">Map assessment answers → custom fields</div>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:5px; font-size:0.76rem; color:rgba(255,255,255,0.6); line-height:1.5;">
+          <div>□ Assessment result → Qualification Tier field</div>
+          <div>□ Company name → Company field</div>
+          <div>□ Phone → Phone (with SMS opt-in copy)</div>
+          <div>□ Revenue range → Custom field</div>
+          <div>□ Decision authority → Custom field</div>
+          <div>□ Map calendar source per tier (Hot / Warm / Lukewarm)</div>
+        </div>
+      </div>
+
+      <div class="node pipe">
+        <div class="node-type">Step 3 — Workflow Goal Conditions</div>
+        <div class="node-title">Add to every active sequence</div>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:5px; font-size:0.76rem; color:rgba(255,255,255,0.6); line-height:1.5;">
+          <div>□ Automation 1: Stop when <span class="tag-chip" style="font-size:0.6rem;">assessment-complete</span> added</div>
+          <div>□ Automations 3/4/5: Stop when <span class="tag-chip" style="font-size:0.6rem;">fit-call-booked</span> added</div>
+          <div>□ Automation 7: Stop when appointment marked complete or no-show</div>
+          <div>□ Nurture: Stop when contact re-enters active sequence</div>
+          <div>□ All sequences: Stop if tagged <span class="tag-chip" style="font-size:0.6rem;">client</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
