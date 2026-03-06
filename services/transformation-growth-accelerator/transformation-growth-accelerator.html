@@ -133,6 +133,16 @@
   <!-- Main Style -->
   <link rel="stylesheet" href="../../assets/css/style.css" />
 
+  <!-- Page-specific overrides (match index.html) -->
+  <style>
+    .month-card__number { margin-bottom: -11px; }
+    .month-card h5 { color: #000; }
+    .month-card p { color: #000; }
+    .accel-timeline__content h5 { margin-bottom: 0; }
+    .accel-timeline__label { margin-bottom: 0; }
+    .package-card--accelerator::before { content: 'BEST VALUE · ONE TEAM THROUGH GROWTH'; }
+  </style>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -166,9 +176,10 @@
     <div class="container container-extend">
       <div class="header-top-wrp">
         <ul class="info">
-          <li>
+         <li>
             <i class="fa-solid fa-paper-plane"></i>
-            <a href="/cdn-cgi/l/email-protection#caa2afa6a6a58aaba8b9beb8aba9bee7a9b8afabbea3bcafe4a9a5a7"><span class="__cf_email__" data-cfemail="0a626f6666654a6b68797e786b697e2769786f6b7e637c6f24696567">[email&#160;protected]</span></a>
+            <a
+              href="mailto:efren@abstract-creative.com?subject=Abstract Creative: Requesting Information for Digital Marketing Services">efren@abstract-creative.com</a>
           </li>
           <li class="ml-40">
             <i class="fa-solid fa-phone"></i>
@@ -202,8 +213,7 @@
                   <li><a href="../brand-foundation/index.html">Brand Foundation</a></li>
                   <li><a href="../brand-transformation/index.html">Complete Transformation</a></li>
                   <li><a href="index.html">Transformation + Growth Accelerator</a></li>
-                  <li><a href="./index.html">Transformation + Growth Accelerator</a></li>
-                  <li><a href="../../growth-partnership/index.html">Growth Partnership</a></li>
+                  <li><a href="../growth-partnership/index.html">Growth Partnership</a></li>
                 </ul>
               </li>
               <li><a id="nav_work" data-track="nav" data-nav="work" href="../../work/index.html">Work</a></li>
@@ -211,8 +221,8 @@
             </ul>
           </nav>
         </div>
-        <a id="cta_book_strategy_call_click" href="#" onclick="openContactModal(event)" class="btn-menu d-none d-lg-inline-block">
-          Reserve Your Accelerator Spot<i class="fa-regular fa-circle-arrow-right ml-10"></i>
+        <a id="cta_book_strategy_call_click" href="../../contact/index.html" class="btn-menu d-none d-lg-inline-block">
+          Book a Strategy Fit Call<i class="fa-regular fa-circle-arrow-right ml-10"></i>
         </a>
         <div class="bars d-block d-lg-none">
           <i id="openButton" class="fa-solid fa-bars"></i>
@@ -266,8 +276,8 @@
             </p>
           </div>
           <div class="d-flex flex-wrap align-items-center gap-4 mt-40">
-            <a href="#" onclick="openContactModal(event)" class="btn-one alink2">
-              Reserve Your Accelerator Spot<i class="fa-regular fa-circle-arrow-right ml-10"></i>
+            <a href="#" onclick="openModal('fitCallModal', event)" class="btn-one alink2">
+              Book a Strategic Fit Call<i class="fa-regular fa-circle-arrow-right ml-10"></i>
             </a>
             <a href="../brand-transformation/index.html" style="color: rgba(255,255,255,0.65); font-size: 0.9rem; text-decoration: underline; text-underline-offset: 3px;">
               Just need the transformation? See Complete Transformation →
@@ -289,17 +299,14 @@
             <div class="momentum-block">
               <h5 class="text-white">The website goes live. Marketing doesn't.</h5>
               <p class="text-white">The system is built and handed off—but without ongoing execution, traffic doesn't compound and qualified leads don't materialize. The infrastructure sits idle.</p>
-            </div>
-            <div class="momentum-block">
-              <h5 class="text-white">Messaging locks. Then drifts.</h5>
+            
+              <h5 class="text-white mt-20">Messaging locks. Then drifts.</h5>
               <p class="text-white">Without a team running on locked positioning, channels go off-message. Social, email, and content all start from scratch again—or don't run at all.</p>
-            </div>
-            <div class="momentum-block">
-              <h5 class="text-white">Launch energy disappears in 30 days.</h5>
+            
+              <h5 class="text-white mt-20">Launch energy disappears in 30 days.</h5>
               <p class="text-white">The first month post-launch is the highest-leverage window. Without active optimization and campaign execution, that window closes—and you're back to starting over.</p>
-            </div>
-            <div class="momentum-block">
-              <h5 class="text-white">You need a second vendor to keep it running.</h5>
+            
+              <h5 class="text-white mt-20">You need a second vendor to keep it running.</h5>
               <p class="text-white">Hiring a separate agency post-transformation means briefing a new team on your positioning, identity, and system. They don't know it. The work starts over. The spend compounds nothing.</p>
             </div>
           </div>
@@ -308,24 +315,24 @@
               <h5 class="text-white mb-5" style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; opacity:0.65;">The Math</h5>
               <h3 class="text-white mb-25">What You'd Pay Separately</h3>
               <div class="value-math__row">
-                <span class="label">Complete Transformation</span>
-                <span class="amount">$20,000–$25,000</span>
+                <span class="label text-white">Complete Transformation</span>
+                <span class="amount text-white">$20,000–$25,000</span>
               </div>
               <div class="value-math__row">
-                <span class="label">Growth Partnership · 6 months</span>
-                <span class="amount">$18,000–$21,000</span>
+                <span class="label text-white">Growth Partnership · 6 months</span>
+                <span class="amount text-white">$18,000–$21,000</span>
               </div>
               <div class="value-math__row">
-                <span class="label">Onboarding a separate agency</span>
-                <span class="amount">$2,000–$4,000</span>
+                <span class="label text-white">Onboarding a separate agency</span>
+                <span class="amount text-white">$2,000–$4,000</span>
               </div>
               <div class="value-math__row">
-                <span class="label">Transition time &amp; momentum loss</span>
-                <span class="amount">Unquantifiable</span>
+                <span class="label text-white">Transition time &amp; momentum loss</span>
+                <span class="amount text-white">Unquantifiable</span>
               </div>
               <div class="value-math__row total">
-                <span class="label">Total if purchased separately</span>
-                <span class="amount">$40,000–$50,000+</span>
+                <span class="label text-white">Total if purchased separately</span>
+                <span class="amount text-white">$40,000–$50,000+</span>
               </div>
               <div class="value-math__savings">
                 Accelerator Price: $39,000–$44,000 · You Save ~$5,000+
@@ -400,7 +407,7 @@
         </div>
 
         <div class="text-center mt-50">
-          <a href="#" onclick="openContactModal(event)" class="btn-one alink2">
+          <a href="#" onclick="openModal('fitCallModal', event)" class="btn-one alink2">
             Book a Strategic Fit Call<i class="fa-regular fa-circle-arrow-right ml-10"></i>
           </a>
         </div>
@@ -432,6 +439,7 @@
           <div class="system-arrow text-white"><i class="fa-solid fa-arrow-right"></i></div>
           <div class="system-node text-orange" style="font-size:0.78rem; padding: 6px 14px;">05 · Launch</div>
           <div class="system-arrow" style="color: var(--main);"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="w-100" style="flex-basis:100%; height:8px;"></div>
           <div class="system-node" style="font-size:0.78rem; padding: 6px 14px; border-color: var(--main); background: var(--main); color: #fff;">06 · Social</div>
           <div class="system-arrow text-white"><i class="fa-solid fa-arrow-right"></i></div>
           <div class="system-node" style="font-size:0.78rem; padding: 6px 14px; border-color: var(--main); background: var(--main); color: #fff;">07 · Email</div>
@@ -627,42 +635,42 @@
         <div class="row g-4">
           <div class="col-md-6 col-lg-4">
             <div class="month-card">
-              <div class="month-card__number">01</div>
+              <div class="month-card__number text-white">01</div>
               <h5>Social Media Management</h5>
               <p>Monthly content calendar, designed and published on brand. Platform-specific creative for LinkedIn, Instagram, and Facebook—all running from your locked messaging architecture. No off-brand posts. No dead channels.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
             <div class="month-card">
-              <div class="month-card__number">02</div>
+              <div class="month-card__number text-white">02</div>
               <h5>Monthly Email Campaign Deployment</h5>
               <p>One fully designed, sequenced email campaign per month—deployed into your CRM and targeted to segmented lists. Nurture sequences run in background. Every send is tracked against your funnel pipeline.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
             <div class="month-card">
-              <div class="month-card__number">03</div>
+              <div class="month-card__number text-white">03</div>
               <h5>Content Creation &amp; Publishing</h5>
               <p>Articles, case study updates, and resource content—written on your messaging architecture and published to your site and channels. SEO-aligned to compound discoverability over the 6-month window.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
             <div class="month-card">
-              <div class="month-card__number">04</div>
+              <div class="month-card__number text-white">04</div>
               <h5>Performance Reporting &amp; Optimization</h5>
               <p>Monthly performance report: traffic, conversion rates, funnel metrics, email performance, social reach, and pipeline attribution. Every decision backed by data. Every optimization tied to revenue impact.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
             <div class="month-card">
-              <div class="month-card__number">05</div>
+              <div class="month-card__number text-white">05</div>
               <h5>Brand Governance &amp; Messaging Integrity</h5>
               <p>Active oversight to prevent drift across every channel. As your team grows and new content is created, we maintain positioning alignment so the system stays locked and effective—not just at launch, but at month six.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
             <div class="month-card">
-              <div class="month-card__number">06</div>
+              <div class="month-card__number text-white">06</div>
               <h5>Growth Review &amp; 12-Month Roadmap</h5>
               <p>At month six, a full growth review session and a prioritized 12-month roadmap. Documented wins, what compounded, what to scale, and the recommended next phase—so growth doesn't stop when the Accelerator ends.</p>
             </div>
@@ -803,7 +811,7 @@
                 <div class="accel-timeline__dot">01</div>
                 <div class="accel-timeline__content">
                   <span class="accel-timeline__label">Week 1 · Build Phase</span>
-                  <h5>Kickoff &amp; Strategy</h5>
+                  <h5 class="text-white">Kickoff &amp; Strategy</h5>
                   <p>Decision structure installed. Competitive analysis begins. Positioning and UVP locked by end of week two.</p>
                 </div>
               </div>
@@ -812,7 +820,7 @@
                 <div class="accel-timeline__dot">02</div>
                 <div class="accel-timeline__content">
                   <span class="accel-timeline__label">Weeks 2–4 · Build Phase</span>
-                  <h5>Brand Identity Development</h5>
+                  <h5 class="text-white">Brand Identity Development</h5>
                   <p>Full logo suite, visual system, brand guidelines, and core asset suite. Identity reviewed and approved before website begins.</p>
                 </div>
               </div>
@@ -821,7 +829,7 @@
                 <div class="accel-timeline__dot">03</div>
                 <div class="accel-timeline__content">
                   <span class="accel-timeline__label">Weeks 4–7 · Build Phase</span>
-                  <h5>Website &amp; Online Presence Build</h5>
+                  <h5 class="text-white">Website &amp; Online Presence Build</h5>
                   <p>5-page conversion website, CRM integration, SEO foundation. Designed on locked positioning—built to convert, not just to look professional.</p>
                 </div>
               </div>
@@ -830,7 +838,7 @@
                 <div class="accel-timeline__dot">04</div>
                 <div class="accel-timeline__content">
                   <span class="accel-timeline__label">Weeks 7–10 · Build Phase</span>
-                  <h5>Marketing Automation, Launch &amp; Baseline</h5>
+                  <h5 class="text-white">Marketing Automation, Launch &amp; Baseline</h5>
                   <p>Funnels wired. Email sequences deployed. Site goes live. Performance baseline documented. Growth Phase Activation Brief prepared.</p>
                 </div>
               </div>
@@ -839,7 +847,7 @@
                 <div class="accel-timeline__dot" style="background: var(--main);">05</div>
                 <div class="accel-timeline__content">
                   <span class="accel-timeline__label">Month 1–2 · Growth Phase</span>
-                  <h5>Growth Phase Activation</h5>
+                  <h5 class="text-white">Growth Phase Activation</h5>
                   <p>Social channels active. First email campaign deployed. Content published. CRM performance monitored daily. No gap from build.</p>
                 </div>
               </div>
@@ -848,7 +856,7 @@
                 <div class="accel-timeline__dot" style="background: var(--main);">06</div>
                 <div class="accel-timeline__content">
                   <span class="accel-timeline__label">Month 3–4 · Growth Phase</span>
-                  <h5>Compounding &amp; Optimization</h5>
+                  <h5 class="text-white">Compounding &amp; Optimization</h5>
                   <p>Campaigns running. Content compounding on SEO. Funnel performance reviewed and optimized. Mid-point report delivered.</p>
                 </div>
               </div>
@@ -857,7 +865,7 @@
                 <div class="accel-timeline__dot" style="background: var(--main);">07</div>
                 <div class="accel-timeline__content">
                   <span class="accel-timeline__label">Month 5–6 · Growth Phase</span>
-                  <h5>Full Pipeline Execution &amp; Growth Review</h5>
+                  <h5 class="text-white">Full Pipeline Execution &amp; Growth Review</h5>
                   <p>All channels executing at full capacity. Final month performance review. 12-month growth roadmap delivered at close-out session.</p>
                 </div>
               </div>
@@ -1036,8 +1044,8 @@
                 </div>
               </div>
 
-              <a href="#" onclick="openContactModal(event)" class="btn-one alink9 d-block text-center" style="font-size: 1.05rem; padding: 16px 24px;">
-                Reserve Your Accelerator Spot<i class="fa-regular fa-circle-arrow-right ml-10"></i>
+              <a href="#" onclick="openModal('fitCallModal', event)" class="btn-one alink9 d-block text-center" style="font-size: 1.05rem; padding: 16px 24px;">
+                Start the Transformation + Growth Accelerator<i class="fa-regular fa-circle-arrow-right ml-10"></i>
               </a>
 
               <div class="text-center mt-20">
@@ -1152,19 +1160,19 @@
             <div class="row text-start g-4">
               <div class="col-md-4">
                 <div class="p-4 rounded lead-capture-card">
-                  <h5 class="mb-10 eyebrow">❌ Not a Fit If</h5>
+                  <h5 class="mb-10 orange-text">❌ Not a Fit If</h5>
                   <p class="mb-0">You want to build the system and hand it off immediately. The Accelerator is for businesses that want ongoing execution, not just a deliverable at the end.</p>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="p-4 rounded lead-capture-card">
-                  <h5 class="mb-10 eyebrow">❌ Not a Fit If</h5>
+                  <h5 class="mb-10 orange-text">❌ Not a Fit If</h5>
                   <p class="mb-0">You already have a high-performing in-house marketing team. The Growth Phase is designed for businesses that don't have that capacity yet—and need it immediately.</p>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="p-4 rounded lead-capture-card">
-                  <h5 class="mb-10 eyebrow">❌ Not a Fit If</h5>
+                  <h5 class="mb-10 orange-text">❌ Not a Fit If</h5>
                   <p class="mb-0">You're looking for the cheapest option. The Accelerator is the highest-value engagement we offer—every dollar is accounted for, and every phase has a measurable outcome.</p>
                 </div>
               </div>
@@ -1310,8 +1318,8 @@
             <p class="text-white mb-20">
               The fit call takes 15–20 minutes. We confirm the Accelerator is the right scope, walk through the 8-month engagement, and tell you exactly what happens next. Spots are limited—we run a maximum of four Accelerator engagements at a time.
             </p>
-            <a href="#" onclick="openContactModal(event)" class="btn-one alink9">
-              Reserve Your Accelerator Spot<i class="fa-solid fa-circle-arrow-right ml-10"></i>
+            <a href="#" onclick="openModal('fitCallModal', event)" class="btn-one alink9">
+              Book a Strategic Fit Call<i class="fa-solid fa-circle-arrow-right ml-10"></i>
             </a>
           </div>
         </div>
@@ -1383,20 +1391,39 @@
     </div>
   </footer>
 
-  <!-- ═══════════════════════════════════════
-       CONTACT MODAL
-  ═══════════════════════════════════════ -->
-  <div id="contactModal" class="contact-modal" role="dialog" aria-modal="true" style="display:none;">
+   <!-- Strategic Fit Call Modal -->
+  <div id="fitCallModal" class="contact-modal" style="display:none;">
     <div class="contact-modal__dialog">
-      <button class="contact-modal__close" type="button" onclick="closeContactModal()" aria-label="Close contact form">×</button>
-      <div class="contact__form">
-        <div class="contact-modal__embed">
-          <iframe src="https://api.leadconnectorhq.com/widget/booking/sIh2YfvkUXspGuoqHkto"
-            style="width: 100%; border: none; overflow: hidden; height: 700px;" scrolling="no"
-            id="sIh2YfvkUXspGuoqHkto_accel" title="Reserve Your Accelerator Spot"></iframe><br>
-          <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
-        </div>
-      </div>
+      <button class="contact-modal__close" onclick="closeModal('fitCallModal')">×</button>
+      <iframe src="https://api.leadconnectorhq.com/widget/booking/sIh2YfvkUXspGuoqHkto" class="iframe-form" scrolling="no"
+        title="Book a Strategic Fit Call Calendar" loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Complete Transformation Pricing Modal -->
+  <div id="transformationPricingModal" class="contact-modal" style="display:none;">
+    <div class="contact-modal__dialog">
+      <button class="contact-modal__close" onclick="closeModal('transformationPricingModal')">×</button>
+      <iframe
+    src="https://api.leadconnectorhq.com/widget/form/vwzNveaYJKhwsEoevGZL"
+    style="width:100%;height:100%;border:none;border-radius:3px"
+    id="inline-vwzNveaYJKhwsEoevGZL" 
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Transformation + Growth Accelerator Pricing"
+    data-height="841"
+    data-layout-iframe-id="inline-vwzNveaYJKhwsEoevGZL"
+    data-form-id="vwzNveaYJKhwsEoevGZL"
+    title="Transformation + Growth Accelerator Pricing"
+        >
+</iframe>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
     </div>
   </div>
 
@@ -1470,42 +1497,48 @@
 
   <!-- Modal JS -->
   <script>
-    function openContactModal(e) {
-      if (e) e.preventDefault();
-      document.getElementById('contactModal').style.display = 'flex';
-      document.body.classList.add('modal-open');
-      if (window.dataLayer) {
-        window.dataLayer.push({
-          event: 'modal_open',
-          modal_type: 'contact_call_booking',
-          page_context: 'transformation_growth_accelerator'
-        });
-      }
-    }
-
-    function closeContactModal() {
-      document.getElementById('contactModal').style.display = 'none';
+    function closeAllModals() {
+      document.querySelectorAll('.contact-modal').forEach(m => m.style.display = 'none');
       document.body.classList.remove('modal-open');
     }
 
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeContactModal();
+    function openModal(id, e) {
+      if (e) e.preventDefault();
+      closeAllModals();
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.style.display = 'flex';
+      document.body.classList.add('modal-open');
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeAllModals();
     });
 
-    document.getElementById('contactModal').addEventListener('click', function (e) {
-      if (e.target === this) closeContactModal();
+    document.querySelectorAll('.contact-modal').forEach(modal => {
+      modal.addEventListener('click', e => {
+        if (e.target === modal) closeAllModals();
+      });
     });
 
     // FAQ Toggle
     function toggleFaq(el) {
       const item = el.closest('.faq-item');
+      if (!item) return;
       const answer = item.querySelector('.faq-answer');
-      const isOpen = answer.classList.contains('open');
+      const isOpen = answer && answer.classList.contains('open');
       // Close all
       document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
       // Open clicked if it was closed
-      if (!isOpen) {
+      if (!isOpen && answer) {
         answer.classList.add('open');
         item.classList.add('active');
       }
