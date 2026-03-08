@@ -57,6 +57,14 @@
   margin-bottom: 10px;
 }
 
+.simple-list .list-item.list-item-green:before {
+  color: #4CAF50;
+}
+
+.simple-list .list-item.list-item-green .icon-checkmark {
+  color: #4CAF50;
+}
+
 .testimonial-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -69,7 +77,7 @@
 .testimonial-quote {
   font-size: 18px;
   font-style: italic;
-  color: #E0E0E0;
+  color: #333;
   line-height: 1.6;
   margin-bottom: 15px;
 }
@@ -87,7 +95,7 @@
 
 .backup-cta {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 230px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 8px;
