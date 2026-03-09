@@ -1,5 +1,12 @@
 User-agent: *
 Allow: /
 
-# Update to point at your sitemap when available.
-Sitemap: Sitemap.xml
+# Disallow conversion and internal pages
+Disallow: /ty/
+Disallow: /emails/
+Disallow: /ghl-sitemap.html
+Disallow: /product-marketing-context/
+Disallow: /assessment/qualified/
+Disallow: /assessment/not-ready/
+
+Sitemap: https://abstract-creative.com/sitemap.xml
