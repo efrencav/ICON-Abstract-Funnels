@@ -12621,7 +12621,7 @@ section[id] {
   color: #ffffff;
 }
 
-/* Center the ICON Method section */
+/* Center the services section */
 #icon-method .section-header__wrp {
   text-align: center;
   /* max-width: 800px; */
@@ -13108,7 +13108,7 @@ a.tra-link { font-size: 1rem; line-height: 1; font-weight: 600; }
 }
 
 
-/* === ICON Method mid-screen optimization (14" MacBook Pro view) === */
+/* === Services mid-screen optimization (14" MacBook Pro view) === */
 @media (max-width: 1500px) and (min-width: 1200px) {
   #icon-method {
     font-size: 0.82rem; /* reduce overall font size slightly */
@@ -13268,7 +13268,7 @@ p {
   }
 }
 
-/* ICON Method – Features 3 minimal add-on (scoped) */
+/* Features 3 minimal add-on (scoped) */
 
 /* Section shell */
 #features-3 {
