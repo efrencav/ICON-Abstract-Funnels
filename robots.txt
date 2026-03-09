@@ -8,5 +8,9 @@ Disallow: /ghl-sitemap.html
 Disallow: /product-marketing-context/
 Disallow: /assessment/qualified/
 Disallow: /assessment/not-ready/
+Disallow: /services/brand-foundation/foundation-pricing.html
+Disallow: /services/complete-transformation/transformation-pricing.html
+Disallow: /services/transformation-growth-accelerator/transformation-growth-accelerator.html
+Disallow: /services/growth-partnership/growth-pricing.html
 
 Sitemap: https://abstract-creative.com/sitemap.xml
