@@ -1,0 +1,19 @@
+:root {
+  --primary-color: #1b5b4a;
+  --primary-two: #124e52;
+  --secondary-color: #020d0a;
+  --sub-bg: #124e5205;
+  --sub-bg-two: #1b575b03;
+  --heading-color: #1c1a1d;
+  --paragraph: #020d0ab2;
+  --paragraph-light: #ffffffb2;
+  --span: #020d0ab2;
+  --border: #020d0a33;
+  --white: #ffffff;
+  --black: #020d0a;
+  --black-sub: #020d0a08;
+  --border-1px: 1px solid #020d0a33;
+  --border-2px: 2px solid #020d0a33;
+  --transition: all 0.5s ease-in-out;
+  --shadow: 0px 4px 25px 0px #0000000f;
+}/*# sourceMappingURL=_variables.css.map */

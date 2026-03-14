@@ -1,0 +1,11 @@
+@keyframes sway {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.sway__animation {
+  animation: sway 2s linear infinite alternate;
+}/*# sourceMappingURL=_animation.css.map */

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-family: OpenSans-Bold, 'Open Sans';
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #19bbb7;
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+
+      .cls-3 {
+        fill: #00817f;
+      }
+    </style>
+  </defs>
+  <circle class="cls-2" cx="22.77" cy="32.24" r="14.15"/>
+  <polygon class="cls-3" points="152.24 9.36 33.82 9.36 53.56 32.33 33.82 55.31 152.24 55.31 171.91 32.33 152.24 9.36"/>
+  <polygon class="cls-3" points="195.92 59.89 77.5 59.89 97.23 82.87 77.5 105.85 195.92 105.85 215.58 82.87 195.92 59.89"/>
+  <text class="cls-1" transform="translate(81.06 35.1)"><tspan x="0" y="0">Week 4</tspan></text>
+  <polygon class="cls-3" points="239.59 110.42 121.17 110.42 140.9 133.4 121.17 156.38 239.59 156.38 259.25 133.4 239.59 110.42"/>
+  <text class="cls-1" transform="translate(125.44 85.49)"><tspan x="0" y="0">Week 5</tspan></text>
+  <text class="cls-1" transform="translate(171.91 136.8)"><tspan x="0" y="0">Week 6</tspan></text>
+  <polygon class="cls-3" points="283.26 161.17 164.84 161.17 184.57 184.15 164.84 207.13 283.26 207.13 302.93 184.15 283.26 161.17"/>
+  <text class="cls-1" transform="translate(212.17 187.55)"><tspan x="0" y="0">Week 7</tspan></text>
+</svg>

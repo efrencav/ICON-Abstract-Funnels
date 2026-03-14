@@ -1,0 +1,66 @@
+//  Sway animation start here ***
+@keyframes sway {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.sway__animation {
+  animation: sway 2s linear infinite alternate;
+}
+//  Sway animation start here ***
+
+//  up-down animation start here ***
+
+@keyframes up-down {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.up-down__animation {
+  animation: up-down 2.5s ease-in-out infinite;
+}
+//  up-down animation start here ***
+
+// Keyframes for moving arrow left ↔ right
+@keyframes arrowMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(6px);
+  }
+}
+
+
+@keyframes animate-image-in {
+    0% {
+        transform: scale(1.05) translateZ(0);
+        clip-path: inset(0 100% 0 0)
+    }
+
+    100% {
+        transform: scale(1);
+        clip-path: inset(0 0 0 0)
+    }
+}
+
+@keyframes animate-image-out {
+  0% {
+    transform: scale(1) translateZ(0);
+    clip-path: inset(0 0 0 0);
+  }
+
+  100% {
+    transform: scale(1.05);
+    clip-path: inset(0 0 0 100%);
+  }
+}

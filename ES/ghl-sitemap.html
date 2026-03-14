@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa de Automatización GHL — Abstract Creative</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red:     #EF4237;
+      --dark:    #2C3E50;
+      --dark2:   #1a2a38;
+      --mid:     #6c757d;
+      --border:  #dde1e7;
+      --light:   #f5f7fa;
+      --white:   #ffffff;
+
+      /* node type colors */
+      --c-page:    #2563eb;  /* blue   — website pages */
+      --c-form:    #7c3aed;  /* purple — GHL forms */
+      --c-email:   #0891b2;  /* cyan   — email sequences */
+      --c-sms:     #059669;  /* green  — SMS */
+      --c-auto:    #d97706;  /* amber  — automations / logic */
+      --c-pipe:    #dc2626;  /* red    — pipeline / CTA */
+      --c-nurture: #64748b;  /* slate  — nurture / low priority */
+      --c-win:     #16a34a;  /* green  — won / client */
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Public Sans', sans-serif;
+      background: #0f1923;
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TOP BAR ─────────────────────────────── */
+    .topbar {
+      background: var(--dark2);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .topbar-title { font-size: 0.875rem; font-weight: 700; color: white; letter-spacing: -0.01em; }
+    .topbar-title span { color: var(--red); }
+    .legend { display: flex; gap: 16px; flex-wrap: wrap; }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.5); }
+    .legend-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+
+    /* ── CANVAS ──────────────────────────────── */
+    .canvas { padding: 48px 40px 80px; min-width: 1200px; }
+
+    /* ── SECTION LABELS ─────────────────────── */
+    .phase-label {
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.2); margin-bottom: 16px; padding-left: 2px;
+    }
+    .phase-block { margin-bottom: 8px; }
+
+    /* ── SWIMLANE ────────────────────────────── */
+    .swimlane {
+      display: grid; gap: 0;
+      position: relative; margin-bottom: 0;
+    }
+
+    /* ── NODE ────────────────────────────────── */
+    .node {
+      border-radius: 10px; padding: 14px 16px;
+      position: relative; background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+    .node-type {
+      font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 5px; opacity: 0.8;
+    }
+    .node-title {
+      font-size: 0.85rem; font-weight: 700; line-height: 1.3; color: white; margin-bottom: 4px;
+    }
+    .node-sub {
+      font-size: 0.72rem; color: rgba(255,255,255,0.45); line-height: 1.45;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .node-sub .id { color: rgba(255,255,255,0.3); font-size: 0.65rem; }
+    .node-badge {
+      display: inline-block; margin-top: 6px;
+      padding: 2px 8px; border-radius: 20px; font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+
+    /* color variants */
+    .page    { border-color: rgba(37,99,235,0.4);  background: rgba(37,99,235,0.08);  }
+    .page    .node-type { color: #60a5fa; }
+    .form    { border-color: rgba(124,58,237,0.4); background: rgba(124,58,237,0.08); }
+    .form    .node-type { color: #a78bfa; }
+    .auto    { border-color: rgba(217,119,6,0.4);  background: rgba(217,119,6,0.08);  }
+    .auto    .node-type { color: #fbbf24; }
+    .email   { border-color: rgba(8,145,178,0.4);  background: rgba(8,145,178,0.08);  }
+    .email   .node-type { color: #22d3ee; }
+    .sms     { border-color: rgba(5,150,105,0.4);  background: rgba(5,150,105,0.08);  }
+    .sms     .node-type { color: #34d399; }
+    .pipe    { border-color: rgba(239,66,55,0.4);  background: rgba(239,66,55,0.1);   }
+    .pipe    .node-type { color: #f87171; }
+    .nurture { border-color: rgba(100,116,139,0.4);background: rgba(100,116,139,0.07);}
+    .nurture .node-type { color: #94a3b8; }
+    .win     { border-color: rgba(22,163,74,0.5);  background: rgba(22,163,74,0.1);   }
+    .win     .node-type { color: #4ade80; }
+
+    .badge-red    { background: rgba(239,66,55,0.2);  color: #fca5a5; }
+    .badge-amber  { background: rgba(217,119,6,0.2);  color: #fcd34d; }
+    .badge-blue   { background: rgba(37,99,235,0.2);  color: #93c5fd; }
+    .badge-green  { background: rgba(22,163,74,0.2);  color: #86efac; }
+    .badge-slate  { background: rgba(100,116,139,0.2);color: #cbd5e1; }
+
+    /* ── ARROW SVG ───────────────────────────── */
+    .arrows-svg {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none; overflow: visible;
+    }
+    .arr { fill: none; stroke-width: 1.5; marker-end: url(#arrowhead); }
+    .arr-main   { stroke: rgba(239,66,55,0.6); }
+    .arr-branch { stroke: rgba(255,255,255,0.2); }
+    .arr-email  { stroke: rgba(8,145,178,0.5); stroke-dasharray: 4 3; }
+    .arr-back   { stroke: rgba(217,119,6,0.4); stroke-dasharray: 4 3; }
+
+    /* ── MAIN FUNNEL FLOW ────────────────────── */
+    .flow-main {
+      display: flex; align-items: flex-start; gap: 0;
+      position: relative;
+    }
+    .flow-col {
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      position: relative;
+    }
+    .flow-arrow {
+      width: 48px; display: flex; align-items: center; justify-content: center;
+      padding-top: 20px; flex-shrink: 0;
+    }
+    .flow-arrow svg { overflow: visible; }
+    .node-w220 { width: 220px; }
+    .node-w200 { width: 200px; }
+    .node-w180 { width: 180px; }
+
+    /* ── BRANCH SECTION ──────────────────────── */
+    .branch-section { position: relative; }
+    .branch-label {
+      font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.25); text-align: center; margin-bottom: 12px;
+    }
+    .branches {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+      position: relative;
+    }
+    .branch { display: flex; flex-direction: column; gap: 10px; position: relative; }
+    .branch-col-hot      { border-left: 2px solid rgba(239,66,55,0.4);   padding-left: 14px; }
+    .branch-col-warm     { border-left: 2px solid rgba(251,146,60,0.4);  padding-left: 14px; }
+    .branch-col-lukewarm { border-left: 2px solid rgba(250,204,21,0.4);  padding-left: 14px; }
+    .branch-col-notready { border-left: 2px solid rgba(100,116,139,0.4); padding-left: 14px; }
+
+    .branch-header {
+      font-size: 0.72rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.08em; margin-bottom: 2px; padding: 8px 12px; border-radius: 6px;
+    }
+    .bh-hot      { background: rgba(239,66,55,0.15);  color: #fca5a5; }
+    .bh-warm     { background: rgba(251,146,60,0.15); color: #fdba74; }
+    .bh-lukewarm { background: rgba(250,204,21,0.15); color: #fde047; }
+    .bh-notready { background: rgba(100,116,139,0.15);color: #cbd5e1; }
+
+    .branch-header small {
+      display: block; font-size: 0.6rem; opacity: 0.6; font-weight: 500;
+      text-transform: none; letter-spacing: 0; margin-top: 2px;
+    }
+
+    /* ── EMAIL SEQUENCE BOX ──────────────────── */
+    .seq-box {
+      border-radius: 8px; padding: 12px 14px;
+      border: 1px dashed rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.02);
+    }
+    .seq-title {
+      font-size: 0.72rem; font-weight: 700; color: #22d3ee; margin-bottom: 8px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .seq-step {
+      display: flex; gap: 8px; align-items: baseline;
+      padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.72rem;
+    }
+    .seq-step:last-child { border-bottom: none; }
+    .seq-day {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem; color: rgba(255,255,255,0.3);
+      min-width: 36px; flex-shrink: 0;
+    }
+    .seq-action { color: rgba(255,255,255,0.65); line-height: 1.35; }
+    .seq-action .cond { color: #fbbf24; font-size: 0.65rem; }
+    .seq-action .tag  { color: #a78bfa; font-size: 0.65rem; font-family: 'JetBrains Mono', monospace; }
+
+    /* ── PIPELINE ROW ────────────────────────── */
+    .pipeline-row {
+      display: flex; gap: 0; align-items: center; margin: 32px 0 8px;
+    }
+    .pipe-stage {
+      flex: 1; text-align: center; padding: 12px 8px; position: relative;
+    }
+    .pipe-stage-inner {
+      background: rgba(239,66,55,0.07); border: 1px solid rgba(239,66,55,0.2);
+      border-radius: 8px; padding: 10px 12px;
+    }
+    .pipe-stage-inner.active { background: rgba(239,66,55,0.15); border-color: rgba(239,66,55,0.5); }
+    .pipe-stage-inner.won    { background: rgba(22,163,74,0.1);  border-color: rgba(22,163,74,0.4); }
+    .pipe-stage-inner.lost   { background: rgba(100,116,139,0.1);border-color: rgba(100,116,139,0.3); }
+    .pipe-num  { font-size: 0.62rem; color: rgba(255,255,255,0.3); font-family: 'JetBrains Mono', monospace; }
+    .pipe-name { font-size: 0.75rem; font-weight: 700; color: white; line-height: 1.2; margin: 3px 0; }
+    .pipe-name.won-text  { color: #4ade80; }
+    .pipe-name.lost-text { color: #94a3b8; }
+    .pipe-arrow {
+      width: 20px; text-align: center; color: rgba(239,66,55,0.4); font-size: 0.75rem; flex-shrink: 0;
+    }
+
+    /* ── POST CALL ───────────────────────────── */
+    .postcall-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 12px;
+    }
+
+    /* ── CONNECTOR DOTS ─────────────────────── */
+    .connector-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--red);
+      margin: 0 auto; position: relative;
+    }
+    .connector-line-v {
+      width: 2px; background: linear-gradient(to bottom, rgba(239,66,55,0.5), rgba(239,66,55,0.1));
+      margin: 0 auto;
+    }
+    .connector-line-h {
+      height: 2px;
+      background: linear-gradient(to right, rgba(239,66,55,0.5), rgba(239,66,55,0.1));
+    }
+
+    /* ── SECTION WRAPPER ─────────────────────── */
+    .map-section { margin-bottom: 40px; position: relative; }
+    .section-title-row {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
+    }
+    .section-title-row h3 { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.3); }
+    .section-title-row hr { flex: 1; border: none; border-top: 1px solid rgba(255,255,255,0.06); }
+
+    /* ── MINI TAG ────────────────────────────── */
+    .tag-chip {
+      display: inline-block; padding: 2px 8px; border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 600;
+      background: rgba(167,139,250,0.15); color: #c4b5fd;
+      margin: 2px 2px 0 0;
+    }
+
+    .divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 32px 0; }
+
+    /* notification pill */
+    .notif {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 3px 9px; border-radius: 20px; font-size: 0.62rem; font-weight: 700;
+      background: rgba(34,197,94,0.15); color: #86efac;
+      margin-top: 5px;
+    }
+    .notif.sms-notif { background: rgba(8,145,178,0.15); color: #67e8f9; }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-title">Abstract Creative — <span>Mapa de Automatización GoHighLevel</span></div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#60a5fa"></div> Página</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div> Formulario GHL</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fbbf24"></div> Automatización</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#22d3ee"></div> Correo</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#34d399"></div> SMS</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f87171"></div> Pipeline</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#4ade80"></div> Ganado</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#94a3b8"></div> Nutrición</div>
+  </div>
+</div>
+
+<div class="canvas">
+
+  <!-- ══════════════════════════════════════════
+       PIPELINE OVERVIEW
+  ══════════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-title-row"><h3>Etapas del Pipeline</h3><hr></div>
+    <div class="pipeline-row">
+      <div class="pipe-stage"><div class="pipe-stage-inner active">
+        <div class="pipe-num">01</div>
+        <div class="pipe-name">Nuevo Lead</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner">
+        <div class="pipe-num">02</div>
+        <div class="pipe-name">Diagnóstico Completado</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner active">
+        <div class="pipe-num">03</div>
+        <div class="pipe-name">Calificado Prioritario</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner">
+        <div class="pipe-num">04</div>
+        <div class="pipe-name">Calificado Sólido</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner">
+        <div class="pipe-num">05</div>
+        <div class="pipe-name">Exploratorio</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner active">
+        <div class="pipe-num">06</div>
+        <div class="pipe-name">Llamada Reservada</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner">
+        <div class="pipe-num">07</div>
+        <div class="pipe-name">Llamada Completada</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner">
+        <div class="pipe-num">08</div>
+        <div class="pipe-name">Propuesta Enviada</div>
+      </div></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner won">
+        <div class="pipe-num">09</div>
+        <div class="pipe-name won-text">Ganado / Cliente</div>
+      </div></div>
+      <div class="pipe-arrow" style="color:rgba(100,116,139,0.4)">↔</div>
+      <div class="pipe-stage"><div class="pipe-stage-inner lost">
+        <div class="pipe-num">—</div>
+        <div class="pipe-name lost-text">No Es Ajuste / Nutrición</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       FUNNEL ENTRY: DIAGNOSTIC
+  ══════════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-title-row"><h3>Punto de Entrada A — Embudo de Descarga del Diagnóstico</h3><hr></div>
+
+    <div class="flow-main">
+
+      <!-- Step 1: Diagnostic Page -->
+      <div class="flow-col">
+        <div class="node page node-w220">
+          <div class="node-type">Página del Sitio</div>
+          <div class="node-title">Página del Diagnóstico</div>
+          <div class="node-sub">diagnostico/index.html</div>
+        </div>
+        <div class="node form node-w220">
+          <div class="node-type">Formulario GHL</div>
+          <div class="node-title">Obtener el Diagnóstico</div>
+          <div class="node-sub"><span class="id">KZusvBcslwv4UmD2Ywh1</span></div>
+          <div class="node-badge badge-blue">Captura: Nombre · Correo · Empresa</div>
+        </div>
+      </div>
+
+      <!-- Arrow 1 -->
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a1)"/></svg>
+      </div>
+
+      <!-- Step 2: Automation 1 -->
+      <div class="flow-col">
+        <div class="node auto node-w220">
+          <div class="node-type">Automatización 1</div>
+          <div class="node-title">Secuencia de Descarga del Diagnóstico</div>
+          <div class="node-sub">Se activa al enviar el formulario</div>
+          <div class="tag-chip">diagnostic-download</div>
+          <div class="tag-chip">pipeline: New Lead</div>
+        </div>
+        <div class="seq-box" style="width:220px; margin-top:6px;">
+          <div class="seq-title">📧 Secuencia de 5 Correos</div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">Entrega de PDF + cómo puntuarte</div></div>
+          <div class="seq-step"><div class="seq-day">Day 2</div><div class="seq-action">"¿Puntuaste tu marca?"</div></div>
+          <div class="seq-step"><div class="seq-day">Day 4</div><div class="seq-action">Invitación al Diagnóstico Estratégico</div></div>
+          <div class="seq-step"><div class="seq-day">Day 7</div><div class="seq-action"><span class="cond">si no hay diagnóstico</span> — Impulso de prueba social</div></div>
+          <div class="seq-step"><div class="seq-day">Day 14</div><div class="seq-action"><span class="cond">si no hay diagnóstico</span> — Nutrición educativa</div></div>
+          <div class="seq-step"><div class="seq-day">Day 21</div><div class="seq-action"><span class="cond">si no hay diagnóstico</span> → <span class="tag">long-term-nurture</span></div></div>
+        </div>
+      </div>
+
+      <!-- Arrow 2 -->
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a2)"/></svg>
+      </div>
+
+      <!-- Step 3: TY Page -->
+      <div class="flow-col">
+        <div class="node page node-w200">
+          <div class="node-type">Página de Agradecimiento</div>
+          <div class="node-title">Diagnóstico Descargado</div>
+          <div class="node-sub">gracias/diagnostico/index.html</div>
+          <div class="node-badge badge-blue" style="margin-top:6px;">CTA → Take Strategy Assessment</div>
+        </div>
+      </div>
+
+      <!-- Arrow 3 -->
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a3)"/></svg>
+      </div>
+
+      <!-- Step 4: Assessment -->
+      <div class="flow-col">
+        <div class="node page node-w220">
+          <div class="node-type">Página del Sitio</div>
+          <div class="node-title">Diagnóstico Estratégico</div>
+          <div class="node-sub">evaluacion/index.html</div>
+        </div>
+        <div class="node form node-w220">
+          <div class="node-type">Formulario GHL</div>
+          <div class="node-title">Diagnóstico Estratégico</div>
+          <div class="node-sub"><span class="id">1oNttPasxe2sTQQWcck6</span></div>
+          <div class="node-badge badge-amber">Enruta según: campo Nivel de Calificación</div>
+        </div>
+        <div class="node auto node-w220" style="margin-top:2px;">
+          <div class="node-type">Automatización 2 — Enrutador</div>
+          <div class="node-title">Envío del Diagnóstico + Enrutamiento</div>
+          <div class="node-sub">Detiene Automatización 1 · Establece nivel · Ramifica ↓</div>
+          <div class="tag-chip">assessment-complete</div>
+          <div class="tag-chip">pipeline: Assessment Taken</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       ASSESSMENT RESULT BRANCHES
+  ══════════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-title-row"><h3>Ramas del Diagnóstico — 4 Caminos de Calificación</h3><hr></div>
+    <div class="branch-label">↓ enruta aquí basado en el valor del campo personalizado Nivel de Calificación ↓</div>
+
+    <div class="branches">
+
+      <!-- ── HOT ── -->
+      <div class="branch branch-col-hot">
+        <div class="branch-header bh-hot">🔴 Lead Prioritario<small>Autoridad ejecutiva · Cronograma inmediato</small></div>
+
+        <div class="node pipe" style="margin:0;">
+          <div class="node-type">Página de Resultado</div>
+          <div class="node-title">Calificado Prioritario</div>
+          <div class="node-sub">evaluacion/calificado/calificado-prioritario.html</div>
+          <div class="tag-chip">qualified-hot</div>
+          <div class="tag-chip">pipeline: Hot Qualified</div>
+        </div>
+
+        <div class="node auto" style="margin:0;">
+          <div class="node-type">Automatización 3 — Prioritaria</div>
+          <div class="node-title">Secuencia de Lead Prioritario</div>
+          <div class="notif">🔔 Propietario: SMS + Correo (inmediato)</div>
+        </div>
+
+        <div class="seq-box">
+          <div class="seq-title">📧 + 💬 Secuencia</div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">Correo: "Eres un ajuste sólido" + enlace de calendario</div></div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">SMS: Invitación personal para reservar</div></div>
+          <div class="seq-step"><div class="seq-day">Day 1</div><div class="seq-action"><span class="cond">si no hay reserva</span> — Correo: preparación + enlace</div></div>
+          <div class="seq-step"><div class="seq-day">Day 2</div><div class="seq-action"><span class="cond">si no hay reserva</span> — Seguimiento SMS</div></div>
+          <div class="seq-step"><div class="seq-day">Day 4</div><div class="seq-action"><span class="cond">si no hay reserva</span> — Correo: manejo de objeciones</div></div>
+          <div class="seq-step"><div class="seq-day">Day 8</div><div class="seq-action"><span class="cond">si no hay reserva</span> → <span class="tag">long-term-nurture</span></div></div>
+        </div>
+
+        <div class="node form" style="margin:0;">
+          <div class="node-type">Calendario GHL</div>
+          <div class="node-title">Reservar Llamada Estratégica de Ajuste</div>
+          <div class="node-sub"><span class="id">vAThrbufC2Acw3utk7J4_priority</span></div>
+        </div>
+      </div>
+
+      <!-- ── WARM ── -->
+      <div class="branch branch-col-warm">
+        <div class="branch-header bh-warm">🟠 Lead Sólido<small>Buen ajuste · Brecha de momento o presupuesto</small></div>
+
+        <div class="node auto" style="margin:0;">
+          <div class="node-type">Página de Resultado</div>
+          <div class="node-title">Calificado Sólido</div>
+          <div class="node-sub">evaluacion/calificado/calificado-solido.html</div>
+          <div class="tag-chip">qualified-warm</div>
+          <div class="tag-chip">pipeline: Warm Qualified</div>
+        </div>
+
+        <div class="node auto" style="margin:0;">
+          <div class="node-type">Automatización 4 — Sólida</div>
+          <div class="node-title">Secuencia de Lead Sólido</div>
+          <div class="notif">📬 Propietario: Notificación por correo</div>
+        </div>
+
+        <div class="seq-box">
+          <div class="seq-title">📧 Secuencia de 4 Correos</div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">Correo: Resultado personalizado + enlace de calendario</div></div>
+          <div class="seq-step"><div class="seq-day">Day 3</div><div class="seq-action"><span class="cond">si no hay reserva</span> — Qué cubre una llamada de ajuste</div></div>
+          <div class="seq-step"><div class="seq-day">Day 7</div><div class="seq-action"><span class="cond">si no hay reserva</span> — Caso de estudio / prueba social</div></div>
+          <div class="seq-step"><div class="seq-day">Day 12</div><div class="seq-action"><span class="cond">si no hay reserva</span> — Correo de última oportunidad</div></div>
+          <div class="seq-step"><div class="seq-day">Day 18</div><div class="seq-action"><span class="cond">si no hay reserva</span> → <span class="tag">long-term-nurture</span></div></div>
+        </div>
+
+        <div class="node form" style="margin:0;">
+          <div class="node-type">Calendario GHL</div>
+          <div class="node-title">Reservar Llamada Estratégica de Ajuste</div>
+          <div class="node-sub"><span class="id">vAThrbufC2Acw3utk7J4_warm</span></div>
+        </div>
+      </div>
+
+      <!-- ── LUKEWARM ── -->
+      <div class="branch branch-col-lukewarm">
+        <div class="branch-header bh-lukewarm">🟡 Tibio<small>Potencial · Brecha de momento / alineación</small></div>
+
+        <div class="node nurture" style="margin:0;">
+          <div class="node-type">Página de Resultado</div>
+          <div class="node-title">Calificado Exploratorio</div>
+          <div class="node-sub">evaluacion/calificado/calificado-tibio.html</div>
+          <div class="tag-chip">qualified-lukewarm</div>
+          <div class="tag-chip">pipeline: Exploratory</div>
+        </div>
+
+        <div class="node auto" style="margin:0;">
+          <div class="node-type">Automatización 5 — Tibia</div>
+          <div class="node-title">Secuencia de Recursos + Nutrición</div>
+          <div style="font-size:0.68rem; color:rgba(255,255,255,0.35); margin-top:4px;">Sin notificación al propietario</div>
+        </div>
+
+        <div class="seq-box">
+          <div class="seq-title">📧 Secuencia de Recursos</div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">Correo: Resultados + Lista de Preparación</div></div>
+          <div class="seq-step"><div class="seq-day">Day 5</div><div class="seq-action">Correo: "Costo del posicionamiento poco claro"</div></div>
+          <div class="seq-step"><div class="seq-day">Day 10</div><div class="seq-action">Correo: Calculadora de Brechas de Ingresos</div></div>
+          <div class="seq-step"><div class="seq-day">Day 20</div><div class="seq-action">Correo: "Cuando el momento sea correcto..."</div></div>
+          <div class="seq-step"><div class="seq-day">Day 30</div><div class="seq-action">→ <span class="tag">long-term-nurture</span> (trimestral)</div></div>
+        </div>
+
+        <div class="node nurture" style="margin:0;">
+          <div class="node-type">Recursos Entregados</div>
+          <div class="node-title">Lista de Preparación · Calculadora de Brechas de Ingresos</div>
+          <div class="node-sub">Enlace de calendario opcional disponible</div>
+        </div>
+      </div>
+
+      <!-- ── NOT READY ── -->
+      <div class="branch branch-col-notready">
+        <div class="branch-header bh-notready">⚫ No Listo<small>Sin autoridad · Sin presupuesto · Sin alineación</small></div>
+
+        <div class="node nurture" style="margin:0;">
+          <div class="node-type">Página de Resultado</div>
+          <div class="node-title">No Listo</div>
+          <div class="node-sub">evaluacion/no-listo/index.html</div>
+          <div class="tag-chip">not-ready</div>
+          <div class="tag-chip">pipeline: Nurture</div>
+        </div>
+
+        <div class="node auto" style="margin:0;">
+          <div class="node-type">Automatización 6 — No Listo</div>
+          <div class="node-title">Secuencia Educativa</div>
+          <div style="font-size:0.68rem; color:rgba(255,255,255,0.35); margin-top:4px;">Sin notificación al propietario</div>
+        </div>
+
+        <div class="seq-box">
+          <div class="seq-title">📧 Secuencia a Largo Plazo</div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">Correo: "Tomaste la decisión correcta" + recursos</div></div>
+          <div class="seq-step"><div class="seq-day">Day 7</div><div class="seq-action">Correo: Educación sobre estrategia de posicionamiento</div></div>
+          <div class="seq-step"><div class="seq-day">Day 30</div><div class="seq-action">→ Lista del boletín mensual</div></div>
+          <div class="seq-step"><div class="seq-day">Day 90</div><div class="seq-action">Re-activación: "¿Ha cambiado algo?"</div></div>
+        </div>
+
+        <div class="node nurture" style="margin:0;">
+          <div class="node-type">Recursos Entregados</div>
+          <div class="node-title">Diagnóstico · Calculadora de Ingresos · Lista · Lista de Espera</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       FIT CALL BOOKING
+  ══════════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-title-row"><h3>Automatización de Llamada de Ajuste — Reserva → Disposición Post-Llamada</h3><hr></div>
+
+    <div class="flow-main">
+
+      <!-- Booking trigger -->
+      <div class="flow-col">
+        <div class="node form node-w220">
+          <div class="node-type">Calendario GHL</div>
+          <div class="node-title">Llamada Estratégica de Ajuste Reservada</div>
+          <div class="node-sub"><span class="id">vAThrbufC2Acw3utk7J4</span></div>
+          <div class="tag-chip">fit-call-booked</div>
+          <div class="tag-chip">pipeline: Fit Call Booked</div>
+        </div>
+      </div>
+
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a4" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a4)"/></svg>
+      </div>
+
+      <!-- Automation 7 -->
+      <div class="flow-col">
+        <div class="node auto node-w220">
+          <div class="node-type">Automatización 7 — Llamada de Ajuste</div>
+          <div class="node-title">Confirmación de Reserva + Recordatorios</div>
+          <div class="node-sub">Detiene todas las secuencias activas del contacto</div>
+        </div>
+        <div class="seq-box" style="width:220px;">
+          <div class="seq-title">📧 + 💬 Pre-Llamada</div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">Correo: Confirmación + guía de preparación + qué esperar</div></div>
+          <div class="seq-step"><div class="seq-day">-24h</div><div class="seq-action">Correo + SMS: Recordatorio del día anterior</div></div>
+          <div class="seq-step"><div class="seq-day">-1h</div><div class="seq-action">SMS: Recordatorio de 1 hora</div></div>
+        </div>
+      </div>
+
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a5" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a5)"/></svg>
+      </div>
+
+      <!-- No-show fork + completion -->
+      <div class="flow-col" style="gap:12px;">
+        <div class="node pipe node-w220">
+          <div class="node-type">Disposición — Llamada Ocurrida</div>
+          <div class="node-title">Cita Completada</div>
+          <div class="node-sub">Propietario marca manualmente en GHL</div>
+          <div class="tag-chip">fit-call-completed</div>
+          <div class="tag-chip">pipeline: Fit Call Complete</div>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; width:220px;">
+          <div style="flex:1;height:1px;background:rgba(239,66,55,0.2);"></div>
+          <div style="font-size:0.65rem;color:rgba(255,255,255,0.2);">or</div>
+          <div style="flex:1;height:1px;background:rgba(100,116,139,0.2);"></div>
+        </div>
+        <div class="node nurture node-w220">
+          <div class="node-type">Disposición — No Se Presentó</div>
+          <div class="node-title">Cita No Asistida</div>
+          <div class="node-sub">Activa Automatización 7b</div>
+          <div class="tag-chip">fit-call-noshow</div>
+        </div>
+        <div class="seq-box" style="width:220px;">
+          <div class="seq-title">💬 Recuperación de No-Presentado</div>
+          <div class="seq-step"><div class="seq-day">Day 0</div><div class="seq-action">Correo + SMS: "Te extrañamos — fácil de reagendar"</div></div>
+          <div class="seq-step"><div class="seq-day">Day 3</div><div class="seq-action">Segundo intento de reagendamiento</div></div>
+          <div class="seq-step"><div class="seq-day">Day 7</div><div class="seq-action"><span class="cond">si no reagenda</span> → retomar secuencia sólida</div></div>
+        </div>
+      </div>
+
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a6" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a6)"/></svg>
+      </div>
+
+      <!-- Post-call disposition -->
+      <div class="flow-col" style="gap:10px;">
+        <div style="font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.25); text-align:center;">Automation 8 — Post-Call Disposition</div>
+        <div class="node win node-w200">
+          <div class="node-type">Resultado: Ganado</div>
+          <div class="node-title">Mover → Propuesta Enviada</div>
+          <div class="node-sub">Enviar secuencia de seguimiento de propuesta</div>
+          <div class="tag-chip">proposal-sent</div>
+        </div>
+        <div class="node nurture node-w200">
+          <div class="node-type">Resultado: No Es Ajuste</div>
+          <div class="node-title">Mover → Nutrición</div>
+          <div class="node-sub">Correo de salida elegante · Contenido mensual</div>
+          <div class="tag-chip">not-a-fit</div>
+        </div>
+        <div class="node auto node-w200">
+          <div class="node-type">Resultado: Seguimiento</div>
+          <div class="node-title">Tarea del Propietario Creada</div>
+          <div class="node-sub">Enviar correo de "próximos pasos" · Programar seguimiento</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       ENTRY POINT B: CONTACT FORM
+  ══════════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-title-row"><h3>Punto de Entrada B — Formulario de Contacto Directo</h3><hr></div>
+
+    <div class="flow-main">
+      <div class="flow-col">
+        <div class="node page node-w220">
+          <div class="node-type">Página del Sitio</div>
+          <div class="node-title">Página de Contacto</div>
+          <div class="node-sub">contacto/index.html</div>
+        </div>
+        <div class="node form node-w220">
+          <div class="node-type">Formulario GHL</div>
+          <div class="node-title">Formulario de Contacto</div>
+          <div class="node-sub"><span class="id">r8cRGeaDMASeAkHFDthA</span></div>
+        </div>
+      </div>
+
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a7" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a7)"/></svg>
+      </div>
+
+      <div class="flow-col">
+        <div class="node auto node-w220">
+          <div class="node-type">Automatización 9 — Enrutador de Contacto</div>
+          <div class="node-title">Envío del Formulario de Contacto</div>
+          <div class="notif">🔔 Propietario: SMS + Correo inmediatos</div>
+        </div>
+      </div>
+
+      <div class="flow-arrow">
+        <svg width="48" height="24" viewBox="0 0 48 24"><defs><marker id="a8" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,66,55,0.7)"/></marker></defs><line x1="0" y1="12" x2="42" y2="12" stroke="rgba(239,66,55,0.6)" stroke-width="1.5" marker-end="url(#a8)"/></svg>
+      </div>
+
+      <div class="flow-col" style="gap:10px;">
+        <div style="font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.25);">Rama Condicional</div>
+        <div class="node pipe node-w220">
+          <div class="node-type">Tiene etiqueta assessment-complete</div>
+          <div class="node-title">Enrutar como Lead Calificado</div>
+          <div class="node-sub">Propietario notificado con contexto completo del diagnóstico · Omitir secuencia de diagnóstico</div>
+        </div>
+        <div class="node auto node-w220">
+          <div class="node-type">Sin etiquetas previas</div>
+          <div class="node-title">Nuevo Contacto</div>
+          <div class="node-sub">Tag: contact-form · Pipeline: New Lead · Confirmation email sent · Owner task: follow up &lt;24hrs</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       LONG-TERM NURTURE
+  ══════════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-title-row"><h3>Nutrición a Largo Plazo — Todos los Caminos Convergen Aquí</h3><hr></div>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:16px;">
+
+      <div class="node nurture">
+        <div class="node-type">Condiciones de Entrada</div>
+        <div class="node-title">Quién Entra a Nutrición</div>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:4px;">
+          <div class="tag-chip">diagnostic-download (no assessment after 21d)</div>
+          <div class="tag-chip">qualified-hot (no booking after 8d)</div>
+          <div class="tag-chip">qualified-warm (no booking after 18d)</div>
+          <div class="tag-chip">qualified-lukewarm (after 30d)</div>
+          <div class="tag-chip">not-ready (immediate)</div>
+          <div class="tag-chip">not-a-fit (post-call)</div>
+        </div>
+      </div>
+
+      <div class="node email">
+        <div class="node-type">Rotación de Contenido Mensual</div>
+        <div class="node-title">Secuencia de Nutrición a Largo Plazo</div>
+        <div class="seq-box" style="margin-top:10px;">
+          <div class="seq-step"><div class="seq-day">Mo 1</div><div class="seq-action">Caso de estudio de cliente / muestra de trabajo</div></div>
+          <div class="seq-step"><div class="seq-day">Mo 2</div><div class="seq-action">Educativo: perspectiva sobre estrategia de posicionamiento</div></div>
+          <div class="seq-step"><div class="seq-day">Mo 3</div><div class="seq-action">Invitación a re-diagnóstico: "¿Estás listo ahora?"</div></div>
+          <div class="seq-step"><div class="seq-day">Mo 4</div><div class="seq-action">Perspectiva de industria / liderazgo de pensamiento</div></div>
+          <div class="seq-step"><div class="seq-day">Mo 6</div><div class="seq-action">Re-activación: "¿Ha cambiado algo?"</div></div>
+        </div>
+      </div>
+
+      <div class="node auto">
+        <div class="node-type">Disparador de Re-Entrada</div>
+        <div class="node-title">Nutrición → Embudo Activo</div>
+        <div style="margin-top:8px; font-size:0.78rem; color:rgba(255,255,255,0.55); line-height:1.6;">
+          Si el contacto hace clic en "Volver a Tomar el Diagnóstico" desde cualquier correo de nutrición:<br><br>
+          <span class="tag-chip">assessment-complete removed</span><br>
+          <span class="tag-chip">long-term-nurture removed</span><br>
+          <br>Vuelve a entrar en Automatización 2 (Enrutador de Diagnóstico) con enrutamiento actualizado basado en el nuevo resultado.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       IMPLEMENTATION CHECKLIST
+  ══════════════════════════════════════════ -->
+  <div class="map-section">
+    <div class="section-title-row"><h3>Lista de Verificación de Configuración GHL</h3><hr></div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+
+      <div class="node auto">
+        <div class="node-type">Paso 1 — Campos Personalizados</div>
+        <div class="node-title">Crear en GHL → Contactos</div>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:5px; font-size:0.76rem; color:rgba(255,255,255,0.6); line-height:1.5;">
+          <div>□ Nivel de Calificación (Desplegable: Prioritario / Sólido / Tibio / No Listo)</div>
+          <div>□ Puntuación del Lead (Número)</div>
+          <div>□ Diagnóstico Completado (Casilla)</div>
+          <div>□ Diagnóstico Descargado (Casilla)</div>
+          <div>□ Rango de Ingresos de la Empresa (Desplegable)</div>
+          <div>□ Autoridad de Decisión (Desplegable)</div>
+          <div>□ Etapa de Compromiso (Texto)</div>
+        </div>
+      </div>
+
+      <div class="node form">
+        <div class="node-type">Paso 2 — Mapeo de Campos del Formulario</div>
+        <div class="node-title">Mapear respuestas del diagnóstico → campos personalizados</div>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:5px; font-size:0.76rem; color:rgba(255,255,255,0.6); line-height:1.5;">
+          <div>□ Resultado del diagnóstico → Campo Nivel de Calificación</div>
+          <div>□ Nombre de empresa → Campo Empresa</div>
+          <div>□ Teléfono → Teléfono (con copia de opt-in SMS)</div>
+          <div>□ Rango de ingresos → Campo personalizado</div>
+          <div>□ Autoridad de decisión → Campo personalizado</div>
+          <div>□ Mapear fuente de calendario por nivel (Prioritario / Sólido / Tibio)</div>
+        </div>
+      </div>
+
+      <div class="node pipe">
+        <div class="node-type">Paso 3 — Condiciones de Meta del Flujo de Trabajo</div>
+        <div class="node-title">Agregar a cada secuencia activa</div>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:5px; font-size:0.76rem; color:rgba(255,255,255,0.6); line-height:1.5;">
+          <div>□ Automation 1: Stop when <span class="tag-chip" style="font-size:0.6rem;">assessment-complete</span> added</div>
+          <div>□ Automations 3/4/5: Stop when <span class="tag-chip" style="font-size:0.6rem;">fit-call-booked</span> added</div>
+          <div>□ Automation 7: Stop when appointment marked complete or no-show</div>
+          <div>□ Nurture: Stop when contact re-enters active sequence</div>
+          <div>□ All sequences: Stop if tagged <span class="tag-chip" style="font-size:0.6rem;">client</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

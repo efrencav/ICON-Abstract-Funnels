@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'SF Pro Text';
+    src: local('SF Pro Text Regular'), local('SFProText-Regular'),
+        url('../webfonts/SFProText-Regular.woff2') format('woff2'),
+        url('../webfonts/SFProText-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: local('SF Pro Text Medium'), local('SFProText-Medium'),
+        url('../webfonts/SFProText-Medium.woff2') format('woff2'),
+        url('../webfonts/SFProText-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: local('SF Pro Text Semibold'), local('SFProText-Semibold'),
+        url('../webfonts/SFProText-Semibold.woff2') format('woff2'),
+        url('../webfonts/SFProText-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: local('SF Pro Text HeavyItalic'), local('SFProText-HeavyItalic'),
+        url('../webfonts/SFProText-HeavyItalic.woff2') format('woff2'),
+        url('../webfonts/SFProText-HeavyItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: local('SF Pro Text Light'), local('SFProText-Light'),
+        url('../webfonts/SFProText-Light.woff2') format('woff2'),
+        url('../webfonts/SFProText-Light.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: local('SF Pro Text Bold'), local('SFProText-Bold'),
+        url('../webfonts/SFProText-Bold.woff2') format('woff2'),
+        url('../webfonts/SFProText-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
