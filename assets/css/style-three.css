@@ -10038,7 +10038,8 @@ p,
 ul,
 li,
 ol,
-a {
+a,
+span {
   font-family: "Open Sans", sans-serif;
 }
 
