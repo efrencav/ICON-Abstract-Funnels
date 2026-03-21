@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Positioning Statement Builder | Abstract Creative</title>
+  <meta name="description" content="A structured template to draft and pressure-test your positioning statement — with prompts for audience, differentiation, proof, and five named failure tests." />
+  <meta name="keywords" content="positioning statement template, positioning statement builder, brand positioning, professional services positioning, Abstract Creative" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Positioning Statement Builder | Abstract Creative" />
+  <meta property="og:description" content="Draft and pressure-test your positioning statement with this structured template for professional services firms." />
+  <meta property="og:url" content="https://abstract-creative.com/resources/positioning-statement-builder.html" />
+  <meta property="og:image" content="https://abstract-creative.com/assets/images/og/abstract-creative-og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Positioning Statement Builder | Abstract Creative" />
+  <meta name="twitter:description" content="Draft and pressure-test your positioning statement with this structured template for professional services firms." />
+  <meta name="twitter:image" content="https://abstract-creative.com/assets/images/og/abstract-creative-og.jpg" />
+  <link rel="shortcut icon" href="../assets/images/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/ClashGrotesk.min.css" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:    #1a1a1a;
+      --red:      #EF4237;
+      --red-dark: #d63328;
+      --muted:    #555;
+      --light:    #888;
+      --border:   #d6dbd9;
+      --bg:       #f7f7f7;
+      --white:    #ffffff;
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      font-family: "Open Sans", sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.7;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page { max-width: 760px; margin: 0 auto; padding: 48px 40px; }
+
+    /* ─── Type ─── */
+    h1, h2, h3, h4, h5 { font-family: "Clash Grotesk", sans-serif; line-height: 1.2; }
+    h1 { font-size: 2.8rem; font-weight: 700; color: var(--black); }
+    h2 { font-size: 1.1rem; font-weight: 700; color: var(--white); }
+    h3 { font-size: 1rem;   font-weight: 600; color: var(--black); }
+    h4 { font-size: .88rem; font-weight: 600; color: var(--black); }
+    h5 { font-size: .78rem; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: .1em; }
+    p  { color: var(--muted); font-size: .93rem; }
+    strong { color: var(--black); }
+
+    /* ─── Logo strip ─── */
+    .logo-strip {
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px; margin-bottom: 36px;
+    }
+    .logo-strip img { height: 56px; }
+    .logo-strip .doc-label { font-size: .75rem; color: var(--light); text-align: right; line-height: 1.6; }
+
+    /* ─── Cover ─── */
+    .cover { margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+    .cover h5 { margin-bottom: 12px; }
+    .cover h1 { margin-bottom: 14px; }
+    .cover .subtitle { font-size: 1rem; color: var(--muted); max-width: 580px; line-height: 1.65; }
+    .cover-meta { display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+    .cover-meta span { font-size: .78rem; color: var(--light); font-weight: 500; }
+    .cover-meta span strong { color: var(--black); font-size: .78rem; }
+
+    /* ─── Intro box ─── */
+    .intro-box {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 5px; padding: 20px 24px; margin-bottom: 44px;
+    }
+    .intro-box h4 { margin-bottom: 8px; }
+    .intro-box p  { font-size: .88rem; }
+    .intro-box p + p { margin-top: 8px; }
+
+    /* ─── Part blocks ─── */
+    .part { margin-bottom: 36px; break-inside: avoid; }
+
+    .part-header {
+      background: var(--black); border-radius: 5px 5px 0 0;
+      padding: 12px 20px; display: flex; align-items: center; gap: 14px;
+    }
+    .part-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--red); color: var(--white);
+      font-family: "Clash Grotesk", sans-serif; font-weight: 700; font-size: .82rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .part-body {
+      border: 1px solid var(--border); border-top: none;
+      border-radius: 0 0 5px 5px; padding: 22px 24px;
+    }
+    .part-body > p { margin-bottom: 14px; font-size: .88rem; }
+    .part-body > p:last-child { margin-bottom: 0; }
+
+    /* ─── Prompt row ─── */
+    .prompt-row {
+      display: grid; grid-template-columns: 180px 1fr;
+      gap: 12px; align-items: start; margin-bottom: 14px;
+    }
+    .prompt-row:last-child { margin-bottom: 0; }
+    .prompt-label {
+      font-size: .78rem; font-weight: 600; color: var(--light);
+      text-transform: uppercase; letter-spacing: .06em;
+      padding-top: 4px; line-height: 1.4;
+    }
+    .prompt-label em { font-style: normal; display: block; font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--light); font-size: .75rem; margin-top: 2px; }
+    .answer-lines { display: flex; flex-direction: column; gap: 7px; }
+    .answer-lines span { display: block; border-bottom: 1px solid var(--border); height: 22px; }
+
+    /* ─── Differentiator tests ─── */
+    .test-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+    .test-card {
+      border: 1px solid var(--border); border-radius: 4px; padding: 14px 16px;
+    }
+    .test-card .test-label {
+      font-size: .72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .08em; margin-bottom: 6px;
+    }
+    .test-card.pass .test-label { color: var(--black); }
+    .test-card.fail .test-label { color: var(--red); }
+    .test-card p { font-size: .82rem; margin-bottom: 10px; }
+    .test-card p:last-child { margin-bottom: 0; }
+
+    /* ─── Assembly section ─── */
+    .assembly {
+      background: var(--black); border-radius: 6px;
+      padding: 26px 28px; margin-bottom: 36px; break-inside: avoid;
+    }
+    .assembly h3 { color: var(--white); margin-bottom: 6px; }
+    .assembly .assembly-sub { color: rgba(255,255,255,.55); font-size: .83rem; margin-bottom: 20px; }
+    .assembly-formula {
+      background: rgba(255,255,255,.07); border-radius: 4px;
+      padding: 14px 18px; margin-bottom: 20px;
+    }
+    .assembly-formula p {
+      font-family: "Clash Grotesk", sans-serif; font-size: .88rem;
+      font-weight: 500; color: rgba(255,255,255,.75); line-height: 1.8; margin: 0;
+    }
+    .assembly-formula span { color: var(--red); }
+    .assembly-write-label {
+      font-size: .72rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: .08em; color: rgba(255,255,255,.4); margin-bottom: 8px;
+    }
+    .assembly-lines { display: flex; flex-direction: column; gap: 8px; }
+    .assembly-lines span { display: block; border-bottom: 1px solid rgba(255,255,255,.15); height: 26px; }
+
+    /* ─── Pressure test ─── */
+    .pressure-test { margin-bottom: 36px; break-inside: avoid; }
+    .pt-header {
+      background: var(--black); border-radius: 5px 5px 0 0; padding: 12px 20px;
+    }
+    .pt-header h3 { color: var(--white); font-size: .95rem; }
+    .pt-header p  { color: rgba(255,255,255,.5); font-size: .8rem; margin-top: 3px; }
+    .pt-body { border: 1px solid var(--border); border-top: none; border-radius: 0 0 5px 5px; }
+    .pt-row {
+      display: grid; grid-template-columns: auto 1fr auto;
+      gap: 16px; padding: 14px 18px; border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .pt-row:last-child { border-bottom: none; }
+    .pt-num {
+      width: 22px; height: 22px; border-radius: 50%;
+      border: 1.5px solid var(--border); color: var(--light);
+      font-family: "Clash Grotesk", sans-serif; font-weight: 700; font-size: .72rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+    }
+    .pt-text h4 { font-size: .88rem; margin-bottom: 3px; }
+    .pt-text p  { font-size: .82rem; margin: 0; }
+    .pt-result {
+      display: flex; gap: 12px; flex-shrink: 0; margin-top: 2px;
+    }
+    .pt-result label {
+      display: flex; align-items: center; gap: 5px;
+      font-size: .78rem; color: var(--light); font-weight: 600; cursor: pointer;
+    }
+    .pt-result input[type="checkbox"] {
+      width: 14px; height: 14px; accent-color: var(--black); cursor: pointer;
+    }
+
+    /* ─── Revision box ─── */
+    .revision-box {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 22px 24px; margin-bottom: 36px;
+    }
+    .revision-box h3 { margin-bottom: 6px; }
+    .revision-box p  { font-size: .88rem; margin-bottom: 14px; }
+    .revision-lines { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+    .revision-lines span { display: block; border-bottom: 1px solid var(--border); height: 26px; }
+
+    /* ─── Next steps ─── */
+    .next-steps { border: 2px solid var(--red); border-radius: 6px; padding: 24px 28px; break-inside: avoid; }
+    .next-steps h3 { color: var(--red); margin-bottom: 16px; }
+    .next-step-item { display: flex; gap: 14px; margin-bottom: 16px; align-items: flex-start; }
+    .next-step-item:last-child { margin-bottom: 0; }
+    .step-num {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--red); color: var(--white);
+      font-family: "Clash Grotesk", sans-serif; font-weight: 700; font-size: .8rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+    }
+    .step-text { font-size: .88rem; color: var(--muted); }
+    .step-text strong { color: var(--black); display: block; margin-bottom: 3px; }
+    .step-text .url { color: var(--black); font-weight: 600; font-size: .83rem; }
+
+    /* ─── Footer ─── */
+    .doc-footer {
+      margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .doc-footer p { font-size: .75rem; color: #aaa; }
+    .doc-footer a { color: var(--black); text-decoration: none; }
+
+    /* ─── Buttons ─── */
+    .download-btn {
+      position: fixed; top: 28px; right: 28px;
+      background: var(--red); color: #fff;
+      font-family: "Clash Grotesk", sans-serif; font-weight: 600; font-size: .9rem;
+      padding: 13px 22px; border: none; border-radius: 4px; cursor: pointer;
+      display: flex; align-items: center; gap: 8px;
+      box-shadow: 0 4px 16px rgba(239,66,55,.35);
+      transition: background .15s, transform .1s; z-index: 999;
+    }
+    .download-btn:hover { background: var(--red-dark); transform: translateY(-1px); }
+    .download-btn:active { transform: translateY(0); }
+
+    .back-btn {
+      position: fixed; top: 28px; left: 28px;
+      background: var(--white); color: var(--black);
+      font-family: "Clash Grotesk", sans-serif; font-weight: 600; font-size: .9rem;
+      padding: 13px 22px; border: 1.5px solid var(--border); border-radius: 4px;
+      cursor: pointer; display: flex; align-items: center; gap: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.08);
+      transition: border-color .15s, transform .1s; z-index: 999; text-decoration: none;
+    }
+    .back-btn:hover { border-color: var(--black); transform: translateY(-1px); }
+    .back-btn:active { transform: translateY(0); }
+
+    @media print {
+      .download-btn { display: none; }
+      .back-btn { display: none; }
+      .part { break-inside: avoid; }
+      .assembly { break-inside: avoid; }
+      .pressure-test { break-inside: avoid; }
+      .next-steps { break-inside: avoid; }
+      @page { margin: 0.6in 0.5in; size: letter; }
+    }
+
+    @media screen {
+      body { background: #c8c8c8; }
+      .page {
+        background: var(--white);
+        box-shadow: 0 4px 32px rgba(0,0,0,.12);
+        margin: 40px auto 100px; border-radius: 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <!-- Logo strip -->
+  <div class="logo-strip">
+    <img src="../assets/images/logo/logo-stacked.svg" alt="Abstract Creative" />
+    <div class="doc-label">Template &amp; Workbook<br>abstract-creative.com</div>
+  </div>
+
+  <!-- Cover -->
+  <div class="cover">
+    <h5>Resource — Template</h5>
+    <h1>Positioning Statement Builder</h1>
+    <p class="subtitle">
+      A structured workspace to draft your positioning statement component by component, assemble it into a final statement, and pressure-test it before putting it to work.
+    </p>
+    <div class="cover-meta">
+      <span><strong>By</strong> Abstract Creative</span>
+      <span><strong>For</strong> Founders &amp; Principals</span>
+      <span><strong>Pair with</strong> The Positioning Framework</span>
+      <span><strong>Time</strong> 60–90 min</span>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro-box">
+    <h4>How to use this template</h4>
+    <p>Work through Parts 1–5 in sequence. Each part corresponds to one component of the Positioning Framework. Fill in your answers using the write lines, then carry them forward into the Assembly section to construct your full positioning statement.</p>
+    <p>When you're done, run the statement through the Pressure Test in Part 6. If it fails any test, use the Revision section to rework the specific component that broke.</p>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       PART 1: Audience
+  ══════════════════════════════════════ -->
+  <div class="part">
+    <div class="part-header">
+      <div class="part-num">1</div>
+      <h2>Your Audience</h2>
+    </div>
+    <div class="part-body">
+      <p>Define who you serve with enough specificity that someone could identify themselves — or rule themselves out — in one read.</p>
+
+      <div class="prompt-row">
+        <div class="prompt-label">Type of firm or business<em>Industry, size, or category</em></div>
+        <div class="answer-lines"><span></span><span></span></div>
+      </div>
+      <div class="prompt-row">
+        <div class="prompt-label">Revenue stage or size<em>Where they are when they find you</em></div>
+        <div class="answer-lines"><span></span><span></span></div>
+      </div>
+      <div class="prompt-row">
+        <div class="prompt-label">Role you sell to<em>Founder, principal, ops lead, etc.</em></div>
+        <div class="answer-lines"><span></span></div>
+      </div>
+      <div class="prompt-row">
+        <div class="prompt-label">Situation when they arrive<em>What's happening in their business</em></div>
+        <div class="answer-lines"><span></span><span></span></div>
+      </div>
+      <div class="prompt-row">
+        <div class="prompt-label">Who you are <em>not</em> for<em>The boundary that sharpens the position</em></div>
+        <div class="answer-lines"><span></span><span></span></div>
+      </div>
+
+      <div style="border-top: 1px solid var(--border); margin-top: 18px; padding-top: 14px;">
+        <p style="font-size:.78rem; font-weight:600; text-transform:uppercase; letter-spacing:.07em; color:var(--light); margin-bottom:8px;">Audience summary — one sentence</p>
+        <div class="answer-lines"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       PART 2: Problem
+  ══════════════════════════════════════ -->
+  <div class="part">
+    <div class="part-header">
+      <div class="part-num">2</div>
+      <h2>The Problem You Solve</h2>
+    </div>
+    <div class="part-body">
+      <p>Describe the problem from the client's perspective — the symptom they feel, not the service you provide.</p>
+
+      <div class="prompt-row">
+        <div class="prompt-label">Symptom they experience<em>What they feel before they find you</em></div>
+        <div class="answer-lines"><span></span><span></span><span></span></div>
+      </div>
+      <div class="prompt-row">
+        <div class="prompt-label">What triggers the search<em>The event that makes them start looking</em></div>
+        <div class="answer-lines"><span></span><span></span></div>
+      </div>
+      <div class="prompt-row">
+        <div class="prompt-label">What they've already tried<em>Previous solutions that didn't fully work</em></div>
+        <div class="answer-lines"><span></span><span></span></div>
+      </div>
+      <div class="prompt-row">
+        <div class="prompt-label">Cost of not solving it<em>What continues to happen without a solution</em></div>
+        <div class="answer-lines"><span></span><span></span></div>
+      </div>
+
+      <div style="border-top: 1px solid var(--border); margin-top: 18px; padding-top: 14px;">
+        <p style="font-size:.78rem; font-weight:600; text-transform:uppercase; letter-spacing:.07em; color:var(--light); margin-bottom:8px;">Problem summary — in the client's language</p>
+        <div class="answer-lines"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       PART 3: Differentiator
+  ══════════════════════════════════════ -->
+  <div class="part">
+    <div class="part-header">
+      <div class="part-num">3</div>
+      <h2>Your Differentiator</h2>
+    </div>
+    <div class="part-body">
+      <p>What makes you different in a way that matters to the specific audience above. Then run it through both tests before moving on.</p>
+
+      <div class="prompt-row">
+        <div class="prompt-label">What you do that others don't<em>Method, approach, or model</em></div>
+        <div class="answer-lines"><span></span><span></span><span></span></div>
+      </div>
+      <div class="prompt-row">
+        <div class="prompt-label">What you refuse to do<em>The constraint that defines your position</em></div>
+        <div class="answer-lines"><span></span><span></span></div>
+      </div>
+      <div class="prompt-row">
+        <div class="prompt-label">Differentiator draft<em>One to two sentences</em></div>
+        <div class="answer-lines"><span></span><span></span><span></span></div>
+      </div>
+
+      <div class="test-grid">
+        <div class="test-card pass">
+          <div class="test-label">Competitor Test</div>
+          <p>Could your top competitor say the exact same thing? If yes, this is a category claim — rewrite it.</p>
+          <p style="font-size:.78rem; font-weight:600; text-transform:uppercase; letter-spacing:.06em; color:var(--light);">Passes? Yes / No</p>
+          <div class="answer-lines" style="margin-top:6px;"><span></span></div>
+        </div>
+        <div class="test-card fail">
+          <div class="test-label">Relevance Test</div>
+          <p>Does this difference actually matter to the audience in Part 1? If not, it's a feature, not a position.</p>
+          <p style="font-size:.78rem; font-weight:600; text-transform:uppercase; letter-spacing:.06em; color:var(--light);">Passes? Yes / No</p>
+          <div class="answer-lines" style="margin-top:6px;"><span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       PART 4: Proof
+  ══════════════════════════════════════ -->
+  <div class="part">
+    <div class="part-header">
+      <div class="part-num">4</div>
+      <h2>Your Proof</h2>
+    </div>
+    <div class="part-body">
+      <p>List the three most credible, specific proof points that support your differentiator. Outcome-based beats generic every time.</p>
+
+      <div class="prompt-row" style="margin-bottom: 16px;">
+        <div class="prompt-label">Proof point 1<em>Named client, outcome, or result</em></div>
+        <div class="answer-lines"><span></span><span></span></div>
+      </div>
+      <div class="prompt-row" style="margin-bottom: 16px;">
+        <div class="prompt-label">Proof point 2<em>Named client, outcome, or result</em></div>
+        <div class="answer-lines"><span></span><span></span></div>
+      </div>
+      <div class="prompt-row">
+        <div class="prompt-label">Proof point 3<em>Named client, outcome, or result</em></div>
+        <div class="answer-lines"><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       PART 5: Assembly
+  ══════════════════════════════════════ -->
+  <div class="assembly">
+    <h3>Part 5 — Assemble Your Statement</h3>
+    <p class="assembly-sub">Pull your summaries from Parts 1–4 into the formula below, then write your full statement in your own voice.</p>
+
+    <div class="assembly-formula">
+      <p>
+        We help <span>[audience from Part 1]</span><br>
+        who are dealing with <span>[problem from Part 2]</span><br>
+        by <span>[differentiator from Part 3]</span> —<br>
+        so they can <span>[outcome / opposite of the problem]</span>.
+      </p>
+    </div>
+
+    <p class="assembly-write-label">Your positioning statement — write it in your voice, not the formula's</p>
+    <div class="assembly-lines">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       PART 6: Pressure Test
+  ══════════════════════════════════════ -->
+  <div class="pressure-test">
+    <div class="pt-header">
+      <h3>Part 6 — Pressure Test</h3>
+      <p>Run your statement through each test before using it anywhere. Check Pass or Fail for each.</p>
+    </div>
+    <div class="pt-body">
+
+      <div class="pt-row">
+        <div class="pt-num">1</div>
+        <div class="pt-text">
+          <h4>The one-read test</h4>
+          <p>Read it to someone outside your industry. Can they tell you who it's for and what makes it different — without asking a follow-up question?</p>
+        </div>
+        <div class="pt-result">
+          <label><input type="checkbox" /> Pass</label>
+          <label><input type="checkbox" /> Fail</label>
+        </div>
+      </div>
+
+      <div class="pt-row">
+        <div class="pt-num">2</div>
+        <div class="pt-text">
+          <h4>The team test</h4>
+          <p>Ask two people on your team to describe the firm without prep. Does their answer reflect this statement? If not, the statement isn't landing internally yet.</p>
+        </div>
+        <div class="pt-result">
+          <label><input type="checkbox" /> Pass</label>
+          <label><input type="checkbox" /> Fail</label>
+        </div>
+      </div>
+
+      <div class="pt-row">
+        <div class="pt-num">3</div>
+        <div class="pt-text">
+          <h4>The competitor test</h4>
+          <p>Replace your firm's name with a direct competitor's. Does it still hold? If yes, you have a category description, not a positioning statement. Return to Part 3.</p>
+        </div>
+        <div class="pt-result">
+          <label><input type="checkbox" /> Pass</label>
+          <label><input type="checkbox" /> Fail</label>
+        </div>
+      </div>
+
+      <div class="pt-row">
+        <div class="pt-num">4</div>
+        <div class="pt-text">
+          <h4>The self-recognition test</h4>
+          <p>If your ideal client read this, would they immediately recognize themselves in it — and feel like it was written for them specifically?</p>
+        </div>
+        <div class="pt-result">
+          <label><input type="checkbox" /> Pass</label>
+          <label><input type="checkbox" /> Fail</label>
+        </div>
+      </div>
+
+      <div class="pt-row">
+        <div class="pt-num">5</div>
+        <div class="pt-text">
+          <h4>The homepage test</h4>
+          <p>Read your current website headline. Does it reflect this statement? If there's a gap, the site needs to be updated — not the positioning.</p>
+        </div>
+        <div class="pt-result">
+          <label><input type="checkbox" /> Pass</label>
+          <label><input type="checkbox" /> Fail</label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       REVISION
+  ══════════════════════════════════════ -->
+  <div class="revision-box">
+    <h3>Revision notes</h3>
+    <p>If a test failed, note which component needs reworking and what specifically needs to change. Return to that Part and revise before reassembling.</p>
+    <div class="revision-lines">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div style="border-top: 1px solid var(--border); margin-top: 20px; padding-top: 16px;">
+      <p style="font-size:.78rem; font-weight:600; text-transform:uppercase; letter-spacing:.07em; color:var(--light); margin-bottom:8px;">Revised positioning statement</p>
+      <div class="revision-lines">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       NEXT STEPS
+  ══════════════════════════════════════ -->
+  <div class="next-steps">
+    <h3>What to do next</h3>
+
+    <div class="next-step-item">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <strong>Download the Brand Voice &amp; Messaging Template</strong>
+        Your next step after locking positioning. Translates the statement into the language your team uses across every touchpoint.
+        <br><span class="url">abstract-creative.com/resources</span>
+      </div>
+    </div>
+
+    <div class="next-step-item">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>Update your website headline</strong>
+        Once the statement passes all five tests, the first place it should appear is your homepage. If the headline doesn't reflect your positioning, it's the next thing to fix.
+      </div>
+    </div>
+
+    <div class="next-step-item">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <strong>Book a Strategy Call</strong>
+        If you're stuck on the differentiator or can't get the statement past the competitor test — a strategy call is the fastest way to work through it.
+        <br><span class="url">abstract-creative.com/book-a-strategy-call</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="doc-footer">
+    <p>© 2026 Abstract Creative LLC &nbsp;·&nbsp; <a href="https://abstract-creative.com">abstract-creative.com</a> &nbsp;·&nbsp; Houston, TX</p>
+    <p>For internal use only. Not for redistribution.</p>
+  </div>
+
+</div>
+
+<!-- Back to Resources -->
+<a href="index.html" class="back-btn">
+  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+  </svg>
+  Resources
+</a>
+
+<!-- Download PDF button -->
+<button class="download-btn" onclick="window.print()">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+    <polyline points="7 10 12 15 17 10"/>
+    <line x1="12" y1="15" x2="12" y2="3"/>
+  </svg>
+  Download PDF
+</button>
+
+</body>
+</html>

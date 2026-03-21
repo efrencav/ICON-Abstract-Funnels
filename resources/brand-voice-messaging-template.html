@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Brand Voice & Messaging Template | Abstract Creative</title>
+  <meta name="description" content="Document your brand's tone, language rules, and messaging hierarchy so your team can produce on-brand content without routing every piece through you." />
+  <meta name="keywords" content="brand voice template, brand messaging template, tone of voice, brand guidelines, professional services brand, Abstract Creative" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Brand Voice & Messaging Template | Abstract Creative" />
+  <meta property="og:description" content="Document your brand's tone, language rules, and messaging hierarchy so your team can work independently." />
+  <meta property="og:url" content="https://abstract-creative.com/resources/brand-voice-messaging-template.html" />
+  <meta property="og:image" content="https://abstract-creative.com/assets/images/og/abstract-creative-og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Brand Voice & Messaging Template | Abstract Creative" />
+  <meta name="twitter:description" content="Document your brand's tone, language rules, and messaging hierarchy so your team can work independently." />
+  <meta name="twitter:image" content="https://abstract-creative.com/assets/images/og/abstract-creative-og.jpg" />
+  <link rel="shortcut icon" href="../assets/images/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/ClashGrotesk.min.css" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:    #1a1a1a;
+      --red:      #EF4237;
+      --red-dark: #d63328;
+      --muted:    #555;
+      --light:    #888;
+      --border:   #d6dbd9;
+      --bg:       #f7f7f7;
+      --white:    #ffffff;
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      font-family: "Open Sans", sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.7;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page { max-width: 760px; margin: 0 auto; padding: 48px 40px; }
+
+    /* ─── Type ─── */
+    h1, h2, h3, h4, h5 { font-family: "Clash Grotesk", sans-serif; line-height: 1.2; }
+    h1 { font-size: 2.8rem; font-weight: 700; color: var(--black); }
+    h2 { font-size: 1.1rem; font-weight: 700; color: var(--white); }
+    h3 { font-size: .95rem; font-weight: 600; color: var(--black); }
+    h4 { font-size: .85rem; font-weight: 600; color: var(--black); }
+    h5 { font-size: .78rem; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: .1em; }
+    p  { color: var(--muted); font-size: .9rem; }
+    strong { color: var(--black); }
+
+    /* ─── Logo strip ─── */
+    .logo-strip {
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 36px;
+    }
+    .logo-strip img { height: 56px; }
+    .logo-strip .doc-label { font-size: .75rem; color: var(--light); text-align: right; line-height: 1.6; }
+
+    /* ─── Cover ─── */
+    .cover { margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+    .cover h5 { margin-bottom: 12px; }
+    .cover h1 { margin-bottom: 14px; }
+    .cover .subtitle { font-size: 1rem; color: var(--muted); max-width: 580px; line-height: 1.65; }
+    .cover-meta { display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+    .cover-meta span { font-size: .78rem; color: var(--light); font-weight: 500; }
+    .cover-meta span strong { color: var(--black); font-size: .78rem; }
+
+    /* ─── Firm info block ─── */
+    .firm-info {
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 20px 24px; margin-bottom: 44px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    }
+    .firm-field label {
+      display: block; font-size: .72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--light); margin-bottom: 6px;
+    }
+    .firm-field .field-line {
+      border-bottom: 1px solid var(--border); height: 26px; width: 100%;
+    }
+    .firm-field.full { grid-column: 1 / -1; }
+
+    /* ─── Section blocks ─── */
+    .section { margin-bottom: 40px; }
+
+    .section-header {
+      background: var(--black); border-radius: 5px 5px 0 0;
+      padding: 12px 20px; display: flex; align-items: center; gap: 14px;
+    }
+    .sec-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--red); color: var(--white);
+      font-family: "Clash Grotesk", sans-serif; font-weight: 700; font-size: .82rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .section-body {
+      border: 1px solid var(--border); border-top: none;
+      border-radius: 0 0 5px 5px; padding: 22px 24px;
+    }
+    .section-body > p { margin-bottom: 16px; font-size: .88rem; }
+    .section-body > p:last-child { margin-bottom: 0; }
+
+    /* ─── Write lines ─── */
+    .field-label {
+      font-size: .72rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: .07em; color: var(--light); margin-bottom: 6px; margin-top: 16px;
+      display: block;
+    }
+    .field-label:first-child { margin-top: 0; }
+    .answer-lines { display: flex; flex-direction: column; gap: 7px; }
+    .answer-lines span { display: block; border-bottom: 1px solid var(--border); height: 22px; }
+
+    /* ─── Voice descriptor cards ─── */
+    .descriptor-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 4px; }
+    .descriptor-card {
+      border: 1px solid var(--border); border-radius: 4px; padding: 14px 14px 10px;
+    }
+    .descriptor-card .d-label {
+      font-size: .68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .08em; color: var(--red); margin-bottom: 8px;
+    }
+    .descriptor-card .d-word {
+      border-bottom: 2px solid var(--black); height: 28px; margin-bottom: 10px;
+      font-family: "Clash Grotesk", sans-serif; font-size: .95rem; font-weight: 600;
+    }
+    .descriptor-card .d-sub {
+      font-size: .72rem; color: var(--light); margin-bottom: 6px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .06em;
+    }
+    .descriptor-card .d-line {
+      border-bottom: 1px solid var(--border); height: 18px; margin-bottom: 6px;
+    }
+
+    /* ─── Two-col ─── */
+    .col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+
+    /* ─── Word table ─── */
+    .word-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .word-table th {
+      font-size: .72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .07em; color: var(--light); padding: 0 0 8px 0;
+      border-bottom: 2px solid var(--border); text-align: left;
+    }
+    .word-table th.use { color: var(--black); }
+    .word-table th.avoid { color: var(--red); }
+    .word-table td {
+      padding: 6px 0; border-bottom: 1px solid var(--border);
+      font-size: .85rem; vertical-align: top;
+    }
+    .word-table td .w-line {
+      border-bottom: 1px solid var(--border); height: 20px; width: 90%;
+    }
+
+    /* ─── Tone scale ─── */
+    .tone-row {
+      display: grid; grid-template-columns: 120px 1fr 80px;
+      gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border);
+      align-items: center;
+    }
+    .tone-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .tone-context {
+      font-size: .82rem; font-weight: 600; color: var(--black);
+    }
+    .tone-scale {
+      display: flex; gap: 4px; align-items: center;
+    }
+    .scale-label { font-size: .68rem; color: var(--light); font-weight: 600; white-space: nowrap; }
+    .scale-dots { display: flex; gap: 6px; flex: 1; justify-content: center; }
+    .scale-dot {
+      width: 18px; height: 18px; border-radius: 50%;
+      border: 1.5px solid var(--border); cursor: pointer; flex-shrink: 0;
+    }
+    .tone-note { border-bottom: 1px solid var(--border); height: 20px; }
+
+    /* ─── Hierarchy table ─── */
+    .hierarchy-block { margin-bottom: 16px; }
+    .hierarchy-block:last-child { margin-bottom: 0; }
+    .h-label {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+    }
+    .h-badge {
+      font-size: .68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .07em; padding: 3px 8px; border-radius: 3px;
+    }
+    .h-badge.primary   { background: var(--black); color: var(--white); }
+    .h-badge.secondary { background: var(--bg); color: var(--black); border: 1px solid var(--border); }
+    .h-badge.contextual { background: var(--bg); color: var(--light); border: 1px solid var(--border); }
+    .h-badge.avoid     { background: #fff3f2; color: var(--red); border: 1px solid #f0c0be; }
+    .h-desc { font-size: .78rem; color: var(--muted); }
+    .h-lines { display: flex; flex-direction: column; gap: 6px; }
+    .h-lines span { display: block; border-bottom: 1px solid var(--border); height: 20px; }
+
+    /* ─── Before/after ─── */
+    .ba-block { margin-bottom: 16px; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+    .ba-block:last-child { margin-bottom: 0; }
+    .ba-row { display: grid; grid-template-columns: 80px 1fr; }
+    .ba-tag {
+      padding: 10px 12px; font-size: .72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .07em;
+      display: flex; align-items: flex-start; padding-top: 12px;
+    }
+    .ba-tag.off  { background: #fff3f2; color: var(--red);   border-right: 1px solid #f0c0be; border-bottom: 1px solid var(--border); }
+    .ba-tag.on   { background: #f2faf8; color: #1b5b4a;      border-right: 1px solid #c8e0da; }
+    .ba-content  { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+    .ba-content:last-child { border-bottom: none; }
+    .ba-lines    { display: flex; flex-direction: column; gap: 6px; }
+    .ba-lines span { display: block; border-bottom: 1px solid var(--border); height: 20px; }
+
+    /* ─── Next steps ─── */
+    .next-steps { border: 2px solid var(--red); border-radius: 6px; padding: 24px 28px; break-inside: avoid; }
+    .next-steps h3 { color: var(--red); margin-bottom: 16px; font-size: 1rem; }
+    .next-step-item { display: flex; gap: 14px; margin-bottom: 16px; align-items: flex-start; }
+    .next-step-item:last-child { margin-bottom: 0; }
+    .step-num {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--red); color: var(--white);
+      font-family: "Clash Grotesk", sans-serif; font-weight: 700; font-size: .8rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+    }
+    .step-text { font-size: .88rem; color: var(--muted); }
+    .step-text strong { color: var(--black); display: block; margin-bottom: 3px; }
+    .step-text .url { color: var(--black); font-weight: 600; font-size: .83rem; }
+
+    /* ─── Footer ─── */
+    .doc-footer {
+      margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .doc-footer p { font-size: .75rem; color: #aaa; }
+    .doc-footer a { color: var(--black); text-decoration: none; }
+
+    /* ─── Buttons ─── */
+    .download-btn {
+      position: fixed; top: 28px; right: 28px;
+      background: var(--red); color: #fff;
+      font-family: "Clash Grotesk", sans-serif; font-weight: 600; font-size: .9rem;
+      padding: 13px 22px; border: none; border-radius: 4px; cursor: pointer;
+      display: flex; align-items: center; gap: 8px;
+      box-shadow: 0 4px 16px rgba(239,66,55,.35);
+      transition: background .15s, transform .1s; z-index: 999;
+    }
+    .download-btn:hover { background: var(--red-dark); transform: translateY(-1px); }
+    .download-btn:active { transform: translateY(0); }
+
+    .back-btn {
+      position: fixed; top: 28px; left: 28px;
+      background: var(--white); color: var(--black);
+      font-family: "Clash Grotesk", sans-serif; font-weight: 600; font-size: .9rem;
+      padding: 13px 22px; border: 1.5px solid var(--border); border-radius: 4px;
+      cursor: pointer; display: flex; align-items: center; gap: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.08);
+      transition: border-color .15s, transform .1s; z-index: 999; text-decoration: none;
+    }
+    .back-btn:hover { border-color: var(--black); transform: translateY(-1px); }
+    .back-btn:active { transform: translateY(0); }
+
+    @media print {
+      .download-btn { display: none; }
+      .back-btn { display: none; }
+      .section { break-inside: avoid; }
+      .next-steps { break-inside: avoid; }
+      @page { margin: 0.6in 0.5in; size: letter; }
+    }
+
+    @media screen {
+      body { background: #c8c8c8; }
+      .page {
+        background: var(--white);
+        box-shadow: 0 4px 32px rgba(0,0,0,.12);
+        margin: 40px auto 100px; border-radius: 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <!-- Logo strip -->
+  <div class="logo-strip">
+    <img src="../assets/images/logo/logo-stacked.svg" alt="Abstract Creative" />
+    <div class="doc-label">Template &amp; Reference<br>abstract-creative.com</div>
+  </div>
+
+  <!-- Cover -->
+  <div class="cover">
+    <h5>Resource — Template</h5>
+    <h1>Brand Voice &amp; Messaging Template</h1>
+    <p class="subtitle">
+      A working document to capture your brand's voice, tone, language rules, and message hierarchy — so your team can communicate consistently without routing every piece through you.
+    </p>
+    <div class="cover-meta">
+      <span><strong>By</strong> Abstract Creative</span>
+      <span><strong>Owner</strong> _______________</span>
+      <span><strong>Last updated</strong> _______________</span>
+      <span><strong>Version</strong> _______________</span>
+    </div>
+  </div>
+
+  <!-- Firm info -->
+  <div class="firm-info">
+    <div class="firm-field">
+      <label>Firm name</label>
+      <div class="field-line"></div>
+    </div>
+    <div class="firm-field">
+      <label>Positioning statement</label>
+      <div class="field-line"></div>
+    </div>
+    <div class="firm-field full">
+      <label>Primary audience (one sentence)</label>
+      <div class="field-line"></div>
+    </div>
+    <div class="firm-field full">
+      <label>Core differentiator (one sentence)</label>
+      <div class="field-line"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       SECTION 1: Voice Descriptors
+  ══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-num">1</div>
+      <h2>Voice Descriptors</h2>
+    </div>
+    <div class="section-body">
+      <p>Choose 3–5 adjectives that define how the brand sounds. For each one, write a short explanation of what it means in practice and one example of it in use. These become the standard your team checks their writing against.</p>
+
+      <div class="descriptor-grid">
+
+        <div class="descriptor-card">
+          <div class="d-label">Descriptor 1</div>
+          <div class="d-word"></div>
+          <div class="d-sub">What it means in practice</div>
+          <div class="d-line"></div>
+          <div class="d-line"></div>
+          <div class="d-sub" style="margin-top:8px;">Example in use</div>
+          <div class="d-line"></div>
+          <div class="d-line"></div>
+        </div>
+
+        <div class="descriptor-card">
+          <div class="d-label">Descriptor 2</div>
+          <div class="d-word"></div>
+          <div class="d-sub">What it means in practice</div>
+          <div class="d-line"></div>
+          <div class="d-line"></div>
+          <div class="d-sub" style="margin-top:8px;">Example in use</div>
+          <div class="d-line"></div>
+          <div class="d-line"></div>
+        </div>
+
+        <div class="descriptor-card">
+          <div class="d-label">Descriptor 3</div>
+          <div class="d-word"></div>
+          <div class="d-sub">What it means in practice</div>
+          <div class="d-line"></div>
+          <div class="d-line"></div>
+          <div class="d-sub" style="margin-top:8px;">Example in use</div>
+          <div class="d-line"></div>
+          <div class="d-line"></div>
+        </div>
+
+        <div class="descriptor-card">
+          <div class="d-label">Descriptor 4</div>
+          <div class="d-word"></div>
+          <div class="d-sub">What it means in practice</div>
+          <div class="d-line"></div>
+          <div class="d-line"></div>
+          <div class="d-sub" style="margin-top:8px;">Example in use</div>
+          <div class="d-line"></div>
+          <div class="d-line"></div>
+        </div>
+
+        <div class="descriptor-card">
+          <div class="d-label">Descriptor 5</div>
+          <div class="d-word"></div>
+          <div class="d-sub">What it means in practice</div>
+          <div class="d-line"></div>
+          <div class="d-line"></div>
+          <div class="d-sub" style="margin-top:8px;">Example in use</div>
+          <div class="d-line"></div>
+          <div class="d-line"></div>
+        </div>
+
+        <div class="descriptor-card" style="background:var(--bg);">
+          <div class="d-label" style="color:var(--light);">The brand is never</div>
+          <div style="margin-top: 4px;">
+            <div class="d-line" style="margin-bottom:8px;"></div>
+            <div class="d-line" style="margin-bottom:8px;"></div>
+            <div class="d-line" style="margin-bottom:8px;"></div>
+            <div class="d-line" style="margin-bottom:8px;"></div>
+            <div class="d-line"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       SECTION 2: Tone by Context
+  ══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-num">2</div>
+      <h2>Tone by Context</h2>
+    </div>
+    <div class="section-body">
+      <p>The voice stays constant. The tone shifts depending on context. Mark where each channel sits on the formality and warmth scales, then add a note on what that looks like in practice.</p>
+
+      <div style="margin-top: 16px;">
+
+        <div style="display:grid; grid-template-columns:120px 1fr 80px; gap:14px; padding-bottom:10px; border-bottom:2px solid var(--border); margin-bottom:4px;">
+          <span style="font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--light);">Channel</span>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--light);">Formal ←————————→ Casual</span>
+          </div>
+          <span style="font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--light);">Note</span>
+        </div>
+
+        <div class="tone-row">
+          <div class="tone-context">Website</div>
+          <div class="tone-scale">
+            <div class="scale-dots">
+              <div class="scale-dot"></div><div class="scale-dot"></div>
+              <div class="scale-dot"></div><div class="scale-dot"></div><div class="scale-dot"></div>
+            </div>
+          </div>
+          <div class="tone-note"></div>
+        </div>
+
+        <div class="tone-row">
+          <div class="tone-context">Proposals</div>
+          <div class="tone-scale">
+            <div class="scale-dots">
+              <div class="scale-dot"></div><div class="scale-dot"></div>
+              <div class="scale-dot"></div><div class="scale-dot"></div><div class="scale-dot"></div>
+            </div>
+          </div>
+          <div class="tone-note"></div>
+        </div>
+
+        <div class="tone-row">
+          <div class="tone-context">Client emails</div>
+          <div class="tone-scale">
+            <div class="scale-dots">
+              <div class="scale-dot"></div><div class="scale-dot"></div>
+              <div class="scale-dot"></div><div class="scale-dot"></div><div class="scale-dot"></div>
+            </div>
+          </div>
+          <div class="tone-note"></div>
+        </div>
+
+        <div class="tone-row">
+          <div class="tone-context">Prospect emails</div>
+          <div class="tone-scale">
+            <div class="scale-dots">
+              <div class="scale-dot"></div><div class="scale-dot"></div>
+              <div class="scale-dot"></div><div class="scale-dot"></div><div class="scale-dot"></div>
+            </div>
+          </div>
+          <div class="tone-note"></div>
+        </div>
+
+        <div class="tone-row">
+          <div class="tone-context">LinkedIn</div>
+          <div class="tone-scale">
+            <div class="scale-dots">
+              <div class="scale-dot"></div><div class="scale-dot"></div>
+              <div class="scale-dot"></div><div class="scale-dot"></div><div class="scale-dot"></div>
+            </div>
+          </div>
+          <div class="tone-note"></div>
+        </div>
+
+        <div class="tone-row">
+          <div class="tone-context">Internal docs</div>
+          <div class="tone-scale">
+            <div class="scale-dots">
+              <div class="scale-dot"></div><div class="scale-dot"></div>
+              <div class="scale-dot"></div><div class="scale-dot"></div><div class="scale-dot"></div>
+            </div>
+          </div>
+          <div class="tone-note"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       SECTION 3: Language Guidelines
+  ══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-num">3</div>
+      <h2>Language Guidelines</h2>
+    </div>
+    <div class="section-body">
+      <p>Specific words and phrases the brand uses — and avoids. This is the fastest section to refer to when editing someone else's writing.</p>
+
+      <div class="col-2" style="margin-top:0;">
+
+        <div>
+          <p style="font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--black); margin-bottom:10px;">Words &amp; phrases we use</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div>
+          <p style="font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--red); margin-bottom:10px;">Words &amp; phrases we avoid</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:20px; border-top:1px solid var(--border); padding-top:18px;">
+        <p style="font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--black); margin-bottom:10px;">Jargon &amp; industry terms — our position</p>
+        <p style="font-size:.83rem; margin-bottom:12px;">Some industry terms are useful with certain audiences and off-putting with others. Note how we handle each here.</p>
+        <table class="word-table">
+          <thead>
+            <tr>
+              <th style="width:30%;">Term</th>
+              <th style="width:40%;">How we use it (or why we don't)</th>
+              <th style="width:30%;">Context where it's OK</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><div class="w-line"></div></td><td><div class="w-line"></div></td><td><div class="w-line"></div></td></tr>
+            <tr><td><div class="w-line"></div></td><td><div class="w-line"></div></td><td><div class="w-line"></div></td></tr>
+            <tr><td><div class="w-line"></div></td><td><div class="w-line"></div></td><td><div class="w-line"></div></td></tr>
+            <tr><td><div class="w-line"></div></td><td><div class="w-line"></div></td><td><div class="w-line"></div></td></tr>
+            <tr><td><div class="w-line"></div></td><td><div class="w-line"></div></td><td><div class="w-line" style="border:none;"></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       SECTION 4: Message Hierarchy
+  ══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-num">4</div>
+      <h2>Message Hierarchy</h2>
+    </div>
+    <div class="section-body">
+      <p>What the brand always says, what it sometimes says, and what it never leads with. This tells your team how to prioritize when they're writing anything from a LinkedIn post to a proposal opening.</p>
+
+      <div style="margin-top: 4px;">
+
+        <div class="hierarchy-block">
+          <div class="h-label">
+            <span class="h-badge primary">Primary</span>
+            <span class="h-desc">What always leads. The first idea in any communication.</span>
+          </div>
+          <div class="h-lines">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="hierarchy-block" style="margin-top:16px;">
+          <div class="h-label">
+            <span class="h-badge secondary">Secondary</span>
+            <span class="h-desc">What supports the primary message. The second idea.</span>
+          </div>
+          <div class="h-lines">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="hierarchy-block" style="margin-top:16px;">
+          <div class="h-label">
+            <span class="h-badge contextual">Contextual</span>
+            <span class="h-desc">What appears depending on the audience or channel.</span>
+          </div>
+          <div class="h-lines">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="hierarchy-block" style="margin-top:16px;">
+          <div class="h-label">
+            <span class="h-badge avoid">Never lead with</span>
+            <span class="h-desc">True, but undermines the primary message when it leads.</span>
+          </div>
+          <div class="h-lines">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       SECTION 5: Audience Language
+  ══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-num">5</div>
+      <h2>Audience Language</h2>
+    </div>
+    <div class="section-body">
+      <p>The exact words and phrases your clients use when describing their own problem. Mirror this language in your marketing and sales communications — it signals that you understand them before they have to explain themselves.</p>
+
+      <span class="field-label">How clients describe the problem when they first reach out</span>
+      <div class="answer-lines"><span></span><span></span><span></span></div>
+
+      <span class="field-label" style="margin-top:16px;">Words they use for the outcome they want</span>
+      <div class="answer-lines"><span></span><span></span><span></span></div>
+
+      <span class="field-label" style="margin-top:16px;">Phrases that signal they're the right fit (things ideal clients say)</span>
+      <div class="answer-lines"><span></span><span></span><span></span></div>
+
+      <span class="field-label" style="margin-top:16px;">Phrases that signal they're not the right fit</span>
+      <div class="answer-lines"><span></span><span></span></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       SECTION 6: Before / After Examples
+  ══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="sec-num">6</div>
+      <h2>Before &amp; After Examples</h2>
+    </div>
+    <div class="section-body">
+      <p>Write 3 rewrites that show the difference between off-brand and on-brand writing for your firm. These become the clearest reference point for your team — faster to absorb than rules.</p>
+
+      <div style="margin-top: 16px;">
+
+        <p style="font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--light); margin-bottom:10px;">Example 1 — Website or proposal language</p>
+        <div class="ba-block">
+          <div class="ba-row">
+            <div class="ba-tag off">Off-brand</div>
+            <div class="ba-content"><div class="ba-lines"><span></span><span></span></div></div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-tag on">On-brand</div>
+            <div class="ba-content" style="border-bottom:none;"><div class="ba-lines"><span></span><span></span></div></div>
+          </div>
+        </div>
+
+        <p style="font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--light); margin-top:20px; margin-bottom:10px;">Example 2 — Email or outreach</p>
+        <div class="ba-block">
+          <div class="ba-row">
+            <div class="ba-tag off">Off-brand</div>
+            <div class="ba-content"><div class="ba-lines"><span></span><span></span></div></div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-tag on">On-brand</div>
+            <div class="ba-content" style="border-bottom:none;"><div class="ba-lines"><span></span><span></span></div></div>
+          </div>
+        </div>
+
+        <p style="font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--light); margin-top:20px; margin-bottom:10px;">Example 3 — How we describe what we do</p>
+        <div class="ba-block">
+          <div class="ba-row">
+            <div class="ba-tag off">Off-brand</div>
+            <div class="ba-content"><div class="ba-lines"><span></span><span></span></div></div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-tag on">On-brand</div>
+            <div class="ba-content" style="border-bottom:none;"><div class="ba-lines"><span></span><span></span></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       NEXT STEPS
+  ══════════════════════════════════════ -->
+  <div class="next-steps">
+    <h3>Putting this document to work</h3>
+
+    <div class="next-step-item">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <strong>Share it with everyone who writes for the firm</strong>
+        Proposals, emails, LinkedIn posts, case studies — anyone producing outward-facing content should have access to this document and know it exists.
+      </div>
+    </div>
+
+    <div class="next-step-item">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>Review it quarterly</strong>
+        Language evolves. Audit once per quarter: what's drifted, what new patterns have emerged, what needs to be added. A 30-minute review keeps it current.
+      </div>
+    </div>
+
+    <div class="next-step-item">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <strong>Use Section 6 when onboarding new team members</strong>
+        The before/after examples are the fastest way to calibrate new hires on what on-brand looks and sounds like — faster than any rule set.
+      </div>
+    </div>
+
+    <div class="next-step-item">
+      <div class="step-num">4</div>
+      <div class="step-text">
+        <strong>Book a Strategy Call if you're stuck on Sections 1 or 4</strong>
+        Voice descriptors and message hierarchy are the hardest sections to complete alone. If they're not landing clearly, a strategy call will surface them quickly.
+        <br><span class="url">abstract-creative.com/book-a-strategy-call</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="doc-footer">
+    <p>© 2026 Abstract Creative LLC &nbsp;·&nbsp; <a href="https://abstract-creative.com">abstract-creative.com</a> &nbsp;·&nbsp; Houston, TX</p>
+    <p>For internal use only. Not for redistribution.</p>
+  </div>
+
+</div>
+
+<!-- Back to Resources -->
+<a href="index.html" class="back-btn">
+  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+  </svg>
+  Resources
+</a>
+
+<!-- Download PDF button -->
+<button class="download-btn" onclick="window.print()">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+    <polyline points="7 10 12 15 17 10"/>
+    <line x1="12" y1="15" x2="12" y2="3"/>
+  </svg>
+  Download PDF
+</button>
+
+</body>
+</html>

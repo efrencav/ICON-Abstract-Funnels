@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>The Positioning Framework | Abstract Creative</title>
+  <meta name="description" content="The five-part positioning model used by Abstract Creative for professional services firms — covering audience specificity, differentiator structure, proof, and message translation." />
+  <meta name="keywords" content="positioning framework, brand positioning, professional services positioning, differentiator, Abstract Creative" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Positioning Framework | Abstract Creative" />
+  <meta property="og:description" content="The five-part positioning model for professional services firms — audience, problem, differentiator, proof, and message translation." />
+  <meta property="og:url" content="https://abstract-creative.com/resources/positioning-framework.html" />
+  <meta property="og:image" content="https://abstract-creative.com/assets/images/og/abstract-creative-og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Positioning Framework | Abstract Creative" />
+  <meta name="twitter:description" content="The five-part positioning model for professional services firms — audience, problem, differentiator, proof, and message translation." />
+  <meta name="twitter:image" content="https://abstract-creative.com/assets/images/og/abstract-creative-og.jpg" />
+  <link rel="shortcut icon" href="../assets/images/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/ClashGrotesk.min.css" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:  #1a1a1a;
+      --red:      #EF4237;
+      --red-dark: #d63328;
+      --muted:  #555;
+      --light:  #888;
+      --border: #d6dbd9;
+      --bg:     #f7f7f7;
+      --white:  #ffffff;
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      font-family: "Open Sans", sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.7;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page { max-width: 760px; margin: 0 auto; padding: 48px 40px; }
+
+    /* ─── Type ─── */
+    h1, h2, h3, h4, h5 { font-family: "Clash Grotesk", sans-serif; line-height: 1.2; }
+    h1 { font-size: 2.8rem; font-weight: 700; color: var(--black); }
+    h2 { font-size: 1.2rem; font-weight: 700; color: var(--white); }
+    h3 { font-size: 1rem;   font-weight: 600; color: var(--black); }
+    h4 { font-size: .9rem;  font-weight: 600; color: var(--black); }
+    h5 { font-size: .78rem; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: .1em; }
+    p  { color: var(--muted); font-size: .93rem; }
+    strong { color: var(--black); }
+
+    /* ─── Logo strip ─── */
+    .logo-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 36px;
+    }
+    .logo-strip img { height: 56px; }
+    .logo-strip .doc-label { font-size: .75rem; color: var(--light); text-align: right; line-height: 1.6; }
+
+    /* ─── Cover ─── */
+    .cover {
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cover h5 { margin-bottom: 12px; }
+    .cover h1 { margin-bottom: 14px; }
+    .cover .subtitle { font-size: 1rem; color: var(--muted); max-width: 580px; line-height: 1.65; }
+    .cover-meta { display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+    .cover-meta span { font-size: .78rem; color: var(--light); font-weight: 500; }
+    .cover-meta span strong { color: var(--black); font-size: .78rem; }
+
+    /* ─── Intro box ─── */
+    .intro-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 20px 24px;
+      margin-bottom: 44px;
+    }
+    .intro-box h4 { margin-bottom: 8px; }
+    .intro-box p  { font-size: .88rem; }
+
+    /* ─── Model overview ─── */
+    .model-overview {
+      display: flex;
+      gap: 0;
+      margin-bottom: 48px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .model-part {
+      flex: 1;
+      padding: 16px 12px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+      background: var(--white);
+      transition: background .1s;
+    }
+    .model-part:last-child { border-right: none; }
+    .model-part .part-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--black);
+      color: var(--white);
+      font-family: "Clash Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: .8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 8px;
+    }
+    .model-part .part-label {
+      font-family: "Clash Grotesk", sans-serif;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1.3;
+    }
+
+    /* ─── Component blocks ─── */
+    .component { margin-bottom: 44px; break-inside: avoid; }
+
+    .component-header {
+      background: var(--black);
+      border-radius: 5px 5px 0 0;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .comp-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--red); color: var(--white);
+      font-family: "Clash Grotesk", sans-serif;
+      font-weight: 700; font-size: .82rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .component-body {
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 5px 5px;
+      padding: 24px;
+    }
+    .component-body > p { margin-bottom: 16px; }
+
+    /* ─── Two-column grid inside components ─── */
+    .col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+
+    /* ─── Prompt box ─── */
+    .prompt-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 14px 16px;
+    }
+    .prompt-box h4 {
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--light);
+      margin-bottom: 10px;
+    }
+    .prompt-box ul { list-style: none; padding: 0; }
+    .prompt-box ul li {
+      font-size: .83rem;
+      color: var(--muted);
+      padding: 4px 0 4px 14px;
+      position: relative;
+    }
+    .prompt-box ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-weight: 700;
+      font-size: .78rem;
+    }
+
+    /* ─── Failure box ─── */
+    .failure-box {
+      border: 1px solid #f0c0be;
+      background: #fff8f7;
+      border-radius: 4px;
+      padding: 14px 16px;
+    }
+    .failure-box h4 {
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+    .failure-box ul { list-style: none; padding: 0; }
+    .failure-box ul li {
+      font-size: .83rem;
+      color: var(--muted);
+      padding: 4px 0 4px 14px;
+      position: relative;
+    }
+    .failure-box ul li::before {
+      content: "✕";
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-weight: 700;
+      font-size: .75rem;
+    }
+
+    /* ─── Write field ─── */
+    .write-label {
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--light);
+      margin-bottom: 6px;
+      margin-top: 16px;
+    }
+    .answer-lines { display: flex; flex-direction: column; gap: 7px; margin-bottom: 4px; }
+    .answer-lines span { display: block; border-bottom: 1px solid var(--border); height: 22px; }
+
+    /* ─── Pull quote ─── */
+    .pull-quote {
+      border-left: 4px solid var(--red);
+      padding: 12px 18px;
+      margin: 20px 0;
+      background: var(--bg);
+      border-radius: 0 4px 4px 0;
+    }
+    .pull-quote p {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1.5;
+      margin: 0;
+      font-family: "Clash Grotesk", sans-serif;
+    }
+
+    /* ─── Assembled example ─── */
+    .example-block {
+      border: 2px solid var(--black);
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 20px 0;
+      break-inside: avoid;
+    }
+    .example-header {
+      background: var(--black);
+      padding: 10px 18px;
+    }
+    .example-header h4 {
+      color: var(--white);
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 600;
+    }
+    .example-body { padding: 18px; }
+    .example-row {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .example-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .ex-label {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--red);
+      width: 110px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .ex-value { font-size: .85rem; color: var(--muted); flex: 1; }
+    .ex-value strong { color: var(--black); }
+
+    /* ─── Formula ─── */
+    .formula {
+      background: var(--black);
+      border-radius: 5px;
+      padding: 18px 22px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .formula p {
+      font-family: "Clash Grotesk", sans-serif;
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .formula span { color: var(--red); }
+
+    /* ─── Next steps ─── */
+    .next-steps {
+      border: 2px solid var(--red);
+      border-radius: 6px;
+      padding: 24px 28px;
+      margin-top: 40px;
+      break-inside: avoid;
+    }
+    .next-steps h3 { color: var(--red); margin-bottom: 16px; }
+    .next-step-item { display: flex; gap: 14px; margin-bottom: 16px; align-items: flex-start; }
+    .next-step-item:last-child { margin-bottom: 0; }
+    .step-num {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--red); color: var(--white);
+      font-family: "Clash Grotesk", sans-serif;
+      font-weight: 700; font-size: .8rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .step-text { font-size: .88rem; color: var(--muted); }
+    .step-text strong { color: var(--black); display: block; margin-bottom: 3px; }
+    .step-text .url { color: var(--black); font-weight: 600; font-size: .83rem; }
+
+    /* ─── Footer ─── */
+    .doc-footer {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .doc-footer p { font-size: .75rem; color: #aaa; }
+    .doc-footer a { color: var(--black); text-decoration: none; }
+
+    /* ─── Download button ─── */
+    .download-btn {
+      position: fixed;
+      top: 28px; right: 28px;
+      background: var(--red);
+      color: #fff;
+      font-family: "Clash Grotesk", sans-serif;
+      font-weight: 600; font-size: .9rem;
+      padding: 13px 22px;
+      border: none; border-radius: 4px;
+      cursor: pointer;
+      display: flex; align-items: center; gap: 8px;
+      box-shadow: 0 4px 16px rgba(239,66,55,.35);
+      transition: background .15s, transform .1s;
+      z-index: 999;
+    }
+    .download-btn:hover { background: var(--red-dark); transform: translateY(-1px); }
+    .download-btn:active { transform: translateY(0); }
+
+    .back-btn {
+      position: fixed;
+      top: 28px; left: 28px;
+      background: var(--white); color: var(--black);
+      font-family: "Clash Grotesk", sans-serif; font-weight: 600; font-size: .9rem;
+      padding: 13px 22px; border: 1.5px solid var(--border); border-radius: 4px;
+      cursor: pointer; display: flex; align-items: center; gap: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.08);
+      transition: border-color .15s, transform .1s; z-index: 999; text-decoration: none;
+    }
+    .back-btn:hover { border-color: var(--black); transform: translateY(-1px); }
+    .back-btn:active { transform: translateY(0); }
+
+    @media print {
+      .download-btn { display: none; }
+      .back-btn { display: none; }
+      .component { break-inside: avoid; }
+      .example-block { break-inside: avoid; }
+      @page { margin: 0.6in 0.5in; size: letter; }
+    }
+
+    @media screen {
+      body { background: #c8c8c8; }
+      .page {
+        background: var(--white);
+        box-shadow: 0 4px 32px rgba(0,0,0,.12);
+        margin: 40px auto 100px;
+        border-radius: 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <!-- Logo strip -->
+  <div class="logo-strip">
+    <img src="../assets/images/logo/logo-stacked.svg" alt="Abstract Creative" />
+    <div class="doc-label">Framework &amp; Reference<br>abstract-creative.com</div>
+  </div>
+
+  <!-- Cover -->
+  <div class="cover">
+    <h5>Resource — Framework</h5>
+    <h1>The Positioning Framework</h1>
+    <p class="subtitle">
+      The five-part model we use to develop positioning for professional services firms — with prompts, examples, and the failure modes to avoid at each step.
+    </p>
+    <div class="cover-meta">
+      <span><strong>By</strong> Abstract Creative</span>
+      <span><strong>For</strong> Founders &amp; Principals</span>
+      <span><strong>Use with</strong> Leadership team</span>
+      <span><strong>Read time</strong> 20 min</span>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro-box">
+    <h4>What this framework is — and isn't</h4>
+    <p>Positioning is not a tagline. It is not a one-liner you put on your homepage. It is the strategic decision that defines who you serve, what problem you solve for them, and why they should choose you over a comparable alternative. Every other brand decision — your messaging, your website, your marketing — flows from it.</p>
+    <p style="margin-top: 10px;">This framework walks through each of the five components in sequence. Work through them in order. The prompts under each section are designed to pressure-test your thinking, not validate it. If a question is hard to answer, that difficulty is information.</p>
+  </div>
+
+  <!-- Model overview bar -->
+  <div class="model-overview">
+    <div class="model-part">
+      <div class="part-num">1</div>
+      <div class="part-label">Audience<br>Specificity</div>
+    </div>
+    <div class="model-part">
+      <div class="part-num">2</div>
+      <div class="part-label">Problem<br>Definition</div>
+    </div>
+    <div class="model-part">
+      <div class="part-num">3</div>
+      <div class="part-label">Differentiator<br>Structure</div>
+    </div>
+    <div class="model-part">
+      <div class="part-num">4</div>
+      <div class="part-label">Proof</div>
+    </div>
+    <div class="model-part">
+      <div class="part-num">5</div>
+      <div class="part-label">Message<br>Translation</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       COMPONENT 1: Audience Specificity
+  ══════════════════════════════════════ -->
+  <div class="component">
+    <div class="component-header">
+      <div class="comp-num">1</div>
+      <h2>Audience Specificity</h2>
+    </div>
+    <div class="component-body">
+      <p>
+        Most positioning problems start here. Founders define their audience broadly because narrowing it feels like leaving revenue on the table. The opposite is true: the more specifically you can describe who you serve, the more resonant your positioning becomes — and the easier it is for the right clients to recognize themselves in it.
+      </p>
+      <p>
+        Audience specificity is not just demographics. It is the combination of who they are, where they are in their business, and what they are experiencing when they start looking for someone like you.
+      </p>
+
+      <div class="pull-quote">
+        <p>If your audience definition would apply to half the businesses in your city, it is not specific enough.</p>
+      </div>
+
+      <div class="col-2">
+        <div class="prompt-box">
+          <h4>Define by asking</h4>
+          <ul>
+            <li>What type of firm or business?</li>
+            <li>What revenue stage or size?</li>
+            <li>What role are you selling to?</li>
+            <li>What situation are they in when they find you?</li>
+            <li>What have they already tried that didn't work?</li>
+          </ul>
+        </div>
+        <div class="failure-box">
+          <h4>Common failures</h4>
+          <ul>
+            <li>"Small to mid-size businesses"</li>
+            <li>"Companies in any industry"</li>
+            <li>Defining by geography alone</li>
+            <li>Defining by budget range, not situation</li>
+            <li>Changing the answer by who's in the room</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="write-label">Write your audience definition here</p>
+      <div class="answer-lines"><span></span><span></span><span></span><span></span></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       COMPONENT 2: Problem Definition
+  ══════════════════════════════════════ -->
+  <div class="component">
+    <div class="component-header">
+      <div class="comp-num">2</div>
+      <h2>Problem Definition</h2>
+    </div>
+    <div class="component-body">
+      <p>
+        The problem you solve is not the service you provide. Clients don't hire you for the deliverable — they hire you because of what the deliverable does for them. The distinction matters because clients make decisions based on the problem they feel, not the solution you've designed.
+      </p>
+      <p>
+        Strong problem definitions describe the symptom the client is experiencing, not the category of service that addresses it. "Our brand isn't converting" is a problem. "You need brand strategy" is a category.
+      </p>
+
+      <div class="col-2">
+        <div class="prompt-box">
+          <h4>Define by asking</h4>
+          <ul>
+            <li>What symptom is the client experiencing?</li>
+            <li>What have they tried already?</li>
+            <li>What is the cost of not solving it?</li>
+            <li>What does it feel like from the inside?</li>
+            <li>What triggers them to start looking?</li>
+          </ul>
+        </div>
+        <div class="failure-box">
+          <h4>Common failures</h4>
+          <ul>
+            <li>Describing the service, not the problem</li>
+            <li>Using industry jargon the client doesn't use</li>
+            <li>Solving for the wrong audience's problem</li>
+            <li>Making the problem too broad to own</li>
+            <li>Confusing the symptom with the root cause</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="write-label">Write the core problem you solve — in your client's language</p>
+      <div class="answer-lines"><span></span><span></span><span></span><span></span></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       COMPONENT 3: Differentiator Structure
+  ══════════════════════════════════════ -->
+  <div class="component">
+    <div class="component-header">
+      <div class="comp-num">3</div>
+      <h2>Differentiator Structure</h2>
+    </div>
+    <div class="component-body">
+      <p>
+        Your differentiator answers one question: why you, specifically, over a comparable alternative? Not why you're better — why you're different in a way that matters to the audience you just defined.
+      </p>
+      <p>
+        Most differentiator claims fail one of two tests. The first is the <strong>competitor test</strong>: could your top competitor say the same thing? If yes, it's a category claim, not a differentiator. The second is the <strong>relevance test</strong>: does the difference actually matter to the client you described in Component 1? If not, it's a feature, not a position.
+      </p>
+
+      <div class="pull-quote">
+        <p>A differentiator is not what makes you better. It is what makes you different in a way that matters to the specific client you're trying to attract.</p>
+      </div>
+
+      <div class="col-2">
+        <div class="prompt-box">
+          <h4>Structure your differentiator</h4>
+          <ul>
+            <li>What do you do that competitors don't?</li>
+            <li>What do you refuse to do that others do?</li>
+            <li>What unique method, model, or approach do you use?</li>
+            <li>What do you know that others don't?</li>
+            <li>Who do you serve that others overlook?</li>
+          </ul>
+        </div>
+        <div class="failure-box">
+          <h4>Differentiators that aren't</h4>
+          <ul>
+            <li>"We really care about our clients"</li>
+            <li>"We deliver results"</li>
+            <li>"We have over X years of experience"</li>
+            <li>"We're a full-service firm"</li>
+            <li>"We treat you like a partner, not a client"</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="write-label">Write your differentiator — then run it through both tests</p>
+      <div class="answer-lines"><span></span><span></span><span></span></div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px;">
+        <div>
+          <p class="write-label">Competitor test: Could a competitor say this?</p>
+          <div class="answer-lines"><span></span><span></span></div>
+        </div>
+        <div>
+          <p class="write-label">Relevance test: Does it matter to your audience?</p>
+          <div class="answer-lines"><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       COMPONENT 4: Proof
+  ══════════════════════════════════════ -->
+  <div class="component">
+    <div class="component-header">
+      <div class="comp-num">4</div>
+      <h2>Proof</h2>
+    </div>
+    <div class="component-body">
+      <p>
+        Positioning without proof is a claim. Proof is what makes a positioning believable — and believability is what determines whether a prospective client acts on it or dismisses it.
+      </p>
+      <p>
+        Proof comes in several forms, and each serves a different function. The most credible proof is outcome-based: specific results, named clients, and transformations that a prospective client can map to their own situation. Social proof (testimonials, logos) adds credibility. Methodological proof (a proprietary process, a named framework) signals rigor.
+      </p>
+
+      <div class="col-2">
+        <div class="prompt-box">
+          <h4>Types of proof to inventory</h4>
+          <ul>
+            <li>Named case studies with outcomes</li>
+            <li>Specific results (time, revenue, growth)</li>
+            <li>Client testimonials with context</li>
+            <li>Industry recognition or credentials</li>
+            <li>Proprietary methods or frameworks</li>
+            <li>Years of focused experience in the niche</li>
+          </ul>
+        </div>
+        <div class="failure-box">
+          <h4>Weak proof patterns</h4>
+          <ul>
+            <li>Generic testimonials with no specifics</li>
+            <li>Results without client context</li>
+            <li>"Trusted by hundreds of clients"</li>
+            <li>Awards unrecognized by target clients</li>
+            <li>Proof that doesn't match the audience</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="write-label">List your three strongest proof points — specific and outcome-based</p>
+      <div style="margin-top: 8px;">
+        <p style="font-size:.78rem; color:var(--light); margin-bottom:4px;">1.</p>
+        <div class="answer-lines"><span></span><span></span></div>
+        <p style="font-size:.78rem; color:var(--light); margin-top:10px; margin-bottom:4px;">2.</p>
+        <div class="answer-lines"><span></span><span></span></div>
+        <p style="font-size:.78rem; color:var(--light); margin-top:10px; margin-bottom:4px;">3.</p>
+        <div class="answer-lines"><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       COMPONENT 5: Message Translation
+  ══════════════════════════════════════ -->
+  <div class="component">
+    <div class="component-header">
+      <div class="comp-num">5</div>
+      <h2>Message Translation</h2>
+    </div>
+    <div class="component-body">
+      <p>
+        The first four components are strategic. This one is operational. Message translation is the process of converting your positioning into the actual language your team uses — across your website, proposals, sales conversations, and content.
+      </p>
+      <p>
+        The goal is a positioning statement and a set of core messages that can be used by anyone on your team, consistently, without interpretation. If your team has to guess how to say what you do — you haven't finished this step.
+      </p>
+
+      <div class="col-2">
+        <div class="prompt-box">
+          <h4>What to translate it into</h4>
+          <ul>
+            <li>One-sentence firm description</li>
+            <li>Elevator pitch (30 sec, spoken)</li>
+            <li>Homepage headline and subheadline</li>
+            <li>Proposal opening paragraph</li>
+            <li>Email introduction for new prospects</li>
+            <li>Team member "what do you do" answer</li>
+          </ul>
+        </div>
+        <div class="failure-box">
+          <h4>Translation failures</h4>
+          <ul>
+            <li>Jargon the client doesn't use</li>
+            <li>Different language on every channel</li>
+            <li>Messaging that describes the firm, not the client's problem</li>
+            <li>Positioning that lives only in the founder's head</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="write-label">Draft your one-sentence firm description using the components above</p>
+      <div class="answer-lines"><span></span><span></span><span></span></div>
+
+      <div class="formula" style="margin-top: 20px;">
+        <p>
+          We help <span>[specific audience]</span> who are dealing with <span>[defined problem]</span><br>
+          by <span>[your differentiator]</span> — so they can <span>[outcome]</span>.
+        </p>
+      </div>
+
+      <p style="font-size:.82rem; color:var(--muted); margin-top:12px;">
+        This formula is a starting point, not a final sentence. The language should sound like how you actually talk — not a fill-in-the-blank template. Use it to pressure-test structure, then rewrite it in your voice.
+      </p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       ASSEMBLED EXAMPLE
+  ══════════════════════════════════════ -->
+  <div class="example-block">
+    <div class="example-header">
+      <h4>Example — How the five components come together</h4>
+    </div>
+    <div class="example-body">
+      <div class="example-row">
+        <div class="ex-label">Audience</div>
+        <div class="ex-value">Founders of professional services firms at $500K–$5M who are growing past the point where their personal reputation closes every deal — and whose brand hasn't caught up to the business they're now running.</div>
+      </div>
+      <div class="example-row">
+        <div class="ex-label">Problem</div>
+        <div class="ex-value">Their brand was built for a version of the business that no longer exists. It depends on the founder to work. When they're not in the room, the messaging drifts, the team improvises, and marketing spend stops converting.</div>
+      </div>
+      <div class="example-row">
+        <div class="ex-label">Differentiator</div>
+        <div class="ex-value">We don't just design a brand — we install the strategic infrastructure behind it: positioning, messaging architecture, and governance systems that let the brand operate independently of the founder.</div>
+      </div>
+      <div class="example-row">
+        <div class="ex-label">Proof</div>
+        <div class="ex-value">16+ case studies across professional services, B2B, and industrial sectors. Clients include firms that have scaled from founder-led to team-led brand execution within 18 months of engagement.</div>
+      </div>
+      <div class="example-row">
+        <div class="ex-label">Translation</div>
+        <div class="ex-value"><strong>"We help professional services firms at the $500K–$5M stage build the brand infrastructure they need to scale — so the business stops depending on the founder to communicate, sell, and deliver on brand."</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       NEXT STEPS
+  ══════════════════════════════════════ -->
+  <div class="next-steps">
+    <h3>What to do with this framework</h3>
+
+    <div class="next-step-item">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <strong>Work through it with your leadership team — not alone</strong>
+        The gaps show up when more than one person tries to answer. If you and your team give different answers to any component, that gap is your first priority.
+      </div>
+    </div>
+
+    <div class="next-step-item">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>Download the Positioning Statement Builder</strong>
+        A structured template to draft and pressure-test your final positioning statement, with prompts for each of the five components.
+        <br><span class="url">abstract-creative.com/resources</span>
+      </div>
+    </div>
+
+    <div class="next-step-item">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <strong>Book a Strategy Call</strong>
+        If you've worked through this and still can't get the differentiator or audience to land clearly — that's exactly what a strategy call is for. 30 minutes, no pitch.
+        <br><span class="url">abstract-creative.com/book-a-strategy-call</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="doc-footer">
+    <p>© 2026 Abstract Creative LLC &nbsp;·&nbsp; <a href="https://abstract-creative.com">abstract-creative.com</a> &nbsp;·&nbsp; Houston, TX</p>
+    <p>For internal use only. Not for redistribution.</p>
+  </div>
+
+</div>
+
+<!-- Back to Resources -->
+<a href="index.html" class="back-btn">
+  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+  </svg>
+  Resources
+</a>
+
+<!-- Download PDF button -->
+<button class="download-btn" onclick="window.print()">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+    <polyline points="7 10 12 15 17 10"/>
+    <line x1="12" y1="15" x2="12" y2="3"/>
+  </svg>
+  Download PDF
+</button>
+
+</body>
+</html>

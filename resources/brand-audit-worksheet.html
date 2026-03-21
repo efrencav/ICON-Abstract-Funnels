@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Brand Audit Worksheet | Abstract Creative</title>
+  <meta name="description" content="A guided self-audit to evaluate your positioning, messaging consistency, and audience alignment. Structured for professional services leadership teams." />
+  <meta name="keywords" content="brand audit worksheet, brand self-assessment, brand positioning audit, professional services brand, Abstract Creative" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Brand Audit Worksheet | Abstract Creative" />
+  <meta property="og:description" content="A guided self-audit to evaluate your positioning, messaging consistency, and audience alignment." />
+  <meta property="og:url" content="https://abstract-creative.com/resources/brand-audit-worksheet.html" />
+  <meta property="og:image" content="https://abstract-creative.com/assets/images/og/abstract-creative-og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Brand Audit Worksheet | Abstract Creative" />
+  <meta name="twitter:description" content="A guided self-audit to evaluate your positioning, messaging consistency, and audience alignment." />
+  <meta name="twitter:image" content="https://abstract-creative.com/assets/images/og/abstract-creative-og.jpg" />
+  <link rel="shortcut icon" href="../assets/images/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/ClashGrotesk.min.css" />
+
+  <style>
+    /* ─── Reset & base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:    #1a1a1a;
+      --red:      #EF4237;
+      --red-dark: #d63328;
+      --muted:    #555;
+      --light:    #888;
+      --border:   #d6dbd9;
+      --bg:       #f7f7f7;
+      --white:    #ffffff;
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      font-family: "Open Sans", sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.65;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ─── Page layout ─── */
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 40px;
+    }
+
+    /* ─── Typography ─── */
+    h1, h2, h3, h4 {
+      font-family: "Clash Grotesk", sans-serif;
+      line-height: 1.2;
+    }
+
+    h1 { font-size: 2.8rem; font-weight: 700; color: var(--black); }
+    h2 { font-size: 1.25rem; font-weight: 600; color: var(--white); }
+    h3 { font-size: 1.05rem; font-weight: 600; color: var(--black); }
+    h4 { font-size: .9rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; }
+
+    p { color: var(--muted); }
+    strong { color: var(--black); }
+
+    /* ─── Cover / Header ─── */
+    .cover {
+      margin-bottom: 36px;
+    }
+
+    .cover-meta {
+      font-size: .78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--red);
+      margin-bottom: 8px;
+    }
+
+    .cover h1 { margin-bottom: 10px; }
+
+    .cover .subtitle {
+      font-size: .95rem;
+      color: var(--muted);
+      max-width: 560px;
+    }
+
+    /* ─── Logo strip ─── */
+    .logo-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 36px;
+    }
+
+    .logo-strip img { height: 56px; }
+
+    .logo-strip .doc-label {
+      font-size: .75rem;
+      color: var(--muted);
+      text-align: right;
+      line-height: 1.5;
+    }
+
+    /* ─── Intro box ─── */
+    .intro-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+
+    .intro-box h3 { margin-bottom: 8px; color: var(--black); }
+
+    .intro-box ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    .intro-box ul li {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 4px;
+    }
+
+    /* ─── Section blocks ─── */
+    .audit-section {
+      margin-bottom: 40px;
+      break-inside: avoid;
+    }
+
+    .section-header {
+      background: var(--black);
+      border-radius: 5px 5px 0 0;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-header .section-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--red);
+      color: var(--white);
+      font-family: "Clash Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: .85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .section-body {
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 5px 5px;
+      padding: 24px;
+    }
+
+    /* ─── Question items ─── */
+    .question-item {
+      margin-bottom: 28px;
+    }
+
+    .question-item:last-child { margin-bottom: 0; }
+
+    .question-label {
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+
+    .question-hint {
+      font-size: .8rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .write-lines {
+      border-bottom: 1px solid var(--border);
+      min-height: 24px;
+      margin-bottom: 8px;
+    }
+
+    /* default: 3 lines */
+    .lines-3  { display: flex; flex-direction: column; gap: 0; }
+    .lines-3  .write-lines,
+    .lines-4  .write-lines,
+    .lines-5  .write-lines { display: block; }
+
+    .lines-3 { height: 72px; }
+    .lines-4 { height: 96px; }
+    .lines-5 { height: 120px; }
+
+    .answer-area {
+      border-bottom: 1.5px solid var(--border);
+      width: 100%;
+      min-height: 28px;
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    /* repeat line helper */
+    .answer-lines { display: flex; flex-direction: column; gap: 7px; }
+    .answer-lines span {
+      display: block;
+      border-bottom: 1px solid var(--border);
+      height: 22px;
+    }
+
+    /* ─── Divider ─── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 32px 0;
+    }
+
+    /* ─── Reflection box ─── */
+    .reflection-box {
+      background: var(--black);
+      border-radius: 6px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+      break-inside: avoid;
+    }
+
+    .reflection-box h3 {
+      color: var(--white);
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .reflection-box p {
+      color: rgba(255,255,255,.85);
+      font-size: .9rem;
+      margin-bottom: 12px;
+    }
+
+    .reflection-box p:last-child { margin-bottom: 0; }
+
+    .reflection-box strong { color: var(--white); }
+
+    /* ─── Signal list ─── */
+    .signal-list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0;
+    }
+
+    .signal-list li {
+      font-size: .88rem;
+      color: rgba(255,255,255,.85);
+      padding: 5px 0 5px 20px;
+      position: relative;
+    }
+
+    .signal-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    /* ─── Next steps box ─── */
+    .next-steps {
+      border: 2px solid var(--red);
+      border-radius: 6px;
+      padding: 24px 28px;
+      break-inside: avoid;
+    }
+
+    .next-steps h3 {
+      color: var(--red);
+      margin-bottom: 14px;
+    }
+
+    .next-step-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+
+    .next-step-item:last-child { margin-bottom: 0; }
+
+    .step-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--red);
+      color: var(--white);
+      font-family: "Clash Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: .8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-text { font-size: .88rem; color: var(--muted); }
+    .step-text strong { color: var(--black); display: block; margin-bottom: 2px; }
+
+    /* ─── Footer ─── */
+    .doc-footer {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .doc-footer p {
+      font-size: .75rem;
+      color: #aaa;
+    }
+
+    .doc-footer a {
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    /* ─── Print styles ─── */
+    @media print {
+      body { font-size: 13px; }
+      .page { padding: 28px 32px; }
+      h1 { font-size: 1.75rem; }
+
+      .audit-section { break-inside: avoid; }
+      .reflection-box { break-inside: avoid; }
+      .next-steps { break-inside: avoid; }
+      .download-btn { display: none; }
+      .back-btn { display: none; }
+
+      @page {
+        margin: 0.6in 0.5in;
+        size: letter;
+      }
+    }
+
+    /* ─── Download button ─── */
+    .download-btn {
+      position: fixed;
+      top: 28px;
+      right: 28px;
+      background: var(--red);
+      color: #fff;
+      font-family: "Clash Grotesk", sans-serif;
+      font-weight: 600;
+      font-size: .9rem;
+      padding: 13px 22px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 16px rgba(239,66,55,.35);
+      transition: background .15s, transform .1s;
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    .download-btn:hover { background: var(--red-dark); transform: translateY(-1px); }
+    .download-btn:active { transform: translateY(0); }
+
+    .back-btn {
+      position: fixed;
+      top: 28px;
+      left: 28px;
+      background: var(--white);
+      color: var(--black);
+      font-family: "Clash Grotesk", sans-serif;
+      font-weight: 600;
+      font-size: .9rem;
+      padding: 13px 22px;
+      border: 1.5px solid var(--border);
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.08);
+      transition: border-color .15s, transform .1s;
+      z-index: 999;
+      text-decoration: none;
+    }
+    .back-btn:hover { border-color: var(--black); transform: translateY(-1px); }
+    .back-btn:active { transform: translateY(0); }
+
+    @media screen {
+      body { background: #c8c8c8; }
+      .page {
+        background: var(--white);
+        box-shadow: 0 4px 32px rgba(0,0,0,.12);
+        margin: 40px auto 100px;
+        border-radius: 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Logo strip -->
+    <div class="logo-strip">
+      <img src="../assets/images/logo/logo-stacked.svg" alt="Abstract Creative" />
+      <div class="doc-label">
+        Brand Audit Worksheet<br>
+        abstract-creative.com
+      </div>
+    </div>
+
+    <!-- Cover -->
+    <div class="cover">
+      <p class="cover-meta">Resource — Self-Audit</p>
+      <h1>Brand Audit Worksheet</h1>
+      <p class="subtitle">
+        A guided exercise for professional services firms at the $500K–$5M stage. Walk through it with your leadership team to surface where your brand is holding — and where it's starting to crack.
+      </p>
+    </div>
+
+    <!-- Intro -->
+    <div class="intro-box">
+      <h3>Before you begin</h3>
+      <p style="font-size:.9rem;">This is not a design review. It is a strategic audit of how clearly your brand communicates, how consistently your team executes it, and how much of it depends on you personally.</p>
+      <ul>
+        <li>Set aside 45–60 minutes with your leadership team</li>
+        <li>Answer based on what is true today — not what you intend it to be</li>
+        <li>If your team gives different answers than you, that difference <em>is</em> the finding</li>
+        <li>No scores — this is a diagnostic, not a report card</li>
+      </ul>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         SECTION 1: Audience Clarity
+    ══════════════════════════════════════ -->
+    <div class="audit-section">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <h2>Audience Clarity</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="question-item">
+          <p class="question-label">Who do you serve?</p>
+          <p class="question-hint">Be specific. Not "small businesses" or "professional services firms" — name the type of firm, the role you sell to, and the situation they're in when they find you.</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="question-item">
+          <p class="question-label">What problem do they have when they arrive?</p>
+          <p class="question-hint">Not the service you sell — the symptom they're experiencing. What makes them start looking?</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="question-item">
+          <p class="question-label">Would your team give the same answers you just did?</p>
+          <p class="question-hint">Ask someone on your team right now — before you compare notes. Note the gaps.</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="question-item">
+          <p class="question-label">Who are you <em>not</em> for?</p>
+          <p class="question-hint">If you struggle to answer this, your audience definition is probably too broad.</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         SECTION 2: Positioning & Differentiation
+    ══════════════════════════════════════ -->
+    <div class="audit-section">
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <h2>Positioning &amp; Differentiation</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="question-item">
+          <p class="question-label">What makes you different from competitors in your space?</p>
+          <p class="question-hint">Write it as you would say it to a prospect — not as a tagline.</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="question-item">
+          <p class="question-label">Could a competitor say the same thing?</p>
+          <p class="question-hint">Read what you just wrote. If the answer is yes — or probably — your differentiator is a category claim, not a position.</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="question-item">
+          <p class="question-label">Can you say what you do in one sentence — clearly, without jargon?</p>
+          <p class="question-hint">Write it here. Then test it: would a prospective client immediately understand who it's for and why it matters?</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="question-item">
+          <p class="question-label">Why does your difference matter to the specific client you described in Section 1?</p>
+          <p class="question-hint">This is the link between positioning and relevance. If you can't connect the two, you have a positioning gap.</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         SECTION 3: Messaging Consistency
+    ══════════════════════════════════════ -->
+    <div class="audit-section">
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <h2>Messaging Consistency</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="question-item">
+          <p class="question-label">Read your website homepage headline aloud. Does it match what you wrote in Sections 1 and 2?</p>
+          <p class="question-hint">Write the headline here, then note the gap — if any.</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="question-item">
+          <p class="question-label">How do you describe the firm in a sales conversation?</p>
+          <p class="question-hint">Not what you should say — what you actually say, unprepared, when someone asks "so what do you do?"</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="question-item">
+          <p class="question-label">How does your team describe the firm to prospects?</p>
+          <p class="question-hint">If you don't know, that's worth noting. If the answer varies by person, that's a governance gap.</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="question-item">
+          <p class="question-label">Is there a single document your team can reference for how to communicate the brand?</p>
+          <p class="question-hint">Not a style guide for design. A messaging document: who we serve, how we talk, what we say and don't say.</p>
+          <div class="answer-lines">
+            <span></span><span></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         SECTION 4: Brand Governance
+    ══════════════════════════════════════ -->
+    <div class="audit-section">
+      <div class="section-header">
+        <div class="section-num">4</div>
+        <h2>Brand Governance</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="question-item">
+          <p class="question-label">Who makes brand decisions when you're not in the room?</p>
+          <p class="question-hint">If the answer is "no one" or "it depends," the brand is founder-dependent.</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="question-item">
+          <p class="question-label">What's the most recent example of brand drift you've noticed?</p>
+          <p class="question-hint">A proposal that didn't sound like you. An email that felt off. A hire who described the firm differently. Write what you noticed.</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="question-item">
+          <p class="question-label">If you stepped back for 90 days, what would break?</p>
+          <p class="question-hint">Be honest. The answer tells you exactly what depends on you personally rather than on a system.</p>
+          <div class="answer-lines">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="question-item">
+          <p class="question-label">Is there a process for reviewing new content against your brand before it goes out?</p>
+          <p class="question-hint">Proposals, social posts, decks, emails sent by your team. Yes / No — and if yes, describe it briefly.</p>
+          <div class="answer-lines">
+            <span></span><span></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         REFLECTION
+    ══════════════════════════════════════ -->
+    <div class="reflection-box">
+      <h3>What to look for in your answers</h3>
+      <p>You don't need a score. You need to notice the pattern. Here are the signals that matter most:</p>
+      <ul class="signal-list">
+        <li>Your team gave different answers than you — audience, positioning, or how they describe the firm</li>
+        <li>You couldn't write a one-sentence description that a client would immediately understand</li>
+        <li>Your website headline doesn't match what you wrote in Section 2</li>
+        <li>There's no document your team can reference for messaging</li>
+        <li>Brand decisions — or the absence of them — route back to you</li>
+        <li>You identified drift but haven't addressed the system that caused it</li>
+      </ul>
+      <p style="margin-top:14px;">
+        <strong>If three or more of these resonate:</strong> the constraint is strategic, not executional. A new website, better content, or a different agency will not fix it. The positioning needs to be resolved first.
+      </p>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         NEXT STEPS
+    ══════════════════════════════════════ -->
+    <div class="next-steps">
+      <h3>What to do next</h3>
+
+      <div class="next-step-item">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Take the Brand Strategy Assessment</strong>
+          Goes deeper than this worksheet. Maps where you stand across positioning, systems, and leadership alignment — and tells you what to address first.
+          <br><span style="color:var(--black); font-weight:600;">abstract-creative.com/assessment</span>
+        </div>
+      </div>
+
+      <div class="next-step-item">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>Download the Positioning Framework</strong>
+          The five-part model we use to develop positioning for professional services firms. Useful if Section 2 surfaced the most friction.
+          <br><span style="color:var(--black); font-weight:600;">abstract-creative.com/resources</span>
+        </div>
+      </div>
+
+      <div class="next-step-item">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>Book a Strategy Call</strong>
+          If this raised more questions than answers, a 30-minute call will clarify what the constraint is and what sequencing makes sense for your stage.
+          <br><span style="color:var(--black); font-weight:600;">abstract-creative.com/book-a-strategy-call</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <p>© 2026 Abstract Creative LLC &nbsp;·&nbsp; <a href="https://abstract-creative.com">abstract-creative.com</a> &nbsp;·&nbsp; Houston, TX</p>
+      <p>For internal use only. Not for redistribution.</p>
+    </div>
+
+  </div>
+
+  <!-- Back to Resources -->
+  <a href="index.html" class="back-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+    </svg>
+    Resources
+  </a>
+
+  <!-- Download PDF button -->
+  <button class="download-btn" onclick="window.print()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+    Download PDF
+  </button>
+
+</body>
+</html>
