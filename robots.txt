@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Disallow conversion and internal pages
+# Conversion and internal pages
 Disallow: /ty/
 Disallow: /emails/
 Disallow: /ghl-sitemap.html
@@ -12,5 +12,17 @@ Disallow: /services/brand-foundation/foundation-pricing.html
 Disallow: /services/complete-transformation/transformation-pricing.html
 Disallow: /services/transformation-growth-accelerator/transformation-growth-accelerator.html
 Disallow: /services/growth-partnership/growth-pricing.html
+
+# Resource gate and thank-you pages (always private)
+Disallow: /resources/download.html
+Disallow: /resources/thank-you.html
+
+# Gated resource PDFs — disallow direct access to preserve the gate
+Disallow: /resources/brand-audit-worksheet.html
+Disallow: /resources/500k-5m-brand-playbook.html
+Disallow: /resources/positioning-framework.html
+Disallow: /resources/founder-brand-to-scalable-brand.html
+Disallow: /resources/positioning-statement-builder.html
+Disallow: /resources/brand-voice-messaging-template.html
 
 Sitemap: https://abstract-creative.com/sitemap.xml
