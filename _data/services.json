@@ -1,0 +1,10 @@
+{
+  "heading": "Four ways we can work together",
+  "showPrices": true,
+  "tiers": [
+    { "name": "Foundation", "price": "From $3,500", "description": "Logo + core brand system for early-stage businesses.", "featured": false, "includes": ["Logo system", "Color palette", "1 revision round"] },
+    { "name": "Growth", "price": "From $7,500", "description": "Full brand system + social templates for scaling teams.", "featured": false, "includes": ["Everything in Studio", "Social media templates", "2 revision rounds"] },
+    { "name": "Studio", "price": "From $12,000", "description": "Full identity system with strategy and brand guidelines.", "featured": true, "includes": ["Brand strategy", "Full identity system", "Brand guidelines PDF", "2 revision rounds"] },
+    { "name": "Enterprise", "price": "From $20,000", "description": "Complete transformation with CRM, funnel, and retainer option.", "featured": false, "includes": ["Full brand transformation", "CRM + funnel setup", "Retainer option"] }
+  ]
+}

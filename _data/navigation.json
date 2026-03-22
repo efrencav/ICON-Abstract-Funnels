@@ -1,0 +1,10 @@
+{
+  "links": [
+    { "label": "Work", "url": "/work", "visible": true },
+    { "label": "Services", "url": "/services", "visible": true },
+    { "label": "About", "url": "/about", "visible": true },
+    { "label": "Blog", "url": "/blog", "visible": true }
+  ],
+  "ctaText": "Book a Call",
+  "ctaUrl": "/strategy-call"
+}

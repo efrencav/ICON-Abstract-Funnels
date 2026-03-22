@@ -1,0 +1,143 @@
+backend:
+  name: github
+  repo: efrencav/ICON-Abstract-Funnels
+  branch: main
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+
+  - name: "hero"
+    label: "Homepage Hero"
+    files:
+      - name: "homepage_hero"
+        label: "Homepage Hero"
+        file: "_data/hero.json"
+        fields:
+          - { label: "Eyebrow text", name: "eyebrow", widget: "string" }
+          - { label: "Main headline", name: "headline", widget: "string" }
+          - { label: "Subheadline", name: "subheadline", widget: "text" }
+          - { label: "CTA button text", name: "ctaText", widget: "string" }
+          - { label: "CTA button URL", name: "ctaUrl", widget: "string" }
+          - { label: "Show social proof strip", name: "showSocialProof", widget: "boolean", default: true }
+          - { label: "Social proof text", name: "socialProofText", widget: "string", required: false }
+
+  - name: "services"
+    label: "Services + Pricing"
+    files:
+      - name: "services"
+        label: "Service Tiers"
+        file: "_data/services.json"
+        fields:
+          - { label: "Section heading", name: "heading", widget: "string" }
+          - { label: "Show prices publicly", name: "showPrices", widget: "boolean", default: true }
+          - label: "Tiers"
+            name: "tiers"
+            widget: "list"
+            fields:
+              - { label: "Tier name", name: "name", widget: "string" }
+              - { label: "Price display", name: "price", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Mark as featured", name: "featured", widget: "boolean", default: false }
+              - label: "What's included"
+                name: "includes"
+                widget: "list"
+                field: { label: "Item", name: "item", widget: "string" }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    files:
+      - name: "testimonials"
+        label: "Testimonials"
+        file: "_data/testimonials.json"
+        fields:
+          - { label: "Section heading", name: "heading", widget: "string" }
+          - { label: "Show on homepage", name: "showOnHomepage", widget: "boolean", default: true }
+          - label: "Testimonials"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Client name", name: "name", widget: "string" }
+              - { label: "Company", name: "company", widget: "string" }
+              - { label: "Show on site", name: "visible", widget: "boolean", default: true }
+
+  - name: "portfolio"
+    label: "Portfolio / Case Studies"
+    folder: "_data/portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Client name", name: "title", widget: "string" }
+      - { label: "Project type", name: "projectType", widget: "string" }
+      - { label: "Result headline", name: "resultHeadline", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Cover image", name: "coverImage", widget: "image", required: false }
+      - { label: "Service tier", name: "tier", widget: "select", options: ["Foundation", "Growth", "Studio", "Enterprise"] }
+      - { label: "Published", name: "published", widget: "boolean", default: false }
+      - { label: "Sort order", name: "order", widget: "number", default: 1 }
+
+  - name: "blog"
+    label: "Blog / Insights"
+    folder: "_data/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish date", name: "date", widget: "datetime" }
+      - { label: "Cover image", name: "coverImage", widget: "image", required: false }
+      - { label: "Category", name: "category", widget: "select", options: ["Strategy", "Insights", "Case Study", "Behind the Studio"] }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Published", name: "published", widget: "boolean", default: false }
+
+  - name: "seo"
+    label: "SEO Metadata"
+    files:
+      - name: "seo"
+        label: "SEO — All Pages"
+        file: "_data/seo.json"
+        fields:
+          - label: "Homepage"
+            name: "home"
+            widget: "object"
+            fields:
+              - { label: "Page title", name: "title", widget: "string" }
+              - { label: "Meta description", name: "description", widget: "text" }
+              - { label: "Social share image", name: "ogImage", widget: "image", required: false }
+          - label: "Services page"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Page title", name: "title", widget: "string" }
+              - { label: "Meta description", name: "description", widget: "text" }
+          - label: "About page"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Page title", name: "title", widget: "string" }
+              - { label: "Meta description", name: "description", widget: "text" }
+          - label: "Contact page"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Page title", name: "title", widget: "string" }
+              - { label: "Meta description", name: "description", widget: "text" }
+
+  - name: "navigation"
+    label: "Navigation + CTAs"
+    files:
+      - name: "navigation"
+        label: "Navigation"
+        file: "_data/navigation.json"
+        fields:
+          - label: "Nav links"
+            name: "links"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Show in nav", name: "visible", widget: "boolean", default: true }
+          - { label: "CTA button text", name: "ctaText", widget: "string" }
+          - { label: "CTA button URL", name: "ctaUrl", widget: "string" }

@@ -1,0 +1,9 @@
+{
+  "heading": "What our clients say",
+  "showOnHomepage": true,
+  "items": [
+    { "quote": "Working with Efren transformed how we show up in the market. The strategy work was genuinely insightful.", "name": "Rena Yassiri", "company": "Inside Job Healing", "visible": true },
+    { "quote": "The brand identity exceeded what we imagined. The process was clear, professional, and collaborative.", "name": "Jim Read", "company": "Uncharted Insights", "visible": true },
+    { "quote": "Abstract Creative brought a level of strategic thinking I didn't expect from a branding studio.", "name": "Brad Austria", "company": "Press Clarity", "visible": true }
+  ]
+}
