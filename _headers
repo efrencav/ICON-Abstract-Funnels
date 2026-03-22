@@ -1,3 +1,11 @@
+/admin/*
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Frame-Options: SAMEORIGIN
+
+/admin
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Frame-Options: SAMEORIGIN
+
 /*
   Access-Control-Allow-Origin: https://abstract-creative.com
   Access-Control-Allow-Methods: GET, OPTIONS
