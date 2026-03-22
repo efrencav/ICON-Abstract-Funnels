@@ -148,6 +148,8 @@
       a.appendChild(r);
     })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
   </script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 </head>
 
 <body>
@@ -1125,6 +1127,17 @@
   <!-- External Tracking Script -->
   <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_32fbbaceba0948059733a215b2bd6a9c">
   </script>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 
 </html>
