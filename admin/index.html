@@ -4,9 +4,32 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abstract Creative — Content Manager</title>
+
+  <!-- Handle Netlify Identity invite/recovery tokens BEFORE anything else loads -->
+  <script>
+    // If there's a Netlify Identity token in the URL hash, 
+    // capture it and redirect properly so the site doesn't swallow it
+    if (window.location.hash && window.location.hash.indexOf('invite_token') > -1) {
+      // Store the token
+      var token = window.location.hash;
+      // Clear the hash and let Netlify Identity Widget handle it
+      window.location.hash = '';
+      window.location.href = '/admin/#' + token.replace('#', '');
+    }
+    if (window.location.hash && window.location.hash.indexOf('recovery_token') > -1) {
+      var token = window.location.hash;
+      window.location.hash = '';
+      window.location.href = '/admin/#' + token.replace('#', '');
+    }
+  </script>
+
+  <!-- Netlify Identity Widget — handles login/signup -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <!-- Decap CMS (formerly Netlify CMS) -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
-  <!-- Netlify CMS mounts here automatically -->
+  <!-- CMS mounts here automatically -->
 </body>
 </html>
