@@ -1,3 +1,4 @@
 /admin/*  /admin/index.html  200
 /admin    /admin/index.html  200
+/insights/article-template.html  /insights/  302
 /*        /404.html          404
