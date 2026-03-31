@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "page_meta",
+      pageType: "client_portal",
+      pageName: "Client Portal",
+      templateVersion: "2026-03-27-v1"
+    });
+    window.ACTrack = function(e, p) {
+      try { window.dataLayer.push(Object.assign({ event: e }, p || {})); } catch(err) {}
+    };
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P93WLQG');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow" />
+
+  <title>Client Portal — Abstract Creative</title>
+  <meta name="description" content="Every Abstract Creative client gets a private portal to track their project, download brand assets, approve deliverables, view campaign analytics, and communicate directly with the team." />
+  <link rel="canonical" href="https://abstract-creative.com/client-portal/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Client Portal — Abstract Creative">
+  <meta property="og:description" content="A private workspace for every client. Track your project, download assets, approve deliverables, and view live campaign analytics — all in one place.">
+  <meta property="og:url" content="https://abstract-creative.com/client-portal/">
+  <meta property="og:image" content="https://abstract-creative.com/assets/images/og/abstract-creative-og.jpg">
+
+  <link rel="shortcut icon" href="../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../assets/css/meanmenu.min.css" />
+  <link rel="preload" href="../assets/css/all.min.css" as="style">
+  <link rel="stylesheet" href="../assets/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="../assets/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../assets/css/animate.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Hotjar -->
+  <script>
+    (function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:1785389,hjsv:6};a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r);})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <style>
+    /* ── Portal page-specific styles ── */
+    .portal-hero {
+      background: #0a0a0a;
+      padding: 120px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .portal-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(239,66,55,0.14) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .portal-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #ef4237;
+      background: rgba(239,66,55,0.1);
+      border: 1px solid rgba(239,66,55,0.25);
+      border-radius: 4px;
+      padding: 5px 12px;
+      margin-bottom: 28px;
+    }
+    .portal-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.12;
+      color: #fff;
+      margin-bottom: 22px;
+    }
+    .portal-hero h1 span { color: #ef4237; }
+    .portal-hero .portal-sub {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.65);
+      max-width: 560px;
+      margin-bottom: 40px;
+    }
+    .portal-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .portal-btn-login {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 28px;
+      background: #ef4237;
+      color: #fff;
+      border-radius: 8px;
+      font-size: .97rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .portal-btn-login:hover { background: #d63027; color: #fff; }
+    .portal-btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 26px;
+      background: transparent;
+      color: rgba(255,255,255,0.75);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 8px;
+      font-size: .95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: border-color .2s, color .2s;
+    }
+    .portal-btn-ghost:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+
+    /* ── Feature grid ── */
+    .portal-features { padding: 100px 0; background: #0a0a0a; }
+
+    /* Featured top cards */
+    .portal-feature-primary {
+      background: #fff;
+      border-radius: 12px;
+      padding: 36px;
+      height: 100%;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      transition: box-shadow .3s, transform .3s;
+    }
+    .portal-feature-primary:hover {
+      box-shadow: 0 12px 32px rgba(0,0,0,.15);
+      transform: translateY(-4px);
+    }
+    .portal-feature-primary .feature-badge {
+      display: inline-block;
+      color: #ef4237;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .portal-feature-primary h4 {
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 14px;
+    }
+    .portal-feature-primary > p {
+      font-size: .95rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .portal-feature-primary .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 18px;
+    }
+    .portal-feature-primary .feature-list li {
+      padding: 7px 0;
+      color: #555;
+      font-size: .88rem;
+      line-height: 1.4;
+      border-bottom: 1px solid #f8f8f8;
+    }
+    .portal-feature-primary .feature-list li:last-child { border-bottom: none; }
+    .portal-feature-primary .feature-list li::before {
+      content: "→";
+      color: #ef4237;
+      font-weight: 700;
+      margin-right: 9px;
+    }
+
+    /* Screenshot placeholder inside primary cards */
+    .portal-feature-screenshot {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      border: 1px solid #f0f0f0;
+      background: #f6f6f6;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .portal-feature-screenshot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .portal-feature-screenshot .screenshot-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #bbb;
+      font-size: .8rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      height: 100%;
+      width: 100%;
+    }
+    .portal-feature-screenshot .screenshot-placeholder i {
+      font-size: 1.6rem;
+      color: #ddd;
+    }
+
+    /* Secondary compact chips */
+    .portal-feature-chip {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 24px 22px;
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: background .2s, border-color .2s;
+    }
+    .portal-feature-chip:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(239,66,55,0.3);
+    }
+    .portal-chip-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(239,66,55,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: #ef4237;
+    }
+    .portal-feature-chip h5 {
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+    .portal-feature-chip p {
+      font-size: .82rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ── How access works ── */
+    .portal-access { padding: 100px 0; background: #fff; }
+    .portal-access-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 28px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .portal-access-step:last-child { border-bottom: none; }
+    .portal-step-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #0a0a0a;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .portal-access-step h5 {
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 5px;
+    }
+    .portal-access-step p {
+      font-size: .9rem;
+      color: #666;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── Screenshot/preview band ── */
+    .portal-preview {
+      background: #0a0a0a;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .portal-preview::before {
+      content: '';
+      position: absolute;
+      top: -120px; left: -120px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(239,66,55,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .portal-preview-screen {
+      background: #1a1a1a;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+    }
+    .portal-preview-bar {
+      background: #111;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .portal-preview-bar .dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .portal-preview-bar .dot-red   { background: #ef4237; }
+    .portal-preview-bar .dot-amber { background: #f59e0b; }
+    .portal-preview-bar .dot-green { background: #10b981; }
+    .portal-preview-bar .url {
+      margin-left: 12px;
+      font-size: .72rem;
+      color: rgba(255,255,255,0.3);
+      font-family: monospace;
+    }
+    .portal-preview-content {
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 20px;
+      min-height: 320px;
+    }
+    .portal-preview-sidebar {
+      background: #111;
+      border-radius: 8px;
+      padding: 16px 12px;
+    }
+    .portal-preview-sidebar .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 10px;
+      border-radius: 6px;
+      font-size: .78rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 2px;
+      cursor: default;
+    }
+    .portal-preview-sidebar .nav-item.active {
+      background: rgba(239,66,55,0.15);
+      color: #ef4237;
+    }
+    .portal-preview-sidebar .nav-item i { width: 14px; text-align: center; }
+    .portal-preview-main { display: flex; flex-direction: column; gap: 14px; }
+    .portal-preview-card {
+      background: #111;
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+    .portal-preview-card .card-label {
+      font-size: .65rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: rgba(255,255,255,0.3);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .portal-preview-card .card-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .portal-preview-card .progress-bar-wrap {
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .portal-preview-card .progress-bar-fill {
+      height: 100%;
+      background: #ef4237;
+      border-radius: 3px;
+    }
+    .portal-preview-card .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: .7rem;
+      font-weight: 600;
+    }
+    .badge-pending { background: rgba(245,158,11,0.15); color: #f59e0b; }
+    .badge-active  { background: rgba(16,185,129,0.15); color: #10b981; }
+
+    /* ── CTA section ── */
+    .portal-cta {
+      background: #0a0a0a;
+      padding: 0 0 100px;
+      overflow: hidden;
+      position: relative;
+    }
+    .portal-cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 60% 50%, rgba(239,66,55,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 15% 80%, rgba(239,66,55,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .portal-cta-inner {
+      position: relative;
+      z-index: 2;
+    }
+    .portal-cta h2 { font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .portal-cta .cta-sub { font-size: 1.05rem; color: rgba(255,255,255,.55); line-height: 1.75; margin-bottom: 32px; }
+    .portal-cta .cta-divider {
+      margin-top: 36px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .portal-cta .cta-divider p { font-size:.9rem; color:rgba(255,255,255,0.4); margin-bottom:18px; }
+
+    /* Monitor mockup */
+    .portal-monitor-wrap {
+      position: relative;
+      padding: 60px 0 0;
+    }
+    .portal-monitor {
+      position: relative;
+      background: #1c1c1e;
+      border-radius: 14px 14px 0 0;
+      padding: 12px 12px 0;
+      box-shadow: 0 30px 80px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.06);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .portal-monitor-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+      padding: 0 4px;
+    }
+    .portal-monitor-bar .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .portal-monitor-bar .dot-r { background: #ff5f57; }
+    .portal-monitor-bar .dot-a { background: #febc2e; }
+    .portal-monitor-bar .dot-g { background: #28c840; }
+    .portal-monitor-bar .url-bar {
+      flex: 1;
+      background: rgba(255,255,255,.07);
+      border-radius: 5px;
+      font-size: .68rem;
+      color: rgba(255,255,255,.3);
+      padding: 4px 10px;
+      margin-left: 8px;
+      letter-spacing: .02em;
+    }
+    .portal-monitor-screen {
+      background: #f4f4f4;
+      border-radius: 6px 6px 0 0;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .portal-monitor-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .portal-monitor-screen .monitor-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: #bbb;
+      font-size: .78rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .portal-monitor-screen .monitor-placeholder i { font-size: 2rem; color: #d0d0d0; }
+    .portal-monitor-stand {
+      width: 30%;
+      height: 18px;
+      background: #1c1c1e;
+      margin: 0 auto;
+      border-radius: 0 0 4px 4px;
+    }
+    .portal-monitor-base {
+      width: 42%;
+      height: 8px;
+      background: #161616;
+      border-radius: 0 0 6px 6px;
+      margin: 0 auto;
+    }
+    @media (max-width: 991px) {
+      .portal-monitor-wrap { padding-top: 50px; }
+      .portal-monitor { max-width: 100%; }
+    }
+
+    @media (max-width: 767px) {
+      .portal-hero { padding: 80px 0 70px; }
+      .portal-preview-content { grid-template-columns: 1fr; }
+      .portal-preview-sidebar { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- GTM noscript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P93WLQG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- Preloader -->
+  <div id="loading" class="preloader">
+    <div class="loading-overlay"></div>
+    <div class="custom-loader"><div></div><div></div><div></div><div></div></div>
+  </div>
+
+  <!-- Top header -->
+  <div id="topbar" class="header-top d-none d-lg-block">
+    <div class="container container-extend">
+      <div class="header-top-wrp">
+        <ul class="info">
+          <li><i class="fa-solid fa-paper-plane"></i>
+            <a href="mailto:efren@abstract-creative.com?subject=Abstract Creative: Client Portal Access">efren@abstract-creative.com</a>
+          </li>
+          <li class="ml-40"><i class="fa-solid fa-phone"></i> <a href="tel:+18323707322">832.370.7322</a></li>
+        </ul>
+        <ul class="link-info">
+          <li class="bor-right"><a href="https://www.facebook.com/AbstractCreative"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li class="bor-right"><a href="https://www.instagram.com/abstr8ct/"><i class="fa-brands fa-instagram-square"></i></a></li>
+          <li class="bor-right"><a href="https://www.linkedin.com/company/abstract-creative-houston/"><i class="fa-brands fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header-area">
+    <div class="container container-extend">
+      <div class="header__main">
+        <a href="../index.html" class="logo">
+          <img src="../assets/images/logo/logo-stacked.svg" alt="Abstract Creative logo" />
+        </a>
+        <a href="../index.html" class="logo logo-light">
+          <img src="../assets/images/logo/logo-stacked-orange-light.svg" alt="Abstract Creative logo" />
+        </a>
+        <div class="main-menu main-menu-light">
+          <nav>
+            <ul>
+              <li><a data-track="nav" data-nav="how_we_work" href="../services/index.html">Services <i class="fa-solid fa-angle-down"></i></a>
+                <ul class="sub-menu" style="width:190px">
+                <li><a href="../services/foundation/index.html">Foundation</a></li>
+                <li><a href="../services/identity/index.html">Identity</a></li>
+                <li><a href="../services/execution/index.html">Execution</a></li>
+              </ul>
+              </li>
+              <li><a data-track="nav" data-nav="work" href="../work/index.html">Work</a></li>
+              <li><a data-track="nav" data-nav="about" href="../about/index.html">About</a></li>
+              <li><a data-track="nav" data-nav="insights" href="../insights/index.html">Insights <i class="fa-solid fa-angle-down"></i></a>
+                <ul class="sub-menu" style="width:190px">
+                  <li><a href="../insights/index.html">Articles</a></li>
+                  <li><a href="../resources/index.html">Resource Library</a></li>
+                </ul>
+              </li>
+              <li><a data-track="nav" data-nav="assessment" href="../assessment/index.html">Free Assessment</a></li>
+            </ul>
+          </nav>
+        </div><div class="bars d-block d-lg-none">
+          <i id="openButton" class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar (mobile) -->
+  <div id="targetElement" class="sidebar-area sidebar__hide">
+    <div class="sidebar__overlay"></div>
+    <a href="../index.html" class="logo mb-40">
+      <img src="../assets/images/logo/logo-stacked-orange-light.svg" alt="Abstract Creative logo" />
+    </a>
+    <div class="mobile-menu overflow-hidden"></div>
+    <ul class="info pt-40">
+      <li><i class="fa-solid primary-color fa-location-dot"></i> <a href="https://abstract-creative.com">abstract-creative.com</a></li>
+      <li class="py-2"><i class="fa-solid primary-color fa-phone-volume"></i> <a href="tel:+18323707322">832-370-7322</a></li>
+      <li><i class="fa-solid primary-color fa-paper-plane"></i> <a href="mailto:efren@abstract-creative.com">efren@abstract-creative.com</a></li>
+    </ul>
+    <div class="social-icon mt-20">
+      <a href="https://www.facebook.com/AbstractCreative"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/abstr8ct/"><i class="fa-brands fa-instagram-square"></i></a>
+      <a href="https://www.linkedin.com/company/abstract-creative-houston/"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <button id="closeButton" class="text-white"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="portal-hero">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="portal-eyebrow">
+              <i class="fa-regular fa-shield-check"></i> Existing Clients
+            </span>
+            <h1>Your Project.<br><span>Your Portal.</span><br>Always On.</h1>
+            <p class="portal-sub">
+              Every Abstract Creative client gets a private, dedicated workspace to track their project,
+              download brand assets, approve deliverables, view live campaign analytics, and communicate
+              directly with the team — without waiting for a status email.
+            </p>
+            <div class="portal-hero-btns">
+              <a href="https://portal.abstract-creative.com" target="_blank" rel="noopener"
+                data-track="cta" data-cta="client_login" data-location="portal_hero"
+                class="portal-btn-login">
+                <i class="fa-regular fa-arrow-right-to-bracket"></i> Log In to Your Portal
+              </a>
+              <a href="../contact/index.html"
+                data-track="cta" data-cta="fit_call" data-location="portal_hero"
+                class="portal-btn-ghost">
+                Not a client yet? Let's talk <i class="fa-regular fa-arrow-right"></i>
+              </a>
+            </div>
+            <p style="font-size:.78rem; color:rgba(255,255,255,0.3); margin-top:18px;">
+              Access is invitation-only. You'll set up your password during onboarding.
+            </p>
+          </div>
+          <!-- Inline UI preview -->
+          <div class="col-lg-6 d-none d-lg-block">
+            <div class="portal-preview-screen">
+              <div class="portal-preview-bar">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-amber"></span>
+                <span class="dot dot-green"></span>
+                <span class="url">portal.abstract-creative.com/dashboard</span>
+              </div>
+              <div class="portal-preview-content">
+                <div class="portal-preview-sidebar">
+                  <div class="nav-item active"><i class="fa-regular fa-grid-2"></i> Dashboard</div>
+                  <div class="nav-item"><i class="fa-regular fa-chart-line"></i> Analytics</div>
+                  <div class="nav-item"><i class="fa-regular fa-folder-open"></i> Files</div>
+                  <div class="nav-item"><i class="fa-regular fa-file-invoice-dollar"></i> Invoices</div>
+                  <div class="nav-item"><i class="fa-regular fa-circle-check"></i> Approvals</div>
+                  <div class="nav-item"><i class="fa-regular fa-calendar"></i> Schedule</div>
+                  <div class="nav-item"><i class="fa-regular fa-message"></i> Messages</div>
+                </div>
+                <div class="portal-preview-main">
+                  <div class="portal-preview-card">
+                    <div class="card-label">Active Project</div>
+                    <div class="card-value">Brand Transformation</div>
+                    <div class="progress-bar-wrap">
+                      <div class="progress-bar-fill" style="width:65%"></div>
+                    </div>
+                    <div style="font-size:.72rem; color:rgba(255,255,255,.35); margin-top:7px;">65% complete · Est. delivery Apr 14</div>
+                  </div>
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <div class="portal-preview-card">
+                        <div class="card-label">Pending Approvals</div>
+                        <div class="card-value" style="font-size:1.5rem;">2</div>
+                        <span class="badge badge-pending mt-2">Action needed</span>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="portal-preview-card">
+                        <div class="card-label">Invoice Status</div>
+                        <div class="card-value" style="font-size:1.5rem;">Paid</div>
+                        <span class="badge badge-active mt-2">Up to date</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FEATURES ── -->
+    <section class="portal-features">
+      <div class="container">
+        <div class="section-header text-center mb-60">
+          <h5>What's Inside</h5>
+          <h2>Everything You Need.<br>Nothing You Don't.</h2>
+          <p style="max-width:560px; margin:0 auto; color:#666; line-height:1.75;">
+            The portal is your single source of truth for every active engagement — built to eliminate status update emails and give you real visibility into your project.
+          </p>
+        </div>
+        <!-- Row 1: 3 primary feature cards -->
+        <div class="row g-4 mb-4">
+
+          <div class="col-lg-4">
+            <div class="portal-feature-primary">
+              <div class="portal-feature-screenshot">
+                <!-- Replace with: <img src="../assets/img/portal/dashboard.jpg" alt="Project Dashboard screenshot"> -->
+                <div class="screenshot-placeholder">
+                  <i class="fa-regular fa-image"></i>
+                  dashboard.jpg
+                </div>
+              </div>
+              <div class="feature-badge">VISIBILITY</div>
+              <h4>Project Dashboard</h4>
+              <p>Your real-time view of every active engagement — no status calls required.</p>
+              <ul class="feature-list">
+                <li>Project stage &amp; completion percentage</li>
+                <li>Key milestones &amp; estimated delivery</li>
+                <li>Live updates as work progresses</li>
+                <li>Pending items that need your attention</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portal-feature-primary">
+              <div class="portal-feature-screenshot">
+                <!-- Replace with: <img src="../assets/img/portal/analytics.jpg" alt="Campaign Analytics screenshot"> -->
+                <div class="screenshot-placeholder">
+                  <i class="fa-regular fa-image"></i>
+                  analytics.jpg
+                </div>
+              </div>
+              <div class="feature-badge">PERFORMANCE</div>
+              <h4>Campaign &amp; Social Analytics</h4>
+              <p>Live data for every campaign we're running on your behalf — in one place.</p>
+              <ul class="feature-list">
+                <li>Impressions, reach &amp; engagement rates</li>
+                <li>Platform-by-platform breakdown</li>
+                <li>Conversion tracking &amp; lead volume</li>
+                <li>Monthly trend comparisons</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portal-feature-primary">
+              <div class="portal-feature-screenshot">
+                <!-- Replace with: <img src="../assets/img/portal/brand-assets.jpg" alt="Brand Asset Library screenshot"> -->
+                <div class="screenshot-placeholder">
+                  <i class="fa-regular fa-image"></i>
+                  brand-assets.jpg
+                </div>
+              </div>
+              <div class="feature-badge">ACCESS</div>
+              <h4>Brand Asset Library</h4>
+              <p>Every deliverable we produce, organized and ready to download anytime.</p>
+              <ul class="feature-list">
+                <li>Logos, marks &amp; brand guidelines</li>
+                <li>Strategy documents &amp; briefs</li>
+                <li>Fonts, color palettes &amp; templates</li>
+                <li>Organized by project &amp; category</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Row 2: 6 utility chip cards -->
+        <div class="row g-3">
+
+          <div class="col-md-6 col-lg-4">
+            <div class="portal-feature-chip">
+              <div class="portal-chip-icon"><i class="fa-regular fa-circle-check"></i></div>
+              <div>
+                <h5>Deliverable Approvals</h5>
+                <p>Review, approve, or request revisions — no email threads.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="portal-feature-chip">
+              <div class="portal-chip-icon"><i class="fa-regular fa-calendar-check"></i></div>
+              <div>
+                <h5>Schedule a Call</h5>
+                <p>Book a check-in synced to your project timeline.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="portal-feature-chip">
+              <div class="portal-chip-icon"><i class="fa-regular fa-file-invoice-dollar"></i></div>
+              <div>
+                <h5>Invoices &amp; Billing</h5>
+                <p>Payment history, status &amp; upcoming milestones.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="portal-feature-chip">
+              <div class="portal-chip-icon"><i class="fa-regular fa-message-lines"></i></div>
+              <div>
+                <h5>Direct Messaging</h5>
+                <p>Message the team directly, tied to your project.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="portal-feature-chip">
+              <div class="portal-chip-icon"><i class="fa-regular fa-list-check"></i></div>
+              <div>
+                <h5>Onboarding Tracker</h5>
+                <p>Step-by-step checklist from signed proposal to kickoff.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="portal-feature-chip">
+              <div class="portal-chip-icon"><i class="fa-regular fa-user-gear"></i></div>
+              <div>
+                <h5>Account Settings</h5>
+                <p>Business info, notifications &amp; team contacts.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOW ACCESS WORKS ── -->
+    <section class="portal-access">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5">
+            <div class="section-header">
+              <h5>How It Works</h5>
+              <h2>Access Is Set Up Before Your Project Kicks Off</h2>
+              <p style="color:#666; line-height:1.75; margin-bottom:0;">
+                The portal is exclusive to active Abstract Creative clients. You'll set up your password when you're onboarded — from there, your workspace is ready on Day 1.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6 offset-lg-1">
+            <div class="portal-access-step">
+              <div class="portal-step-num">1</div>
+              <div>
+                <h5>Proposal signed &amp; deposit received</h5>
+                <p>Your project is confirmed and your portal workspace is created in the system with your project details pre-loaded.</p>
+              </div>
+            </div>
+            <div class="portal-access-step">
+              <div class="portal-step-num">2</div>
+              <div>
+                <h5>You set up your password &amp; log in</h5>
+                <p>You'll receive an invitation email with a link to create your password. Once set, you can log in anytime at portal.abstract-creative.com.</p>
+              </div>
+            </div>
+            <div class="portal-access-step">
+              <div class="portal-step-num">3</div>
+              <div>
+                <h5>Complete your intake in the portal</h5>
+                <p>Your onboarding questionnaire, brand intake, and kickoff scheduling all happen inside the portal — keeping everything in one place from day one.</p>
+              </div>
+            </div>
+            <div class="portal-access-step">
+              <div class="portal-step-num">4</div>
+              <div>
+                <h5>Track everything through delivery</h5>
+                <p>From first strategy session to final asset delivery, every update, approval, file, and invoice lives in your portal — no chasing status emails.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EXISTING CLIENT CTA ── -->
+    <section class="portal-cta">
+      <div class="container portal-cta-inner">
+        <div class="row align-items-center g-5">
+
+          <!-- Left: copy + CTAs -->
+          <div class="col-lg-5">
+            <div class="section-header mb-0">
+              <h5 class="text-white" style="color:#ef4237; margin-top:60px;">Already a Client?</h5>
+              <h2 class="text-white">Your Portal Is Ready.</h2>
+            </div>
+            <p class="cta-sub">Log in to access your project dashboard, download brand assets, and check your latest campaign performance — all in one place.</p>
+            <a href="https://portal.abstract-creative.com" target="_blank" rel="noopener"
+              data-track="cta" data-cta="client_login" data-location="portal_cta_footer"
+              class="portal-btn-login">
+              <i class="fa-regular fa-arrow-right-to-bracket"></i> Log In to Your Portal
+            </a>
+            <div class="cta-divider">
+              <p>Not a client yet? See what working together looks like.</p>
+              <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <a href="../services/index.html"
+                  data-track="cta" data-cta="explore_services" data-location="portal_cta_footer"
+                  class="portal-btn-ghost" style="font-size:.9rem; padding:11px 22px;">
+                  See How We Work <i class="fa-regular fa-arrow-right"></i>
+                </a>
+                <a href="../contact/index.html"
+                  data-track="cta" data-cta="fit_call" data-location="portal_cta_footer"
+                  class="portal-btn-ghost" style="font-size:.9rem; padding:11px 22px;">
+                  Book a Fit Call <i class="fa-regular fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: monitor mockup -->
+          <div class="col-lg-7">
+            <div class="portal-monitor-wrap">
+              <div class="portal-monitor">
+                <div class="portal-monitor-bar">
+                  <span class="dot dot-r"></span>
+                  <span class="dot dot-a"></span>
+                  <span class="dot dot-g"></span>
+                  <div class="url-bar">portal.abstract-creative.com/dashboard</div>
+                </div>
+                <div class="portal-monitor-screen">
+                  <!-- Replace with: <img src="../assets/img/portal/monitor-preview.jpg" alt="Abstract Creative Client Portal"> -->
+                  <div class="monitor-placeholder">
+                    <i class="fa-regular fa-display"></i>
+                    monitor-preview.jpg
+                  </div>
+                </div>
+              </div>
+              <div class="portal-monitor-stand"></div>
+              <div class="portal-monitor-base"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="site-footer" class="footer-area footer-bg">
+    <div class="footer__main-wrp">
+      <div class="container container-extend">
+        <div class="footer__wrp pt-90 pb-90">
+          <div class="row g-4 justify-content-between">
+            <div class="col-lg-4 col-sm-6">
+              <div class="footer__item">
+                <a href="../index.html" class="logo mb-20">
+                  <img src="../assets/images/logo/logo-stacked-orange-light.svg" alt="Abstract Creative brand strategy firm" />
+                </a>
+                <p>Abstract Creative is a Brand Transformation Studio that installs positioning, brand architecture, and growth systems—so you can scale without drift.</p>
+                <div class="social-icon mt-20">
+                  <a href="https://www.facebook.com/AbstractCreative"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="https://www.instagram.com/abstr8ct/"><i class="fa-brands fa-instagram-square"></i></a>
+                  <a href="https://www.linkedin.com/company/abstract-creative-houston/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-sm-6">
+              <div class="footer__item">
+                <h4 class="title mb-20 text-white">Company</h4>
+                <ul class="link">
+                  <li><a href="../about/index.html">About</a></li>
+                  <li><a href="../services/index.html">How We Work</a></li>
+                  <li><a href="../work/index.html">Work</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-sm-6">
+              <div class="footer__item">
+                <h4 class="title mb-20 text-white">Resources</h4>
+                <ul class="link">
+                  <li><a href="../insights/index.html">Articles</a></li>
+                  <li><a href="../resources/index.html">Resource Library</a></li>
+                  <li><a href="../assessment/index.html">Free Assessment</a></li>
+                  <li><a href="https://portal.abstract-creative.com" target="_blank" rel="noopener">Client Login</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2 col-sm-6">
+              <div class="footer__item">
+                <h4 class="title mb-20 text-white">Legal</h4>
+                <ul class="link">
+                  <li><a href="../privacy.html">Privacy Policy</a></li>
+                  <li><a href="../terms-of-services.html">Terms &amp; Conditions</a></li>
+                  <li><a href="../cookies.html">Cookies</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__copytext footer__copy">
+      <div class="container container-extend">
+        <p>© 2017–2026 <a class="primary-hover medium-grey" href="../index.html">Abstract Creative</a> LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/meanmenu.js"></script>
+  <script src="../assets/js/swiper-bundle.min.js"></script>
+  <script src="../assets/js/script.js" defer></script>
+</body>
+</html>

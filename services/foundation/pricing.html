@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({ pageType: "pricing", expertiseCategory: "foundation" });
+  </script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Strategic Foundation — Pricing | Abstract Creative</title>
+  <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+  <link rel="preload" href="../../assets/css/all.min.css" as="style">
+  <link rel="stylesheet" href="../../assets/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="../../assets/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P93WLQG');</script>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P93WLQG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { background: #112b32; color: #111; font-family: 'Public Sans', sans-serif; min-height: 100vh; margin: 0; }
+    .pricing-header { background: #0d2229; border-bottom: 1px solid rgba(255,255,255,.07); padding: 18px 0; position: sticky; top: 0; z-index: 100; }
+    .pricing-header::after { content: ''; display: block; position: absolute; bottom: 0; left: 0; width: 60px; height: 2px; background: #ef4237; }
+    .back-link { font-size: .8rem; color: rgba(255,255,255,.4); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: color .15s; }
+    .back-link:hover { color: rgba(255,255,255,.85); }
+    .pricing-wrap { max-width: 680px; margin: 0 auto; padding: 60px 20px 80px; }
+
+    /* ── Gate (sits on dark teal) ── */
+    .pricing-gate { max-width: 520px; margin: 0 auto; }
+    .gate-eyebrow { font-size: .58rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #ef4237; margin-bottom: 16px; display: block; }
+    .gate-headline { font-size: 2.4rem; font-weight: 800; color: #fff; margin-bottom: 14px; line-height: 1.1; }
+    .gate-sub { color: rgba(255,255,255,.55); font-size: .92rem; margin-bottom: 32px; line-height: 1.75; }
+    .gate-card { background: #fff; border: none; padding: 36px; box-shadow: 0 8px 40px rgba(0,0,0,.25); }
+    .gate-label { font-size: .72rem; font-weight: 700; color: #555; display: block; margin-bottom: 8px; letter-spacing: .03em; }
+    .gate-input { width: 100%; padding: 13px 16px; background: #f5f5f5; border: 1px solid #e0e0e0; color: #111; font-size: .9rem; outline: none; transition: border-color .15s; font-family: inherit; }
+    .gate-input::placeholder { color: #bbb; }
+    .gate-input:focus { border-color: #ef4237; }
+    .gate-btn { width: 100%; background: #ef4237; color: #fff; border: none; padding: 15px; font-size: .92rem; font-weight: 700; cursor: pointer; font-family: inherit; transition: background .15s; letter-spacing: .02em; }
+    .gate-btn:hover { background: #c73028; }
+    .gate-error { color: #ef4237; font-size: .78rem; margin-top: 10px; display: none; }
+    .gate-trust { display: flex; align-items: center; justify-content: center; gap: 28px; margin-top: 24px; flex-wrap: wrap; }
+    .gate-trust span { font-size: .7rem; color: rgba(255,255,255,.35); display: flex; align-items: center; gap: 7px; }
+    .gate-trust i { color: #ef4237; font-size: .65rem; }
+
+    /* ── Revealed content ── */
+    .pricing-content { display: none; }
+    .pricing-content.revealed { display: block; }
+    .content-eyebrow { font-size: .58rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #ef4237; margin-bottom: 12px; display: block; }
+    .content-headline { font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 18px; }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .badge { font-size: .78rem; font-weight: 600; background: rgba(255,255,255,.1); color: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.12); padding: 6px 14px; }
+
+    /* ── Phase cards (white on teal) ── */
+    .phase-card { background: #fff; border: none; border-left: 3px solid #ef4237; padding: 24px 28px; margin-bottom: 8px; box-shadow: 0 2px 12px rgba(0,0,0,.15); }
+    .phase-card--retainer { background: #f7f9f9; border-left: 3px solid #ef4237; }
+    .phase-num { font-size: .54rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: #ef4237; margin-bottom: 10px; display: block; }
+    .phase-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+    .phase-title { font-size: 1.05rem; font-weight: 700; color: #111; margin: 0; }
+    .phase-value { font-size: .82rem; font-weight: 600; color: #999; white-space: nowrap; }
+    .phase-list { margin: 14px 0 0; padding: 0; }
+    .phase-list li { color: #666; font-size: .85rem; padding: 5px 0 5px 16px; list-style: none; position: relative; line-height: 1.5; }
+    .phase-list li::before { content: '·'; color: #ef4237; position: absolute; left: 0; }
+
+    /* ── Section label (on teal bg) ── */
+    .section-label { font-size: .6rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.35); display: flex; align-items: center; gap: 12px; margin: 28px 0 16px; }
+    .section-label::before, .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.1); }
+
+    /* ── Total bar ── */
+    .total-bar { background: #ef4237; padding: 30px 32px; margin-bottom: 8px; box-shadow: 0 4px 20px rgba(239,66,55,.3); }
+    .total-bar .total-label { font-size: .56rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.75); margin-bottom: 8px; display: block; }
+    .total-bar .total-amount { font-size: 1.9rem; font-weight: 800; color: #fff; margin: 0 0 6px; line-height: 1; }
+    .total-bar .total-sub { font-size: .78rem; color: rgba(255,255,255,.8); margin: 0; }
+    .total-bar .total-note { font-size: .72rem; color: rgba(255,255,255,.65); margin: 0; line-height: 1.5; }
+    .savings-callout { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.2); padding: 16px 20px; }
+    .savings-callout p { font-size: .78rem; color: rgba(255,255,255,.8); margin: 0; line-height: 1.6; }
+    .savings-callout strong { color: #fff; }
+
+    /* ── Reserve section ── */
+    .reserve-section { background: #fff; border: none; border-left: 4px solid #ef4237; padding: 44px 40px; text-align: center; margin-bottom: 8px; box-shadow: 0 4px 24px rgba(0,0,0,.18); }
+    .reserve-eyebrow { font-size: .54rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #ef4237; margin-bottom: 14px; display: block; }
+    .reserve-headline { font-size: 1.5rem; font-weight: 800; color: #111; margin-bottom: 10px; }
+    .reserve-sub { font-size: .9rem; color: #777; margin-bottom: 28px; line-height: 1.75; max-width: 440px; margin-left: auto; margin-right: auto; }
+    .btn-reserve-lg { display: inline-flex; align-items: center; gap: 10px; background: #ef4237; color: #fff; font-weight: 700; font-size: .95rem; padding: 17px 36px; text-decoration: none; transition: background .15s; border: none; cursor: pointer; font-family: inherit; letter-spacing: .02em; }
+    .btn-reserve-lg:hover { background: #c73028; color: #fff; }
+    .reserve-divider { display: block; font-size: .72rem; color: #ccc; margin: 18px 0 12px; }
+    .reserve-alt { font-size: .82rem; color: #aaa; cursor: pointer; background: none; border: none; padding: 0; font-family: inherit; }
+    .reserve-alt:hover { color: #333; text-decoration: underline; }
+    .reserve-note { font-size: .7rem; color: #ccc; margin-top: 20px; margin-bottom: 0; }
+
+    /* ── Payment card ── */
+    .payment-card { background: #fff; border: none; padding: 28px 32px; margin-bottom: 8px; box-shadow: 0 2px 12px rgba(0,0,0,.15); }
+    .payment-card h4 { font-size: .95rem; font-weight: 800; color: #111; margin-bottom: 20px; }
+    .payment-step { display: flex; align-items: flex-start; gap: 16px; padding: 14px 0; border-bottom: 1px solid #f0f0f0; }
+    .payment-step:last-child { border-bottom: none; padding-bottom: 0; }
+    .payment-step-num { width: 28px; height: 28px; background: #ef4237; color: #fff; font-size: .62rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .payment-step-num--dark { background: #ccc; }
+    .payment-step-body h5 { font-size: .88rem; font-weight: 700; color: #111; margin: 0 0 4px; }
+    .payment-step-body p { font-size: .8rem; color: #888; margin: 0; line-height: 1.55; }
+
+    /* ── FAQ ── */
+    .faq-section { margin-bottom: 8px; }
+    .faq-section h3 { font-size: 1rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+    .faq-item { background: #fff; border-bottom: 1px solid #ebebeb; box-shadow: none; }
+    .faq-item:first-child { border-top: none; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; padding: 18px 20px; font-size: .88rem; font-weight: 600; color: #333; cursor: pointer; font-family: inherit; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .faq-q:hover { color: #ef4237; }
+    .faq-q i { color: #ef4237; font-size: .62rem; transition: transform .2s; flex-shrink: 0; }
+    .faq-q.open i { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 20px 18px; font-size: .85rem; color: #777; line-height: 1.8; }
+    .faq-a.open { display: block; }
+    .faq-wrap { box-shadow: 0 2px 12px rgba(0,0,0,.15); overflow: hidden; }
+
+    /* ── Bottom CTA ── */
+    .bottom-cta { background: #0d2229; padding: 40px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,.2); }
+    .bottom-cta-eyebrow { font-size: .54rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #ef4237; margin-bottom: 10px; display: block; }
+    .bottom-cta h3 { font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .bottom-cta p { color: rgba(255,255,255,.45); font-size: .85rem; margin-bottom: 24px; }
+    .section-gap { height: 32px; }
+
+    @media (max-width: 600px) {
+      .gate-headline { font-size: 1.8rem; }
+      .content-headline { font-size: 1.5rem; }
+      .reserve-section { padding: 32px 24px; }
+      .gate-card { padding: 24px; }
+      .pricing-wrap { padding: 40px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loading" class="preloader">
+    <div class="loading-overlay"></div>
+    <div class="custom-loader"><div></div><div></div><div></div><div></div></div>
+  </div>
+
+  <!-- Header -->
+  <header class="pricing-header">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="../../index.html">
+          <img src="../../assets/images/logo/logo-stacked-orange-light.svg" alt="Abstract Creative" style="height:52px;">
+        </a>
+        <a href="./index.html" class="back-link">
+          <i class="fa-regular fa-arrow-left"></i> Back to Strategic Foundation
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="pricing-wrap">
+
+      <!-- ── GATE ── -->
+      <div id="pricingGate" class="pricing-gate text-center">
+        <span class="gate-eyebrow">Foundation · Strategic Positioning</span>
+        <h1 class="gate-headline">See the Full<br>Investment Breakdown</h1>
+        <p class="gate-sub">Phase details, deliverables, and payment structure — unlocked in one step. No sales call required to get the numbers.</p>
+<iframe
+    src="https://api.leadconnectorhq.com/widget/form/2IXRBRb7RFe53NYnLqIW"
+    style="width:100%;height:100%;border:none;border-radius:3px"
+    id="inline-2IXRBRb7RFe53NYnLqIW" 
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Foundation Pricing"
+    data-height="793"
+    data-layout-iframe-id="inline-2IXRBRb7RFe53NYnLqIW"
+    data-form-id="2IXRBRb7RFe53NYnLqIW"
+    title="Foundation Pricing"
+        >
+</iframe>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        <div class="gate-trust">
+          <span><i class="fa-solid fa-lock"></i> No spam, ever</span>
+          <span><i class="fa-solid fa-shield-check"></i> No obligation</span>
+          <span><i class="fa-solid fa-circle-check"></i> Instant access</span>
+        </div>
+      </div>
+
+      <!-- ── PRICING CONTENT ── -->
+      <div id="pricingContent" class="pricing-content">
+
+        <!-- Title -->
+        <div style="margin-bottom:36px;">
+          <span class="content-eyebrow">Foundation · Strategic Positioning</span>
+          <h1 class="content-headline">Strategic Foundation Investment</h1>
+          <div class="badge-row">
+            <span class="badge">$10,000–$12,000</span>
+            <span class="badge">5–6 Weeks</span>
+            <span class="badge">Fixed-Fee · Phased</span>
+          </div>
+        </div>
+
+        <!-- Phases -->
+        <div class="phase-card">
+          <span class="phase-num">Phase 01 &nbsp;·&nbsp; Weeks 1–3</span>
+          <div class="phase-header">
+            <h3 class="phase-title">Strategy &amp; Positioning</h3>
+            <span class="phase-value">$4,500–$5,500</span>
+          </div>
+          <ul class="phase-list">
+            <li>Market analysis &amp; competitive audit</li>
+            <li>Audience personas &amp; buyer psychology</li>
+            <li>Unique Value Proposition (UVP) development</li>
+            <li>Messaging hierarchy &amp; narrative architecture</li>
+            <li>Live positioning workshop (virtual or in-person)</li>
+            <li>Brand story &amp; core messaging framework</li>
+          </ul>
+        </div>
+
+        <div class="phase-card">
+          <span class="phase-num">Phase 02 &nbsp;·&nbsp; Weeks 3–6</span>
+          <div class="phase-header">
+            <h3 class="phase-title">Identity Design</h3>
+            <span class="phase-value">$5,500–$6,500</span>
+          </div>
+          <ul class="phase-list">
+            <li>Logo suite (primary, secondary, mark variants)</li>
+            <li>Visual system: color, typography, iconography</li>
+            <li>Comprehensive brand guidelines document</li>
+            <li>Essential brand templates (deck, email, social)</li>
+            <li>Brand standards documentation</li>
+            <li>Final asset delivery package</li>
+          </ul>
+        </div>
+
+        <!-- Total -->
+        <div class="total-bar">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+            <div>
+              <span class="total-label">Total Investment</span>
+              <p class="total-amount">$10,000–$12,000</p>
+              <p class="total-sub">Fixed-fee · 30/30/40 phased payments · No overages</p>
+            </div>
+            <p class="total-note" style="max-width:220px; text-align:right;">Scope locked at start. You approve each phase before we proceed.</p>
+          </div>
+        </div>
+
+        <!-- Reserve -->
+        <div class="reserve-section">
+          <span class="reserve-eyebrow">Ready to Begin?</span>
+          <h2 class="reserve-headline">Reserve Your Foundation Engagement</h2>
+          <p class="reserve-sub">Secure your start date with a $3,000 deposit — applied toward your total. Remaining balance invoiced in phases as we hit each milestone.</p>
+          <a href="#reserve-foundation" class="btn-reserve-lg" data-track="cta" data-cta="reserve_deposit" data-location="pricing_page">
+            Reserve My Spot — $3,000 Deposit &nbsp;<i class="fa-regular fa-arrow-right"></i>
+          </a>
+          <span class="reserve-divider">or</span>
+          <button onclick="openModal('fitCallModal')" class="reserve-alt">Have questions? Book a 20-min fit call first.</button>
+          <p class="reserve-note">Deposit link activated once your spot is confirmed. We'll reach out within 1 business day.</p>
+        </div>
+
+        <!-- Payment structure -->
+        <div class="payment-card">
+          <h4>How Payments Work</h4>
+          <div class="payment-step">
+            <div class="payment-step-num">1</div>
+            <div class="payment-step-body">
+              <h5>30% at Engagement Start</h5>
+              <p>~$3,000–$3,600 · Covers discovery, research, and the positioning workshop. Kicks off Phase 1.</p>
+            </div>
+          </div>
+          <div class="payment-step">
+            <div class="payment-step-num">2</div>
+            <div class="payment-step-body">
+              <h5>30% at Phase 2 Kickoff</h5>
+              <p>~$3,000–$3,600 · Strategy approved and locked. Identity design begins.</p>
+            </div>
+          </div>
+          <div class="payment-step">
+            <div class="payment-step-num">3</div>
+            <div class="payment-step-body">
+              <h5>40% at Final Delivery</h5>
+              <p>~$4,000–$4,800 · All assets delivered, guidelines complete, project closed.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="section-gap"></div>
+        <div class="faq-section">
+          <h3>Common Questions</h3>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Do I need Foundation before moving to Identity or Execution?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a">Yes — and intentionally so. Positioning must be locked before visual identity is built. Designing a brand without a messaging foundation produces aesthetics without strategy, which means rework every 12–18 months as your business evolves.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What if I already have a brand? Can we skip Phase 1?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a">We always start with a strategy audit — even if you have an existing brand. We need to validate that your positioning actually holds before building on top of it. In most cases we find gaps. If your strategy is genuinely locked, Phase 1 is shorter and the engagement adjusts accordingly.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What do I actually receive at the end of this engagement?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a">You receive: a complete positioning document, your UVP and messaging hierarchy, a full logo suite, visual system (colors, typography, iconography), brand guidelines, brand templates, and all source files. Everything you need to brief any designer, agency, or team member — without starting over.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Am I locked in for the full engagement from day one?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a">No. Each phase has an approval gate — you review and sign off before we invoice the next payment and proceed. You're never committed beyond the current phase without explicit agreement.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              How long does this take and how involved do I need to be?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a">5–6 weeks total. You'll need to participate in the positioning workshop (2–3 hours) and provide feedback at review checkpoints — typically 2–4 hours of your time per phase. We handle the heavy lifting; you stay in the decision seat.</div>
+          </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="section-gap"></div>
+        <div class="bottom-cta">
+          <span class="bottom-cta-eyebrow">Next Step</span>
+          <h3>Ready to lock your positioning?</h3>
+          <p>Reserve your spot and we'll confirm your start date within 1 business day.</p>
+          <a href="#reserve-foundation" class="btn-reserve-lg" data-track="cta" data-cta="reserve_deposit" data-location="pricing_bottom">
+            Reserve My Spot — $3,000 Deposit &nbsp;<i class="fa-regular fa-arrow-right"></i>
+          </a>
+          <p style="margin-top:14px; margin-bottom:0;">
+            <button onclick="openModal('fitCallModal')" style="background:none; border:none; color:rgba(255,255,255,.3); font-size:.8rem; cursor:pointer; padding:0; font-family:inherit;">Prefer to talk first? Book a fit call.</button>
+          </p>
+          <div class="bottom-cta-footer">
+            <a href="./index.html" class="back-link" style="justify-content:center;"><i class="fa-regular fa-arrow-left"></i> Back to Strategic Foundation overview</a>
+          </div>
+        </div>
+
+      </div><!-- /pricing-content -->
+    </div><!-- /pricing-wrap -->
+  </main>
+
+  <!-- Modal -->
+  <div id="fitCallModal" class="contact-modal" style="display:none;">
+    <div class="contact-modal__dialog">
+      <button class="contact-modal__close" onclick="closeModal('fitCallModal')">×</button>
+      <iframe src="https://api.leadconnectorhq.com/widget/booking/sIh2YfvkUXspGuoqHkto" class="iframe-form" scrolling="no" title="Book a Strategic Fit Call" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <script src="../../assets/js/jquery-3.7.1.min.js" defer></script>
+  <script src="../../assets/js/bootstrap.min.js" defer></script>
+  <script src="../../assets/js/meanmenu.js" defer></script>
+  <script src="../../assets/js/script.js" defer></script>
+  <script>
+    function revealPricing() {
+      var name = document.getElementById('gateName').value.trim();
+      var email = document.getElementById('gateEmail').value.trim();
+      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!name || !emailOk) {
+        document.getElementById('gateError').style.display = 'block';
+        return;
+      }
+      document.getElementById('gateError').style.display = 'none';
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'pricing_gate_submit', service: 'foundation', name: name, email: email });
+      document.getElementById('pricingGate').style.display = 'none';
+      document.getElementById('pricingContent').classList.add('revealed');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    function toggleFaq(btn) {
+      var answer = btn.nextElementSibling;
+      var isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-a.open').forEach(function(a) { a.classList.remove('open'); });
+      document.querySelectorAll('.faq-q.open').forEach(function(b) { b.classList.remove('open'); });
+      if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+    }
+    function openModal(id) {
+      var m = document.getElementById(id);
+      if (m) m.style.display = 'flex';
+    }
+    function closeModal(id) {
+      var m = document.getElementById(id);
+      if (m) m.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "page_meta",
+      pageType: "landing_page",
+      pageName: "Social LP – Brand Gap",
+      templateVersion: "2026-03-27-v1"
+    });
+    window.ACTrack = function(e, p) {
+      try { window.dataLayer.push(Object.assign({ event: e }, p || {})); } catch(err) {}
+    };
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P93WLQG');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+
+  <title>Your Brand Hasn't Caught Up — Abstract Creative</title>
+  <meta name="description" content="If your business has grown but your brand hasn't kept up, you're leaving deals on the table every week. Find out where the gap is." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Your Brand Hasn't Caught Up to the Business You've Built">
+  <meta property="og:description" content="Most $500K–$5M businesses are generating revenue despite their brand, not because of it. Here's how to close that gap.">
+  <meta property="og:image" content="https://abstract-creative.com/assets/images/og/abstract-creative-og.jpg">
+
+  <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+  <link rel="preload" href="../../assets/css/all.min.css" as="style">
+  <link rel="stylesheet" href="../../assets/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="../../assets/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="../../assets/css/animate.css" />
+  <link rel="stylesheet" href="../../assets/css/style-three.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── LP-specific overrides ─── */
+    body { font-family: 'Open Sans', sans-serif; background: #fff; }
+
+    .lp-nav {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .lp-nav img { height: 44px; }
+
+    .lp-hero {
+      background: #0e0e0e;
+      padding: 90px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .lp-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(239,66,55,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .lp-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #ef4237;
+      background: rgba(239,66,55,0.1);
+      border: 1px solid rgba(239,66,55,0.25);
+      border-radius: 4px;
+      padding: 5px 12px;
+      margin-bottom: 24px;
+    }
+    .lp-hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .lp-hero h1 span { color: #ef4237; }
+    .lp-hero .lp-sub {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.72);
+      max-width: 560px;
+      margin-bottom: 36px;
+    }
+
+    .lp-cta-stack { display: flex; flex-direction: column; gap: 12px; max-width: 420px; }
+    .lp-btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 28px;
+      background: #ef4237;
+      color: #fff;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .lp-btn-primary:hover { background: #d63027; color: #fff; }
+    .lp-btn-secondary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: transparent;
+      color: rgba(255,255,255,0.8);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 8px;
+      font-size: .95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: border-color .2s, color .2s;
+    }
+    .lp-btn-secondary:hover { border-color: rgba(255,255,255,0.65); color: #fff; }
+
+    .lp-microcopy {
+      margin-top: 16px;
+      font-size: .78rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ─── Social proof bar ─── */
+    .lp-proof-bar {
+      background: #f7f7f7;
+      padding: 32px 0;
+      border-bottom: 1px solid #ebebeb;
+    }
+    .lp-proof-bar p {
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #999;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .lp-proof-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 32px 48px; }
+    .lp-proof-logos img { height: 28px; opacity: .55; filter: grayscale(1); transition: opacity .2s; }
+    .lp-proof-logos img:hover { opacity: .8; }
+
+    /* ─── Problem section ─── */
+    .lp-section { padding: 80px 0; }
+    .lp-section-alt { background: #f9f9f9; }
+
+    .lp-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #ef4237;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .lp-section h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #111;
+      margin-bottom: 16px;
+    }
+    .lp-section .lp-lead {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #555;
+      max-width: 600px;
+      margin-bottom: 32px;
+    }
+
+    /* ─── Symptom checklist ─── */
+    .lp-checklist { list-style: none; padding: 0; margin: 0 0 32px; }
+    .lp-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid #efefef;
+      font-size: .97rem;
+      line-height: 1.55;
+      color: #333;
+    }
+    .lp-checklist li:last-child { border-bottom: none; }
+    .lp-checklist .check-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(239,66,55,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .lp-checklist .check-icon i { color: #ef4237; font-size: 11px; }
+
+    /* ─── How it works steps ─── */
+    .lp-steps { display: flex; flex-direction: column; gap: 24px; }
+    .lp-step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      background: #fff;
+      border-radius: 10px;
+      padding: 24px;
+      border: 1px solid #ebebeb;
+    }
+    .lp-step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #ef4237;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lp-step h5 { font-size: 1rem; font-weight: 700; color: #111; margin-bottom: 4px; }
+    .lp-step p { font-size: .9rem; color: #666; margin: 0; line-height: 1.6; }
+
+    /* ─── Testimonial ─── */
+    .lp-quote-card {
+      background: #0e0e0e;
+      border-radius: 12px;
+      padding: 40px;
+    }
+    .lp-quote-card blockquote {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.85);
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+    .lp-quote-card .attrib { font-size: .9rem; color: rgba(255,255,255,0.5); }
+    .lp-quote-card .attrib strong { color: #fff; display: block; margin-bottom: 2px; }
+
+    /* ─── Final CTA block ─── */
+    .lp-final-cta {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0e0e0e 100%);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .lp-final-cta h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .lp-final-cta p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .lp-final-cta .lp-cta-stack { margin: 0 auto; align-items: center; }
+
+    /* ─── Minimal footer ─── */
+    .lp-footer {
+      background: #0e0e0e;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 24px 0;
+      text-align: center;
+    }
+    .lp-footer p { font-size: .8rem; color: rgba(255,255,255,0.3); margin: 0; }
+    .lp-footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
+    .lp-footer a:hover { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 767px) {
+      .lp-hero { padding: 60px 0 56px; }
+      .lp-quote-card { padding: 28px 24px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- GTM noscript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P93WLQG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- Minimal nav — logo only, no links to keep focus -->
+  <nav class="lp-nav">
+    <div class="container">
+      <a href="../../index.html">
+        <img src="../../assets/images/logo/logo-stacked.svg" alt="Abstract Creative" />
+      </a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ─── HERO ─── -->
+    <section class="lp-hero">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <span class="lp-eyebrow">Brand Strategy · Houston, TX</span>
+            <h1>Your Brand Hasn't <span>Caught Up</span> to the Business You've Built</h1>
+            <p class="lp-sub">
+              Most $500K–$5M businesses are generating revenue <em>despite</em> their brand, not because of it.
+              Inconsistent messaging, unclear positioning, and reactive marketing create friction that costs you
+              deals, slows your team, and caps your growth.
+            </p>
+            <div class="lp-cta-stack">
+              <a href="../../assessment/index.html"
+                data-track="cta" data-cta="assessment" data-location="lp_hero"
+                class="lp-btn-primary">
+                Take the Free 5-Minute Assessment <i class="fa-regular fa-circle-arrow-right"></i>
+              </a>
+              <a href="#" onclick="openContactModal ? openContactModal(event) : window.location='../../contact/index.html'; return false;"
+                data-track="cta" data-cta="fit_call" data-location="lp_hero"
+                class="lp-btn-secondary">
+                Book a Strategic Fit Call <i class="fa-regular fa-arrow-right"></i>
+              </a>
+            </div>
+            <p class="lp-microcopy">No pitch. No obligation. Takes 5 minutes.</p>
+          </div>
+          <div class="col-lg-5 d-none d-lg-block">
+            <img src="../../assets/images/monitor-brands.webp"
+              alt="Brand system dashboard — Abstract Creative"
+              style="width:100%; border-radius:12px; opacity:.9;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SOCIAL PROOF BAR ─── -->
+    <div class="lp-proof-bar">
+      <div class="container text-center">
+        <p>Trusted by growth-stage companies</p>
+        <div class="lp-proof-logos">
+          <img src="../../assets/images/brand/logosArtboard_1.svg" alt="Enfusia" />
+          <img src="../../assets/images/brand/logosArtboard_2.svg" alt="AIS – Architectural Information Services" />
+          <img src="../../assets/images/brand/logosArtboard_4.svg" alt="Fall Creek" />
+          <img src="../../assets/images/brand/logosArtboard_5.svg" alt="Kinsmen Group" />
+          <img src="../../assets/images/brand/logosArtboard_6.svg" alt="Muscle Rehab" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PROBLEM / SYMPTOMS ─── -->
+    <section class="lp-section">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <span class="lp-badge">Sound Familiar?</span>
+            <h2>The signs your brand is costing you more than you think</h2>
+            <p class="lp-lead">
+              These aren't design problems. They're positioning and systems problems — and they compound every month
+              you leave them unresolved.
+            </p>
+            <ul class="lp-checklist">
+              <li>
+                <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+                <span>You're spending on ads and content but can't trace a clear line to qualified pipeline</span>
+              </li>
+              <li>
+                <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+                <span>Your team improvises messaging because there's no documented standard</span>
+              </li>
+              <li>
+                <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+                <span>Your website looks professional but conversion rates are flat</span>
+              </li>
+              <li>
+                <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+                <span>You're explaining what you do differently in every sales conversation</span>
+              </li>
+              <li>
+                <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+                <span>Every brand decision still routes back to you personally</span>
+              </li>
+            </ul>
+            <p style="font-size: .9rem; color: #888; font-style: italic;">
+              If 2 or more of these are true, you're likely leaving six figures on the table annually.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="lp-quote-card">
+              <blockquote>
+                "Efren didn't just design assets — he built a cohesive brand system that elevated how my business shows up everywhere.
+                We're regularly asked where our branding came from. My go-to partner, without hesitation."
+              </blockquote>
+              <div class="attrib">
+                <strong>Sebastian Millan</strong>
+                CEO, TMS – Tools, Materials &amp; Supplies
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── HOW IT WORKS ─── -->
+    <section class="lp-section lp-section-alt">
+      <div class="container">
+        <div class="row justify-content-center mb-50">
+          <div class="col-lg-7 text-center">
+            <span class="lp-badge">How We Work</span>
+            <h2>Strategy first. Systems second. Execution third.</h2>
+            <p class="lp-lead mx-auto">
+              We lock positioning before building anything — because systems built on unclear strategy just scale the wrong message faster.
+            </p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="lp-steps">
+              <div class="lp-step">
+                <div class="lp-step-num">1</div>
+                <div>
+                  <h5>Discovery &amp; Strategic Positioning</h5>
+                  <p>Define who you serve, what gap you close, and why you specifically — so every team member and dollar pulls in the same direction.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="lp-steps">
+              <div class="lp-step">
+                <div class="lp-step-num">2</div>
+                <div>
+                  <h5>Brand Architecture &amp; Identity Build</h5>
+                  <p>Translate strategy into scalable visual and verbal systems your team can operate without you in the room.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="lp-steps">
+              <div class="lp-step">
+                <div class="lp-step-num">3</div>
+                <div>
+                  <h5>Digital Execution &amp; Growth Infrastructure</h5>
+                  <p>Deploy a website, CRM funnels, and campaigns that turn traffic into qualified pipeline — with ongoing governance to compound ROI.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── RESULTS ─── -->
+    <section class="lp-section">
+      <div class="container">
+        <div class="row justify-content-center mb-50">
+          <div class="col-lg-7 text-center">
+            <span class="lp-badge">Client Results</span>
+            <h2>What this looks like in practice</h2>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="text-center p-4" style="background:#f9f9f9; border-radius:10px; height:100%;">
+              <div style="font-size:2rem; font-weight:700; color:#ef4237; margin-bottom:8px;">$700K+</div>
+              <p style="font-size:.9rem; color:#555; margin:0; line-height:1.6;">Profit driven since launch for Muscle Rehab through outcome-focused packaging and positioning</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="text-center p-4" style="background:#f9f9f9; border-radius:10px; height:100%;">
+              <div style="font-size:2rem; font-weight:700; color:#ef4237; margin-bottom:8px;">14%</div>
+              <p style="font-size:.9rem; color:#555; margin:0; line-height:1.6;">Engagement lift for Phillips 66 through governed brand systems and KPI-linked enterprise storytelling</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="text-center p-4" style="background:#f9f9f9; border-radius:10px; height:100%;">
+              <div style="font-size:2rem; font-weight:700; color:#ef4237; margin-bottom:8px;">30%</div>
+              <p style="font-size:.9rem; color:#555; margin:0; line-height:1.6;">Faster sales close when positioning is locked and messaging is built to answer objections before they're raised</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="text-center p-4" style="background:#f9f9f9; border-radius:10px; height:100%;">
+              <div style="font-size:2rem; font-weight:700; color:#ef4237; margin-bottom:8px;">4×</div>
+              <p style="font-size:.9rem; color:#555; margin:0; line-height:1.6;">Website conversion lift when strategy-led messaging replaces generic copy and design-first decisions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FINAL CTA ─── -->
+    <section class="lp-final-cta">
+      <div class="container">
+        <h2>Find Out Exactly Where Your Brand Is Losing You Revenue</h2>
+        <p>
+          The free 5-minute assessment identifies the specific gap between where your brand is and where your business needs it to be — with a clear next step.
+        </p>
+        <div class="lp-cta-stack">
+          <a href="../../assessment/index.html"
+            data-track="cta" data-cta="assessment" data-location="lp_footer"
+            class="lp-btn-primary">
+            Take the Free Assessment <i class="fa-regular fa-circle-arrow-right"></i>
+          </a>
+          <a href="#" onclick="openContactModal ? openContactModal(event) : window.location='../../contact/index.html'; return false;"
+            data-track="cta" data-cta="fit_call" data-location="lp_footer"
+            class="lp-btn-secondary">
+            Book a Strategic Fit Call instead <i class="fa-regular fa-arrow-right"></i>
+          </a>
+        </div>
+        <p style="font-size:.78rem; color:rgba(255,255,255,0.3); margin-top:20px;">
+          Based in Houston, TX · Working with founders across the US and globally
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Minimal footer -->
+  <footer class="lp-footer">
+    <div class="container">
+      <p>
+        © 2026 <a href="../../index.html">Abstract Creative</a> LLC &nbsp;·&nbsp;
+        <a href="../../privacy.html">Privacy</a> &nbsp;·&nbsp;
+        <a href="../../terms-of-services.html">Terms</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

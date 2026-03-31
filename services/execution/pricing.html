@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({ pageType: "pricing", expertiseCategory: "execution" });
+  </script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Execution: Digital Infrastructure — Pricing | Abstract Creative</title>
+  <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+  <link rel="preload" href="../../assets/css/all.min.css" as="style">
+  <link rel="stylesheet" href="../../assets/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="../../assets/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P93WLQG');</script>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P93WLQG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { background: #112b32; color: #111; font-family: 'Public Sans', sans-serif; min-height: 100vh; margin: 0; }
+    .pricing-header { background: #0d2229; border-bottom: 1px solid rgba(255,255,255,.07); padding: 18px 0; position: sticky; top: 0; z-index: 100; }
+    .pricing-header::after { content: ''; display: block; position: absolute; bottom: 0; left: 0; width: 60px; height: 2px; background: #ef4237; }
+    .back-link { font-size: .8rem; color: rgba(255,255,255,.4); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: color .15s; }
+    .back-link:hover { color: rgba(255,255,255,.85); }
+    .pricing-wrap { max-width: 680px; margin: 0 auto; padding: 60px 20px 80px; }
+
+    /* ── Gate (sits on dark teal) ── */
+    .pricing-gate { max-width: 520px; margin: 0 auto; }
+    .gate-eyebrow { font-size: .58rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #ef4237; margin-bottom: 16px; display: block; }
+    .gate-headline { font-size: 2.4rem; font-weight: 800; color: #fff; margin-bottom: 14px; line-height: 1.1; }
+    .gate-sub { color: rgba(255,255,255,.55); font-size: .92rem; margin-bottom: 32px; line-height: 1.75; }
+    .gate-card { background: #fff; border: none; padding: 36px; box-shadow: 0 8px 40px rgba(0,0,0,.25); }
+    .gate-label { font-size: .72rem; font-weight: 700; color: #555; display: block; margin-bottom: 8px; letter-spacing: .03em; }
+    .gate-input { width: 100%; padding: 13px 16px; background: #f5f5f5; border: 1px solid #e0e0e0; color: #111; font-size: .9rem; outline: none; transition: border-color .15s; font-family: inherit; }
+    .gate-input::placeholder { color: #bbb; }
+    .gate-input:focus { border-color: #ef4237; }
+    .gate-btn { width: 100%; background: #ef4237; color: #fff; border: none; padding: 15px; font-size: .92rem; font-weight: 700; cursor: pointer; font-family: inherit; transition: background .15s; letter-spacing: .02em; }
+    .gate-btn:hover { background: #c73028; }
+    .gate-error { color: #ef4237; font-size: .78rem; margin-top: 10px; display: none; }
+    .gate-trust { display: flex; align-items: center; justify-content: center; gap: 28px; margin-top: 24px; flex-wrap: wrap; }
+    .gate-trust span { font-size: .7rem; color: rgba(255,255,255,.35); display: flex; align-items: center; gap: 7px; }
+    .gate-trust i { color: #ef4237; font-size: .65rem; }
+
+    /* ── Revealed content ── */
+    .pricing-content { display: none; }
+    .pricing-content.revealed { display: block; }
+    .content-eyebrow { font-size: .58rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #ef4237; margin-bottom: 12px; display: block; }
+    .content-headline { font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 18px; }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .badge { font-size: .78rem; font-weight: 600; background: rgba(255,255,255,.1); color: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.12); padding: 6px 14px; }
+
+    /* ── Phase cards (white on teal) ── */
+    .phase-card { background: #fff; border: none; border-left: 3px solid #ef4237; padding: 24px 28px; margin-bottom: 8px; box-shadow: 0 2px 12px rgba(0,0,0,.15); }
+    .phase-card--retainer { background: #f7f9f9; border-left: 3px solid #ef4237; }
+    .phase-num { font-size: .54rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: #ef4237; margin-bottom: 10px; display: block; }
+    .phase-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+    .phase-title { font-size: 1.05rem; font-weight: 700; color: #111; margin: 0; }
+    .phase-value { font-size: .82rem; font-weight: 600; color: #999; white-space: nowrap; }
+    .phase-list { margin: 14px 0 0; padding: 0; }
+    .phase-list li { color: #666; font-size: .85rem; padding: 5px 0 5px 16px; list-style: none; position: relative; line-height: 1.5; }
+    .phase-list li::before { content: '·'; color: #ef4237; position: absolute; left: 0; }
+
+    /* ── Section label (on teal bg) ── */
+    .section-label { font-size: .6rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.35); display: flex; align-items: center; gap: 12px; margin: 28px 0 16px; }
+    .section-label::before, .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.1); }
+
+    /* ── Total bar ── */
+    .total-bar { background: #ef4237; padding: 30px 32px; margin-bottom: 8px; box-shadow: 0 4px 20px rgba(239,66,55,.3); }
+    .total-bar .total-label { font-size: .56rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.75); margin-bottom: 8px; display: block; }
+    .total-bar .total-amount { font-size: 1.9rem; font-weight: 800; color: #fff; margin: 0 0 6px; line-height: 1; }
+    .total-bar .total-sub { font-size: .78rem; color: rgba(255,255,255,.8); margin: 0; }
+    .total-bar .total-note { font-size: .72rem; color: rgba(255,255,255,.65); margin: 0; line-height: 1.5; }
+    .savings-callout { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.2); padding: 16px 20px; }
+    .savings-callout p { font-size: .78rem; color: rgba(255,255,255,.8); margin: 0; line-height: 1.6; }
+    .savings-callout strong { color: #fff; }
+
+    /* ── Reserve section ── */
+    .reserve-section { background: #fff; border: none; border-left: 4px solid #ef4237; padding: 44px 40px; text-align: center; margin-bottom: 8px; box-shadow: 0 4px 24px rgba(0,0,0,.18); }
+    .reserve-eyebrow { font-size: .54rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #ef4237; margin-bottom: 14px; display: block; }
+    .reserve-headline { font-size: 1.5rem; font-weight: 800; color: #111; margin-bottom: 10px; }
+    .reserve-sub { font-size: .9rem; color: #777; margin-bottom: 28px; line-height: 1.75; max-width: 440px; margin-left: auto; margin-right: auto; }
+    .btn-reserve-lg { display: inline-flex; align-items: center; gap: 10px; background: #ef4237; color: #fff; font-weight: 700; font-size: .95rem; padding: 17px 36px; text-decoration: none; transition: background .15s; border: none; cursor: pointer; font-family: inherit; letter-spacing: .02em; }
+    .btn-reserve-lg:hover { background: #c73028; color: #fff; }
+    .reserve-divider { display: block; font-size: .72rem; color: #ccc; margin: 18px 0 12px; }
+    .reserve-alt { font-size: .82rem; color: #aaa; cursor: pointer; background: none; border: none; padding: 0; font-family: inherit; }
+    .reserve-alt:hover { color: #333; text-decoration: underline; }
+    .reserve-note { font-size: .7rem; color: #ccc; margin-top: 20px; margin-bottom: 0; }
+
+    /* ── Payment card ── */
+    .payment-card { background: #fff; border: none; padding: 28px 32px; margin-bottom: 8px; box-shadow: 0 2px 12px rgba(0,0,0,.15); }
+    .payment-card h4 { font-size: .95rem; font-weight: 800; color: #111; margin-bottom: 20px; }
+    .payment-step { display: flex; align-items: flex-start; gap: 16px; padding: 14px 0; border-bottom: 1px solid #f0f0f0; }
+    .payment-step:last-child { border-bottom: none; padding-bottom: 0; }
+    .payment-step-num { width: 28px; height: 28px; background: #ef4237; color: #fff; font-size: .62rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .payment-step-num--dark { background: #ccc; }
+    .payment-step-body h5 { font-size: .88rem; font-weight: 700; color: #111; margin: 0 0 4px; }
+    .payment-step-body p { font-size: .8rem; color: #888; margin: 0; line-height: 1.55; }
+
+    /* ── FAQ ── */
+    .faq-section { margin-bottom: 8px; }
+    .faq-section h3 { font-size: 1rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+    .faq-item { background: #fff; border-bottom: 1px solid #ebebeb; box-shadow: none; }
+    .faq-item:first-child { border-top: none; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; padding: 18px 20px; font-size: .88rem; font-weight: 600; color: #333; cursor: pointer; font-family: inherit; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .faq-q:hover { color: #ef4237; }
+    .faq-q i { color: #ef4237; font-size: .62rem; transition: transform .2s; flex-shrink: 0; }
+    .faq-q.open i { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 20px 18px; font-size: .85rem; color: #777; line-height: 1.8; }
+    .faq-a.open { display: block; }
+    .faq-wrap { box-shadow: 0 2px 12px rgba(0,0,0,.15); overflow: hidden; }
+
+    /* ── Bottom CTA ── */
+    .bottom-cta { background: #0d2229; padding: 40px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,.2); }
+    .bottom-cta-eyebrow { font-size: .54rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #ef4237; margin-bottom: 10px; display: block; }
+    .bottom-cta h3 { font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .bottom-cta p { color: rgba(255,255,255,.45); font-size: .85rem; margin-bottom: 24px; }
+    .section-gap { height: 32px; }
+
+    @media (max-width: 600px) {
+      .gate-headline { font-size: 1.8rem; }
+      .content-headline { font-size: 1.5rem; }
+      .reserve-section { padding: 32px 24px; }
+      .gate-card { padding: 24px; }
+      .pricing-wrap { padding: 40px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loading" class="preloader">
+    <div class="loading-overlay"></div>
+    <div class="custom-loader"><div></div><div></div><div></div><div></div></div>
+  </div>
+
+  <header class="pricing-header">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="../../index.html">
+          <img src="../../assets/images/logo/logo-stacked-orange-light.svg" alt="Abstract Creative" style="height:52px;">
+        </a>
+        <a href="./index.html" class="back-link">
+          <i class="fa-regular fa-arrow-left"></i> Back to Execution
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="pricing-wrap">
+
+      <!-- GATE -->
+      <div id="pricingGate" class="pricing-gate text-center">
+        <span class="gate-eyebrow">Execution · Digital Infrastructure</span>
+        <h1 class="gate-headline">See the Full<br>Engagement Structure</h1>
+        <p class="gate-sub">Phase details, retainer structure, and payment terms — unlocked in one step. No sales call required to get the numbers.</p>
+<iframe
+    src="https://api.leadconnectorhq.com/widget/form/KMPwGMrWDkK2CiLXHplf"
+    style="width:100%;height:100%;border:none;border-radius:3px"
+    id="inline-KMPwGMrWDkK2CiLXHplf" 
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Execution Pricing"
+    data-height="793"
+    data-layout-iframe-id="inline-KMPwGMrWDkK2CiLXHplf"
+    data-form-id="KMPwGMrWDkK2CiLXHplf"
+    title="Execution Pricing"
+        >
+</iframe>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        <div class="gate-trust">
+          <span><i class="fa-solid fa-lock"></i> No spam, ever</span>
+          <span><i class="fa-solid fa-shield-check"></i> No obligation</span>
+          <span><i class="fa-solid fa-circle-check"></i> Instant access</span>
+        </div>
+      </div>
+
+      <!-- PRICING CONTENT -->
+      <div id="pricingContent" class="pricing-content">
+
+        <div style="margin-bottom:36px;">
+          <span class="content-eyebrow">Execution · Digital Infrastructure</span>
+          <h1 class="content-headline">Digital Infrastructure Investment</h1>
+          <div class="badge-row">
+            <span class="badge">$35,000–$40,000 Bundled</span>
+            <span class="badge">8–9 Months</span>
+            <span class="badge">Fixed-Fee + Retainer</span>
+          </div>
+        </div>
+
+        <!-- Part 1 -->
+        <div class="section-label"><span>Part 1 &nbsp;·&nbsp; Weeks 1–10 &nbsp;·&nbsp; Brand Systems Build</span></div>
+
+        <div class="phase-card">
+          <span class="phase-num">Phase 01–02 &nbsp;·&nbsp; Weeks 1–4</span>
+          <div class="phase-header">
+            <h3 class="phase-title">Strategy &amp; Brand Identity</h3>
+            <span class="phase-value">$8,500</span>
+          </div>
+          <ul class="phase-list">
+            <li>Full strategy &amp; positioning (market audit, UVP, messaging)</li>
+            <li>Complete logo suite &amp; visual system</li>
+            <li>Brand guidelines &amp; asset library</li>
+            <li>Live positioning workshop</li>
+          </ul>
+        </div>
+
+        <div class="phase-card">
+          <span class="phase-num">Phase 03 &nbsp;·&nbsp; Weeks 4–7</span>
+          <div class="phase-header">
+            <h3 class="phase-title">Website &amp; Online Presence</h3>
+            <span class="phase-value">$7,000–$9,000</span>
+          </div>
+          <ul class="phase-list">
+            <li>5-page conversion-optimized website</li>
+            <li>Brand-matched UI design system</li>
+            <li>CMS integration &amp; mobile optimization</li>
+            <li>SEO foundation &amp; analytics setup</li>
+          </ul>
+        </div>
+
+        <div class="phase-card">
+          <span class="phase-num">Phase 04–05 &nbsp;·&nbsp; Weeks 7–10</span>
+          <div class="phase-header">
+            <h3 class="phase-title">Automation, Launch &amp; Handover</h3>
+            <span class="phase-value">$4,500–$7,500</span>
+          </div>
+          <ul class="phase-list">
+            <li>GoHighLevel setup: CRM, pipelines, lead capture</li>
+            <li>Email sequences &amp; nurture automations</li>
+            <li>Calendar &amp; booking integration</li>
+            <li>Launch QA, team training &amp; documentation</li>
+          </ul>
+        </div>
+
+        <!-- Part 2 -->
+        <div class="section-label"><span>Part 2 &nbsp;·&nbsp; Months 3–9 &nbsp;·&nbsp; Digital Marketing Partnership</span></div>
+
+        <div class="phase-card phase-card--retainer">
+          <span class="phase-num">6-Month Retainer &nbsp;·&nbsp; $3,000–$3,500/mo</span>
+          <div class="phase-header">
+            <h3 class="phase-title">Digital Marketing Partnership</h3>
+            <span class="phase-value">$18,000–$21,000 total</span>
+          </div>
+          <ul class="phase-list">
+            <li>Brand governance &amp; drift prevention</li>
+            <li>Social media management &amp; content creation</li>
+            <li>Ongoing email campaigns via GoHighLevel</li>
+            <li>Performance testing &amp; conversion optimization</li>
+            <li>Monthly reporting &amp; quarterly strategy reviews</li>
+          </ul>
+        </div>
+
+        <!-- Total -->
+        <div class="total-bar" style="margin-top:10px;">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
+            <div>
+              <span class="total-label">Total Bundled Investment</span>
+              <p class="total-amount">$35,000–$40,000</p>
+              <p class="total-sub">Brand build + 6-month marketing retainer included</p>
+            </div>
+            <div class="savings-callout" style="min-width:200px;">
+              <p><strong>~$5,000–$8,000 in bundled savings</strong> vs. purchasing Identity + retainer separately</p>
+            </div>
+          </div>
+          <p class="total-note" style="margin-top:16px;">Retainer begins Month 3 — after brand systems are live. You're never paying for marketing on a brand that isn't ready.</p>
+        </div>
+
+        <div class="reserve-section">
+          <span class="reserve-eyebrow">Ready to Begin?</span>
+          <h2 class="reserve-headline">Reserve Your Execution Engagement</h2>
+          <p class="reserve-sub">Secure your start date with a $10,500 deposit — applied toward your total. Brand build begins Week 1. Marketing retainer activates Month 3.</p>
+          <a href="#reserve-execution" class="btn-reserve-lg" data-track="cta" data-cta="reserve_deposit" data-location="pricing_page">
+            Reserve My Spot — $10,500 Deposit &nbsp;<i class="fa-regular fa-arrow-right"></i>
+          </a>
+          <span class="reserve-divider">or</span>
+          <button onclick="openModal('fitCallModal')" class="reserve-alt">Have questions? Book a 20-min fit call first.</button>
+          <p class="reserve-note">Deposit link activated once your spot is confirmed. We'll reach out within 1 business day.</p>
+        </div>
+
+        <div class="payment-card">
+          <h4>How Payments Work</h4>
+          <div class="payment-step">
+            <div class="payment-step-num">1</div>
+            <div class="payment-step-body">
+              <h5>30% at Engagement Start</h5>
+              <p>~$10,500–$12,000 · Discovery, strategy, and brand identity build. Weeks 1–4.</p>
+            </div>
+          </div>
+          <div class="payment-step">
+            <div class="payment-step-num">2</div>
+            <div class="payment-step-body">
+              <h5>30% at Website Launch (Week 7–8)</h5>
+              <p>~$10,500–$12,000 · Brand approved, website live, automation configured.</p>
+            </div>
+          </div>
+          <div class="payment-step">
+            <div class="payment-step-num">3</div>
+            <div class="payment-step-body">
+              <h5>40% at Full Handover (Week 10)</h5>
+              <p>~$14,000–$16,000 · All systems delivered, team trained, project closed.</p>
+            </div>
+          </div>
+          <div class="payment-step">
+            <div class="payment-step-num payment-step-num--dark">R</div>
+            <div class="payment-step-body">
+              <h5>Retainer: $3,000–$3,500/month (Months 3–9)</h5>
+              <p>Billed monthly at the start of each retainer month. 6-month minimum. Cancel with 30-day notice after Month 6.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-gap"></div>
+        <div class="faq-section">
+          <h3>Common Questions</h3>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What's the difference between Execution and hiring in-house?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a">An in-house hire at this scope costs $120K–$180K annually in salary alone — before benefits and ramp time. Execution gives you a senior strategist, brand team, and marketing operator working as one system, activated in Week 1. When the engagement ends, you own all assets and systems outright.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Can I pause or cancel the retainer portion?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a">The retainer has a 6-month minimum (Months 3–9). After Month 6, you can cancel with 30 days' notice. We intentionally structure it so the systems can stand on their own if you choose to take over internally.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What does brand governance actually include each month?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a">Monthly review of all outgoing assets against brand standards we built — social, email, collateral, ads. We catch drift before it compounds. We also manage the GHL platform, update automations, and handle content creation for social and email.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Do I need to complete Foundation or Identity first?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a">No — Execution is self-contained. If you've already completed Foundation or Identity with us, that prior work applies and reduces scope and typically the fee. We'll account for existing deliverables during scoping.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Who am I working with and how much of my time is required?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a">You work directly with Efren and the Abstract Creative team — no account managers or hand-offs to junior staff. During the build phase, expect 3–5 hours per week for workshops and reviews. During the retainer, a monthly check-in and performance reports. We handle execution independently.</div>
+          </div>
+        </div>
+
+        <div class="section-gap"></div>
+        <div class="bottom-cta">
+          <span class="bottom-cta-eyebrow">Next Step</span>
+          <h3>Ready to build the full system?</h3>
+          <p>Reserve your spot and we'll confirm your start date within 1 business day.</p>
+          <a href="#reserve-execution" class="btn-reserve-lg" data-track="cta" data-cta="reserve_deposit" data-location="pricing_bottom">
+            Reserve My Spot — $10,500 Deposit &nbsp;<i class="fa-regular fa-arrow-right"></i>
+          </a>
+          <p style="margin-top:14px; margin-bottom:0;">
+            <button onclick="openModal('fitCallModal')" style="background:none; border:none; color:rgba(255,255,255,.3); font-size:.8rem; cursor:pointer; padding:0; font-family:inherit;">Prefer to talk first? Book a fit call.</button>
+          </p>
+          <div style="margin-top:24px; padding-top:20px; border-top:1px solid rgba(255,255,255,.06);">
+            <a href="./index.html" class="back-link" style="justify-content:center;"><i class="fa-regular fa-arrow-left"></i> Back to Execution overview</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="fitCallModal" class="contact-modal" style="display:none;">
+    <div class="contact-modal__dialog">
+      <button class="contact-modal__close" onclick="closeModal('fitCallModal')">×</button>
+      <iframe src="https://api.leadconnectorhq.com/widget/booking/sIh2YfvkUXspGuoqHkto" class="iframe-form" scrolling="no" title="Book a Strategic Fit Call" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <script src="../../assets/js/jquery-3.7.1.min.js" defer></script>
+  <script src="../../assets/js/bootstrap.min.js" defer></script>
+  <script src="../../assets/js/meanmenu.js" defer></script>
+  <script src="../../assets/js/script.js" defer></script>
+  <script>
+    function revealPricing() {
+      var name = document.getElementById('gateName').value.trim();
+      var email = document.getElementById('gateEmail').value.trim();
+      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!name || !emailOk) { document.getElementById('gateError').style.display = 'block'; return; }
+      document.getElementById('gateError').style.display = 'none';
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'pricing_gate_submit', service: 'execution', name: name, email: email });
+      document.getElementById('pricingGate').style.display = 'none';
+      document.getElementById('pricingContent').classList.add('revealed');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    function toggleFaq(btn) {
+      var answer = btn.nextElementSibling;
+      var isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-a.open').forEach(function(a) { a.classList.remove('open'); });
+      document.querySelectorAll('.faq-q.open').forEach(function(b) { b.classList.remove('open'); });
+      if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+    }
+    function openModal(id) { var m = document.getElementById(id); if (m) m.style.display = 'flex'; }
+    function closeModal(id) { var m = document.getElementById(id); if (m) m.style.display = 'none'; }
+  </script>
+</body>
+</html>
