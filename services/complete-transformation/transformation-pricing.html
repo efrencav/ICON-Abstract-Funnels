@@ -277,7 +277,7 @@
             </p>
           </div>
           <div class="d-flex align-items-center gap-4 mt-40">
-            <a href="#" onclick="openModal('contactModal', event)" class="btn-one alink2">
+            <a href="#" onclick="openContactModal(event)" class="btn-one alink2">
               Book a Revenue Diagnostic Call<i class="fa-regular fa-circle-arrow-right ml-10"></i>
             </a>
           </div>
@@ -386,7 +386,7 @@
         </div>
 
         <div class="text-center mt-50">
-          <a href="#" onclick="openModal('contactModal', event)" class="btn-one alink2">
+          <a href="#" onclick="openContactModal(event)" class="btn-one alink2">
             Book a Strategic Fit Call<i class="fa-regular fa-circle-arrow-right ml-10"></i>
           </a>
         </div>
@@ -721,7 +721,7 @@
           <!-- Complete Transformation — FEATURED -->
           <div class="col-lg-5">
             <div class="package-card package-card--featured h-100">
-              <h5 class="mb-2" style="opacity:0.75; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--white);">Most Popular</h5>
+              <h5 class="mb-2" style="opacity:0.75; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:#fff;">Most Popular</h5>
               <h3 class="mb-20">Complete Transformation</h3>
               <div class="price-label mb-5">$20,000 – $25,000</div>
               <p class="price-sublabel mb-25">8–10 week delivery · 30/30/40 payment structure · Fixed scope</p>
@@ -736,7 +736,7 @@
                 <li class="list-item-three line-height-20 mb-10"></i> Sales funnel architecture</li>
                 <li class="list-item-three line-height-20"></i> Launch support &amp; 30-day optimization</li>
               </ul>
-              <a href="#" onclick="openModal('contactModal', event)" class="btn-one alink9 d-block text-center">
+              <a href="#" onclick="openContactModal(event)" class="btn-one alink9 d-block text-center">
                 Start the Complete Transformation<i class="fa-regular fa-circle-arrow-right ml-10"></i>
               </a>
             </div>
@@ -758,7 +758,7 @@
                 <li class="list-item line-height-20 mb-10"></i> Performance reporting &amp; optimization</li>
                 <li class="list-item line-height-20"></i> Saves ~$5,000 vs. buying separately</li>
               </ul>
-              <a href="#" onclick="openModal('contactModal', event)" class="btn-one alink2 d-block text-center">
+              <a href="#" onclick="openContactModal(event)" class="btn-one alink2 d-block text-center">
                 See the Growth Accelerator<i class="fa-regular fa-circle-arrow-right ml-10"></i>
               </a>
             </div>
@@ -1067,7 +1067,7 @@
             <p class="text-white mb-20">
               The diagnostic call takes 15–20 minutes. We confirm the transformation is the right scope, walk through the phases, and tell you exactly what happens next. If it's not the right fit, we'll tell you that too.
             </p>
-            <a href="#" onclick="openModal('contactModal', event)" class="btn-one alink9">
+            <a href="#" onclick="openContactModal(event)" class="btn-one alink9">
               Book a Strategic Fit Call<i class="fa-solid fa-circle-arrow-right ml-10"></i>
             </a>
           </div>
@@ -1145,7 +1145,7 @@
   ═══════════════════════════════════════ -->
   <div id="contactModal" class="contact-modal" role="dialog" aria-modal="true" style="display:none;">
     <div class="contact-modal__dialog">
-      <button class="contact-modal__close" type="button" onclick="closeModal('contactModal')" aria-label="Close contact form">×</button>
+      <button class="contact-modal__close" type="button" onclick="closeContactModal()" aria-label="Close contact form">×</button>
       <div class="contact__form">
         <!-- <h3 class="text-center mb-20">Book Your Strategic Fit Call</h3>
         <p class="text-center mb-30">
@@ -1244,47 +1244,19 @@
       }
     }
 
-    function closeModal('contactModal') {
+    function closeContactModal() {
       document.getElementById('contactModal').style.display = 'none';
       document.body.classList.remove('modal-open');
     }
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeModal('contactModal');
+      if (e.key === 'Escape') closeContactModal();
     });
 
     document.getElementById('contactModal').addEventListener('click', function (e) {
-      if (e.target === this) closeModal('contactModal');
+      if (e.target === this) closeContactModal();
     });
   </script>
 
-  <script>
-    function openModal(id, e) {
-      if (e) e.preventDefault();
-      closeAllModals();
-      const modal = document.getElementById(id);
-      if (!modal) return;
-      modal.style.display = 'flex';
-      document.body.classList.add('modal-open');
-      if (window.dataLayer) {
-        window.dataLayer.push({ event: 'modal_open', modal_id: id });
-      }
-    }
-    function closeModal(id) {
-      const modal = document.getElementById(id);
-      if (!modal) return;
-      modal.style.display = 'none';
-      document.body.classList.remove('modal-open');
-    }
-    function closeAllModals() {
-      document.querySelectorAll('.contact-modal').forEach(function(m) {
-        m.style.display = 'none';
-      });
-      document.body.classList.remove('modal-open');
-    }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeAllModals();
-    });
-  </script>
 </body>
 </html>
