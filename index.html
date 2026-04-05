@@ -127,7 +127,7 @@
   <!-- Animate css -->
   <link rel="stylesheet" href="./assets/css/animate.css" />
   <!-- Style css -->
-  <link rel="stylesheet" href="./assets/css/style-three.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
 
@@ -298,7 +298,7 @@
           <div class="d-flex align-items-center gap-3 mt-40 flex-wrap">
             <!-- Primary CTA -->
             <a href="#" role="button" class="btn-one" data-track="cta" data-cta="fit_call" data-location="hero"
-              onclick="openContactModal(event)">
+              onclick="openModal('contactModal', event)">
               Book a Strategic Fit Call<i class="fa-regular fa-circle-arrow-right ml-10"></i>
             </a>
 
@@ -350,13 +350,13 @@
     <!-- Brand logos area end here -->
 
     <!-- Who We Serve Section -->
-    <section class="pt-100 pb-100" style="background: #f9f9f9;">
+    <section class="pt-100 pb-100" style="background: var(--bg-light);">
       <div class="container">
         <div class="text-center mb-60">
-          <h5 style="color: #ef4237; text-transform: uppercase; font-weight: 600; margin-bottom: 16px;">WHO WE SERVE
+          <h5 style="color: var(--main); text-transform: uppercase; font-weight: 600; margin-bottom: 16px;">WHO WE SERVE
           </h5>
           <h2 class="mb-20" style="font-size: 38px; line-height: 1.2;">We Work With Growth-Ready Firms</h2>
-          <p class="mx-auto" style="max-width: 700px; color: #666; font-size: 17px;">
+          <p class="mx-auto" style="max-width: 700px; color: var(--text-mid-2); font-size: 17px;">
             Based in Houston. Working with founders and business owners across the US and globally. Our clients share
             one challenge: they've proven product-market fit, but growth is constrained by brand inconsistency,
             unclear positioning, or reactive marketing.
@@ -367,9 +367,9 @@
           <!-- Card 1 -->
           <div class="col-md-4">
             <div class="who-we-serve-card">
-              <div class="who-we-serve-icon mb-15"><i class="fa-regular fa-chart-line-up" style="font-size: 28px; color: #ef4237;"></i></div>
+              <div class="who-we-serve-icon mb-15"><i class="fa-regular fa-chart-line-up" style="font-size: 28px; color: var(--main);"></i></div>
               <h4>$500K–$5M Revenue</h4>
-              <p style="color: #666; line-height: 1.7; margin: 0;">
+              <p style="color: var(--text-mid-2); line-height: 1.7; margin: 0;">
                 You've validated the business model. Now you need brand systems and marketing infrastructure that
                 scale—not hustle that plateaus.
               </p>
@@ -379,9 +379,9 @@
           <!-- Card 2 -->
           <div class="col-md-4">
             <div class="who-we-serve-card">
-              <div class="who-we-serve-icon mb-15"><i class="fa-regular fa-bullseye-arrow" style="font-size: 28px; color: #ef4237;"></i></div>
+              <div class="who-we-serve-icon mb-15"><i class="fa-regular fa-bullseye-arrow" style="font-size: 28px; color: var(--main);"></i></div>
               <h4>Scattered Marketing, No ROI</h4>
-              <p style="color: #666; line-height: 1.7; margin: 0;">
+              <p style="color: var(--text-mid-2); line-height: 1.7; margin: 0;">
                 You're spending on ads, events, and content but can't trace a clear path from investment to pipeline.
                 You need strategy that governs execution—not more vendors to manage.
               </p>
@@ -391,9 +391,9 @@
           <!-- Card 3 -->
           <div class="col-md-4">
             <div class="who-we-serve-card">
-              <div class="who-we-serve-icon mb-15"><i class="fa-regular fa-handshake" style="font-size: 28px; color: #ef4237;"></i></div>
+              <div class="who-we-serve-icon mb-15"><i class="fa-regular fa-handshake" style="font-size: 28px; color: var(--main);"></i></div>
               <h4>Ready to Build It Right</h4>
-              <p style="color: #666; line-height: 1.7; margin: 0;">
+              <p style="color: var(--text-mid-2); line-height: 1.7; margin: 0;">
                 You understand brand is infrastructure, not decoration. You're willing to lock positioning before
                 executing—because you've seen what happens when you don't.
               </p>
@@ -422,7 +422,7 @@
             <div class="service-outcome-card">
               <h5 class="outcome-badge">FOUNDATION</h5>
               <h4>Strategic Positioning</h4>
-              <p style="color: #666; margin-bottom: 20px;">
+              <p style="color: var(--text-mid-2); margin-bottom: 20px;">
                 Lock who you serve, what gap you close, and why you win—so every team member and marketing asset tells
                 the same story.
               </p>
@@ -439,7 +439,7 @@
             <div class="service-outcome-card">
               <h5 class="outcome-badge">IDENTITY</h5>
               <h4>Brand Architecture</h4>
-              <p style="color: #666; margin-bottom: 20px;">
+              <p style="color: var(--text-mid-2); margin-bottom: 20px;">
                 Build visual and verbal systems that scale across teams, channels, and growth stages—reducing
                 inconsistency by 90%.
               </p>
@@ -456,7 +456,7 @@
             <div class="service-outcome-card">
               <h5 class="outcome-badge">EXECUTION</h5>
               <h4>Digital Infrastructure</h4>
-              <p style="color: #666; margin-bottom: 20px;">
+              <p style="color: var(--text-mid-2); margin-bottom: 20px;">
                 Deploy conversion-optimized websites, CRM funnels, and governed campaigns that turn traffic into
                 qualified pipeline.
               </p>
@@ -470,12 +470,12 @@
         </div>
 
         <div class="text-center mt-60">
-          <p style="font-size: .9rem; color: #666; margin-bottom: 20px;">Not sure which engagement fits where you are? Start with the assessment — it maps your situation to the right next step.</p>
+          <p style="font-size: .9rem; color: var(--text-mid-2); margin-bottom: 20px;">Not sure which engagement fits where you are? Start with the assessment — it maps your situation to the right next step.</p>
           <a href="assessment/index.html" class="btn-one" data-track="cta" data-cta="take_assessment"
             data-location="what_we_build">
             Find the Right Engagement<i class="fa-regular fa-circle-arrow-right ml-10"></i>
           </a>
-          <a href="services/index.html" style="display:block; margin-top: 14px; font-size: .82rem; color: #999; text-decoration: none;" data-track="cta" data-cta="explore_services" data-location="what_we_build">
+          <a href="services/index.html" style="display:block; margin-top: 14px; font-size: .82rem; color: var(--text-faint); text-decoration: none;" data-track="cta" data-cta="explore_services" data-location="what_we_build">
             Or explore all three engagements <i class="fa-regular fa-arrow-right" style="font-size:.75rem;"></i>
           </a>
         </div>
@@ -483,7 +483,7 @@
     </section>
 
     <!-- Why It Works Section -->
-    <section class="pt-100 pb-100" style="background: #f9f9f9;">
+    <section class="pt-100 pb-100" style="background: var(--bg-light);">
       <div class="container">
         <div class="row align-items-center g-5">
           <!-- Left: Image/Visual -->
@@ -646,7 +646,7 @@
     <!-- Portfolio area end here -->
 
     <!-- Insights section -->
-    <section class="pt-100 pb-100" style="background: #f5f5f5; font-family: 'Open Sans', sans-serif;">
+    <section class="pt-100 pb-100" style="background: var(--bg-light-3); font-family: 'Open Sans', sans-serif;">
       <div class="container container-extend">
         <div class="row align-items-end mb-50">
           <div class="col-lg-8">
@@ -663,7 +663,7 @@
 
           <!-- Article: Your Website Is Not the Problem -->
           <div class="col">
-            <div class="blog__item" style="background: #fff; border-radius: 8px; overflow: hidden; height: 100%;">
+            <div class="blog__item" style="background: var(--white); border-radius: 8px; overflow: hidden; height: 100%;">
               <a href="insights/your-website-is-not-the-problem.html" class="image d-block">
                 <img src="assets/images/insights/website-hero.jpg"
                   alt="Your Website Is Not the Problem. Your Messaging Is."
@@ -673,11 +673,11 @@
               <div class="mt-20" style="padding: 0 24px 24px;">
                 <span class="fw-500 primary-color" style="font-size: .8rem; text-transform: uppercase; letter-spacing: .05em;">Messaging</span>
                 <h4 class="mt-10" style="font-size: 1.1rem; line-height: 1.4;">
-                  <a href="insights/your-website-is-not-the-problem.html" class="primary-hover" style="color: #1a1a1a; text-decoration: none;">
+                  <a href="insights/your-website-is-not-the-problem.html" class="primary-hover" style="color: var(--text-dark); text-decoration: none;">
                     Your Website Is Not the Problem. Your Messaging Is.
                   </a>
                 </h4>
-                <p class="mt-10" style="color: #555; font-size: .95rem;">
+                <p class="mt-10" style="color: var(--text-mid); font-size: .95rem;">
                   Your site looks great but isn't converting. The design is probably fine. Here's what's actually broken.
                 </p>
                 <a href="insights/your-website-is-not-the-problem.html" class="fw-500 primary-color d-inline-block mt-15" style="font-size: .9rem; text-decoration: none;">
@@ -689,7 +689,7 @@
 
           <!-- Article: More Marketing Won't Fix Weak Positioning -->
           <div class="col">
-            <div class="blog__item" style="background: #fff; border-radius: 8px; overflow: hidden; height: 100%;">
+            <div class="blog__item" style="background: var(--white); border-radius: 8px; overflow: hidden; height: 100%;">
               <a href="insights/more-marketing-wont-fix-weak-positioning.html" class="image d-block">
                 <img src="assets/images/insights/positioning-hero.jpg"
                   alt="More Marketing Won't Fix Weak Positioning. Here's What Does."
@@ -699,11 +699,11 @@
               <div class="mt-20" style="padding: 0 24px 24px;">
                 <span class="fw-500 primary-color" style="font-size: .8rem; text-transform: uppercase; letter-spacing: .05em;">Positioning</span>
                 <h4 class="mt-10" style="font-size: 1.1rem; line-height: 1.4;">
-                  <a href="insights/more-marketing-wont-fix-weak-positioning.html" class="primary-hover" style="color: #1a1a1a; text-decoration: none;">
+                  <a href="insights/more-marketing-wont-fix-weak-positioning.html" class="primary-hover" style="color: var(--text-dark); text-decoration: none;">
                     More Marketing Won't Fix Weak Positioning. Here's What Does.
                   </a>
                 </h4>
-                <p class="mt-10" style="color: #555; font-size: .95rem;">
+                <p class="mt-10" style="color: var(--text-mid); font-size: .95rem;">
                   More channels, more content, more ad spend — none of it works when positioning is the real problem.
                 </p>
                 <a href="insights/more-marketing-wont-fix-weak-positioning.html" class="fw-500 primary-color d-inline-block mt-15" style="font-size: .9rem; text-decoration: none;">
@@ -715,7 +715,7 @@
 
           <!-- Article: How Abstract Creative Turns Unclear Brands Into Revenue Systems -->
           <div class="col">
-            <div class="blog__item" style="background: #fff; border-radius: 8px; overflow: hidden; height: 100%;">
+            <div class="blog__item" style="background: var(--white); border-radius: 8px; overflow: hidden; height: 100%;">
               <a href="insights/unclear-brands-into-revenue-systems.html" class="image d-block">
                 <img src="assets/images/insights/revenue-systems-hero.jpg"
                   alt="How Abstract Creative Turns Unclear Brands Into Revenue Systems"
@@ -725,11 +725,11 @@
               <div class="mt-20" style="padding: 0 24px 24px;">
                 <span class="fw-500 primary-color" style="font-size: .8rem; text-transform: uppercase; letter-spacing: .05em;">Brand Systems</span>
                 <h4 class="mt-10" style="font-size: 1.1rem; line-height: 1.4;">
-                  <a href="insights/unclear-brands-into-revenue-systems.html" class="primary-hover" style="color: #1a1a1a; text-decoration: none;">
+                  <a href="insights/unclear-brands-into-revenue-systems.html" class="primary-hover" style="color: var(--text-dark); text-decoration: none;">
                     How Abstract Creative Turns Unclear Brands Into Revenue Systems
                   </a>
                 </h4>
-                <p class="mt-10" style="color: #555; font-size: .95rem;">
+                <p class="mt-10" style="color: var(--text-mid); font-size: .95rem;">
                   Positioning. Brand architecture. Conversion design. Digital marketing. The four-part sequence that turns an unclear brand into a system that generates revenue.
                 </p>
                 <a href="insights/unclear-brands-into-revenue-systems.html" class="fw-500 primary-color d-inline-block mt-15" style="font-size: .9rem; text-decoration: none;">
@@ -745,7 +745,7 @@
     <!-- Insights section end here -->
 
     <!-- Lead Capture: Diagnostic Download -->
-    <section class="pt-100 pb-100" style="background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);">
+    <section class="pt-100 pb-100" style="background: var(--bg-dark-grad);">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
@@ -896,9 +896,9 @@
           </div>
           <div class="btn__group text-center d-flex justify-content-center gap-3 flex-wrap">
             <a id="cta_book_call_primary" href="#" role="button" class="btn-two btn-black" data-track="cta"
-              data-cta="fit_call" data-location="primary_cta" onclick="openContactModal(event)">Book a Strategic Fit Call
+              data-cta="fit_call" data-location="primary_cta" onclick="openModal('contactModal', event)">Book a Strategic Fit Call
               <i class="fa-regular fa-circle-arrow-right ml-10"></i></a>
-            <a id="cta_assessment_primary" href="./assessment/index.html" role="button" class="btn-two" style="background: transparent; border: 2px solid rgba(255,255,255,0.35); color: #fff;" data-track="cta"
+            <a id="cta_assessment_primary" href="./assessment/index.html" role="button" class="btn-two" style="background: transparent; border: 2px solid rgba(255,255,255,0.35); color: var(--white);" data-track="cta"
               data-cta="assessment" data-location="primary_cta">Take the Free Assessment
               <i class="fa-regular fa-arrow-right ml-10"></i></a>
           </div>
@@ -943,13 +943,13 @@
                 </ul>
               </div>
             </div>
-            <div class="col-lg-2 col-sm-6">
+                        <div class="col-lg-2 col-sm-6">
               <div class="footer__item">
                 <h4 class="title mb-20 text-white">Resources</h4>
                 <ul class="link">
-                  <li><a href="insights/index.html">Articles</a></li>
-                  <li><a href="resources/index.html">Resource Library</a></li>
-                  <li><a href="assessment/index.html">Free Assessment</a></li>
+                  <li><a href="./insights/index.html">Articles</a></li>
+                  <li><a href="./resources/index.html">Resource Library</a></li>
+                  <li><a href="./assessment/index.html">Free Assessment</a></li>
                 </ul>
               </div>
             </div>
@@ -987,7 +987,7 @@
   <!-- Contact/Calendar Modal (Book a Call) -->
   <div id="contactModal" class="contact-modal" role="dialog" aria-modal="true">
     <div class="contact-modal__dialog">
-      <button class="contact-modal__close" type="button" onclick="closeContactModal()"
+      <button class="contact-modal__close" type="button" onclick="closeModal('contactModal')"
         aria-label="Close contact form">×</button>
       <div class="contact__form">
         <div class="contact-modal__embed">
@@ -1050,7 +1050,7 @@
       }
     }
 
-    function closeContactModal() {
+    function closeModal('contactModal') {
       document.getElementById('contactModal').style.display = 'none';
       document.body.classList.remove('modal-open');
     }
@@ -1058,7 +1058,7 @@
     // Close modals on ESC key
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
-        closeContactModal();
+        closeModal('contactModal');
       }
     });
 
@@ -1082,7 +1082,7 @@
   <!-- Swiper bundle min Js -->
   <script src="./assets/js/swiper-bundle.min.js" defer></script>
   <!-- Wow min Js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
+  <script src="./assets/js/wow.min.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () { if (window.WOW) { new WOW().init(); } });
   </script>
@@ -1124,6 +1124,34 @@
     });
   }
 </script>
+  <script>
+    function openModal(id, e) {
+      if (e) e.preventDefault();
+      closeAllModals();
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.style.display = 'flex';
+      document.body.classList.add('modal-open');
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'modal_open', modal_id: id });
+      }
+    }
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    }
+    function closeAllModals() {
+      document.querySelectorAll('.contact-modal').forEach(function(m) {
+        m.style.display = 'none';
+      });
+      document.body.classList.remove('modal-open');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeAllModals();
+    });
+  </script>
 </body>
 
 </html>

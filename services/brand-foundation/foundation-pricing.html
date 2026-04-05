@@ -297,7 +297,7 @@
             </p>
           </div>
           <div class="d-flex align-items-center gap-4 mt-40">
-            <a href="#" onclick="openContactModal(event)" class="btn-one alink2">
+            <a href="#" onclick="openModal('contactModal', event)" class="btn-one alink2">
               Book a Strategic Fit Call<i class="fa-regular fa-circle-arrow-right ml-10"></i>
             </a>
           </div>
@@ -371,7 +371,7 @@
         </div>
 
         <div class="text-center mt-50">
-          <a href="#" onclick="openContactModal(event)" class="btn-one alink2">
+          <a href="#" onclick="openModal('contactModal', event)" class="btn-one alink2">
             Book a Strategic Fit Call<i class="fa-regular fa-circle-arrow-right ml-10"></i>
           </a>
         </div>
@@ -534,7 +534,7 @@
                 <li class="list-item line-height-20 mb-10"></i> Brand guidelines document</li>
                 <li class="list-item line-height-20"></i> Essential brand assets (cards, templates)</li>
               </ul>
-              <a href="#" onclick="openContactModal(event)" class="btn-one alink2 d-block text-center">
+              <a href="#" onclick="openModal('contactModal', event)" class="btn-one alink2 d-block text-center">
                 See If Brand Foundation Is the Right Fit<i class="fa-regular fa-circle-arrow-right ml-10"></i>
               </a>
             </div>
@@ -544,12 +544,12 @@
           <div class="col-lg-5">
             <div class="package-card package-card--featured h-100">
               <h5 class="mb-5"
-                style="opacity:0.75; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:#fff;">
+                style="opacity:0.75; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--white);">
                 Most Popular</h5>
-              <h3 class="mb-20" style="color:#fff;">Complete Transformation</h3>
+              <h3 class="mb-20" style="color:var(--white);">Complete Transformation</h3>
               <div class="price-label mb-5">$20,000 – $25,000</div>
               <p class="price-sublabel mb-25">8–10 week delivery · Strategy + Identity + Website + Funnels</p>
-              <p class="mb-25" style="color:#fff;">Everything in Brand Foundation, plus a conversion-optimized website,
+              <p class="mb-25" style="color:var(--white);">Everything in Brand Foundation, plus a conversion-optimized website,
                 CRM integration, automated email sequences, and a sales funnel built on your locked positioning. The
                 full system.</p>
               <ul class="simple-list-three mb-30">
@@ -559,7 +559,7 @@
                 <li class="list-item-three line-height-20 mb-10"></i> Lead magnet &amp; email automation</li>
                 <li class="list-item-three line-height-20"></i> Launch monitoring &amp; client training</li>
               </ul>
-              <a href="#" onclick="openContactModal(event)" class="btn-one alink9 d-block text-center">
+              <a href="#" onclick="openModal('contactModal', event)" class="btn-one alink9 d-block text-center">
                 See the Complete Transformation<i class="fa-regular fa-circle-arrow-right ml-10"></i>
               </a>
             </div>
@@ -832,7 +832,7 @@
               The diagnostic call takes 15–20 minutes. We confirm that positioning is your real constraint, scope the
               engagement, and tell you exactly what happens next. If it's not the right fit, we'll say so.
             </p>
-            <a href="#" onclick="openContactModal(event)" class="btn-one alink9">
+            <a href="#" onclick="openModal('contactModal', event)" class="btn-one alink9">
               Book a Revenue Diagnostic Call<i class="fa-solid fa-circle-arrow-right ml-10"></i>
             </a>
           </div>
@@ -914,7 +914,7 @@
   ═══════════════════════════════════════ -->
   <div id="contactModal" class="contact-modal" role="dialog" aria-modal="true" style="display:none;">
     <div class="contact-modal__dialog">
-      <button class="contact-modal__close" type="button" onclick="closeContactModal()"
+      <button class="contact-modal__close" type="button" onclick="closeModal('contactModal')"
         aria-label="Close contact form">×</button>
       <div class="contact__form">
         <!-- <h3 class="text-center mb-20">Book Your Strategic Fit Call</h3> -->
@@ -1006,20 +1006,48 @@
       }
     }
 
-    function closeContactModal() {
+    function closeModal('contactModal') {
       document.getElementById('contactModal').style.display = 'none';
       document.body.classList.remove('modal-open');
     }
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeContactModal();
+      if (e.key === 'Escape') closeModal('contactModal');
     });
 
     document.getElementById('contactModal').addEventListener('click', function (e) {
-      if (e.target === this) closeContactModal();
+      if (e.target === this) closeModal('contactModal');
     });
   </script>
 
+  <script>
+    function openModal(id, e) {
+      if (e) e.preventDefault();
+      closeAllModals();
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.style.display = 'flex';
+      document.body.classList.add('modal-open');
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'modal_open', modal_id: id });
+      }
+    }
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    }
+    function closeAllModals() {
+      document.querySelectorAll('.contact-modal').forEach(function(m) {
+        m.style.display = 'none';
+      });
+      document.body.classList.remove('modal-open');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeAllModals();
+    });
+  </script>
 </body>
 
 </html>
