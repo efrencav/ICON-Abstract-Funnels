@@ -166,19 +166,37 @@
   </url>
   <url>
     <loc>https://abstract-creative.com/insights/why-your-brand-breaks-between-500k-and-5m.html</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://abstract-creative.com/insights/you-are-the-bottleneck.html</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://abstract-creative.com/insights/your-website-is-not-the-problem.html</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://abstract-creative.com/insights/more-marketing-wont-fix-weak-positioning.html</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://abstract-creative.com/insights/inconsistent-brands-pay-more.html</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://abstract-creative.com/insights/unclear-brands-into-revenue-systems.html</loc>
+    <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -392,18 +410,13 @@
   </url>
 
   <!-- ═══════════════════════════════════════════
-       RESOURCES — uncomment when ready to go public:
-       1. Remove noindex from resources/index.html
-       2. Uncomment the block below
-       3. Add new article URLs to INSIGHTS above
+       RESOURCES
   ═══════════════════════════════════════════ -->
-  <!--
   <url>
     <loc>https://abstract-creative.com/resources/</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  -->
 
 </urlset>
