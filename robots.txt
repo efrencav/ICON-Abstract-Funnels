@@ -24,5 +24,6 @@ Disallow: /resources/positioning-framework.html
 Disallow: /resources/founder-brand-to-scalable-brand.html
 Disallow: /resources/positioning-statement-builder.html
 Disallow: /resources/brand-voice-messaging-template.html
+Disallow: /resources/icon-method-blueprint.html
 
 Sitemap: https://abstract-creative.com/sitemap.xml
