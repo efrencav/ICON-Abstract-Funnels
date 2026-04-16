@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedIn Content Calendar — Abstract Creative</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #f4f4f4;
+      color: #111;
+      padding: 40px 24px;
+    }
+
+    .page { max-width: 960px; margin: 0 auto; }
+
+    /* ── Header ── */
+    .header {
+      background: #0e0e0e;
+      border-radius: 12px;
+      padding: 40px 48px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(ellipse, rgba(239,66,55,.2) 0%, transparent 65%);
+    }
+    .header h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+      position: relative;
+    }
+    .header h1 span { color: #EF4237; }
+    .header p {
+      color: rgba(255,255,255,.5);
+      font-size: .9rem;
+      position: relative;
+    }
+
+    /* ── Rules ── */
+    .rules {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .rule {
+      flex: 1;
+      min-width: 200px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px 24px;
+      border-left: 4px solid #EF4237;
+    }
+    .rule h5 {
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #EF4237;
+      margin-bottom: 6px;
+    }
+    .rule p { font-size: .88rem; color: #555; line-height: 1.55; }
+
+    /* ── Week ── */
+    .week {
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    }
+    .week-header {
+      background: #1a1a1a;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .week-header h3 {
+      color: #fff;
+      font-size: .95rem;
+      font-weight: 700;
+    }
+    .week-header .date {
+      font-size: .78rem;
+      color: rgba(255,255,255,.4);
+      font-weight: 600;
+    }
+    .week-body { padding: 28px; }
+
+    .post-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+      align-items: center;
+    }
+    .tag {
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .tag-pillar { background: rgba(239,66,55,.1); color: #EF4237; }
+    .tag-day { background: #f4f4f4; color: #666; }
+    .tag-time { background: #f4f4f4; color: #666; }
+
+    .post-hook {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .post-body {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 20px 24px;
+      font-size: .88rem;
+      color: #444;
+      line-height: 1.75;
+      white-space: pre-wrap;
+      font-family: 'Open Sans', sans-serif;
+      border: 1px solid #ebebeb;
+      margin-bottom: 16px;
+    }
+
+    .post-notes {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .note {
+      font-size: .78rem;
+      color: #888;
+      background: #f4f4f4;
+      border-radius: 4px;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .note strong { color: #555; }
+
+    .divider { border: none; border-top: 1px solid #ebebeb; margin: 24px 0; }
+
+    /* ── Engagement section ── */
+    .engagement {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    }
+    .engagement h3 {
+      font-size: .95rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #111;
+    }
+    .eng-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .eng-num {
+      width: 24px;
+      height: 24px;
+      background: #EF4237;
+      color: #fff;
+      border-radius: 50%;
+      font-size: .72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .eng-row p { font-size: .88rem; color: #555; line-height: 1.55; }
+
+    /* ── Footer ── */
+    .footer-note {
+      text-align: center;
+      font-size: .82rem;
+      color: #999;
+      padding: 24px;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>LinkedIn Content Calendar — <span>Abstract Creative</span></h1>
+    <p>8 weeks · 1 post per week · Personal profile (Efren Cavazos) · Platform: LinkedIn</p>
+  </div>
+
+  <!-- Rules -->
+  <div class="rules">
+    <div class="rule">
+      <h5>Post Day</h5>
+      <p>Tuesday or Wednesday. 8–10am CT. Highest B2B reach window.</p>
+    </div>
+    <div class="rule">
+      <h5>No Links in Post Body</h5>
+      <p>Put links in the first comment. LinkedIn suppresses reach on posts with external URLs.</p>
+    </div>
+    <div class="rule">
+      <h5>Engage First Hour</h5>
+      <p>Reply to every comment within 60 minutes of posting. This signals the algorithm to extend reach.</p>
+    </div>
+    <div class="rule">
+      <h5>First Comment</h5>
+      <p>Post a first comment with the relevant link immediately after publishing.</p>
+    </div>
+  </div>
+
+  <!-- Week 1 -->
+  <div class="week">
+    <div class="week-header">
+      <h3>Week 1 — Your website isn't the problem</h3>
+      <span class="date">Post Tuesday or Wednesday morning</span>
+    </div>
+    <div class="week-body">
+      <div class="post-meta">
+        <span class="tag tag-pillar">Positioning Truth</span>
+        <span class="tag tag-day">Tue / Wed</span>
+        <span class="tag tag-time">8–10am CT</span>
+      </div>
+      <div class="post-hook">Hook: "Your website isn't the problem."</div>
+      <div class="post-body">Your website isn't the problem.
+
+Most founders think a redesign will fix conversions.
+It won't.
+
+Here's what I see over and over:
+
+The site looks great.
+The copy is polished.
+The traffic is decent.
+
+But the positioning is unclear.
+
+Visitors land and can't answer:
+→ What exactly does this company do?
+→ Who is it for?
+→ Why them over anyone else?
+
+When those three questions don't have instant answers,
+people leave. Not because the design failed.
+Because the strategy did.
+
+A new website built on weak positioning
+just makes the confusion look more expensive.
+
+Fix the foundation first.
+Then build the site.
+
+——
+I work with $500K–$5M firms in Houston and beyond
+to lock positioning before anything gets designed.
+If this sounds familiar, the assessment link is in my bio.</div>
+      <div class="post-notes">
+        <div class="note"><strong>First comment:</strong> Link to /insights/your-website-is-not-the-problem.html</div>
+        <div class="note"><strong>Bio CTA:</strong> Assessment link</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week 2 -->
+  <div class="week">
+    <div class="week-header">
+      <h3>Week 2 — You are the bottleneck</h3>
+      <span class="date">Post Tuesday or Wednesday morning</span>
+    </div>
+    <div class="week-body">
+      <div class="post-meta">
+        <span class="tag tag-pillar">Client Pattern</span>
+        <span class="tag tag-day">Tue / Wed</span>
+        <span class="tag tag-time">8–10am CT</span>
+      </div>
+      <div class="post-hook">Hook: "A founder told me last month..."</div>
+      <div class="post-body">A founder told me last month:
+
+"Every piece of content, every proposal, every deck —
+it all goes through me before it goes out."
+
+I asked how long that was sustainable.
+
+She laughed.
+
+This is the most common thing I see at the $1M–$3M stage.
+The brand exists entirely in the founder's head.
+
+No documented positioning.
+No tone of voice guidelines.
+No visual standards anyone else can follow.
+
+So every execution decision routes back to one person.
+
+The bottleneck isn't your team.
+It's that the brand has never been extracted from you.
+
+That's what brand infrastructure solves.
+Not a logo. Not a website.
+A system your team can run without you in every room.
+
+——
+Based in Houston. Working with founders who are ready
+to get out of their brand's way.</div>
+      <div class="post-notes">
+        <div class="note"><strong>First comment:</strong> Link to /insights/you-are-the-bottleneck.html</div>
+        <div class="note"><strong>Bio CTA:</strong> Assessment link</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week 3 -->
+  <div class="week">
+    <div class="week-header">
+      <h3>Week 3 — Brand breaks at $500K–$5M</h3>
+      <span class="date">Post Tuesday or Wednesday morning</span>
+    </div>
+    <div class="week-body">
+      <div class="post-meta">
+        <span class="tag tag-pillar">Positioning Truth</span>
+        <span class="tag tag-day">Tue / Wed</span>
+        <span class="tag tag-time">8–10am CT</span>
+      </div>
+      <div class="post-hook">Hook: "There's a stage almost every founder hits."</div>
+      <div class="post-body">There's a stage almost every founder hits.
+
+Revenue is real. The team is growing.
+But something feels off.
+
+The brand that got you here
+is starting to work against you.
+
+Pitches feel harder than they should.
+The website embarrasses you in the wrong rooms.
+New team members have no idea how to talk about the company.
+
+This isn't a design problem.
+It's a scaling problem.
+
+At $0–$500K, hustle and founder charisma carry the brand.
+At $500K–$5M, that stops being enough.
+
+The buyers get more sophisticated.
+The sales cycles get longer.
+The decisions get made by committees, not individuals.
+
+And a brand that can't communicate value
+without the founder in the room
+becomes the ceiling.
+
+I've seen this pattern in Houston and across the country.
+The fix is always the same: lock the foundation before scaling anything else.
+
+——
+Abstract Creative helps growth-stage firms
+close the gap between where their brand is
+and where their business needs it to be.</div>
+      <div class="post-notes">
+        <div class="note"><strong>First comment:</strong> Link to /insights/why-your-brand-breaks-between-500k-and-5m.html</div>
+        <div class="note"><strong>Bio CTA:</strong> Assessment link</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week 4 -->
+  <div class="week">
+    <div class="week-header">
+      <h3>Week 4 — The ICON Method</h3>
+      <span class="date">Post Tuesday or Wednesday morning</span>
+    </div>
+    <div class="week-body">
+      <div class="post-meta">
+        <span class="tag tag-pillar">ICON Method Education</span>
+        <span class="tag tag-day">Tue / Wed</span>
+        <span class="tag tag-time">8–10am CT</span>
+      </div>
+      <div class="post-hook">Hook: "Every brand engagement I've run that delivered real results moved in the same order."</div>
+      <div class="post-body">Every brand engagement I've run
+that delivered real results
+moved in the same order.
+
+I didn't plan it that way.
+I just noticed the pattern after enough projects.
+
+The ones that worked:
+
+1. Identity first.
+   Who you serve, what gap you close, why you win.
+   Before anything gets designed.
+
+2. Communication second.
+   Visual system, messaging, brand standards.
+   Built on the strategy — not ahead of it.
+
+3. Optimization third.
+   Website, landing pages, conversion paths.
+   Designed around positioning — not just aesthetics.
+
+4. Navigation last.
+   CRM, funnels, campaigns, ongoing governance.
+   Only valuable when the foundation holds.
+
+The projects that didn't work?
+They skipped steps or reversed the order.
+Built a website before positioning was clear.
+Ran ads before the message was locked.
+
+Order matters more than effort.
+
+——
+This is the ICON Method — the framework behind
+every Abstract Creative engagement.
+Link in bio if you want the full breakdown.</div>
+      <div class="post-notes">
+        <div class="note"><strong>First comment:</strong> Link to /icon-method/</div>
+        <div class="note"><strong>Bio CTA:</strong> ICON Method page</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week 5 -->
+  <div class="week">
+    <div class="week-header">
+      <h3>Week 5 — More marketing won't fix positioning</h3>
+      <span class="date">Post Tuesday or Wednesday morning</span>
+    </div>
+    <div class="week-body">
+      <div class="post-meta">
+        <span class="tag tag-pillar">Contrarian / Hot Take</span>
+        <span class="tag tag-day">Tue / Wed</span>
+        <span class="tag tag-time">8–10am CT</span>
+      </div>
+      <div class="post-hook">Hook: "Unpopular opinion: Most founders don't have a marketing problem."</div>
+      <div class="post-body">Unpopular opinion:
+
+Most founders don't have a marketing problem.
+They have a positioning problem they're trying to outspend.
+
+More ads.
+More content.
+More campaigns.
+
+All running on a message that was never clearly defined.
+
+Weak positioning doesn't get fixed with more volume.
+It just reaches more people who don't understand what you do.
+
+The founders who scale past $5M
+almost always did one thing differently:
+
+They stopped marketing harder
+and started being clearer.
+
+Clear on who they serve.
+Clear on what problem they solve.
+Clear on why they're the right answer.
+
+Marketing scales that message.
+It cannot create it.
+
+——
+Houston branding strategist.
+I help growth-stage firms get clear before they scale.</div>
+      <div class="post-notes">
+        <div class="note"><strong>First comment:</strong> Link to /insights/more-marketing-wont-fix-weak-positioning.html</div>
+        <div class="note"><strong>Bio CTA:</strong> Assessment link</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week 6 -->
+  <div class="week">
+    <div class="week-header">
+      <h3>Week 6 — Brand inconsistency costs money</h3>
+      <span class="date">Post Tuesday or Wednesday morning</span>
+    </div>
+    <div class="week-body">
+      <div class="post-meta">
+        <span class="tag tag-pillar">Client Pattern</span>
+        <span class="tag tag-day">Tue / Wed</span>
+        <span class="tag tag-time">8–10am CT</span>
+      </div>
+      <div class="post-hook">Hook: "Nobody talks about the cost of brand inconsistency."</div>
+      <div class="post-body">Nobody talks about the cost of brand inconsistency.
+
+But it shows up everywhere:
+
+→ A sales rep describes the company one way.
+   The website says something different.
+   The proposal uses a third version.
+
+→ The prospect is confused.
+   Confusion creates hesitation.
+   Hesitation loses deals.
+
+This isn't a hypothetical.
+I've walked into companies where three people
+on the same team gave me three different answers
+to the question: "What does your company do?"
+
+No one noticed. Because everyone was too close to it.
+
+But buyers notice immediately.
+
+Brand inconsistency is a revenue problem.
+It just disguises itself as a marketing problem.
+
+——
+If you're not sure how consistent your brand actually is,
+the free assessment in my bio takes 5 minutes.</div>
+      <div class="post-notes">
+        <div class="note"><strong>First comment:</strong> Link to /insights/inconsistent-brands-pay-more.html</div>
+        <div class="note"><strong>Bio CTA:</strong> Assessment link</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week 7 -->
+  <div class="week">
+    <div class="week-header">
+      <h3>Week 7 — Houston signal</h3>
+      <span class="date">Post Tuesday or Wednesday morning</span>
+    </div>
+    <div class="week-body">
+      <div class="post-meta">
+        <span class="tag tag-pillar">Houston / Local</span>
+        <span class="tag tag-day">Tue / Wed</span>
+        <span class="tag tag-time">8–10am CT</span>
+      </div>
+      <div class="post-hook">Hook: "Houston has no shortage of smart founders."</div>
+      <div class="post-body">Houston has no shortage of smart founders.
+
+What it does have a shortage of is:
+brands that match the caliber of the businesses behind them.
+
+I see it constantly.
+
+A $2M firm.
+Sophisticated service.
+Real results for real clients.
+
+And a brand that makes them look like
+they launched last Tuesday.
+
+The work is there.
+The credibility is there.
+The positioning isn't.
+
+Building Abstract Creative here was intentional.
+This market rewards substance.
+But you still have to communicate it clearly.
+
+——
+Abstract Creative is a Houston-based brand strategy studio.
+We work with founders who've outgrown their first brand.</div>
+      <div class="post-notes">
+        <div class="note"><strong>First comment:</strong> Link to /about/</div>
+        <div class="note"><strong>Bio CTA:</strong> Assessment link</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Week 8 -->
+  <div class="week">
+    <div class="week-header">
+      <h3>Week 8 — Kinsmen case study</h3>
+      <span class="date">Post Tuesday or Wednesday morning</span>
+    </div>
+    <div class="week-body">
+      <div class="post-meta">
+        <span class="tag tag-pillar">Direct CTA / Case Study</span>
+        <span class="tag tag-day">Tue / Wed</span>
+        <span class="tag tag-time">8–10am CT</span>
+      </div>
+      <div class="post-hook">Hook: "Kinsmen Group came to us with a real problem."</div>
+      <div class="post-body">Kinsmen Group came to us with a real problem.
+
+Enterprise buyers were visiting the site.
+Not converting.
+
+The work was excellent.
+The brand wasn't communicating it.
+
+We locked positioning first.
+Rebuilt the identity for enterprise sales contexts.
+Rebuilt the web presence around how buyers actually evaluate.
+
+Results in the first two quarters:
+
+→ +26% quarter-over-quarter sales growth
+→ ~20% shorter sales cycle
+→ 3.8× return on the brand investment
+
+The brand became a sales asset.
+Not a liability.
+
+That's what this work is supposed to do.
+
+——
+Full case study linked in bio.
+If your brand is costing you deals, let's talk.</div>
+      <div class="post-notes">
+        <div class="note"><strong>First comment:</strong> Link to /work/kinsmen-group.html</div>
+        <div class="note"><strong>Bio CTA:</strong> Case study or fit call link</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Engagement routine -->
+  <div class="engagement">
+    <h3>Daily Engagement Routine — 20 min/day</h3>
+    <div class="eng-row">
+      <div class="eng-num">1</div>
+      <p><strong>Reply to all comments on your post</strong> within the first hour of publishing. This is the single highest-leverage action for reach.</p>
+    </div>
+    <div class="eng-row">
+      <div class="eng-num">2</div>
+      <p><strong>Comment on 5 posts</strong> from founders, CEOs, or business owners in your ICP. Thoughtful comments — not "Great post!" Add a perspective or ask a question.</p>
+    </div>
+    <div class="eng-row">
+      <div class="eng-num">3</div>
+      <p><strong>Connect with 3–5 people per day</strong> who engaged with your post or fit your ICP. Short note: "Noticed you engaged with my post on positioning — happy to connect."</p>
+    </div>
+    <div class="eng-row">
+      <div class="eng-num">4</div>
+      <p><strong>After week 4</strong>, DM 2–3 people who liked or commented on multiple posts. Not a pitch — just "Thanks for following along. What's the biggest brand challenge you're dealing with right now?"</p>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Abstract Creative · LinkedIn Content Calendar · 8 Weeks · abstract-creative.com
+  </div>
+
+</div>
+</body>
+</html>
