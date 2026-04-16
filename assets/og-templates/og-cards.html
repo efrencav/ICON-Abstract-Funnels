@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OG Card Templates — Abstract Creative</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #e8e8e8;
+      font-family: 'Open Sans', sans-serif;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 8px;
+    }
+
+    /* ─── OG CARD ─── */
+    .og-card {
+      width: 1200px;
+      height: 628px;
+      background: #0e0e0e;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 64px 72px;
+      flex-shrink: 0;
+    }
+
+    /* Red radial glow */
+    .og-card::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(239,66,55,0.22) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* Subtle grid texture */
+    .og-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    .og-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .og-logo {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .og-logo span { color: #EF4237; }
+
+    .og-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #EF4237;
+      background: rgba(239,66,55,.1);
+      border: 1px solid rgba(239,66,55,.3);
+      border-radius: 4px;
+      padding: 5px 14px;
+    }
+
+    .og-body {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+    }
+
+    .og-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #EF4237;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .og-headline {
+      font-size: 52px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+    }
+    .og-headline span { color: #EF4237; }
+
+    .og-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 24px;
+    }
+
+    .og-url {
+      font-size: 13px;
+      color: rgba(255,255,255,.3);
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+
+    .og-cta {
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,.5);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .og-cta span {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: #EF4237;
+      border-radius: 50%;
+      margin-left: 10px;
+      vertical-align: middle;
+      text-align: center;
+      line-height: 24px;
+      font-size: 11px;
+      color: #fff;
+    }
+
+    /* Orange accent bar */
+    .og-accent {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: #EF4237;
+      z-index: 3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── CARD 1 ─── -->
+  <p class="label">1 · inconsistent-brands-pay-more — screenshot at 1200×628</p>
+  <div class="og-card">
+    <div class="og-accent"></div>
+    <div class="og-top">
+      <div class="og-logo">Abstract <span>Creative</span></div>
+      <div class="og-tag">Brand Strategy · Houston</div>
+    </div>
+    <div class="og-body">
+      <span class="og-eyebrow">Insights</span>
+      <h1 class="og-headline">Brand Inconsistency Is<br><span>Costing You More</span><br>Than You Think</h1>
+    </div>
+    <div class="og-bottom">
+      <span class="og-url">abstract-creative.com/insights</span>
+      <span class="og-cta">Read the Article <span>→</span></span>
+    </div>
+  </div>
+
+  <!-- ─── CARD 2 ─── -->
+  <p class="label">2 · more-marketing-wont-fix-weak-positioning — screenshot at 1200×628</p>
+  <div class="og-card">
+    <div class="og-accent"></div>
+    <div class="og-top">
+      <div class="og-logo">Abstract <span>Creative</span></div>
+      <div class="og-tag">Brand Strategy · Houston</div>
+    </div>
+    <div class="og-body">
+      <span class="og-eyebrow">Insights</span>
+      <h1 class="og-headline">More Marketing<br>Won't Fix <span>Weak</span><br>Positioning</h1>
+    </div>
+    <div class="og-bottom">
+      <span class="og-url">abstract-creative.com/insights</span>
+      <span class="og-cta">Read the Article <span>→</span></span>
+    </div>
+  </div>
+
+  <!-- ─── CARD 3 ─── -->
+  <p class="label">3 · unclear-brands-into-revenue-systems — screenshot at 1200×628</p>
+  <div class="og-card">
+    <div class="og-accent"></div>
+    <div class="og-top">
+      <div class="og-logo">Abstract <span>Creative</span></div>
+      <div class="og-tag">Brand Strategy · Houston</div>
+    </div>
+    <div class="og-body">
+      <span class="og-eyebrow">Insights</span>
+      <h1 class="og-headline">How We Turn<br><span>Unclear Brands</span><br>Into Revenue Systems</h1>
+    </div>
+    <div class="og-bottom">
+      <span class="og-url">abstract-creative.com/insights</span>
+      <span class="og-cta">Read the Article <span>→</span></span>
+    </div>
+  </div>
+
+  <!-- ─── CARD 4 ─── -->
+  <p class="label">4 · why-your-brand-breaks-between-500k-and-5m — screenshot at 1200×628</p>
+  <div class="og-card">
+    <div class="og-accent"></div>
+    <div class="og-top">
+      <div class="og-logo">Abstract <span>Creative</span></div>
+      <div class="og-tag">Brand Strategy · Houston</div>
+    </div>
+    <div class="og-body">
+      <span class="og-eyebrow">Insights</span>
+      <h1 class="og-headline">Why Your Brand<br>Breaks Between<br><span>$500K and $5M</span></h1>
+    </div>
+    <div class="og-bottom">
+      <span class="og-url">abstract-creative.com/insights</span>
+      <span class="og-cta">Read the Article <span>→</span></span>
+    </div>
+  </div>
+
+  <!-- ─── CARD 5 ─── -->
+  <p class="label">5 · you-are-the-bottleneck — screenshot at 1200×628</p>
+  <div class="og-card">
+    <div class="og-accent"></div>
+    <div class="og-top">
+      <div class="og-logo">Abstract <span>Creative</span></div>
+      <div class="og-tag">Brand Strategy · Houston</div>
+    </div>
+    <div class="og-body">
+      <span class="og-eyebrow">Insights</span>
+      <h1 class="og-headline">How to Scale<br>Without Being<br><span>the Bottleneck</span></h1>
+    </div>
+    <div class="og-bottom">
+      <span class="og-url">abstract-creative.com/insights</span>
+      <span class="og-cta">Read the Article <span>→</span></span>
+    </div>
+  </div>
+
+  <!-- ─── CARD 6 ─── -->
+  <p class="label">6 · your-website-is-not-the-problem — screenshot at 1200×628</p>
+  <div class="og-card">
+    <div class="og-accent"></div>
+    <div class="og-top">
+      <div class="og-logo">Abstract <span>Creative</span></div>
+      <div class="og-tag">Brand Strategy · Houston</div>
+    </div>
+    <div class="og-body">
+      <span class="og-eyebrow">Insights</span>
+      <h1 class="og-headline">Your Website<br>Is <span>Not the Problem.</span><br>This Is.</h1>
+    </div>
+    <div class="og-bottom">
+      <span class="og-url">abstract-creative.com/insights</span>
+      <span class="og-cta">Read the Article <span>→</span></span>
+    </div>
+  </div>
+
+</body>
+</html>
