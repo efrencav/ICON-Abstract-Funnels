@@ -768,16 +768,24 @@
 
 <!-- ── GATE MODAL ── -->
 <div class="gate-overlay" id="gate-overlay">
-  <div class="gate-modal">
+  <div class="gate-modal" style="max-width:520px;">
     <button class="gate-close" onclick="closeGate()" aria-label="Close">×</button>
     <div style="display:inline-block;background:rgba(239,66,55,.1);border-radius:50%;width:52px;height:52px;text-align:center;line-height:52px;font-size:22px;margin-bottom:20px;">🔓</div>
     <h2>Your results are ready.</h2>
-    <p>Enter your name and email to unlock your personalized revenue gap estimate — and see how Houston firms in your industry are closing it.</p>
-    <input type="text" id="gate_name" class="calc-input" placeholder="First name" autocomplete="given-name" />
-    <input type="email" id="gate_email" class="calc-input" placeholder="Work email" autocomplete="email" />
-    <button class="calc-btn" onclick="submitGate()">
-      Unlock My Results <i class="fa-regular fa-circle-arrow-right" style="margin-left:8px;"></i>
-    </button>
+    <p style="margin-bottom:24px;">Enter your name and email to unlock your personalized revenue gap estimate — and see how Houston firms in your industry are closing it.</p>
+
+    <!-- PASTE YOUR GHL FORM EMBED CODE HERE -->
+    <!-- Replace the placeholder below with your GHL iframe snippet.
+         In GHL: Form Settings → On Submit → Redirect to URL →
+         https://abstract-creative.com/tools/brand-gap-calculator/?unlocked=1  -->
+    <div id="ghl-form-placeholder" style="background:#f7f7f7;border:2px dashed #e0e0e0;border-radius:8px;padding:32px;text-align:center;color:#aaa;font-size:13px;line-height:1.6;">
+      <strong style="color:#888;display:block;margin-bottom:6px;">GHL Form Embed Goes Here</strong>
+      Paste your <code>&lt;iframe&gt;</code> snippet from GoHighLevel.<br>
+      Set the form redirect to:<br>
+      <code style="color:#EF4237;font-size:12px;">abstract-creative.com/tools/brand-gap-calculator/?unlocked=1</code>
+    </div>
+    <!-- END GHL EMBED -->
+
     <p class="gate-privacy">No spam. No sales calls unless you book one. Unsubscribe anytime.</p>
   </div>
 </div>
@@ -897,49 +905,20 @@
       return;
     }
 
+    // Save inputs so they survive the GHL redirect
+    sessionStorage.setItem('bgc_inputs', JSON.stringify({
+      revenue:     document.getElementById('f_revenue').value,
+      avgClient:   document.getElementById('f_avg_client').value,
+      convRate:    document.getElementById('f_conv_rate').value,
+      referralPct: document.getElementById('f_referral_pct').value,
+      industry:    industry
+    }));
+
     document.getElementById('gate-overlay').classList.add('active');
-    setTimeout(() => document.getElementById('gate_name').focus(), 100);
   }
 
   function closeGate() {
     document.getElementById('gate-overlay').classList.remove('active');
-  }
-
-  function submitGate() {
-    const name  = document.getElementById('gate_name').value.trim();
-    const email = document.getElementById('gate_email').value.trim();
-
-    if (!name) {
-      alert('Please enter your name.');
-      document.getElementById('gate_name').focus();
-      return;
-    }
-    if (!email || !email.includes('@')) {
-      alert('Please enter a valid email address.');
-      document.getElementById('gate_email').focus();
-      return;
-    }
-
-    // Capture lead (passive — fire and forget to GHL webhook if available)
-    try {
-      const payload = {
-        firstName: name,
-        email: email,
-        source: 'Brand Gap Calculator',
-        revenue: document.getElementById('f_revenue').value,
-        avgClient: document.getElementById('f_avg_client').value,
-        convRate: document.getElementById('f_conv_rate').value,
-        referralPct: document.getElementById('f_referral_pct').value,
-        industry: document.getElementById('f_industry').value
-      };
-      // Push to dataLayer for GTM capture
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'calculator_gate_submit', ...payload });
-    } catch(e) {}
-
-    sessionStorage.setItem('bgc_unlocked', '1');
-    closeGate();
-    renderResults();
   }
 
   function renderResults() {
@@ -1032,18 +1011,41 @@
     window.scrollTo({ top: document.querySelector('section[style*="background:#f7f7f7"]').offsetTop - 80, behavior: 'smooth' });
   }
 
-  // Demo mode: ?demo in URL pre-fills and skips gate
   window.addEventListener('DOMContentLoaded', function() {
-    if (window.location.search.includes('demo')) {
-      document.getElementById('f_revenue').value    = '850000';
-      document.getElementById('f_avg_client').value = '14000';
-      document.getElementById('f_conv_rate').value  = '18';
+    const params = new URLSearchParams(window.location.search);
+
+    // GHL redirect — restore saved inputs and show results
+    if (params.has('unlocked')) {
+      const saved = JSON.parse(sessionStorage.getItem('bgc_inputs') || 'null');
+      if (saved) {
+        document.getElementById('f_revenue').value      = saved.revenue;
+        document.getElementById('f_avg_client').value   = saved.avgClient;
+        document.getElementById('f_conv_rate').value    = saved.convRate;
+        document.getElementById('f_referral_pct').value = saved.referralPct;
+        document.getElementById('f_industry').value     = saved.industry;
+        document.getElementById('conv_val').textContent = saved.convRate + '%';
+        document.getElementById('ref_val').textContent  = saved.referralPct + '%';
+        sessionStorage.removeItem('bgc_inputs');
+        renderResults();
+        setTimeout(() => {
+          document.getElementById('results-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      }
+    }
+
+    // Demo mode — pre-fill sample data and skip gate
+    if (params.has('demo')) {
+      document.getElementById('f_revenue').value      = '850000';
+      document.getElementById('f_avg_client').value   = '14000';
+      document.getElementById('f_conv_rate').value    = '18';
       document.getElementById('f_referral_pct').value = '68';
-      document.getElementById('f_industry').value   = 'professional';
+      document.getElementById('f_industry').value     = 'professional';
       document.getElementById('conv_val').textContent = '18%';
       document.getElementById('ref_val').textContent  = '68%';
       renderResults();
-      document.getElementById('results-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => {
+        document.getElementById('results-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
     }
   });
 </script>
