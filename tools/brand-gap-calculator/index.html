@@ -1032,13 +1032,20 @@
     window.scrollTo({ top: document.querySelector('section[style*="background:#f7f7f7"]').offsetTop - 80, behavior: 'smooth' });
   }
 
-  // Re-show results if already unlocked this session
-  if (sessionStorage.getItem('bgc_unlocked')) {
-    // Only re-render if inputs still have values
-    window.addEventListener('DOMContentLoaded', () => {
-      sessionStorage.removeItem('bgc_unlocked'); // require re-entry on fresh load
-    });
-  }
+  // Demo mode: ?demo in URL pre-fills and skips gate
+  window.addEventListener('DOMContentLoaded', function() {
+    if (window.location.search.includes('demo')) {
+      document.getElementById('f_revenue').value    = '850000';
+      document.getElementById('f_avg_client').value = '14000';
+      document.getElementById('f_conv_rate').value  = '18';
+      document.getElementById('f_referral_pct').value = '68';
+      document.getElementById('f_industry').value   = 'professional';
+      document.getElementById('conv_val').textContent = '18%';
+      document.getElementById('ref_val').textContent  = '68%';
+      renderResults();
+      document.getElementById('results-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 </script>
 
 </body>
