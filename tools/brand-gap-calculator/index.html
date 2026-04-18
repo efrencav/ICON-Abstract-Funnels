@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P93WLQG');</script>
+
+  <title>Brand Gap Revenue Calculator | Abstract Creative Houston</title>
+  <meta name="description" content="Find out exactly how much revenue your brand gap is costing you each year. Free calculator for Houston growth-stage businesses." />
+  <link rel="canonical" href="https://abstract-creative.com/tools/brand-gap-calculator/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="How Much Is Your Brand Gap Costing You? | Free Calculator" />
+  <meta property="og:description" content="Enter 5 numbers. See your annual revenue gap. Free tool from Abstract Creative Houston." />
+  <meta property="og:url" content="https://abstract-creative.com/tools/brand-gap-calculator/" />
+  <meta property="og:image" content="https://abstract-creative.com/assets/images/cover.jpg" />
+  <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+  <link rel="preload" href="../../assets/css/all.min.css" as="style" />
+  <link rel="stylesheet" href="../../assets/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="../../assets/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Calculator Page Styles ── */
+    .calc-hero {
+      background: #0e0e0e;
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .calc-hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -60px;
+      width: 560px; height: 560px;
+      background: radial-gradient(ellipse, rgba(239,66,55,.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .calc-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #EF4237;
+      background: rgba(239,66,55,.1);
+      border: 1px solid rgba(239,66,55,.3);
+      border-radius: 20px;
+      padding: 5px 16px;
+      margin-bottom: 24px;
+    }
+
+    /* ── Form Card ── */
+    .calc-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 48px 48px 40px;
+      box-shadow: 0 4px 40px rgba(0,0,0,.08);
+    }
+    @media (max-width: 768px) { .calc-card { padding: 32px 24px; } }
+
+    .calc-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+      letter-spacing: .02em;
+    }
+    .calc-hint {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .calc-input {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 15px;
+      color: #1a1a1a;
+      background: #fafafa;
+      transition: border-color .2s;
+      outline: none;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .calc-input:focus { border-color: #EF4237; background: #fff; }
+    .calc-input.has-prefix { padding-left: 36px; }
+    .input-wrap { position: relative; }
+    .input-prefix {
+      position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+      color: #888; font-size: 15px; pointer-events: none;
+    }
+    .input-suffix {
+      position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+      color: #888; font-size: 14px; pointer-events: none;
+    }
+    .calc-select {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 15px;
+      color: #1a1a1a;
+      background: #fafafa;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .calc-select:focus { border-color: #EF4237; background-color: #fff; }
+    .calc-btn {
+      width: 100%;
+      padding: 16px 24px;
+      background: #EF4237;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      letter-spacing: .02em;
+      transition: background .2s, transform .1s;
+      margin-top: 8px;
+    }
+    .calc-btn:hover { background: #d63529; }
+    .calc-btn:active { transform: scale(.98); }
+    .field-group { margin-bottom: 24px; }
+
+    /* ── Gate Modal ── */
+    .gate-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.72);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .gate-overlay.active { display: flex; }
+    .gate-modal {
+      background: #fff;
+      border-radius: 16px;
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 100%;
+      position: relative;
+      animation: modalIn .3s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(16px) scale(.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .gate-modal h2 {
+      font-size: 24px; font-weight: 800; color: #1a1a1a;
+      margin-bottom: 8px; line-height: 1.2;
+    }
+    .gate-modal p { font-size: 14px; color: #666; margin-bottom: 28px; line-height: 1.6; }
+    .gate-modal .calc-input { margin-bottom: 14px; }
+    .gate-close {
+      position: absolute; top: 16px; right: 20px;
+      background: none; border: none; font-size: 20px;
+      color: #999; cursor: pointer; line-height: 1;
+    }
+    .gate-privacy {
+      font-size: 11px; color: #aaa; text-align: center;
+      margin-top: 14px; line-height: 1.5;
+    }
+
+    /* ── Results Section ── */
+    .results-section {
+      display: none;
+      background: #f7f7f7;
+      padding: 80px 0;
+    }
+    .results-section.visible { display: block; }
+
+    .results-headline {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      color: #1a1a1a;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .results-headline .red { color: #EF4237; }
+    .results-sub {
+      font-size: 16px; color: #666; margin-bottom: 48px; max-width: 580px;
+    }
+
+    .result-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      border-left: 4px solid #e0e0e0;
+      height: 100%;
+    }
+    .result-card.red   { border-color: #EF4237; }
+    .result-card.amber { border-color: #F59E0B; }
+    .result-card.dark  { border-color: #1a1a1a; background: #1a1a1a; }
+
+    .result-card .rc-label {
+      font-size: 11px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: #EF4237; margin-bottom: 10px;
+    }
+    .result-card.amber .rc-label { color: #F59E0B; }
+    .result-card.dark  .rc-label { color: rgba(255,255,255,.5); }
+
+    .result-card .rc-value {
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 800;
+      color: #1a1a1a;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .result-card.dark .rc-value { color: #fff; }
+
+    .result-card .rc-desc {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.5;
+    }
+    .result-card.dark .rc-desc { color: rgba(255,255,255,.5); }
+
+    .results-divider {
+      height: 1px;
+      background: #e8e8e8;
+      margin: 56px 0;
+    }
+
+    /* ── Houston Market Section ── */
+    .houston-section {
+      padding: 80px 0 100px;
+      background: #0e0e0e;
+    }
+    .houston-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 20px;
+    }
+    .houston-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #EF4237;
+    }
+    .houston-section h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .houston-section .hs-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,.45);
+      margin-bottom: 48px;
+      max-width: 560px;
+    }
+
+    /* Industry Tabs */
+    .industry-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 900px) { .industry-tabs { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .industry-tabs { grid-template-columns: 1fr 1fr; } }
+
+    .ind-tab {
+      background: rgba(255,255,255,.05);
+      border: 1.5px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      padding: 22px 20px;
+      cursor: pointer;
+      transition: background .2s, border-color .2s;
+      text-align: left;
+    }
+    .ind-tab:hover {
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.18);
+    }
+    .ind-tab.active {
+      background: rgba(239,66,55,.08);
+      border-color: rgba(239,66,55,.4);
+    }
+    .ind-tab .it-icon { font-size: 22px; margin-bottom: 12px; display: block; }
+    .ind-tab .it-name {
+      font-size: 15px; font-weight: 700; color: #fff;
+      margin-bottom: 4px; line-height: 1.2;
+    }
+    .ind-tab.active .it-name { color: #EF4237; }
+    .ind-tab .it-count {
+      font-size: 12px; color: rgba(255,255,255,.35); font-weight: 600;
+    }
+
+    /* Industry Panel */
+    .ind-panel {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      padding: 40px;
+      display: none;
+    }
+    .ind-panel.active { display: block; animation: panelIn .25s ease; }
+    @keyframes panelIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .ind-panel .ip-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: #EF4237; margin-bottom: 14px;
+    }
+    .ind-panel h3 {
+      font-size: clamp(20px, 2.5vw, 27px);
+      font-weight: 800; color: #fff; line-height: 1.25;
+      margin-bottom: 14px;
+    }
+    .ind-panel p {
+      font-size: 15px; color: rgba(255,255,255,.55);
+      line-height: 1.7; margin-bottom: 28px; max-width: 680px;
+    }
+    .ind-tags {
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .ind-tag {
+      display: inline-block;
+      font-size: 12px; font-weight: 600;
+      color: rgba(255,255,255,.6);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px;
+      padding: 5px 14px;
+    }
+
+    /* ── CTA Strip ── */
+    .cta-strip {
+      background: #EF4237;
+      padding: 60px 0;
+    }
+    .cta-strip h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 800; color: #fff;
+      line-height: 1.2; margin-bottom: 10px;
+    }
+    .cta-strip p { font-size: 16px; color: rgba(255,255,255,.75); margin-bottom: 0; }
+    .cta-strip .cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #fff; color: #EF4237;
+      padding: 15px 30px; border-radius: 8px;
+      font-size: 15px; font-weight: 700;
+      text-decoration: none;
+      transition: transform .15s;
+      white-space: nowrap;
+    }
+    .cta-strip .cta-btn:hover { transform: translateY(-2px); }
+
+    /* ── Range Slider ── */
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%; height: 6px;
+      border-radius: 3px;
+      background: #e0e0e0;
+      outline: none;
+      margin: 8px 0;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: #EF4237;
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,.2);
+    }
+    .slider-row { display: flex; align-items: center; gap: 14px; }
+    .slider-val {
+      min-width: 52px;
+      font-size: 15px; font-weight: 700;
+      color: #EF4237;
+      text-align: right;
+    }
+
+    /* Recalc note */
+    .recalc-note {
+      font-size: 13px; color: #999;
+      margin-top: 20px; text-align: center;
+    }
+    .recalc-link {
+      color: #EF4237; font-weight: 600;
+      cursor: pointer; text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-P93WLQG"
+  style="display:none;visibility:hidden" width="0"></iframe></noscript>
+
+<!-- Preloader -->
+<div class="preloader" id="loading">
+  <div class="loading-overlay"></div>
+  <div class="custom-loader"><div></div><div></div><div></div><div></div></div>
+</div>
+
+<!-- Top header -->
+<div class="header-top d-none d-lg-block">
+  <div class="container container-extend">
+    <div class="header-top-wrp">
+      <ul class="info">
+        <li><i class="fa-solid fa-paper-plane"></i>
+          <a href="mailto:efren@abstract-creative.com?subject=Abstract Creative: Requesting Information">efren@abstract-creative.com</a></li>
+        <li class="ml-40"><i class="fa-solid fa-phone"></i> <a href="tel:+18323707322">832.370.7322</a></li>
+      </ul>
+      <ul class="link-info">
+        <li class="bor-right"><a href="https://www.facebook.com/AbstractCreative" rel="nofollow"><i class="fa-brands fa-facebook-f"></i></a></li>
+        <li class="bor-right"><a href="https://www.instagram.com/abstr8ct/" rel="nofollow"><i class="fa-brands fa-instagram-square"></i></a></li>
+        <li class="bor-right"><a href="https://www.linkedin.com/company/abstract-creative-houston/" rel="nofollow"><i class="fa-brands fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header-area banner-ux-hero-bg">
+  <div class="container container-extend">
+    <div class="header__main">
+      <a href="../../index.html" class="logo">
+        <img src="../../assets/images/logo/logo-stacked.svg" alt="Abstract Creative" />
+      </a>
+      <a href="../../index.html" class="logo logo-light">
+        <img src="../../assets/images/logo/logo-stacked-light.svg" alt="Abstract Creative" />
+      </a>
+      <div class="main-menu main-menu-light">
+        <nav><ul>
+          <li><a href="../../services/index.html">Services <i class="fa-solid fa-angle-down"></i></a>
+            <ul class="sub-menu" style="width:190px">
+              <li><a href="../../services/foundation/index.html">Foundation</a></li>
+              <li><a href="../../services/identity/index.html">Identity</a></li>
+              <li><a href="../../services/execution/index.html">Execution</a></li>
+              <li style="border-top:1px solid rgba(0,0,0,.08);margin-top:6px;padding-top:6px;"><a href="../../icon-method/index.html" style="color:#EF4237;font-weight:600;">The ICON Method</a></li>
+            </ul>
+          </li>
+          <li><a href="../../work/index.html">Work</a></li>
+          <li><a href="../../about/index.html">About</a></li>
+          <li><a href="../../insights/index.html">Insights <i class="fa-solid fa-angle-down"></i></a>
+            <ul class="sub-menu" style="width:190px">
+              <li><a href="../../insights/index.html">Articles</a></li>
+              <li><a href="../../resources/index.html">Resource Library</a></li>
+            </ul>
+          </li>
+        </ul></nav>
+      </div>
+      <a href="../../contact/index.html" class="btn-menu d-none d-lg-inline-block">Book a Strategic Fit Call<i class="fa-regular fa-circle-arrow-right ml-10"></i></a>
+    </div>
+  </div>
+</header>
+
+<!-- Sidebar -->
+<div id="targetElement" class="sidebar-area sidebar__hide">
+  <div class="sidebar__overlay"></div>
+  <a href="../../index.html" class="logo mb-40">
+    <img src="../../assets/images/logo/logo-stacked-orange-light.svg" alt="logo">
+  </a>
+  <div class="mobile-menu overflow-hidden"></div>
+  <ul class="info pt-40">
+    <li><i class="fa-solid primary-color fa-location-dot"></i> <a href="https://abstract-creative.com">abstract-creative.com</a></li>
+    <li class="py-2"><i class="fa-solid primary-color fa-phone-volume"></i> <a href="tel:+18323707322">832-370-7322</a></li>
+    <li><i class="fa-solid primary-color fa-paper-plane"></i> <a href="mailto:efren@abstract-creative.com">efren@abstract-creative.com</a></li>
+  </ul>
+  <button id="closeButton" class="text-white"><i class="fa-solid fa-xmark"></i></button>
+</div>
+
+<main>
+
+  <!-- ── HERO ── -->
+  <section class="calc-hero">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9 text-center">
+          <span class="calc-badge">Free Revenue Calculator · Houston</span>
+          <h1 class="text-white" style="font-size:clamp(32px,5vw,58px);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px;">
+            How Much Is Your<br><span style="color:#EF4237;">Brand Gap</span> Costing You?
+          </h1>
+          <p style="font-size:18px;color:rgba(255,255,255,.55);max-width:560px;margin:0 auto 14px;line-height:1.65;">
+            Enter 5 numbers. Get an honest estimate of the revenue slipping through unclear positioning, weak conversion, and referral dependency.
+          </p>
+          <p style="font-size:13px;color:rgba(255,255,255,.3);letter-spacing:.04em;">Takes 60 seconds. No fluff.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CALCULATOR FORM ── -->
+  <section style="background:#f7f7f7;padding:80px 0;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="calc-card">
+            <h2 style="font-size:22px;font-weight:800;color:#1a1a1a;margin-bottom:6px;">Your Business Numbers</h2>
+            <p style="font-size:14px;color:#888;margin-bottom:36px;">We'll use these to calculate your estimated annual brand gap cost.</p>
+
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="field-group">
+                  <label class="calc-label" for="f_revenue">Annual Revenue</label>
+                  <span class="calc-hint">Your total revenue last 12 months</span>
+                  <div class="input-wrap">
+                    <span class="input-prefix">$</span>
+                    <input type="number" id="f_revenue" class="calc-input has-prefix" placeholder="750,000" min="0" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="field-group">
+                  <label class="calc-label" for="f_avg_client">Average Client Value</label>
+                  <span class="calc-hint">Avg. revenue per client per year</span>
+                  <div class="input-wrap">
+                    <span class="input-prefix">$</span>
+                    <input type="number" id="f_avg_client" class="calc-input has-prefix" placeholder="12,000" min="0" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="field-group">
+                  <label class="calc-label" for="f_conv_rate">Lead-to-Client Conversion Rate</label>
+                  <span class="calc-hint">% of leads that become paying clients</span>
+                  <div class="slider-row">
+                    <input type="range" id="f_conv_rate" min="1" max="60" value="18" oninput="document.getElementById('conv_val').textContent=this.value+'%'" />
+                    <span class="slider-val" id="conv_val">18%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="field-group">
+                  <label class="calc-label" for="f_referral_pct">% of Leads from Referrals</label>
+                  <span class="calc-hint">vs. inbound marketing / paid channels</span>
+                  <div class="slider-row">
+                    <input type="range" id="f_referral_pct" min="0" max="100" value="65" oninput="document.getElementById('ref_val').textContent=this.value+'%'" />
+                    <span class="slider-val" id="ref_val">65%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="field-group">
+                  <label class="calc-label" for="f_industry">Industry</label>
+                  <span class="calc-hint">Select the closest match for your business</span>
+                  <select id="f_industry" class="calc-select">
+                    <option value="">Select your industry…</option>
+                    <option value="construction">Construction &amp; Trades</option>
+                    <option value="professional">Professional Services</option>
+                    <option value="health">Health &amp; Wellness</option>
+                    <option value="energy">Energy &amp; Industrial</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <button class="calc-btn" onclick="openGate()">
+              Calculate My Revenue Gap <i class="fa-regular fa-circle-arrow-right" style="margin-left:8px;"></i>
+            </button>
+
+            <p style="font-size:12px;color:#bbb;text-align:center;margin-top:14px;">
+              Free. Results unlock instantly after entering your name &amp; email.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESULTS (hidden until unlocked) ── -->
+  <section class="results-section" id="results-section">
+    <div class="container">
+
+      <!-- Headline -->
+      <div class="row justify-content-center mb-10">
+        <div class="col-lg-10">
+          <p style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#EF4237;margin-bottom:12px;">Your Results</p>
+          <h2 class="results-headline">
+            Your brand gap is estimated to be costing you<br>
+            <span class="red" id="res_range">$—</span> per year
+          </h2>
+          <p class="results-sub" id="res_sub">Based on your inputs, here's how your revenue is leaking.</p>
+        </div>
+      </div>
+
+      <!-- 3 metric cards -->
+      <div class="row g-4 mb-20">
+        <div class="col-md-4">
+          <div class="result-card red h-100">
+            <div class="rc-label">Conversion Gap</div>
+            <div class="rc-value" id="res_conv_gap">$—</div>
+            <div class="rc-desc" id="res_conv_desc">You're converting below your industry benchmark. Each percentage point is real revenue.</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="result-card amber h-100">
+            <div class="rc-label" style="color:#F59E0B;">Positioning Tax</div>
+            <div class="rc-value" id="res_pos_tax">$—</div>
+            <div class="rc-desc" id="res_pos_desc">High referral dependency signals price compression — clients aren't finding you; your network is vouching for you.</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="result-card dark h-100">
+            <div class="rc-label">3-Year Exposure</div>
+            <div class="rc-value" id="res_3yr">$—</div>
+            <div class="rc-desc">Left unchecked, brand gaps compound as competitors sharpen their positioning while yours stays unclear.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Methodology note -->
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div style="background:#fff;border-radius:10px;padding:24px 28px;border-left:4px solid #e8e8e8;">
+            <p style="font-size:13px;color:#888;line-height:1.7;margin:0;" id="res_methodology">
+              <strong style="color:#444;">How we calculated this:</strong> Estimate based on your reported conversion rate vs. Houston industry averages, referral dependency as a positioning risk indicator, and typical price compression in firms with unclear brand positioning.
+            </p>
+          </div>
+          <p class="recalc-note">Numbers off? <span class="recalc-link" onclick="recalculate()">Recalculate with different inputs</span></p>
+        </div>
+      </div>
+
+      <div class="results-divider"></div>
+
+    </div>
+  </section>
+
+  <!-- ── HOUSTON MARKET SECTION ── -->
+  <section class="houston-section" id="houston-section" style="display:none;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <div class="houston-badge">Houston, TX</div>
+          <h2>Built for Houston's<br>growth-stage businesses</h2>
+          <p class="hs-sub">We work where you work — from The Heights to Sugar Land, Katy to Midtown. Click your industry to see what we've done for firms like yours.</p>
+        </div>
+      </div>
+
+      <!-- Industry Tabs -->
+      <div class="industry-tabs" id="industry-tabs">
+        <div class="ind-tab" data-ind="construction" onclick="switchIndustry('construction')">
+          <span class="it-icon">🏗️</span>
+          <div class="it-name">Construction &amp; Trades</div>
+          <div class="it-count">3 Houston clients</div>
+        </div>
+        <div class="ind-tab" data-ind="professional" onclick="switchIndustry('professional')">
+          <span class="it-icon">⚖️</span>
+          <div class="it-name">Professional Services</div>
+          <div class="it-count">4 Houston clients</div>
+        </div>
+        <div class="ind-tab" data-ind="health" onclick="switchIndustry('health')">
+          <span class="it-icon">💪</span>
+          <div class="it-name">Health &amp; Wellness</div>
+          <div class="it-count">2 Houston clients</div>
+        </div>
+        <div class="ind-tab" data-ind="energy" onclick="switchIndustry('energy')">
+          <span class="it-icon">⚡</span>
+          <div class="it-name">Energy &amp; Industrial</div>
+          <div class="it-count">2 Houston clients</div>
+        </div>
+      </div>
+
+      <!-- Industry Panels -->
+      <div id="panel-construction" class="ind-panel">
+        <div class="ip-eyebrow">Construction &amp; Trades</div>
+        <h3>Houston contractors lose deals before the proposal — because the brand signals "small shop" first.</h3>
+        <p>We've helped Houston-area construction and trades firms reposition from commodity vendor to trusted specialist — locking in messaging that closes enterprise contracts faster and reduces price-based objections.</p>
+        <div class="ind-tags">
+          <span class="ind-tag">$500K–$3M revenue range</span>
+          <span class="ind-tag">Avg. 3.2× ROI in year 1</span>
+          <span class="ind-tag">JMR Construction</span>
+          <span class="ind-tag">LPW Power Washing</span>
+        </div>
+      </div>
+
+      <div id="panel-professional" class="ind-panel">
+        <div class="ip-eyebrow">Professional Services</div>
+        <h3>Houston professional services firms lose the pitch to bigger-looking competitors — not less capable ones.</h3>
+        <p>We've helped consultants, advisors, and agency founders build brand systems that command premium fees — positioning the expertise they already have so the right clients find them first, without relying entirely on warm introductions.</p>
+        <div class="ind-tags">
+          <span class="ind-tag">$500K–$5M revenue range</span>
+          <span class="ind-tag">+26% QoQ pipeline growth</span>
+          <span class="ind-tag">Kinsmen Group</span>
+          <span class="ind-tag">Stamped Passport Society</span>
+          <span class="ind-tag">Uncharted Insights</span>
+        </div>
+      </div>
+
+      <div id="panel-health" class="ind-panel">
+        <div class="ip-eyebrow">Health &amp; Wellness</div>
+        <h3>Houston health &amp; wellness practices struggle to stand out in a crowded market without lowering prices.</h3>
+        <p>We've helped Houston-area health and wellness firms differentiate beyond "results-driven" — building identity systems that attract premium clients and reduce over-dependence on insurance reimbursements and referral networks.</p>
+        <div class="ind-tags">
+          <span class="ind-tag">$300K–$2M revenue range</span>
+          <span class="ind-tag">$700K+ revenue recovery</span>
+          <span class="ind-tag">Muscle Rehab</span>
+        </div>
+      </div>
+
+      <div id="panel-energy" class="ind-panel">
+        <div class="ip-eyebrow">Energy &amp; Industrial</div>
+        <h3>Houston energy firms pitch capability but lose enterprise deals on perception, not performance.</h3>
+        <p>We've helped energy and industrial services firms build the brand credibility needed to compete at enterprise scale — positioning deep technical expertise as strategic advantage and reducing the trust gap with procurement teams.</p>
+        <div class="ind-tags">
+          <span class="ind-tag">$1M–$10M revenue range</span>
+          <span class="ind-tag">14% employee retention lift</span>
+          <span class="ind-tag">Phillips 66</span>
+        </div>
+      </div>
+
+      <div id="panel-other" class="ind-panel">
+        <div class="ip-eyebrow">Other Industries</div>
+        <h3>If your business depends on trust, credibility, and relationships — brand gaps cost you more than you think.</h3>
+        <p>We work across industries wherever professional services, complex sales cycles, or reputation-driven growth are in play. If a prospect's first impression of your brand doesn't match the quality of your work, we can close that gap.</p>
+        <div class="ind-tags">
+          <span class="ind-tag">B2B &amp; B2C firms</span>
+          <span class="ind-tag">Houston &amp; beyond</span>
+          <span class="ind-tag">Strategy-first approach</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CTA STRIP ── -->
+  <section class="cta-strip" id="cta-strip" style="display:none;">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <h2>Ready to close the gap?</h2>
+          <p>Book a free Strategic Fit Call. We'll confirm whether the problem is strategic, executional, or both — and what the right first move is.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="../../contact/index.html" class="cta-btn">
+            Book a Fit Call <i class="fa-regular fa-circle-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── GATE MODAL ── -->
+<div class="gate-overlay" id="gate-overlay">
+  <div class="gate-modal">
+    <button class="gate-close" onclick="closeGate()" aria-label="Close">×</button>
+    <div style="display:inline-block;background:rgba(239,66,55,.1);border-radius:50%;width:52px;height:52px;text-align:center;line-height:52px;font-size:22px;margin-bottom:20px;">🔓</div>
+    <h2>Your results are ready.</h2>
+    <p>Enter your name and email to unlock your personalized revenue gap estimate — and see how Houston firms in your industry are closing it.</p>
+    <input type="text" id="gate_name" class="calc-input" placeholder="First name" autocomplete="given-name" />
+    <input type="email" id="gate_email" class="calc-input" placeholder="Work email" autocomplete="email" />
+    <button class="calc-btn" onclick="submitGate()">
+      Unlock My Results <i class="fa-regular fa-circle-arrow-right" style="margin-left:8px;"></i>
+    </button>
+    <p class="gate-privacy">No spam. No sales calls unless you book one. Unsubscribe anytime.</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer-area">
+  <div class="footer__wrapper">
+    <div class="container container-extend">
+      <div class="row gy-50">
+        <div class="col-lg-4 col-sm-6">
+          <div class="footer__widget">
+            <a href="../../index.html" class="logo mb-30 d-block">
+              <img src="../../assets/images/logo/logo-stacked-orange-light.svg" alt="Abstract Creative" style="max-width:160px;" />
+            </a>
+            <p>Houston branding agency building positioning, identity, and growth systems for firms scaling past $500K.</p>
+          </div>
+        </div>
+        <div class="col-lg-2 col-sm-6">
+          <div class="footer__widget">
+            <h5 class="footer__widget-title">Services</h5>
+            <ul class="footer__widget-list">
+              <li><a href="../../services/foundation/index.html">Foundation</a></li>
+              <li><a href="../../services/identity/index.html">Identity</a></li>
+              <li><a href="../../services/execution/index.html">Execution</a></li>
+              <li><a href="../../icon-method/index.html">The ICON Method</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-sm-6">
+          <div class="footer__widget">
+            <h5 class="footer__widget-title">Company</h5>
+            <ul class="footer__widget-list">
+              <li><a href="../../work/index.html">Work</a></li>
+              <li><a href="../../about/index.html">About</a></li>
+              <li><a href="../../insights/index.html">Insights</a></li>
+              <li><a href="../../contact/index.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="footer__widget">
+            <h5 class="footer__widget-title">Free Tools</h5>
+            <ul class="footer__widget-list">
+              <li><a href="../../assessment/index.html">Brand Assessment</a></li>
+              <li><a href="../../tools/brand-gap-calculator/index.html">Revenue Gap Calculator</a></li>
+              <li><a href="../../resources/index.html">Resource Library</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__copyright">
+    <div class="container container-extend">
+      <div class="footer__copyright-wrp">
+        <p>© <span id="yr"></span> Abstract Creative. All rights reserved. Houston, TX.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="../../assets/js/jquery-3.7.1.min.js"></script>
+<script src="../../assets/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Industry benchmark conversion rates (%)
+  const BENCHMARKS = {
+    construction: 22,
+    professional: 26,
+    health:        24,
+    energy:        19,
+    other:         22
+  };
+
+  // Positioning tax rates by referral dependency
+  function positioningTaxRate(refPct) {
+    if (refPct >= 65) return 0.14;
+    if (refPct >= 45) return 0.09;
+    return 0.05;
+  }
+
+  function fmtDollar(n) {
+    if (n >= 1000000) return '$' + (n / 1000000).toFixed(1) + 'M';
+    if (n >= 1000)    return '$' + Math.round(n / 1000) + 'K';
+    return '$' + Math.round(n);
+  }
+
+  function openGate() {
+    const revenue   = parseFloat(document.getElementById('f_revenue').value);
+    const avgClient = parseFloat(document.getElementById('f_avg_client').value);
+    const industry  = document.getElementById('f_industry').value;
+
+    if (!revenue || revenue <= 0) {
+      alert('Please enter your annual revenue.');
+      document.getElementById('f_revenue').focus();
+      return;
+    }
+    if (!avgClient || avgClient <= 0) {
+      alert('Please enter your average client value.');
+      document.getElementById('f_avg_client').focus();
+      return;
+    }
+    if (!industry) {
+      alert('Please select your industry.');
+      document.getElementById('f_industry').focus();
+      return;
+    }
+
+    document.getElementById('gate-overlay').classList.add('active');
+    setTimeout(() => document.getElementById('gate_name').focus(), 100);
+  }
+
+  function closeGate() {
+    document.getElementById('gate-overlay').classList.remove('active');
+  }
+
+  function submitGate() {
+    const name  = document.getElementById('gate_name').value.trim();
+    const email = document.getElementById('gate_email').value.trim();
+
+    if (!name) {
+      alert('Please enter your name.');
+      document.getElementById('gate_name').focus();
+      return;
+    }
+    if (!email || !email.includes('@')) {
+      alert('Please enter a valid email address.');
+      document.getElementById('gate_email').focus();
+      return;
+    }
+
+    // Capture lead (passive — fire and forget to GHL webhook if available)
+    try {
+      const payload = {
+        firstName: name,
+        email: email,
+        source: 'Brand Gap Calculator',
+        revenue: document.getElementById('f_revenue').value,
+        avgClient: document.getElementById('f_avg_client').value,
+        convRate: document.getElementById('f_conv_rate').value,
+        referralPct: document.getElementById('f_referral_pct').value,
+        industry: document.getElementById('f_industry').value
+      };
+      // Push to dataLayer for GTM capture
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'calculator_gate_submit', ...payload });
+    } catch(e) {}
+
+    sessionStorage.setItem('bgc_unlocked', '1');
+    closeGate();
+    renderResults();
+  }
+
+  function renderResults() {
+    const revenue    = parseFloat(document.getElementById('f_revenue').value) || 0;
+    const avgClient  = parseFloat(document.getElementById('f_avg_client').value) || 0;
+    const convRate   = parseInt(document.getElementById('f_conv_rate').value) || 18;
+    const referralPct = parseInt(document.getElementById('f_referral_pct').value) || 65;
+    const industry   = document.getElementById('f_industry').value || 'other';
+
+    const benchmark  = BENCHMARKS[industry] || 22;
+
+    // Derived
+    const annualClients    = revenue / avgClient;
+    const annualLeads      = annualClients / (convRate / 100);
+    const marketingLeads   = annualLeads * (1 - referralPct / 100);
+
+    // Conversion gap
+    const convGapPct   = Math.max(0, (benchmark - convRate) / 100);
+    const convGapLeads = marketingLeads * convGapPct;
+    const convGapRev   = convGapLeads * avgClient;
+
+    // Positioning tax
+    const taxRate   = positioningTaxRate(referralPct);
+    const posTax    = revenue * taxRate;
+
+    // Totals
+    const totalAnnual = convGapRev + posTax;
+    const rangeLow    = Math.round(totalAnnual * 0.85 / 1000) * 1000;
+    const rangeHigh   = Math.round(totalAnnual * 1.15 / 1000) * 1000;
+    const threeYear   = totalAnnual * 3.4;
+
+    // Render
+    document.getElementById('res_range').textContent =
+      fmtDollar(rangeLow) + '–' + fmtDollar(rangeHigh);
+
+    document.getElementById('res_conv_gap').textContent = fmtDollar(convGapRev);
+    document.getElementById('res_conv_desc').textContent =
+      'You\'re converting at ' + convRate + '% vs. the Houston ' +
+      industry.charAt(0).toUpperCase() + industry.slice(1) +
+      ' benchmark of ' + benchmark + '%. That gap across ' +
+      Math.round(marketingLeads) + ' marketing-generated leads is real revenue.';
+
+    document.getElementById('res_pos_tax').textContent = fmtDollar(posTax);
+    document.getElementById('res_pos_desc').textContent =
+      referralPct + '% referral dependency is above the safe threshold. Firms at this level ' +
+      'typically discount 10–16% to compensate for positioning that doesn\'t sell on its own.';
+
+    document.getElementById('res_3yr').textContent = fmtDollar(threeYear);
+
+    document.getElementById('res_methodology').innerHTML =
+      '<strong style="color:#444;">How we calculated this:</strong> Conversion gap based on your reported ' +
+      convRate + '% close rate vs. Houston ' + industry + ' benchmark of ' + benchmark +
+      '% across your estimated ' + Math.round(marketingLeads) + ' marketing-generated leads ' +
+      '(annual revenue ÷ avg client value ÷ conversion rate). Positioning tax applied at ' +
+      Math.round(taxRate * 100) + '% of revenue — calibrated to your ' + referralPct +
+      '% referral dependency. 3-year figure uses 3.4× multiplier to account for compounding competitive disadvantage.';
+
+    // Show sections
+    document.getElementById('results-section').classList.add('visible');
+    document.getElementById('houston-section').style.display = 'block';
+    document.getElementById('cta-strip').style.display = 'block';
+
+    // Auto-select the user's industry tab
+    switchIndustry(industry);
+
+    // Smooth scroll
+    setTimeout(() => {
+      document.getElementById('results-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 120);
+  }
+
+  function switchIndustry(ind) {
+    // Tabs
+    document.querySelectorAll('.ind-tab').forEach(t => {
+      t.classList.toggle('active', t.dataset.ind === ind);
+    });
+    // Panels
+    document.querySelectorAll('.ind-panel').forEach(p => {
+      p.classList.remove('active');
+    });
+    const target = document.getElementById('panel-' + ind);
+    if (target) target.classList.add('active');
+  }
+
+  function recalculate() {
+    document.getElementById('results-section').classList.remove('visible');
+    document.getElementById('houston-section').style.display = 'none';
+    document.getElementById('cta-strip').style.display = 'none';
+    sessionStorage.removeItem('bgc_unlocked');
+    window.scrollTo({ top: document.querySelector('section[style*="background:#f7f7f7"]').offsetTop - 80, behavior: 'smooth' });
+  }
+
+  // Re-show results if already unlocked this session
+  if (sessionStorage.getItem('bgc_unlocked')) {
+    // Only re-render if inputs still have values
+    window.addEventListener('DOMContentLoaded', () => {
+      sessionStorage.removeItem('bgc_unlocked'); // require re-entry on fresh load
+    });
+  }
+</script>
+
+</body>
+</html>
