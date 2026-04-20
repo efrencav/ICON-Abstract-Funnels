@@ -1,8 +1,8 @@
 /admin/*  /admin/index.html  200
 /admin    /admin/index.html  200
 /insights/article-template.html  /insights/  302
-/case-studies  /work/index.html  301
-/case-studies/  /work/index.html  301
+/case-studies  /work/  301
+/case-studies/  /work/  301
 /services/add-ons  /services/index.html  301
 /services/add-ons/  /services/index.html  301
 /services/market-authority  /services/index.html  301
