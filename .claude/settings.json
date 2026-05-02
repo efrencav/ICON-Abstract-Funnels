@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(perl -i -pe 's|\\\\s*<li><a href=\"[^\"]*assessment[^\"]*\">Free Assessment</a></li>||g' /Users/abstract/Documents/GitHub/ICON-Abstract-Funnels/client-portal/index.html)"
+    ]
+  }
+}
